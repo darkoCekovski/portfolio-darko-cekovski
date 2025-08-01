@@ -24,9 +24,12 @@
         <div class="flex items-center space-x-6">
             <a href="{{ route('home') }}"
                class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-            {{--                <a href="{{ route('about') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">About</a>--}}
-            {{--                <a href="{{ route('projects') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>--}}
-            {{--                <a href="{{ route('contact') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>--}}
+            <a href="{{ route('about') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+            <a href="{{ route('projects') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+            <a href="{{ route('contact') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
             @livewire('theme-switcher')
         </div>
     </nav>
