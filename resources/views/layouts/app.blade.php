@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>@yield('title', 'Darko Cekovski Portfolio')</title>
-
-    <!-- Scripts -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', __('messages.site_title'))</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
     @livewireStyles
 </head>
-<body class="transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
-      x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
+<body class="transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }" x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
 <!-- Header -->
 <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" class="flex items-center">
-            <img src="/images/logo-light.svg" alt="Darko Cekovski Logo" class="h-20 dark:hidden">
-            <img src="/images/logo-dark.svg" alt="Darko Cekovski Logo" class="h-20 hidden dark:block">
+        <a href="/" class="flex items-center space-x-3">
+            <img src="/images/logo-light.svg" alt="Darko Cekovski Logo" class="h-10 dark:hidden">
+            <img src="/images/logo-dark.svg" alt="Darko Cekovski Logo" class="h-10 hidden dark:block">
+            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Darko Cekovski</span>
         </a>
         <div class="flex items-center space-x-6">
-            <a href="{{ route('home') }}"
-               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-            <a href="{{ route('about') }}"
-               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">About</a>
-            <a href="{{ route('projects') }}"
-               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-            <a href="{{ route('contact') }}"
-               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            <a href="{{ route('home') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_home') }}</a>
+            <a href="{{ route('about') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_about') }}</a>
+            <a href="{{ route('projects') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_projects') }}</a>
+            <a href="{{ route('contact') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_contact') }}</a>
             @livewire('theme-switcher')
+{{--            @livewire('language-switcher')--}}
         </div>
     </nav>
 </header>
@@ -57,7 +49,6 @@
 </footer>
 
 @livewireScripts
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const theme = localStorage.getItem('theme') || 'system';
@@ -68,6 +59,5 @@
         }
     });
 </script>
-
 </body>
 </html>
