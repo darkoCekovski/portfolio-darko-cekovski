@@ -6,7 +6,7 @@
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-5xl font-bold text-gray-800 dark:text-gray-200 mb-4">{{ __('messages.hero_title') }}</h1>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">{{ __('messages.hero_subtitle') }}</p>
-                <a href="{{ route('projects') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.hero_cta') }}</a>
+                <a href="{{ localized_route('projects') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.hero_cta') }}</a>
             </div>
         </section>
 
@@ -16,7 +16,7 @@
                 <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">{{ __('messages.about_title') }}</h2>
                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">{{ __('messages.about_text') }}</p>
                 <div class="text-center">
-                    <a href="{{ route('about') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.about_cta') }}</a>
+                    <a href="{{ localized_route('about') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.about_cta') }}</a>
                 </div>
             </div>
         </section>
@@ -46,13 +46,13 @@
                             <div class="p-4">
                                 <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $project->title }}</h3>
                                 <p class="text-gray-600 dark:text-gray-400 mt-2">{{ Str::limit($project->description, 100) }}</p>
-                                <a href="{{ route('project.detail', $project->id) }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline">{{ __('messages.project_detail_demo') }}</a>
+                                <a href="{{ localized_route('project.detail', ['id' => $project->id]) }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline">{{ __('messages.project_detail_demo') }}</a>
                             </div>
                         </div>
                     @endforeach
                 </div>
                 <div class="text-center mt-8">
-                    <a href="{{ route('projects') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.projects_all_cta') }}</a>
+                    <a href="{{ localized_route('projects') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.projects_all_cta') }}</a>
                 </div>
             </div>
         </section>
@@ -62,7 +62,7 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">{{ __('messages.contact_title') }}</h2>
                 <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">{{ __('messages.contact_text') }}</p>
-                <a href="{{ route('contact') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.contact_cta') }}</a>
+                <a href="{{ localized_route('contact') }}" class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.contact_cta') }}</a>
             </div>
         </section>
     @endsection

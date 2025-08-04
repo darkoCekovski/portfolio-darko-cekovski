@@ -1,0 +1,23 @@
+<?php
+return [
+    'site_title'=>'Portfolio Darko Cekovski',
+    'nav_home' => 'Home',
+    'nav_about' => 'About',
+    'nav_projects' => 'Projects',
+    'nav_contact' => 'Contact',
+    'hero_title' => 'Hi, I\'m Darko Cekovski',
+    'hero_subtitle' => 'A passionate web developer building modern applications with Laravel and Tailwind CSS.',
+    'hero_cta' => 'View My Projects',
+    'about_title' => 'About Me',
+    'about_text' => 'I\'m a web developer with a focus on creating user-friendly and efficient applications using modern technologies like Laravel, Tailwind CSS, and Livewire. I love turning ideas into reality through clean code and creative solutions.',
+    'about_cta' => 'Learn More About Me',
+    'skills_title' => 'My Skills',
+    'projects_title' => 'Featured Projects',
+    'projects_all_cta' => 'See All Projects',
+    'contact_title' => 'Get in Touch',
+    'contact_text' => 'Have a project idea or want to collaborate? Feel free to reach out!',
+    'contact_cta' => 'Contact Me',
+    'project_detail_tech' => 'Technologies Used',
+    'project_detail_demo' => 'View Demo',
+    'project_detail_github' => 'View on GitHub',
+];

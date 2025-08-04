@@ -1,0 +1,23 @@
+<?php
+return [
+    'site_title'=>'Portfolio Darko Cekovski',
+    'nav_home' => 'Startseite',
+    'nav_about' => 'Über mich',
+    'nav_projects' => 'Projekte',
+    'nav_contact' => 'Kontakt',
+    'hero_title' => 'Hallo, ich bin Darko Cekovski',
+    'hero_subtitle' => 'Ein leidenschaftlicher Webentwickler, der moderne Anwendungen mit Laravel und Tailwind CSS erstellt.',
+    'hero_cta' => 'Meine Projekte ansehen',
+    'about_title' => 'Über mich',
+    'about_text' => 'Ich bin ein Webentwickler, der sich darauf konzentriert, benutzerfreundliche und effiziente Anwendungen mit modernen Technologien wie Laravel, Tailwind CSS und Livewire zu erstellen. Ich liebe es, Ideen durch sauberen Code und kreative Lösungen in die Realität umzusetzen.',
+    'about_cta' => 'Mehr über mich erfahren',
+    'skills_title' => 'Meine Fähigkeiten',
+    'projects_title' => 'Ausgewählte Projekte',
+    'projects_all_cta' => 'Alle Projekte ansehen',
+    'contact_title' => 'Kontakt aufnehmen',
+    'contact_text' => 'Haben Sie eine Projektidee oder möchten Sie zusammenarbeiten? Kontaktieren Sie mich gerne!',
+    'contact_cta' => 'Kontaktieren Sie mich',
+    'project_detail_tech' => 'Verwendete Technologien',
+    'project_detail_demo' => 'Demo ansehen',
+    'project_detail_github' => 'Auf GitHub ansehen',
+];

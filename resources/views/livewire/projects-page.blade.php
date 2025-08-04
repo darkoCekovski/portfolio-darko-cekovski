@@ -11,7 +11,7 @@
                             <div class="p-4">
                                 <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $project->title }}</h2>
                                 <p class="text-gray-600 dark:text-gray-400 mt-2">{{ Str::limit($project->description, 100) }}</p>
-                                <a href="{{ route('project.detail', $project->id) }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline">{{ __('messages.project_detail_demo') }}</a>
+                                <a href="{{ localized_route('project.detail', ['id' => $project->id]) }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline">{{ __('messages.project_detail_demo') }}</a>
                             </div>
                         </div>
                     @endforeach

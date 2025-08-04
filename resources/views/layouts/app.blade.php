@@ -17,12 +17,12 @@
             <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Darko Cekovski</span>
         </a>
         <div class="flex items-center space-x-6">
-            <a href="{{ route('home') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_home') }}</a>
-            <a href="{{ route('about') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_about') }}</a>
-            <a href="{{ route('projects') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_projects') }}</a>
-            <a href="{{ route('contact') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_contact') }}</a>
+            <a href="{{ localized_route('home') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_home') }}</a>
+            <a href="{{ localized_route('about') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_about') }}</a>
+            <a href="{{ localized_route('projects') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_projects') }}</a>
+            <a href="{{ localized_route('contact') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_contact') }}</a>
             @livewire('theme-switcher')
-{{--            @livewire('language-switcher')--}}
+            @livewire('language-switcher')
         </div>
     </nav>
 </header>
