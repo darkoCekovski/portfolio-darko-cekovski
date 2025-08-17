@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ app()->getLocale() }}" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }" x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
+<body class="transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
+      x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
 <!-- Header -->
 <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -17,12 +18,17 @@
             <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Darko Cekovski</span>
         </a>
         <div class="flex items-center space-x-6">
-            <a href="{{ localized_route('home') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_home') }}</a>
-            <a href="{{ localized_route('about') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_about') }}</a>
-            <a href="{{ localized_route('projects') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_projects') }}</a>
-            <a href="{{ localized_route('contact') }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_contact') }}</a>
+            <a href="{{ localized_route('home') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_home') }}</a>
+            <a href="{{ localized_route('about') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_about') }}</a>
+            <a href="{{ localized_route('projects') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_projects') }}</a>
+            <a href="{{ localized_route('contact') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_contact') }}</a>
             @livewire('theme-switcher')
-            @livewire('language-switcher')
+            @include('partials.language-switcher')
+
         </div>
     </nav>
 </header>
@@ -48,7 +54,11 @@
     </div>
 </footer>
 
+
+
+
 @livewireScripts
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const theme = localStorage.getItem('theme') || 'system';
@@ -59,5 +69,7 @@
         }
     });
 </script>
+
+
 </body>
 </html>
