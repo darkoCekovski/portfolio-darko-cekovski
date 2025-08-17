@@ -6,6 +6,7 @@ use App\Livewire\AboutPage;
 use App\Livewire\ProjectsPage;
 use App\Livewire\ContactPage;
 use App\Models\Project;
+use App\Http\Controllers\CvController;
 
 Route::redirect('/', '/en');
 
@@ -17,5 +18,9 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
         return view('project-detail', ['project' => Project::findOrFail($id)]);
     })->name('project.detail');
     Route::get('/contact', ContactPage::class)->name('contact');
+
+    Route::get('/cv/download', [CvController::class, 'download'])->name('cv.download');
 });
+
+
 
