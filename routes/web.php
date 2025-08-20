@@ -1,12 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Livewire\HomePage;
 use App\Livewire\AboutPage;
 use App\Livewire\ProjectsPage;
 use App\Livewire\ContactPage;
+use App\Livewire\SkillsPage;
 use App\Models\Project;
+use App\Models\Skill;
 use App\Http\Controllers\CvController;
+use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/en');
 
@@ -18,8 +20,20 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
         return view('project-detail', ['project' => Project::findOrFail($id)]);
     })->name('project.detail');
     Route::get('/contact', ContactPage::class)->name('contact');
-
+    Route::get('/skills', SkillsPage::class)->name('skills');
+    Route::get('/skill/{slug}', function ($locale, $slug) {
+        $skill = Skill::where('name', \Illuminate\Support\Str::title(str_replace('-', ' ', $slug)))->firstOrFail();
+        return view('skill-detail', ['skill' => $skill]);
+    })->name('skill.detail');
     Route::get('/cv/download', [CvController::class, 'download'])->name('cv.download');
+    Route::get('/test-locale', function () {
+        return 'Current locale: ' . app()->getLocale();
+    });
+    Route::get('/test-session', function () {
+        session(['test' => 'test-value']);
+        \Log::info('Test session set: ' . session('test'));
+        return 'Session set: ' . session('test');
+    });
 });
 
 

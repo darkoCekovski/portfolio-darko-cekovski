@@ -11,6 +11,8 @@
                class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_about') }}</a>
             <a href="{{ localized_route('projects') }}"
                class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_projects') }}</a>
+            <a href="{{ localized_route('skills') }}"
+               class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_skills') }}</a>
             <a href="{{ localized_route('contact') }}"
                class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ __('messages.nav_contact') }}</a>
         </div>

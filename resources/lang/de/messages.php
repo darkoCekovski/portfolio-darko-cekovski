@@ -11,7 +11,6 @@ return [
     'about_title' => 'Über mich',
     'about_text' => 'Ich bin ein Webentwickler, der sich darauf konzentriert, benutzerfreundliche und effiziente Anwendungen mit modernen Technologien wie Laravel, Tailwind CSS und Livewire zu erstellen. Ich liebe es, Ideen durch sauberen Code und kreative Lösungen in die Realität umzusetzen.',
     'about_cta' => 'Mehr über mich erfahren',
-    'skills_title' => 'Meine Fähigkeiten',
     'projects_title' => 'Ausgewählte Projekte',
     'projects_all_cta' => 'Alle Projekte ansehen',
     'contact_title' => 'Kontakt aufnehmen',
@@ -20,4 +19,13 @@ return [
     'project_detail_tech' => 'Verwendete Technologien',
     'project_detail_demo' => 'Demo ansehen',
     'project_detail_github' => 'Auf GitHub ansehen',
+    'skills_title' => 'Meine Fähigkeiten',
+    'skills_all_cta' => 'Alle Fähigkeiten ansehen',
+    'skill_proficiency' => 'Kompetenz',
+    'skill_description' => 'Beschreibung',
+    'skill_learning_source' => 'Gelernt von',
+    'skill_experience' => 'Erfahrung',
+    'nav_skills' => 'Fähigkeiten',
+    'no_skills' => 'Keine Fähigkeiten gefunden.',
+
 ];

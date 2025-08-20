@@ -11,7 +11,6 @@ return [
     'about_title' => 'About Me',
     'about_text' => 'I\'m a web developer with a focus on creating user-friendly and efficient applications using modern technologies like Laravel, Tailwind CSS, and Livewire. I love turning ideas into reality through clean code and creative solutions.',
     'about_cta' => 'Learn More About Me',
-    'skills_title' => 'My Skills',
     'projects_title' => 'Featured Projects',
     'projects_all_cta' => 'See All Projects',
     'contact_title' => 'Get in Touch',
@@ -20,4 +19,13 @@ return [
     'project_detail_tech' => 'Technologies Used',
     'project_detail_demo' => 'View Demo',
     'project_detail_github' => 'View on GitHub',
+    'skills_title' => 'My Skills',
+    'skills_all_cta' => 'View All Skills',
+    'skill_proficiency' => 'Proficiency',
+    'skill_description' => 'Description',
+    'skill_learning_source' => 'Learned From',
+    'skill_experience' => 'Experience',
+    'nav_skills' => 'Skills',
+    'no_skills' => 'No skills found.',
+
 ];

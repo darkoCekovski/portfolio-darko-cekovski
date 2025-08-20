@@ -24,16 +24,26 @@
         </section>
 
         <!-- Skills Section -->
-        <section class="bg-gray-100 dark:bg-gray-800 py-16">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">{{ __('messages.skills_title') }}</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    @foreach (['Laravel', 'Tailwind CSS', 'Livewire', 'PHP', 'MySQL', 'JavaScript'] as $skill)
-                        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md text-center">
-                            <p class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $skill }}</p>
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">{{ __('messages.skills_title') }}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @foreach ($skills as $skill)
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md flex items-center space-x-4">
+                        <img src="{{ $skill->logo }}" alt="{{ $skill->name }} Logo" class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $skill->name }}</h3>
+                            <div class="w-24 bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: {{ $skill->proficiency * 10 }}%"></div>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">{{ $skill->proficiency }}/10</p>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="mt-6 text-center">
+                <a href="{{ localized_route('skills') }}" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                    {{ __('messages.skills_all_cta') }}
+                </a>
             </div>
         </section>
 
