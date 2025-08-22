@@ -9,11 +9,12 @@ class SkillsTableSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('skills')->truncate(); // Clear table to avoid duplicates
         DB::table('skills')->insert([
             [
                 'name' => 'Laravel',
                 'description' => 'Proficient in building web applications with Laravel, including Livewire and Blade templating.',
-                'proficiency' => 6, // 6/10
+                'proficiency' => 6,
                 'logo' => '/images/skills/laravel.svg',
                 'learning_source' => 'Laravel Documentation, Udemy Courses',
                 'experience_duration' => '2 years',
@@ -23,7 +24,7 @@ class SkillsTableSeeder extends Seeder
             [
                 'name' => 'Tailwind CSS',
                 'description' => 'Experienced in creating responsive and modern UI designs with Tailwind CSS.',
-                'proficiency' => 8, // 8/10
+                'proficiency' => 8,
                 'logo' => '/images/skills/tailwind.svg',
                 'learning_source' => 'Tailwind CSS Docs, YouTube Tutorials',
                 'experience_duration' => '1.5 years',

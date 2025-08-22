@@ -1,6 +1,6 @@
 <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
     <nav class="container mx-auto flex justify-between items-center px-6 py-1">
-        <a href="/" class="flex items-center space-x-3">
+        <a href="{{ localized_route('home') }}" class="flex items-center space-x-3">
             <img src="/images/logo-light.svg" alt="Darko Cekovski Logo" class="h-20 dark:hidden">
             <img src="/images/logo-dark.svg" alt="Darko Cekovski Logo" class="h-20 hidden dark:block">
         </a>

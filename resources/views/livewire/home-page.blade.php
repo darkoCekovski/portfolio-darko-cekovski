@@ -33,7 +33,8 @@
                         <div>
                             <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ $skill->name }}</h3>
                             <div class="w-24 bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: {{ $skill->proficiency * 10 }}%"></div>
+                                <div class="bg-blue-600 h-2 rounded-full"
+                                     style="width: {{ $skill->proficiency * 10 }}%"></div>
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-400">{{ $skill->proficiency }}/10</p>
                         </div>
@@ -41,7 +42,8 @@
                 @endforeach
             </div>
             <div class="mt-6 text-center">
-                <a href="{{ localized_route('skills') }}" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                <a href="{{ localized_route('skills') }}"
+                   class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
                     {{ __('messages.skills_all_cta') }}
                 </a>
             </div>
@@ -83,5 +85,7 @@
         </section>
     @endsection
 </div>
+
+
 
 
