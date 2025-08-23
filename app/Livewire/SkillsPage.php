@@ -30,6 +30,6 @@ class SkillsPage extends Component
 
     public function render()
     {
-        return view('livewire.skills-page')->layout('layouts.app', ['title' => __('messages.skills_title')]);
+        return view('livewire.pages.skills-page')->layout('layouts.app', ['title' => __('messages.skills_title')]);
     }
 }

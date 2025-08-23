@@ -2,7 +2,7 @@
 
 use App\Models\User;
 
-test('profile page is displayed', function () {
+test('profile pages is displayed', function () {
     $user = User::factory()->create();
 
     $response = $this

@@ -8,6 +8,6 @@ class ThemeSwitcher extends Component
 {
     public function render()
     {
-        return view('livewire.theme-switcher');
+        return view('livewire.components.theme-switcher');
     }
 }

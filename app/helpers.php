@@ -13,7 +13,7 @@ if (!function_exists('localized_route')) {
 
 if (!function_exists('switch_locale_url')) {
     /**
-     * Build the current page URL but with a different locale.
+     * Build the current pages URL but with a different locale.
      * Useful for language switcher links.
      */
     function switch_locale_url(string $locale): string

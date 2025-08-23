@@ -19,6 +19,6 @@ class HomePage extends Component
 
     public function render()
     {
-        return view('livewire.home-page')->layout('layouts.app', ['title' => __('messages.site_title')]);
+        return view('livewire.pages.home-page')->layout('layouts.app', ['title' => __('messages.site_title')]);
     }
 }
