@@ -20,32 +20,26 @@
             <!-- Current icon -->
             <span aria-hidden="true">
                 <template x-if="theme === 'light'">
-                    <!-- Sun -->
                     <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M12 17.625C15.1066 17.625 17.625 15.1066 17.625 12C17.625 8.8934 15.1066 6.375 12 6.375C8.8934 6.375 6.375 8.8934 6.375 12C6.375 15.1066 8.8934 17.625 12 17.625Z"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 3.375V1.5" stroke-width="1.5" stroke-linecap="round"
+                        <path d="M12 3.375V1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.89683 5.89683L4.57495 4.57495" stroke-width="1.5" stroke-linecap="round"
                               stroke-linejoin="round"/>
-                        <path d="M5.89683 5.89683L4.57495 4.57495" stroke-width="1.5"
-                              stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M3.375 12H1.5" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
+                        <path d="M3.375 12H1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M5.89683 18.103L4.57495 19.4249" stroke-width="1.5" stroke-linecap="round"
                               stroke-linejoin="round"/>
-                        <path d="M12 20.625V22.5" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
+                        <path d="M12 20.625V22.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M18.103 18.103L19.4249 19.4249" stroke-width="1.5" stroke-linecap="round"
                               stroke-linejoin="round"/>
-                        <path d="M20.625 12H22.5" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
+                        <path d="M20.625 12H22.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M18.103 5.89683L19.4249 4.57495" stroke-width="1.5" stroke-linecap="round"
                               stroke-linejoin="round"/>
                     </svg>
                 </template>
                 <template x-if="theme === 'dark'">
-                    <!-- Moon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -54,7 +48,6 @@
                     </svg>
                 </template>
                 <template x-if="theme === 'system'">
-                    <!-- Laptop -->
                     <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -63,8 +56,7 @@
                         <path
                             d="M2.25 16.5H21.75V18C21.75 18.3978 21.592 18.7794 21.3107 19.0607C21.0294 19.342 20.6478 19.5 20.25 19.5H3.75C3.35218 19.5 2.97064 19.342 2.68934 19.0607C2.40804 18.7794 2.25 18.3978 2.25 18V16.5Z"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.5 8.25H10.5" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round"/>
+                        <path d="M13.5 8.25H10.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </template>
             </span>
@@ -73,8 +65,13 @@
         <!-- Dropdown Menu -->
         <div
             x-show="open"
-            x-transition
             @click.outside="open = false"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
             x-cloak
             role="menu"
             class="absolute right-0 z-50 w-48 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg shadow-lg p-1 mt-2"
@@ -191,16 +188,10 @@
                     const osDark = this.mql ? this.mql.matches : window.matchMedia('(prefers-color-scheme: dark)').matches;
                     const isDark = this.theme === 'dark' || (this.theme === 'system' && osDark);
 
-                    // 1) Tailwind selector
                     root.classList.toggle('dark', isDark);
-
-                    // 2) Clean up anything else that could force dark:
-                    body.classList.remove('dark');             // in case "dark" accidentally ended up on body
-                    root.removeAttribute('data-theme');        // DaisyUI/Flowbite style attribute
+                    body.classList.remove('dark');
+                    root.removeAttribute('data-theme');
                     body.removeAttribute('data-theme');
-
-                    // 3) Optional: set data-theme explicitly if you *are* using DaisyUI (pick one theme):
-                    // if (isDark) root.setAttribute('data-theme', 'dark'); else root.setAttribute('data-theme', 'light');
                 },
             };
         }

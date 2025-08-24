@@ -25,7 +25,12 @@
         <!-- Dropdown Menu -->
         <div x-show="open"
              @click.away="open = false"
-             x-transition
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
              x-cloak
              role="menu"
              class="absolute right-0 z-50 w-36 bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-lg shadow-lg p-1 mt-2">

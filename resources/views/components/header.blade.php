@@ -6,7 +6,7 @@
         </a>
         <div class="flex items-center space-x-6">
             <a href="{{ localized_route('home') }}"
-               class="{{ request()->routeIs('home') ? 'text-blue-600 dark:text-blue-400 pointer-events-none cursor-default' : 'text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400' }} transition-all duration-200 ease-in-out">{{ __('messages.nav_home') }}</a>
+               class="{{ request()->routeIs('home') ? 'text-blue-600 dark:text-blue-400 pointer-events-none cursor-default' : 'text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400' }} transition-all duration-200 ease-in-out ">{{ __('messages.nav_home') }}</a>
             <a href="{{ localized_route('about') }}"
                class="{{ request()->routeIs('about') ? 'text-blue-600 dark:text-blue-400 pointer-events-none cursor-default' : 'text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400' }} transition-all duration-200 ease-in-out">{{ __('messages.nav_about') }}</a>
             <a href="{{ localized_route('projects') }}"
