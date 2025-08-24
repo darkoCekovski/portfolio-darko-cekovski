@@ -27,5 +27,7 @@ return [
     'skill_experience' => 'Erfahrung',
     'nav_skills' => 'Fähigkeiten',
     'no_skills' => 'Keine Fähigkeiten gefunden.',
-
+    'theme_light' => 'Hell',
+    'theme_dark' => 'Dunkel',
+    'theme_system' => 'System',
 ];

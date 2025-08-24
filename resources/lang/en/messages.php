@@ -27,5 +27,7 @@ return [
     'skill_experience' => 'Experience',
     'nav_skills' => 'Skills',
     'no_skills' => 'No skills found.',
-
+    'theme_light' => 'Light',
+    'theme_dark' => 'Dark',
+    'theme_system' => 'System',
 ];
