@@ -30,4 +30,15 @@ return [
     'theme_light' => 'Light',
     'theme_dark' => 'Dark',
     'theme_system' => 'System',
+    // Contact page translations
+    'contact_name_label' => 'Name',
+    'contact_email_label' => 'Email',
+    'contact_message_label' => 'Message',
+    'contact_submit' => 'Send Message',
+    'contact_success' => 'Thank you! Your message has been sent.',
+    'contact_error' => 'There was an error. Please try again.',
+    'contact_name_required' => 'The name field is required.',
+    'contact_email_required' => 'The email field is required.',
+    'contact_email_invalid' => 'The email must be a valid email address.',
+    'contact_message_required' => 'The message field is required.',
 ];

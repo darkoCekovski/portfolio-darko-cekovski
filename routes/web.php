@@ -26,14 +26,6 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
         return view('skill-detail', ['skill' => $skill]);
     })->name('skill.detail');
     Route::get('/cv/download', [CvController::class, 'download'])->name('cv.download');
-    Route::get('/test-locale', function () {
-        return 'Current locale: ' . app()->getLocale();
-    });
-    Route::get('/test-session', function () {
-        session(['test' => 'test-value']);
-        \Log::info('Test session set: ' . session('test'));
-        return 'Session set: ' . session('test');
-    });
 });
 
 

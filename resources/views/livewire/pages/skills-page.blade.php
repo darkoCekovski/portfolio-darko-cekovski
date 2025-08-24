@@ -3,11 +3,6 @@
     @section('content')
         <section class="container mx-auto px-6 py-12">
             <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">{{ __('messages.skills_title') }}</h2>
-            <!-- Debug Output -->
-            <div class="mb-6 text-gray-600 dark:text-gray-400">
-                <p>Debug: Skills count: {{ $skills->count() }}</p>
-                <pre>{{ print_r($skills->toArray(), true) }}</pre>
-            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse ($skills as $skill)
                     <a href="{{ localized_route('skill.detail', ['slug' => \Illuminate\Support\Str::slug($skill->name)]) }}"

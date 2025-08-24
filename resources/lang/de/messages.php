@@ -30,4 +30,15 @@ return [
     'theme_light' => 'Hell',
     'theme_dark' => 'Dunkel',
     'theme_system' => 'System',
+    // Contact page translations
+    'contact_name_label' => 'Name',
+    'contact_email_label' => 'E-Mail',
+    'contact_message_label' => 'Nachricht',
+    'contact_submit' => 'Nachricht senden',
+    'contact_success' => 'Vielen Dank! Ihre Nachricht wurde gesendet.',
+    'contact_error' => 'Es gab einen Fehler. Bitte versuchen Sie es erneut.',
+    'contact_name_required' => 'Das Namensfeld ist erforderlich.',
+    'contact_email_required' => 'Das E-Mail-Feld ist erforderlich.',
+    'contact_email_invalid' => 'Die E-Mail muss eine gültige E-Mail-Adresse sein.',
+    'contact_message_required' => 'Das Nachrichtenfeld ist erforderlich.',
 ];
