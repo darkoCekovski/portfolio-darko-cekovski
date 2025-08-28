@@ -1,6 +1,5 @@
 <div>
     @section('title', __('messages.site_title'))
-    @section('content')
         <!-- Hero Section -->
         <section class="bg-gray-100 dark:bg-gray-800 py-20">
             <div class="container mx-auto px-6 text-center">
@@ -83,7 +82,6 @@
                    class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.contact_cta') }}</a>
             </div>
         </section>
-    @endsection
 </div>
 
 

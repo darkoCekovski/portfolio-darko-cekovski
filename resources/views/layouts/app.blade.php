@@ -15,7 +15,7 @@
 
 <!-- Main Content -->
 <main class="min-h-screen bg-gray-100 dark:bg-gray-800 pt-20">
-    @yield('content')
+     {{ $slot }}
 </main>
 
 <!-- Footer -->

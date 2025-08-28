@@ -19,6 +19,7 @@ return [
     'project_detail_tech' => 'Verwendete Technologien',
     'project_detail_demo' => 'Demo ansehen',
     'project_detail_github' => 'Auf GitHub ansehen',
+    'no_projects'=>'Keine Projekte gefunden.',
     'skills_title' => 'Meine Fähigkeiten',
     'skills_all_cta' => 'Alle Fähigkeiten ansehen',
     'skill_proficiency' => 'Kompetenz',

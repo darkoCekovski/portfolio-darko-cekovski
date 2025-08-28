@@ -19,6 +19,7 @@ return [
     'project_detail_tech' => 'Technologies Used',
     'project_detail_demo' => 'View Demo',
     'project_detail_github' => 'View on GitHub',
+    'no_projects'=>'No projects found.',
     'skills_title' => 'My Skills',
     'skills_all_cta' => 'View All Skills',
     'skill_proficiency' => 'Proficiency',

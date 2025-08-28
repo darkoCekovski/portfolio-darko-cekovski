@@ -1,6 +1,5 @@
 <div>
     @section('title', __('messages.site_title'))
-    @section('content')
         <section class="container mx-auto px-6 py-12">
             <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">{{ __('messages.contact_title') }}</h2>
             <form wire:submit.prevent="submit" class="max-w-lg mx-auto space-y-6">
@@ -37,5 +36,4 @@
                 @endif
             </form>
         </section>
-    @endsection
 </div>
