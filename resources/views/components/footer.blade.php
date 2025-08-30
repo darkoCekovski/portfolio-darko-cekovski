@@ -7,7 +7,7 @@
                 <img src="/images/logo-dark.svg" alt="{{ __('Darko Cekovski Logo') }}" class="h-20 hidden dark:block">
             </a>
         </div>
-        <div class="flex justify-center space-x-6 mb-4">
+        <div class="flex items-center justify-center space-x-6 mb-4">
             <a href="https://github.com/your-username"
                class="hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 ease-in-out">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,19 @@
                 </svg>
             </a>
             <a href="https://twitter.com/your-username"
-               class="hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 ease-in-out">Twitter</a>
+               class="hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 ease-in-out">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_481_1305)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.4201 11.0092L24.8911 0H22.6468L14.4231 9.55916L7.85493 0H0.279297L10.2117 14.4551L0.279297 26H2.52374L11.2081 15.9052L18.1446 26H25.7202L15.4196 11.0092H15.4201ZM12.346 14.5825L11.3397 13.1431L3.33244 1.68957H6.77977L13.2417 10.9329L14.2481 12.3723L22.6478 24.3873H19.2005L12.346 14.583V14.5825Z"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_481_1305">
+                            <rect width="26" height="26" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
         </div>
         <p>&copy; 2025 Darko Cekovski. All rights reserved.</p>
     </div>
