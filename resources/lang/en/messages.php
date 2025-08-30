@@ -1,6 +1,6 @@
 <?php
 return [
-    'site_title'=>'Portfolio Darko Cekovski',
+    'site_title' => 'Portfolio Darko Cekovski',
     'nav_home' => 'Home',
     'nav_about' => 'About',
     'nav_projects' => 'Projects',
@@ -19,7 +19,9 @@ return [
     'project_detail_tech' => 'Technologies Used',
     'project_detail_demo' => 'View Demo',
     'project_detail_github' => 'View on GitHub',
-    'no_projects'=>'No projects found.',
+    'project_detail' => 'See Project Details',
+    'project_description' => 'Description',
+    'no_projects' => 'No projects found.',
     'skills_title' => 'My Skills',
     'skills_all_cta' => 'View All Skills',
     'skill_proficiency' => 'Proficiency',
@@ -31,7 +33,6 @@ return [
     'theme_light' => 'Light',
     'theme_dark' => 'Dark',
     'theme_system' => 'System',
-    // Contact page translations
     'contact_name_label' => 'Name',
     'contact_email_label' => 'Email',
     'contact_message_label' => 'Message',
@@ -39,7 +40,13 @@ return [
     'contact_success' => 'Thank you! Your message has been sent.',
     'contact_error' => 'There was an error. Please try again.',
     'contact_name_required' => 'The name field is required.',
+    'contact_name_string' => 'The name must be a string.',
+    'contact_name_max' => 'The name may not be greater than 255 characters.',
     'contact_email_required' => 'The email field is required.',
-    'contact_email_invalid' => 'The email must be a valid email address.',
+    'contact_email_email' => 'The email must be a valid email address.',
+    'contact_email_max' => 'The email may not be greater than 255 characters.',
     'contact_message_required' => 'The message field is required.',
+    'contact_message_string' => 'The message must be a string.',
+    'contact_message_max' => 'The message may not be greater than 1000 characters.',
+    'filter_all' => 'All',
 ];

@@ -21,6 +21,7 @@ class ContactPage extends Component
         'comment' => 'required|string|max:1000',
     ];
 
+
     public function submit()
     {
         $this->reset(['successMessage', 'errorMessage']);

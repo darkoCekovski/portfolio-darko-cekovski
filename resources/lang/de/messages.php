@@ -1,6 +1,6 @@
 <?php
 return [
-    'site_title'=>'Portfolio Darko Cekovski',
+    'site_title' => 'Portfolio Darko Cekovski',
     'nav_home' => 'Startseite',
     'nav_about' => 'Über mich',
     'nav_projects' => 'Projekte',
@@ -19,7 +19,9 @@ return [
     'project_detail_tech' => 'Verwendete Technologien',
     'project_detail_demo' => 'Demo ansehen',
     'project_detail_github' => 'Auf GitHub ansehen',
-    'no_projects'=>'Keine Projekte gefunden.',
+    'project_detail' => 'Projektdetails ansehen',
+    'project_description' => 'Beschreibung',
+    'no_projects' => 'Keine Projekte gefunden.',
     'skills_title' => 'Meine Fähigkeiten',
     'skills_all_cta' => 'Alle Fähigkeiten ansehen',
     'skill_proficiency' => 'Kompetenz',
@@ -31,7 +33,6 @@ return [
     'theme_light' => 'Hell',
     'theme_dark' => 'Dunkel',
     'theme_system' => 'System',
-    // Contact page translations
     'contact_name_label' => 'Name',
     'contact_email_label' => 'E-Mail',
     'contact_message_label' => 'Nachricht',
@@ -39,7 +40,13 @@ return [
     'contact_success' => 'Vielen Dank! Ihre Nachricht wurde gesendet.',
     'contact_error' => 'Es gab einen Fehler. Bitte versuchen Sie es erneut.',
     'contact_name_required' => 'Das Namensfeld ist erforderlich.',
+    'contact_name_string' => 'Der Name muss eine Zeichenkette sein.',
+    'contact_name_max' => 'Der Name darf nicht länger als 255 Zeichen sein.',
     'contact_email_required' => 'Das E-Mail-Feld ist erforderlich.',
-    'contact_email_invalid' => 'Die E-Mail muss eine gültige E-Mail-Adresse sein.',
+    'contact_email_email' => 'Die E-Mail muss eine gültige E-Mail-Adresse sein.',
+    'contact_email_max' => 'Die E-Mail darf nicht länger als 255 Zeichen sein.',
     'contact_message_required' => 'Das Nachrichtenfeld ist erforderlich.',
+    'contact_message_string' => 'Die Nachricht muss eine Zeichenkette sein.',
+    'contact_message_max' => 'Die Nachricht darf nicht länger als 1000 Zeichen sein.',
+    'filter_all' => 'Alle',
 ];
