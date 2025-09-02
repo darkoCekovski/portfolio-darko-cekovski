@@ -3,13 +3,28 @@
         <div class="container mx-auto px-6">
             <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">{{ __('messages.projects_title') }}</h1>
 
+            <!-- Search Input -->
+            <form class="mb-8 max-w-md mx-auto relative">
+                <div class="relative">
+                    <input type="text" wire:model.live.debounce="search" placeholder="{{ __('messages.search_projects') }}"
+                           class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white pr-10">
+                    @if (!empty($search))
+                        <button type="button" wire:click="clearSearch" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    @endif
+                </div>
+            </form>
+
             <!-- Filter Buttons -->
-            <div class="mb-8 flex flex-wrap gap-2 justify-start">
+            <div class="mb-8 flex flex-wrap gap-2 justify-center">
                 <button wire:click="toggleFilter('all')" class="{{ empty($filterTechs) ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' }} px-4 py-2 rounded-md hover:bg-blue-700 hover:text-white transition duration-200">
                     {{ __('messages.filter_all') }}
                 </button>
                 @foreach ($technologies as $tech)
-                    <button wire:click="toggleFilter('{{ $tech }}')" class="{{ in_array($tech, $filterTechs) ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' }} px-4 py-2 rounded-md hover:bg-blue-700 hover:text-white transition duration-200">
+                    <button wire:click="toggleFilter(@js($tech))" class="{{ in_array($tech, $filterTechs) ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' }} px-4 py-2 rounded-md hover:bg-blue-700 hover:text-white transition duration-200">
                         {{ $tech }}
                     </button>
                 @endforeach

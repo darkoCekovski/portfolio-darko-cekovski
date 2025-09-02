@@ -49,4 +49,5 @@ return [
     'contact_message_string' => 'The message must be a string.',
     'contact_message_max' => 'The message may not be greater than 1000 characters.',
     'filter_all' => 'All',
+    'search_projects' => 'Search projects',
 ];

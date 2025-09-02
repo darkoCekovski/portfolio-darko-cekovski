@@ -49,4 +49,5 @@ return [
     'contact_message_string' => 'Die Nachricht muss eine Zeichenkette sein.',
     'contact_message_max' => 'Die Nachricht darf nicht länger als 1000 Zeichen sein.',
     'filter_all' => 'Alle',
+    'search_projects' => 'Projekte suchen',
 ];
