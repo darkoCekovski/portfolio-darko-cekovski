@@ -41,6 +41,7 @@
                 </svg>
             </a>
         </div>
-        <p>&copy; 2025 Darko Cekovski. All rights reserved.</p>
+        <p>Build with Laravel, AlpineJS, Tailwind CSS</p>
+        <p class="mt-2">&copy; 2025 Darko Cekovski. All rights reserved.</p>
     </div>
 </footer>
