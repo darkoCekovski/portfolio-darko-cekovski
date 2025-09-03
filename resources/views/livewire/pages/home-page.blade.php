@@ -10,6 +10,9 @@
             </div>
         </section>
 
+    <!-- Services Section -->
+    <livewire:services />
+
         <!-- About Section -->
         <section class="py-16">
             <div class="container mx-auto px-6">

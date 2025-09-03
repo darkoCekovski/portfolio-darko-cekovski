@@ -50,4 +50,5 @@ return [
     'contact_message_max' => 'The message may not be greater than 1000 characters.',
     'filter_all' => 'All',
     'search_projects' => 'Search projects',
+    'services_title'=>'What I Offer',
 ];
