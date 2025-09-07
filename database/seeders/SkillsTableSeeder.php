@@ -62,6 +62,16 @@ class SkillsTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'name' => 'Alpine js',
+                'description' => 'Proficient in building web applications with Laravel, including Livewire and Blade templating.',
+                'proficiency' => 8,
+                'logo' => '/images/skills/alpinejs.svg',
+                'learning_source' => 'Laravel Documentation, Udemy Courses',
+                'experience_duration' => '5 years',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'name' => 'Vue js',
                 'description' => 'Proficient in building web applications with Laravel, including Livewire and Blade templating.',
                 'proficiency' => 3,

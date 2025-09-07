@@ -1,4 +1,4 @@
-<header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-lg dark:shadow-white z-50">
+<header class="fixed top-0 w-full bg-primary/70 shadow-lg dark:shadow-[0px_27px_40px_0px_rgba(255,255,255,0.50)] z-50">
     <nav class="container mx-auto flex justify-between items-center px-6 py-1">
         <a href="{{ localized_route('home') }}" class="{{ request()->routeIs('home') ? 'pointer-events-none cursor-default' : '' }}">
             <img src="/images/logo-light.svg" alt="{{ __('Darko Cekovski Logo') }}" class="h-20 dark:hidden">

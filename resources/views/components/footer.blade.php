@@ -1,5 +1,5 @@
-<footer class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-8">
-    <div class="container mx-auto px-6 text-center">
+<footer class="relative text-gray-800 dark:text-gray-200 ">
+    <div class="container mx-auto px-6 py-8 text-center border-t border-gray-200 dark:border-gray-800">
         <div class="w-fit mb-4 mx-auto">
             <a href="{{ localized_route('home') }}"
                class="{{ request()->routeIs('home') ? 'pointer-events-none cursor-default' : '' }}">
@@ -31,7 +31,7 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_481_1305)">
                         <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M15.4201 11.0092L24.8911 0H22.6468L14.4231 9.55916L7.85493 0H0.279297L10.2117 14.4551L0.279297 26H2.52374L11.2081 15.9052L18.1446 26H25.7202L15.4196 11.0092H15.4201ZM12.346 14.5825L11.3397 13.1431L3.33244 1.68957H6.77977L13.2417 10.9329L14.2481 12.3723L22.6478 24.3873H19.2005L12.346 14.583V14.5825Z"/>
+                              d="M15.4201 11.0092L24.8911 0H22.6468L14.4231 9.55916L7.85493 0H0.279297L10.2117 14.4551L0.279297 26H2.52374L11.2081 15.9052L18.1446 26H25.7202L15.4196 11.0092H15.4201ZM12.346 14.5825L11.3397 13.1431L3.33244 1.68957H6.77977L13.2417 10.9329L14.2481 12.3723L22.6478 24.3873H19.2005L12.346 14.583V14.5825Z"/>
                     </g>
                     <defs>
                         <clipPath id="clip0_481_1305">
@@ -44,4 +44,8 @@
         <p>Build with Laravel, AlpineJS, Tailwind CSS</p>
         <p class="mt-2">&copy; 2025 Darko Cekovski. All rights reserved.</p>
     </div>
+    <img src="{{asset('images/moon.svg')}}" alt="Moon"
+         class="absolute bottom-0 right-0 filter drop-shadow-[0_0_30px_rgba(156,163,175,0.7)]">
+    <img src="{{asset('images/glow-gradient-vector.svg')}}" alt="Gray Planet"
+         class="absolute bottom-0 left-0">
 </footer>

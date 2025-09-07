@@ -7,19 +7,26 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
+<body class="bg-primary transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
       x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
+<div class="relative bg-stars bg-cover bg-center">
+    <!-- Header -->
+    @include('components.header')
 
-<!-- Header -->
-@include('components.header')
+    <!-- Main Content -->
+    <main class="min-h-screen pt-20">
+        {{ $slot }}
+    </main>
 
-<!-- Main Content -->
-<main class="min-h-screen bg-gray-100 dark:bg-gray-800 pt-20">
-     {{ $slot }}
-</main>
+    <!-- Footer -->
+    @include('components.footer')
 
-<!-- Footer -->
-@include('components.footer')
+    <!-- Background vectors -->
+    <div>
+
+
+    </div>
+</div>
 
 @livewireScripts
 
@@ -32,7 +39,8 @@
             const isDark = stored === 'dark' || (stored === 'system' && mq.matches);
             if (isDark) document.documentElement.classList.add('dark');
             else document.documentElement.classList.remove('dark');
-        } catch {}
+        } catch {
+        }
     })();
 </script>
 
