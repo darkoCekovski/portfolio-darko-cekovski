@@ -5,8 +5,5 @@
 [x-cloak] {
     display: none;
 }
-/*@layer base {*/
-    /*html { color-scheme: light dark; }*/
-    /*body { @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100; }*/
-/*}*/
+
 

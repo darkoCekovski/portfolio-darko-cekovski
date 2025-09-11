@@ -14,19 +14,19 @@ export default {
         extend: {
             keyframes: {
                 'rocket-launch': {
-                    '0%': {transform: 'translate(-200px, 200px) scale(0.5) rotate(-20deg)', opacity: '0'},
-                    '50%': {transform: 'translate(0, -50px) scale(1.1) rotate(0deg)', opacity: '1'},
-                    '100%': {transform: 'translate(0, -300px) scale(1) rotate(10deg)', opacity: '1'},
+                    '0%': {transform: 'translate(0px, 200px) scale(0.1) rotate(-45deg)', opacity: '0'},
+                    '50%': {transform: 'translate(0, 0px) scale(1) rotate(-45deg)', opacity: '1'},
+                    '100%': {transform: 'translate(0, -300px) scale(1) rotate(-20deg)', opacity: '1'},
                 },
                 'planet-spin-pulse': {
                     '0%':   { transform: 'rotate(0deg) scale(1)' },
-                    '50%':  { transform: 'rotate(180deg) scale(1.1)' },
+                    '50%':  { transform: 'rotate(180deg) scale(1.2)' },
                     '100%': { transform: 'rotate(360deg) scale(1)' },
                 },
             },
             animation: {
-                'rocket-launch': 'rocket-launch 2s ease-out forwards',
-                'planet-spin-pulse': 'planet-spin-pulse 12s ease-in-out infinite',
+                'rocket-launch': 'rocket-launch 10s ease-out forwards',
+                'planet-spin-pulse': 'planet-spin-pulse 100s ease-in-out infinite',
             },
             backgroundImage: {
                 'space': "url('../../public/images/space-vector.png')",

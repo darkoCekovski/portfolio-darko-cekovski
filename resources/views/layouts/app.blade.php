@@ -7,9 +7,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="bg-primary transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
+
+<body style="background: linear-gradient(to bottom, #05060F, #0A0B16);" class=" transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
       x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
-<div class="relative bg-stars bg-cover bg-center">
+
+<div class="relative bg-stars bg-cover bg-top bg-fixed">
+
     <!-- Header -->
     @include('components.header')
 
@@ -21,11 +24,6 @@
     <!-- Footer -->
     @include('components.footer')
 
-    <!-- Background vectors -->
-    <div>
-
-
-    </div>
 </div>
 
 @livewireScripts
