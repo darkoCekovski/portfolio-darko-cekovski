@@ -5,11 +5,11 @@
             @foreach ($services as $service)
                 <!--  3D Card Styles  -->
                 <div
-                    class="bg-white/5 dark:bg-gray-900/5 backdrop-blur-lg rounded-lg shadow-[0px_0px_30px_5px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_30px_5px_rgba(255,255,255,0.1)] [transform:perspective(800px)_rotateY(10deg)] hover:[transform:perspective(800px)_rotateY(-10deg)] hover:z-10 p-6 text-center group duration-300 border border-white/10">
+                    class="bg-white/5 dark:bg-gray-900/5 backdrop-blur-lg rounded-lg shadow-[0px_0px_30px_5px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_30px_5px_rgba(255,255,255,0.1)] [transform:perspective(800px)_rotateY(10deg)] hover:[transform:perspective(800px)_rotateY(-10deg)] hover:z-10 p-6 text-center group delay-150 duration-300 border border-white/10">
                     <!-- Icon -->
                     <div class="bg-center bg-cover bg-img-bg p-5 rounded-lg">
                         <svg
-                            class="h-24 w-24 mx-auto mb-4 text-blue-600 dark:text-blue-400 duration-300 group-hover:-translate-x-8"
+                            class="h-24 w-24 mx-auto mb-4 text-blue-600 dark:text-blue-400 delay-150 duration-300 group-hover:-translate-x-8"
                             fill="none"
                             stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

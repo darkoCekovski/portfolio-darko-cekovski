@@ -6,7 +6,7 @@
             <div class=" flex flex-col lg:flex-row max-lg:space-y-10 lg:space-x-20">
                 <div class="basis-1/2 text-left">
                     <h1 class="text-6xl font-bold text-gray-800 dark:text-gray-200 mb-4">Hello. I'm Darko
-                        <span>Frontend Developer</span>
+                        <span class="text-gray-400">Frontend</span> <span> Developer</span>
                     </h1>
                     <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">Experience cutting-edge solutions designed
                         to elevate productivity and deliver results like never before.</p>
@@ -16,9 +16,7 @@
                 <div class="basis-1/2">
 
                 </div>
-
             </div>
-
         </div>
         <img src="{{ asset('images/rocket.svg') }}" alt="Rocket Vector"
              class="absolute z-10 left-1/2 top-[70%] animate-rocket-launch drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
