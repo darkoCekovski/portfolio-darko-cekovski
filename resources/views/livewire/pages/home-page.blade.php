@@ -1,7 +1,7 @@
 <div>
     @section('title', __('messages.site_title'))
     <!-- Hero Section -->
-    <section class="relative ">
+    <section class="relative">
         <div class="relative z-10 container mx-auto px-6 py-[250px]">
             <div class=" flex flex-col lg:flex-row max-lg:space-y-10 lg:space-x-20">
                 <div class="basis-1/2 text-left">
@@ -26,8 +26,6 @@
              class="absolute right-20 top-20 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)] animate-planet-spin-pulse">
         <img src="{{ asset('images/red-planet-5.svg') }}" alt="Red Planet Vector"
              class="absolute left-[10%] bottom-10 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)] animate-planet-spin-pulse">
-
-
     </section>
 
     <!-- Services Section -->

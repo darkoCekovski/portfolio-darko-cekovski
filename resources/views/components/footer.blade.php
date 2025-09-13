@@ -1,6 +1,7 @@
-<footer class="relative text-gray-800 dark:text-gray-200 ">
-    <div class="container mx-auto px-6 py-8 text-center border-t border-gray-200 dark:border-gray-800">
-        <div class="w-fit mb-4 mx-auto">
+<footer class="relative z-10 text-gray-800 dark:text-gray-200">
+    <div class="container mx-auto px-6 pb-8 text-center group">
+        <div class="h-px w-full dark:bg-gray-800 shadow-[0px_0px_50px_9px_rgba(0,0,0,0.20)] dark:shadow-[0px_0px_20px_5px_rgba(255,255,255,0.20)]"></div>
+        <div class=" w-fit my-4 mx-auto opacity-0 group-hover:opacity-100 transform-all duration-1000 easy-in-out">
             <a href="{{ localized_route('home') }}"
                class="{{ request()->routeIs('home') ? 'pointer-events-none cursor-default' : '' }}">
                 <img src="/images/logo-light.svg" alt="{{ __('Darko Cekovski Logo') }}" class="h-20 dark:hidden">
@@ -45,7 +46,7 @@
         <p class="mt-2">&copy; 2025 Darko Cekovski. All rights reserved.</p>
     </div>
     <img src="{{asset('images/moon.svg')}}" alt="Moon"
-         class="absolute bottom-0 right-0 filter drop-shadow-[0_0_30px_rgba(156,163,175,0.7)]">
+         class="absolute -z-10 bottom-0 right-0 filter drop-shadow-[0_0_30px_rgba(156,163,175,0.7)]">
     <img src="{{asset('images/glow-gradient-vector.svg')}}" alt="Gray Planet"
-         class="absolute bottom-0 left-0">
+         class="absolute -z-10 bottom-0 left-0">
 </footer>
