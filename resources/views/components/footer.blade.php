@@ -48,5 +48,5 @@
     <img src="{{asset('images/moon.svg')}}" alt="Moon"
          class="absolute -z-10 bottom-0 right-0 filter drop-shadow-[0_0_30px_rgba(156,163,175,0.7)]">
     <img src="{{asset('images/glow-gradient-vector.svg')}}" alt="Gray Planet"
-         class="absolute -z-10 bottom-0 left-0">
+         class="absolute !-z-10 bottom-0 left-0">
 </footer>

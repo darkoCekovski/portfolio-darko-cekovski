@@ -8,10 +8,11 @@
     @livewireStyles
 </head>
 
-<body style="background: linear-gradient(to bottom, #05060F, #0A0B16);" class=" transition-colors duration-300" x-data="{ theme: localStorage.getItem('theme') || 'system' }"
+<body style="background: linear-gradient(to bottom, #05060F, #0A0B16);" class="transition-colors duration-300"
+      x-data="{ theme: localStorage.getItem('theme') || 'system' }"
       x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
 
-<div class="relative bg-stars bg-cover bg-top bg-fixed">
+<div class="bg-stars bg-cover bg-top bg-fixed animate-stars-move">
 
     <!-- Header -->
     @include('components.header')
@@ -25,6 +26,9 @@
     @include('components.footer')
 
 </div>
+
+
+{{--</div>--}}
 
 @livewireScripts
 

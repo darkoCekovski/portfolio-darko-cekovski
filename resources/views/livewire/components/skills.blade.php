@@ -56,7 +56,7 @@
         </div>
     </div>
     <img src="{{ asset('images/red-planet-6.svg') }}" alt="Red Planet Vector"
-         class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  drop-shadow-[0_0_15px_rgba(255,100,0,0.7)] animate-planet-spin-pulse">
+         class="animate-planet-spin-pulse absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
 
     <script>
         (() => {

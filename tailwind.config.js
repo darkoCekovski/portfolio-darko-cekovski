@@ -23,10 +23,15 @@ export default {
                     '50%':  { transform: 'rotate(180deg) scale(1.2)' },
                     '100%': { transform: 'rotate(360deg) scale(1)' },
                 },
+                starsMove: {
+                    '0%': { backgroundPosition: '100% 100%' },
+                    '100%': { backgroundPosition: '0% 0%' },
+                },
             },
             animation: {
                 'rocket-launch': 'rocket-launch 10s ease-out forwards',
                 'planet-spin-pulse': 'planet-spin-pulse 100s ease-in-out infinite',
+                'stars-move': 'starsMove 200s linear infinite',
             },
             backgroundImage: {
                 'space': "url('../../public/images/space-vector.png')",

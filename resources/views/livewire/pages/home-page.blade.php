@@ -21,9 +21,9 @@
         <img src="{{ asset('images/rocket.svg') }}" alt="Rocket Vector"
              class="absolute z-10 left-1/2 top-[70%] animate-rocket-launch drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
         <img src="{{ asset('images/red-planet-2.svg') }}" alt="Red Planet Vector"
-             class="absolute right-20 top-20 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)] animate-planet-spin-pulse">
+             class="animate-planet-spin-pulse absolute right-20 top-20 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
         <img src="{{ asset('images/red-planet-5.svg') }}" alt="Red Planet Vector"
-             class="absolute left-[10%] bottom-10 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)] animate-planet-spin-pulse">
+             class="animate-planet-spin-pulse absolute left-[10%] bottom-10 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
     </section>
 
     <!-- Services Section -->
@@ -70,7 +70,7 @@
         <img src="{{ asset('images/red-planet-3.svg') }}" alt="Red Planet Vector"
              class="absolute left-40 top-2 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
         <img src="{{ asset('images/red-planet-1.svg') }}" alt="Red Planet Vector"
-             class="absolute right-32 bottom-2 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)] animate-planet-spin-pulse">
+             class="animate-planet-spin-pulse absolute right-32 bottom-2 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
     </section>
 
     <!-- Contact Section -->
