@@ -2,24 +2,27 @@
     @section('title', __('messages.site_title'))
     <!-- Hero Section -->
     <section class="relative">
-        <div class="relative z-10 container mx-auto px-6 py-[250px]">
+        <div class="relative z-10 container mx-auto px-6 pt-[250px]">
             <div class=" flex flex-col lg:flex-row max-lg:space-y-10 lg:space-x-20">
                 <div class="basis-1/2 text-left">
-                    <h1 class="text-6xl font-bold text-gray-800 dark:text-gray-200 mb-4">Hello. I'm Darko
-                        <span class="text-gray-400">Frontend</span> <span> Developer</span>
+                    <h1 class="text-6xl font-bold text-gray-800 dark:text-gray-200 mb-4">Hello. I'm Darko.<br />
+                        <span class="whitespace-nowrap">A <span class="relative text-gray-300"> Frontend
+                            <img class="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2" src="{{ asset('images/glow-text.png') }}" alt="Glow">
+                            </span> Developer</span>
                     </h1>
                     <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">Experience cutting-edge solutions designed
                         to elevate productivity and deliver results like never before.</p>
                     <a href="{{ localized_route('projects') }}"
                        class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">{{ __('messages.hero_cta') }}</a>
                 </div>
-                <div class="basis-1/2">
-
+                <div class="relative basis-1/2 flex items-start justify-center">
+                    <img class="h-[150px] absolute -translate-x-1/2 -translate-y-1/2 top-0 left-1/2" src="{{asset('images/astronaut.svg')}}" alt="{{ __('Astronaut') }}">
+                    <img class="h-[650px]" src="{{asset('images/earth.svg')}}" alt="{{ __('Earth') }}">
                 </div>
             </div>
         </div>
-        <img src="{{ asset('images/rocket.svg') }}" alt="Rocket Vector"
-             class="absolute z-10 left-1/2 top-[70%] animate-rocket-launch drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
+{{--        <img src="{{ asset('images/rocket.svg') }}" alt="Rocket Vector"--}}
+{{--             class="absolute z-10 left-1/2 top-[70%] animate-rocket-launch drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">--}}
         <img src="{{ asset('images/red-planet-2.svg') }}" alt="Red Planet Vector"
              class="animate-planet-spin-pulse absolute right-20 top-20 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
         <img src="{{ asset('images/red-planet-5.svg') }}" alt="Red Planet Vector"

@@ -11,59 +11,74 @@ class ServiceSeeder extends Seeder
     {
         $services = [
             [
+                'name' => 'frontend',
+                'icon' => 'M4 8L8 12M8 12L12 8M8 12L12 16M8 12L4 16M20 4H4V20',
                 'title' => [
                     'en' => 'Frontend Development',
                     'de' => 'Frontend-Entwicklung',
                 ],
                 'description' => [
-                    'en' => 'Building user-friendly, visually appealing interfaces with Tailwind CSS and JavaScript.',
-                    'de' => 'Erstellung benutzerfreundlicher, optisch ansprechender Oberflächen mit Tailwind CSS und JavaScript.',
+                    'en' => 'Building responsive and interactive user interfaces using HTML, CSS, JavaScript, and frameworks like React and Vue.js.',
+                    'de' => 'Erstellung responsiver und interaktiver Benutzeroberflächen mit HTML, CSS, JavaScript und Frameworks wie React und Vue.js.',
                 ],
-                'icon' => 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
+                'name' => 'backend',
+                'icon' => 'M8 4H16V8H20V16H16V20H8V16H4V8H8V4ZM12 16H16V12H12V16ZM12 8H8V12H12V8Z',
                 'title' => [
                     'en' => 'Backend Development',
                     'de' => 'Backend-Entwicklung',
                 ],
                 'description' => [
-                    'en' => 'Developing robust APIs and server-side logic with Laravel and MySQL.',
-                    'de' => 'Entwicklung robuster APIs und serverseitiger Logik mit Laravel und MySQL.',
+                    'en' => 'Developing robust server-side applications with PHP, Laravel, and MySQL for seamless functionality.',
+                    'de' => 'Entwicklung robuster serverseitiger Anwendungen mit PHP, Laravel und MySQL für nahtlose Funktionalität.',
                 ],
-                'icon' => 'M5 11l7-7 7 7M5 19l7-7 7 7',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
+                'name' => 'responsive-design',
+                'icon' => 'M4 4H20V8H4V4ZM4 12H20V16H4V12ZM4 20H20V24H4V20Z',
                 'title' => [
                     'en' => 'Responsive Design',
                     'de' => 'Responsives Design',
                 ],
                 'description' => [
-                    'en' => 'Ensuring websites work seamlessly across all devices using Tailwind CSS.',
-                    'de' => 'Sicherstellung, dass Websites auf allen Geräten mit Tailwind CSS nahtlos funktionieren.',
+                    'en' => 'Creating websites that adapt seamlessly to various devices and screen sizes using modern CSS techniques.',
+                    'de' => 'Erstellung von Websites, die sich mit modernen CSS-Techniken nahtlos an verschiedene Geräte und Bildschirmgrößen anpassen.',
                 ],
-                'icon' => 'M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
+                'name' => 'seo',
+                'icon' => 'M4 4H20V8H4V4ZM4 12H20V16H4V12ZM4 20H20',
                 'title' => [
-                    'en' => 'SEO',
-                    'de' => 'SEO',
+                    'en' => 'SEO Optimization',
+                    'de' => 'SEO-Optimierung',
                 ],
                 'description' => [
                     'en' => 'Optimizing websites for search engines to improve visibility and rankings.',
-                    'de' => 'Optimierung von Websites für Suchmaschinen, um Sichtbarkeit und Rankings zu verbessern.',
+                    'de' => 'Optimierung von Websites für Suchmaschinen zur Verbesserung der Sichtbarkeit und Rankings.',
                 ],
-                'icon' => 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
+                'name' => 'custom-web-solution',
+                'icon' => 'M4 4H20V20H4V4ZM8 8H16V16H8V8Z',
                 'title' => [
-                    'en' => 'Custom Web Solutions',
+                    'en' => 'Custom Web Solution',
                     'de' => 'Individuelle Web-Lösungen',
                 ],
                 'description' => [
-                    'en' => 'Developing tailored solutions like portfolios, e-commerce platforms, or CMS.',
-                    'de' => 'Entwicklung maßgeschneiderter Lösungen wie Portfolios, E-Commerce-Plattformen oder CMS.',
+                    'en' => 'Developing tailored web solutions to meet unique business needs using a variety of technologies.',
+                    'de' => 'Entwicklung maßgeschneiderter Web-Lösungen, um spezifische Geschäftsanforderungen mit verschiedenen Technologien zu erfüllen.',
                 ],
-                'icon' => 'M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z M13.5 10.5H21A10.5 10.5 0 0110.5 0v7.5z',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 

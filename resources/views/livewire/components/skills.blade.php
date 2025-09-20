@@ -7,44 +7,76 @@
             @keyframes skill-fill { 0% { --p: 0; } 100% { --p: var(--target); } }
             .skill-ring { background: conic-gradient(var(--ring-color, #2563eb) calc(var(--p) * 1%), var(--track-color, #e5e7eb) 0); }
             .skill-animate { animation: skill-fill var(--duration, 1100ms) ease-out forwards; }
+            .skills-wrapper {
+                position: relative;
+                height: 80vh; /* Reduced height for better visibility */
+                overflow: hidden;
+                outline: none; /* Ensure focus outline is clean */
+            }
+            .skill-container {
+                height: 80vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+                position: absolute;
+                width: 100%;
+                top: 0;
+                opacity: 0;
+                transform: translateY(100%);
+                z-index: 1;
+            }
+            .skill-container.active {
+                opacity: 1;
+                transform: translateY(0);
+                z-index: 2;
+            }
+            .skill-container.prev {
+                transform: translateY(-100%);
+            }
         </style>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div class="skills-wrapper" tabindex="0">
             @foreach ($skills as $skill)
                 @php
                     $value = max(0, min(10, (int)($skill->proficiency ?? 0)));
                     $percent = (int) round(($value / 10) * 100);
-                    $color = '#2563eb'; // Default color
+                    $color = '#2563eb';
                     $href = localized_route('skill.detail', ['slug' => \Illuminate\Support\Str::slug($skill->name)]);
                 @endphp
 
-                <a href="{{ $href }}"
-                   class="w-fit mx-auto group flex flex-col items-center gap-3">
-                    <div
-                        class="relative grid place-items-center w-40 h-40 select-none shadow-[0px_0px_50px_9px_rgba(0,0,0,0.20)] dark:shadow-[0px_0px_50px_9px_rgba(255,255,255,0.20)] rounded-full"
-                        role="progressbar"
-                        aria-label="{{ $skill->name }}"
-                        aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
-                        style="--target: {{ $percent }}; --ring-color: {{ $color }}; --track-color: #e5e7eb; --duration: 1100ms;"
-                        data-skill data-value="{{ $value }}" data-max="10"
-                    >
-                        <div class="absolute inset-0 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                        <div class="absolute inset-0 rounded-full skill-ring"></div>
-                        <div class="absolute inset-2 rounded-full bg-white dark:bg-black shadow-inner">
-                            <img src="{{ asset('images/red-planet-5.svg') }}" alt="Red Planet Vector"
-                                 class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
+                <div class="skill-container {{ $loop->first ? 'active' : '' }}"
+                     data-index="{{ $loop->index }}">
+                    <a href="{{ $href }}"
+                       class="w-fit mx-auto group flex flex-col items-center gap-3">
+                        <div
+                            class="relative grid place-items-center w-[400px] h-[400px] select-none shadow-[0px_0px_50px_9px_rgba(0,0,0,0.20)] dark:shadow-[0px_0px_50px_9px_rgba(255,255,255,0.20)] rounded-full"
+                            role="progressbar"
+                            aria-label="{{ $skill->name }}"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                            style="--target: {{ $percent }}; --ring-color: {{ $color }}; --track-color: #e5e7eb; --duration: 1100ms;"
+                            data-skill data-value="{{ $value }}" data-max="10"
+                        >
+                            <div class="absolute inset-0 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                            <div class="absolute inset-0 rounded-full skill-ring"></div>
+                            <div class="absolute inset-2 rounded-full bg-white dark:bg-black shadow-inner">
+{{--                                <img src="{{ asset('images/moon-light.svg') }}" alt="Red Planet Vector"--}}
+{{--                                     class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[100px] drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">--}}
+                            </div>
+                            @if ($skill->logo)
+                                <img src="{{ asset($skill->logo) }}" alt="{{ $skill->name }} Logo"
+                                     class="relative w-60 h-60 opacity-40 group-hover:opacity-100 transition-opacity ease-in-out duration-300"
+                                     loading="lazy">
+                            @endif
+                            <span class="pointer-events-none absolute bottom-2 text-xs font-medium text-gray-600 dark:text-gray-300"><span class="js-skill-percent">0</span>%</span>
                         </div>
-                        @if ($skill->logo)
-                            <img src="{{ asset($skill->logo) }}" alt="{{ $skill->name }} Logo" class="relative w-24 h-24 opacity-40 group-hover:opacity-100 transition-opacity ease-in-out duration-300" loading="lazy">
-                        @endif
-                        <span class="pointer-events-none absolute bottom-2 text-xs font-medium text-gray-600 dark:text-gray-300"><span class="js-skill-percent">0</span>%</span>
-                    </div>
 
-                    <div class="text-center">
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $skill->name }}</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400"><span class="js-skill-now">{{ $value }}</span>/10</p>
-                    </div>
-                </a>
+                        <div class="text-center">
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $skill->name }}</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400"><span class="js-skill-now">{{ $value }}</span>/10</p>
+                        </div>
+                    </a>
+                </div>
             @endforeach
         </div>
 
@@ -55,16 +87,15 @@
             </a>
         </div>
     </div>
-    <img src="{{ asset('images/red-planet-6.svg') }}" alt="Red Planet Vector"
-         class="animate-planet-spin-pulse absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
 
     <script>
-        (() => {
+        document.addEventListener('livewire:init', () => {
             if (window.__skillsIOSetup) return;
             window.__skillsIOSetup = true;
 
             const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+            // Progress ring animation setup
             document.querySelectorAll('[data-skill][role="progressbar"]').forEach(el => {
                 const value = Number(el.getAttribute('data-value')) || 0;
                 const max = Number(el.getAttribute('data-max')) || 10;
@@ -109,6 +140,69 @@
             }, { threshold: 0.35 });
 
             document.querySelectorAll('[data-skill][role="progressbar"]').forEach(el => io.observe(el));
-        })();
+
+            // Scroll hijacking logic
+            const wrapper = document.querySelector('.skills-wrapper');
+            let currentIndex = 0;
+            const containers = wrapper.querySelectorAll('.skill-container');
+            const totalSections = containers.length;
+            let isScrolling = false;
+
+            function updateSections(index) {
+                containers.forEach((container, i) => {
+                    container.classList.remove('active', 'prev');
+                    if (i === index) {
+                        container.classList.add('active');
+                    } else if (i < index) {
+                        container.classList.add('prev');
+                    }
+                });
+            }
+
+            function scrollToSection(index) {
+                if (index >= 0 && index < totalSections) {
+                    currentIndex = index;
+                    updateSections(currentIndex);
+                    io.observe(containers[index].querySelector('[data-skill]')); // Re-observe for animation
+                }
+            }
+
+            wrapper.addEventListener('wheel', (event) => {
+                event.preventDefault();
+                if (isScrolling) return;
+                isScrolling = true;
+                setTimeout(() => { isScrolling = false; }, 800);
+
+                if (event.deltaY > 0 && currentIndex < totalSections - 1) {
+                    scrollToSection(currentIndex + 1);
+                } else if (event.deltaY < 0 && currentIndex > 0) {
+                    scrollToSection(currentIndex - 1);
+                } else {
+                    // Allow page scrolling at boundaries
+                    window.scrollBy({ top: event.deltaY, behavior: 'smooth' });
+                }
+            }, { passive: false });
+
+            wrapper.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                    event.preventDefault();
+                    if (isScrolling) return;
+                    isScrolling = true;
+                    setTimeout(() => { isScrolling = false; }, 800);
+
+                    if (event.key === 'ArrowDown' && currentIndex < totalSections - 1) {
+                        scrollToSection(currentIndex + 1);
+                    } else if (event.key === 'ArrowUp' && currentIndex > 0) {
+                        scrollToSection(currentIndex - 1);
+                    }
+                }
+            });
+
+            // Initialize first section
+            updateSections(0);
+            if (containers[0]) {
+                io.observe(containers[0].querySelector('[data-skill]'));
+            }
+        });
     </script>
 </section>

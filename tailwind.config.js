@@ -19,13 +19,13 @@ export default {
                     '100%': {transform: 'translate(0, -300px) scale(1) rotate(-20deg)', opacity: '1'},
                 },
                 'planet-spin-pulse': {
-                    '0%':   { transform: 'rotate(0deg) scale(1)' },
-                    '50%':  { transform: 'rotate(180deg) scale(1.2)' },
-                    '100%': { transform: 'rotate(360deg) scale(1)' },
+                    '0%': {transform: 'rotate(0deg) scale(1)'},
+                    '50%': {transform: 'rotate(180deg) scale(1.2)'},
+                    '100%': {transform: 'rotate(360deg) scale(1)'},
                 },
                 starsMove: {
-                    '0%': { backgroundPosition: '100% 100%' },
-                    '100%': { backgroundPosition: '0% 0%' },
+                    '0%': {backgroundPosition: '100% 100%'},
+                    '100%': {backgroundPosition: '0% 0%'},
                 },
             },
             animation: {
@@ -66,11 +66,15 @@ export default {
                 ...colors,
                 // primary: '#01030F', //  for stars background
                 primary: '#0A0B16',  // for space background
+                darkRed: '#B10E17',
             },
             boxShadow: {
                 // shadowLgCstm: '0 0 4px rgba(0, 0, 0, 0.07)',
             },
             fontFamily: {
+                orbitron: ['Orbitron', 'sans-serif'],
+                'exo-2': ['Exo 2', 'sans-serif'],
+                syncopate: ['Syncopate', 'sans-serif'],
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },

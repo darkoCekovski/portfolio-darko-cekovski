@@ -3,11 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Service extends Model
 {
-    protected $fillable = ['title', 'description', 'icon'];
+    protected $fillable = [
+        'name',
+        'icon',
+        'title',
+        'description'
+    ];
 
     protected $casts = [
         'title' => 'array',
@@ -24,3 +33,4 @@ class Service extends Model
         return $this->description[app()->getLocale()] ?? $this->description['en'];
     }
 }
+
