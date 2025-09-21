@@ -24,8 +24,9 @@ export default {
                     '100%': {transform: 'rotate(360deg) scale(1)'},
                 },
                 starsMove: {
-                    '0%': {backgroundPosition: '100% 100%'},
-                    '100%': {backgroundPosition: '0% 0%'},
+                    '0%': { backgroundPosition: '100% 100%' },
+                    // '5%': { backgroundPosition: '50% 50%' }, // Fast movement in first 5 seconds
+                    '100%': { backgroundPosition: '0% 0%' }, // Slow movement to end
                 },
             },
             animation: {

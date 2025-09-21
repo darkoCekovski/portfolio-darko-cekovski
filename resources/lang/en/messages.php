@@ -52,5 +52,8 @@ return [
     'filter_all' => 'All',
     'search_projects' => 'Search Projects',
     'services_title' => 'What I offer you',
+    'back_to_services' => 'Back to Services',
     'back_to_home' => 'Back to Home',
+    'go_to_homepage' => 'Go to Homepage',
+    'go_to_skills' => 'Go to Skills',
 ];

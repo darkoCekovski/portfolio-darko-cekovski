@@ -9,15 +9,22 @@
                     <div class="w-64 bg-gray-200 dark:bg-gray-700 h-3 rounded-full mb-4">
                         <div class="bg-blue-600 h-3 rounded-full" style="width: {{ $skill->proficiency * 10 }}%"></div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>{{ __('messages.skill_proficiency') }}
-                            :</strong> {{ $skill->proficiency }}/10</p>
-                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>{{ __('messages.skill_description') }}
-                            :</strong> {{ $skill->description }}</p>
-                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>{{ __('messages.skill_learning_source') }}
-                            :</strong> {{ $skill->learning_source }}</p>
-                    <p class="text-gray-600 dark:text-gray-400"><strong>{{ __('messages.skill_experience') }}
-                            :</strong> {{ $skill->experience_duration }}</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>{{ __('messages.skill_proficiency') }}:</strong> {{ $skill->proficiency }}/10</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>{{ __('messages.skill_description') }}:</strong> {{ $skill->description }}</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>{{ __('messages.skill_learning_source') }}:</strong> {{ $skill->learning_source }}</p>
+                    <p class="text-gray-600 dark:text-gray-400"><strong>{{ __('messages.skill_experience') }}:</strong> {{ $skill->experience_duration }}</p>
                 </div>
+            </div>
+            <!-- Buttons -->
+            <div class="text-center mt-8 space-x-4">
+                <a href="{{ localized_route('home') }}"
+                   class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-[0_4px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_6px_rgba(255,255,255,0.1)]">
+                    {{ __('messages.go_to_homepage') }}
+                </a>
+                <a href="{{ localized_route('skills') }}"
+                   class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-[0_4px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_6px_rgba(255,255,255,0.1)]">
+                    {{ __('messages.go_to_skills') }}
+                </a>
             </div>
         </div>
     </section>

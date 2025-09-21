@@ -18,7 +18,7 @@
         <div class="text-center">
             <a href="{{ localized_route('home') }}#services"
                class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-[0_4px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_6px_rgba(255,255,255,0.1)]">
-                {{ __('messages.back_to_home') }}
+                {{ __('messages.back_to_services') }}
             </a>
         </div>
     </div>

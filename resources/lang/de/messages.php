@@ -52,5 +52,8 @@ return [
     'filter_all' => 'Alle',
     'search_projects' => 'Projekte suchen',
     'services_title' => 'Was ich dir anbiete',
+    'back_to_services' => 'Zurück zu den Services',
     'back_to_home' => 'Zurück zur Startseite',
+    'go_to_homepage' => 'Zur Startseite',
+    'go_to_skills' => 'Zu den Fähigkeiten',
 ];

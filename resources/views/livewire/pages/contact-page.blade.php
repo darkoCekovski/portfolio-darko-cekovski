@@ -6,19 +6,19 @@
             <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.contact_name_label') }}</label>
                 <input type="text" id="name" wire:model="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white">
-                @error('name') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('name') <p class="mt-1 text-xs text-red-600">{{ $message }}</p> @enderror
             </div>
             <!-- Email -->
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.contact_email_label') }}</label>
                 <input type="email" id="email" wire:model="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white">
-                @error('email') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('email') <p class="mt-1 text-xs text-red-600">{{ $message }}</p> @enderror
             </div>
             <!-- Comment -->
             <div>
                 <label for="comment" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.contact_message_label') }}</label>
                 <textarea id="comment" wire:model="comment" rows="5" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"></textarea>
-                @error('comment') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('comment') <p class="mt-1 text-xs text-red-600">{{ $message }}</p> @enderror
             </div>
             <!-- Submit Button -->
             <div>
