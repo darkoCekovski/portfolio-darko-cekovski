@@ -33,8 +33,7 @@
 
 </div>
 
-
-{{--</div>--}}
+<x-button-to-top></x-button-to-top>
 
 @livewireScripts
 
