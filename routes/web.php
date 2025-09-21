@@ -7,7 +7,7 @@ use App\Livewire\ProjectsPage;
 use App\Livewire\ContactPage;
 use App\Livewire\SkillDetail;
 use App\Livewire\SkillsPage;
-//use App\Livewire\ServiceDetail;
+use App\Livewire\ServiceDetail;
 
 use App\Http\Controllers\CvController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +23,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
     Route::get('/contact', ContactPage::class)->name('contact');
     Route::get('/skills', SkillsPage::class)->name('skills');
     Route::get('/skill/{slug}', SkillDetail::class)->name('skill.detail');
-//    Route::get('/services/{service}',ServiceDetail::class)->name('services.detail');
+    Route::get('/services/{service}',ServiceDetail::class)->name('service.detail');
+//    Route::get('/services/{service}', \App\Livewire\ServiceDetail::class)->name('service.detail');
     Route::get('/cv/download', [CvController::class, 'download'])->name('cv.download');
 });
 
