@@ -73,9 +73,7 @@ export default {
                 // shadowLgCstm: '0 0 4px rgba(0, 0, 0, 0.07)',
             },
             fontFamily: {
-                orbitron: ['Orbitron', 'sans-serif'],
-                'exo-2': ['Exo 2', 'sans-serif'],
-                syncopate: ['Syncopate', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
