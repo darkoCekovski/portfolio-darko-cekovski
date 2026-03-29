@@ -1,12 +1,13 @@
 <div>
     @section('title', __('messages.site_title'))
+
     <!-- Hero Section -->
     <section class="relative">
         <div class="relative z-10 container mx-auto px-6 pt-[250px]">
             <div class=" flex flex-col lg:flex-row max-lg:space-y-10 lg:space-x-20">
                 <div class="basis-1/2 text-left">
                     <h1 class="text-6xl font-bold text-gray-800 dark:text-gray-200 mb-4">Hello. I'm Darko.<br />
-                        <span class="whitespace-nowrap">A <span class="relative text-gray-300"> Frontend
+                        <span class="">A <span class="relative text-gray-300"> Frontend
                             <img class="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2" src="{{ asset('images/glow-text.png') }}" alt="Glow">
                             </span> Developer</span>
                     </h1>

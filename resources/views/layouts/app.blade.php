@@ -19,16 +19,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 
-<body style="background: linear-gradient(to bottom, #05060F, #0A0B16);" class="font-inter transition-colors duration-300"
+<body class="dark:bg-gradient-to-b dark:from-[#05060F] dark:to-[#0A0B16] font-inter transition-colors duration-300"
       x-data="{ theme: localStorage.getItem('theme') || 'system' }"
       x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
-
 <div class="bg-stars bg-cover bg-top bg-fixed">
 
     <!-- Header -->
