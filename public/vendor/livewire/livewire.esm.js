@@ -1992,7 +1992,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     var started = false;
     function start2() {
       if (started)
-        warn("Alpine has already been initialized on this pages. Calling Alpine.start() more than once can cause problems.");
+        warn("Alpine has already been initialized on this page. Calling Alpine.start() more than once can cause problems.");
       started = true;
       if (!document.body)
         warn("Unable to initialize. Trying to load Alpine before `<body>` is available. Did you forget to add `defer` in Alpine's `<script>` tag?");
@@ -8175,7 +8175,7 @@ async function sendRequest(pool) {
   succeed({ status: response.status, json: JSON.parse(content) });
 }
 function handlePageExpiry() {
-  confirm("This pages has expired.\nWould you like to refresh the pages?") && window.location.reload();
+  confirm("This page has expired.\nWould you like to refresh the page?") && window.location.reload();
 }
 function showFailureModal(content) {
   let html = content;
@@ -9133,7 +9133,7 @@ function isPopoverSupported() {
   return typeof document.createElement("div").showPopover === "function";
 }
 
-// js/plugins/navigate/pages.js
+// js/plugins/navigate/page.js
 var oldBodyScriptTagHashes = [];
 var attributesExemptFromScriptTagHashing = [
   "data-csrf",

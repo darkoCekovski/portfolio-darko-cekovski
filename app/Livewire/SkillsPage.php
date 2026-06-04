@@ -3,33 +3,24 @@
 namespace App\Livewire;
 
 use App\Models\Skill;
-use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class SkillsPage extends Component
 {
-    public $skills;
+    public ?string $openSlug = null;
 
-    public function mount()
+    public function mount(?string $slug = null): void
     {
-        try {
-            $this->skills = Skill::all();
-            Log::info('SkillsPage: Retrieved skills', [
-                'count' => $this->skills->count(),
-                'skills' => $this->skills->toArray(),
-                'locale' => app()->getLocale(),
-            ]);
-        } catch (\Exception $e) {
-            Log::error('SkillsPage: Failed to retrieve skills', [
-                'error' => $e->getMessage(),
-                'locale' => app()->getLocale(),
-            ]);
-            $this->skills = collect();
-        }
+        $this->openSlug = $slug;
     }
 
     public function render()
     {
-        return view('livewire.pages.skills-page')->layout('layouts.app', ['title' => __('messages.skills_title')]);
+        $skills = Skill::orderByDesc('proficiency')->get();
+
+        return view('livewire.pages.skills-page', compact('skills'))
+            ->layout('layouts.app', [
+                'title' => __('messages.skills_title') . ' — ' . __('messages.site_title'),
+            ]);
     }
 }

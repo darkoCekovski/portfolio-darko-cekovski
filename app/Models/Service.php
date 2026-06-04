@@ -4,33 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
-
 class Service extends Model
 {
     protected $fillable = [
         'name',
         'icon',
         'title',
-        'description'
+        'description',
     ];
 
     protected $casts = [
-        'title' => 'array',
+        'title'       => 'array',
         'description' => 'array',
     ];
 
-    public function getTranslatedTitleAttribute()
+    public function getTranslatedTitleAttribute(): string
     {
-        return $this->title[app()->getLocale()] ?? $this->title['en'];
+        return $this->title[app()->getLocale()] ?? $this->title['en'] ?? '';
     }
 
-    public function getTranslatedDescriptionAttribute()
+    public function getTranslatedDescriptionAttribute(): string
     {
-        return $this->description[app()->getLocale()] ?? $this->description['en'];
+        return $this->description[app()->getLocale()] ?? $this->description['en'] ?? '';
     }
 }
-

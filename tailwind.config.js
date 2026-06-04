@@ -1,6 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
-import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,75 +8,46 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-    darkMode: 'class', // Ensures dark: classes work
+    darkMode: 'class',
     theme: {
         extend: {
-            keyframes: {
-                'rocket-launch': {
-                    '0%': {transform: 'translate(0px, 200px) scale(0.1) rotate(-45deg)', opacity: '0'},
-                    '50%': {transform: 'translate(0, 0px) scale(1) rotate(-45deg)', opacity: '1'},
-                    '100%': {transform: 'translate(0, -300px) scale(1) rotate(-20deg)', opacity: '1'},
-                },
-                'planet-spin-pulse': {
-                    '0%': {transform: 'rotate(0deg) scale(1)'},
-                    '50%': {transform: 'rotate(180deg) scale(1.2)'},
-                    '100%': {transform: 'rotate(360deg) scale(1)'},
-                },
-                starsMove: {
-                    '0%': { backgroundPosition: '100% 100%' },
-                    // '5%': { backgroundPosition: '50% 50%' }, // Fast movement in first 5 seconds
-                    '100%': { backgroundPosition: '0% 0%' }, // Slow movement to end
+            fontFamily: {
+                inter: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans:  ['Inter', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                indigo: {
+                    50:  '#eef2ff',
+                    100: '#e0e7ff',
+                    200: '#c7d2fe',
+                    300: '#a5b4fc',
+                    400: '#818cf8',
+                    500: '#6366f1',
+                    600: '#4f46e5',
+                    700: '#4338ca',
+                    800: '#3730a3',
+                    900: '#312e81',
+                    950: '#1e1b4b',
                 },
             },
             animation: {
-                'rocket-launch': 'rocket-launch 10s ease-out forwards',
-                'planet-spin-pulse': 'planet-spin-pulse 100s ease-in-out infinite',
-                'stars-move': 'starsMove 200s linear infinite',
+                'spin-slow': 'spin 3s linear infinite',
+            },
+            keyframes: {
+                shimmer: {
+                    '0%':   { backgroundPosition: '-200% 0' },
+                    '100%': { backgroundPosition: '200% 0' },
+                },
             },
             backgroundImage: {
-                'space': "url('../../public/images/space-vector.png')",
-                'stars': "url('../../public/images/stars-vector.png')",
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
             },
-            screens: {
-                'xxs': '360px',
-                'xs': '425px',
-                'sm': '640px',
-                'md': '768px',
-                'lg': '1024px',
-                'xl': '1280px',
-                // '2xl': '1536px',
-                // '3xl': '1936px',
-            },
-            fontSize: {
-                'xxs': '.65rem',
-                'xs': '.75rem',
-                'sm': '.875rem',
-                'tiny': '.875rem',
-                'base': '1rem',
-                'lg': '1.125rem',
-                'xl': '1.25rem',
-                '2xl': '1.5rem',
-                '3xl': '1.875rem',
-                '4xl': '2.25rem',
-                '5xl': '3rem',
-                '6xl': '4rem',
-                '7xl': '5rem',
-            },
-            colors: {
-                ...colors,
-                // primary: '#01030F', //  for stars background
-                primary: '#0A0B16',  // for space background
-                darkRed: '#B10E17',
-            },
-            boxShadow: {
-                // shadowLgCstm: '0 0 4px rgba(0, 0, 0, 0.07)',
-            },
-            fontFamily: {
-                inter: ['Inter', 'sans-serif'],
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: { color: theme('colors.slate.600') },
+                },
+            }),
         },
     },
-
     plugins: [forms],
 };

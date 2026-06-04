@@ -1,67 +1,48 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', __('messages.site_title'))</title>
+    <title>{{ $title ?? __('messages.site_title') }}</title>
+    <meta name="description" content="{{ $description ?? __('messages.hero_subtitle') }}">
 
-    <!-- Favicon (Multiple Sizes) -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-16x16.ico') }}" sizes="16x16">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-32x32.ico') }}" sizes="32x32">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-48x48.ico') }}" sizes="48x48">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-64x64.ico') }}" sizes="64x64">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-96x96.ico') }}" sizes="96x96">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-128x128.ico') }}" sizes="128x128">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-180x180.ico') }}" sizes="180x180">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-192x192.ico') }}" sizes="192x192">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon-512x512.ico') }}" sizes="512x512">
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicons/favicon.svg') }}">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+    {!! ToastMagic::styles() !!}
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (() => {
+            const t = localStorage.getItem('theme') || 'system';
+            const dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (dark) document.documentElement.classList.add('dark');
+        })();
+    </script>
 </head>
 
-<body class="dark:bg-gradient-to-b dark:from-[#05060F] dark:to-[#0A0B16] font-inter transition-colors duration-300"
-      x-data="{ theme: localStorage.getItem('theme') || 'system' }"
-      x-bind:class="{ 'dark': theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches) }">
-<div class="bg-stars bg-cover bg-top bg-fixed">
-
-    <!-- Header -->
+<body
+    class="bg-slate-50 dark:bg-[#080b14] text-slate-900 dark:text-slate-100 font-inter antialiased transition-colors duration-300"
+    x-data
+>
     @include('components.header')
 
-    <!-- Main Content -->
     <main class="min-h-screen pt-20">
         {{ $slot }}
     </main>
 
-    <!-- Footer -->
     @include('components.footer')
 
-</div>
+    <x-button-to-top />
 
-<x-button-to-top></x-button-to-top>
-
-@livewireScripts
-
-<!-- Early theme init (avoids white flash) -->
-<script>
-    (() => {
-        try {
-            const stored = localStorage.getItem('theme') || 'system';
-            const mq = window.matchMedia('(prefers-color-scheme: dark)');
-            const isDark = stored === 'dark' || (stored === 'system' && mq.matches);
-            if (isDark) document.documentElement.classList.add('dark');
-            else document.documentElement.classList.remove('dark');
-        } catch {
-        }
-    })();
-</script>
-
+    @livewireScripts
+    {!! ToastMagic::scripts() !!}
 </body>
 </html>

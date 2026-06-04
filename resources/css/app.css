@@ -2,12 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+[x-cloak] { display: none !important; }
+
+/* ── Skill progress ring ─────────────────────────── */
+@property --p { syntax: '<number>'; inherits: false; initial-value: 0; }
+@keyframes skill-fill { 0% { --p: 0; } 100% { --p: var(--target); } }
+.skill-ring {
+    background: conic-gradient(
+        var(--ring-color, #6366f1) calc(var(--p) * 1%),
+        transparent 0
+    );
 }
-[x-cloak] {
-    display: none !important;
+.skill-animate { animation: skill-fill var(--duration, 1200ms) cubic-bezier(.4,0,.2,1) forwards; }
+
+/* ── Scroll-reveal ───────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
+
+
+/* ── Gradient text ───────────────────────────────── */
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #3b82f6 55%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
+/* ── Glass card ──────────────────────────────────── */
+.glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
 
+/* ── Animated gradient border ────────────────────── */
+@keyframes border-spin {
+    to { --angle: 360deg; }
+}
+@property --angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.card-glow {
+    position: relative;
+}
+.card-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(var(--angle), #6366f1, #3b82f6, #0ea5e9, #6366f1);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+    animation: border-spin 3s linear infinite;
+}
+.card-glow:hover::before { opacity: 1; }
 
+/* ── Typewriter cursor ───────────────────────────── */
+.typewriter-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: #6366f1;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── Noise texture overlay ───────────────────────── */
+.noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+}

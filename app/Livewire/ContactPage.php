@@ -9,45 +9,66 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactPage extends Component
 {
-    public $name = '';
-    public $email = '';
-    public $comment = '';
-    public $successMessage = '';
-    public $errorMessage = '';
+    public string $name    = '';
+    public string $email   = '';
+    public string $comment = '';
 
-    protected $rules = [
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|max:255',
-        'comment' => 'required|string|max:1000',
-    ];
-
-
-    public function submit()
+    protected function rules(): array
     {
-        $this->reset(['successMessage', 'errorMessage']);
-        $this->validate();
+        return [
+            'name'    => ['required', 'string', 'min:2', 'max:255'],
+            'email'   => ['required', 'email:rfc', 'max:255'],
+            'comment' => ['required', 'string', 'min:10', 'max:1000'],
+        ];
+    }
+
+    protected function messages(): array
+    {
+        return [
+            'name.required'    => __('messages.contact_name_required'),
+            'name.min'         => __('messages.contact_name_min'),
+            'name.max'         => __('messages.contact_name_max'),
+            'email.required'   => __('messages.contact_email_required'),
+            'email.email'      => __('messages.contact_email_invalid'),
+            'email.max'        => __('messages.contact_email_max'),
+            'comment.required' => __('messages.contact_message_required'),
+            'comment.min'      => __('messages.contact_message_min'),
+            'comment.max'      => __('messages.contact_message_max'),
+        ];
+    }
+
+    public function updated(string $property): void
+    {
+        $this->validateOnly($property);
+    }
+
+    public function submit(): void
+    {
+        $validated = $this->validate();
 
         try {
-            // Save to database
-            Contact::create([
-                'name' => $this->name,
-                'email' => $this->email,
-                'comment' => $this->comment,
-            ]);
+            Contact::create($validated);
 
-            // Send email
-            Mail::to('cekovski.darko@gmail.com')->send(new ContactForm($this->name, $this->email, $this->comment));
+            Mail::to(config('mail.from.address'))->send(
+                new ContactForm($validated['name'], $validated['email'], $validated['comment'])
+            );
 
-            $this->successMessage = __('messages.contact_success');
             $this->reset(['name', 'email', 'comment']);
-        } catch (\Exception $e) {
-            $this->errorMessage = __('messages.contact_error');
+            $this->resetValidation();
+
+            $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
+
+        } catch (\Throwable $e) {
+            report($e);
+            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_error'));
         }
     }
 
     public function render()
     {
         return view('livewire.pages.contact-page')
-            ->layout('layouts.app', ['title' => __('messages.contact_title') . ' - ' . __('messages.site_title')]);
+            ->layout('layouts.app', [
+                'title' => __('messages.contact_title') . ' — ' . __('messages.site_title'),
+            ]);
     }
 }

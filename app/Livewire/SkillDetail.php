@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Skill;
 use Livewire\Component;
-use Illuminate\Support\Str;
 
 class SkillDetail extends Component
 {
@@ -12,7 +11,7 @@ class SkillDetail extends Component
 
     public function mount($slug)
     {
-        $this->skill = Skill::where('name', Str::title(str_replace('-', ' ', $slug)))->firstOrFail();
+        $this->skill = Skill::where('slug', $slug)->firstOrFail();
     }
 
     public function render()

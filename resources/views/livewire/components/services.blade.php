@@ -1,38 +1,30 @@
-<section id="services" class="relative py-16">
-    <div class="relative z-10 container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">{{ __('messages.services_title') }}</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            @foreach ($services as $service)
-                <a href="{{ localized_route('service.detail', ['service' => $service->name]) }}"
-                   class="bg-white/5 dark:bg-gray-900/5 backdrop-blur-lg rounded-lg shadow-[0px_0px_30px_5px_rgba(0,0,0,0.1)] dark:shadow-[0px_0px_30px_5px_rgba(255,255,255,0.1)] [transform:perspective(800px)_rotateY(10deg)] hover:[transform:perspective(800px)_rotateY(-10deg)] hover:z-10 p-6 text-center delay-150 duration-300 border border-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900 group">
-                    <!-- Icon -->
-                    <div class="bg-center bg-cover bg-img-bg p-5 rounded-lg">
-                        <svg
-                            class="h-24 w-24 mx-auto mb-4 text-blue-600 dark:text-blue-400 delay-150 duration-300 group-hover:-translate-x-8"
-                            fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="{{ $service->icon }}"></path>
-                        </svg>
-                    </div>
-                    <!-- Text -->
-                    <div class="text-center mt-4 text-gray-900">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-darkRed delay-150 duration-300 mb-2">{{ $service->translated_title }}</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $service->translated_description }}</p>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-        <div class="text-center mt-8">
-            <a href="{{ localized_route('contact') }}"
-               class="inline-block bg-blue-600 dark:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-[0_4px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_6px_rgba(255,255,255,0.1)]">
-                {{ __('messages.contact_cta') }}
-            </a>
-        </div>
-    </div>
-
-    <img src="{{ asset('images/red-planet-4.svg') }}" alt="Red Planet Vector"
-         class="absolute right-0 top-10 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
-    <img src="{{ asset('images/red-planet-5.svg') }}" alt="Red Planet Vector"
-         class="animate-planet-spin-pulse absolute right-1/3 bottom-32 drop-shadow-[0_0_15px_rgba(255,100,0,0.7)]">
-</section>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    @foreach ($services as $i => $service)
+        <button type="button"
+                @click="$dispatch('open-service-modal', { name: '{{ $service->name }}' })"
+                class="group relative text-left p-6 rounded-2xl w-full
+                   bg-white dark:bg-white/[0.03]
+                   border border-slate-200 dark:border-white/[0.08]
+                   hover:border-indigo-300 dark:hover:border-indigo-500/40
+                   transition-all duration-300 hover:-translate-y-1
+                   hover:shadow-xl hover:shadow-indigo-500/10 card-glow reveal reveal-delay-{{ $i + 1 }}">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center mb-5
+                    group-hover:bg-indigo-100 dark:group-hover:bg-indigo-500/20 transition-colors duration-200">
+                <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="{{ $service->icon }}"></path>
+                </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                {{ $service->translated_title }}
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                {{ \Illuminate\Support\Str::limit($service->translated_description, 90) }}
+            </p>
+            <div class="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+            </div>
+        </button>
+    @endforeach
+</div>

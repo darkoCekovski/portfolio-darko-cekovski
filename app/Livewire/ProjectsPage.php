@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Project;
 use Livewire\Component;
-use Illuminate\Support\Facades\Log;
 
 class ProjectsPage extends Component
 {
@@ -27,17 +26,14 @@ class ProjectsPage extends Component
     public function clearSearch()
     {
         $this->search = '';
-        Log::info('Search Cleared');
     }
 
     public function render()
     {
         $query = Project::query();
 
-        // Apply search filter
         if (!empty($this->search)) {
             $searchTerm = '%' . $this->search . '%';
-            Log::info('Search Term: ' . $this->search, ['length' => strlen($this->search)]);
             $query->where(function ($q) use ($searchTerm) {
                 $q->whereRaw('LOWER(title) LIKE ?', [$searchTerm])
                     ->orWhereRaw('LOWER(description) LIKE ?', [$searchTerm])
@@ -45,16 +41,13 @@ class ProjectsPage extends Component
             });
         }
 
-        // Apply tech stack filters
         if (!empty($this->filterTechs)) {
-            Log::info('Selected Techs: ' . json_encode($this->filterTechs));
             foreach ($this->filterTechs as $tech) {
                 $query->whereJsonContains('tech_stack', $tech);
             }
         }
 
         $projects = $query->get();
-        Log::info('Projects found: ' . $projects->count(), ['projects' => $projects->pluck('title')->toArray()]);
 
         $technologies = Project::pluck('tech_stack')
             ->map(fn($techStack) => is_array($techStack) ? $techStack : json_decode($techStack, true))
@@ -63,10 +56,8 @@ class ProjectsPage extends Component
             ->values()
             ->toArray();
 
-        Log::info('Technologies: ' . json_encode($technologies));
-
         return view('livewire.pages.projects-page', [
-            'projects' => $projects,
+            'projects'     => $projects,
             'technologies' => $technologies,
         ])->layout('layouts.app', ['title' => __('messages.projects_title') . ' - ' . __('messages.site_title')]);
     }

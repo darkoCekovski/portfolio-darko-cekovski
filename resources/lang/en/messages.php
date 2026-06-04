@@ -1,59 +1,233 @@
 <?php
 
 return [
-    'site_title' => 'Darko Cekovski\'s Portfolio',
+    // Global
+    'site_title' => "Darko Cekovski's Portfolio",
+    'download_cv' => 'Download CV',
+
+    // Nav
     'nav_home' => 'Home',
     'nav_about' => 'About Me',
     'nav_projects' => 'Projects',
     'nav_contact' => 'Contact',
     'nav_skills' => 'Skills',
-    'hero_title' => 'Hey, I\'m Darko Cekovski',
-    'hero_subtitle' => 'A passionate web developer building modern apps with Laravel and Tailwind CSS.',
-    'hero_cta' => 'Check out my projects',
-    'about_title' => 'About Me',
-    'about_text' => 'I’m a web developer focused on creating user-friendly and efficient apps using tech like Laravel, Tailwind CSS, and Livewire. I love turning ideas into reality with clean code and creative solutions.',
-    'about_cta' => 'Learn more about me',
+
+    // Hero
+    'hero_available' => 'Open to work — freelance & full-time',
+    'hero_greeting' => "Hello, I'm",
+    'hero_role_prefix' => 'Web Developer — specialising in ',
+    'hero_roles' => ['Full-Stack Development', 'Laravel & PHP', 'Clean UI Design'],
+    'hero_subtitle' => 'I build fast, modern web applications with clean code and thoughtful design — turning ideas into polished digital products.',
+    'hero_cta' => 'See my work',
+    'hero_card_badge' => '// always learning',
+
+    // Stats
+    'stat_years' => 'Years of coding',
+    'stat_skills' => 'Technologies',
+    'stat_projects' => 'Projects shipped',
+
+    // Services
+    'services_title' => 'What I can build for you',
+    'services_subtitle' => 'From concept to launch — I cover the full stack.',
+    'services_eyebrow' => 'Services',
+    'back_to_services' => 'Back to Services',
+    'services_page_subtitle' => 'Here is what I can help you build.',
+    'nav_services' => 'Services',
+
+    // About
+    'about_eyebrow' => 'About Me',
+    'about_title' => 'The developer behind the code',
+    'about_page_subtitle' => 'A little background on who I am, what experience I bring, and what drives me to build things for the web.',
+    'about_text' => "I'm a web developer specialising in building user-friendly, efficient applications with Laravel, Tailwind CSS, and Livewire. I love turning complex problems into clean, elegant solutions.",
+    'about_cta' => 'Read more about me',
+    'about_who_title' => 'Who I am',
+    'about_passion_title' => 'What drives me',
+    'about_passion_text' => 'I am passionate about clean architecture, performance, and great user experiences. Every project is a chance to learn something new and craft something worth using.',
+    'about_goal_title' => 'What I aim for',
+    'about_goal_text' => 'My goal is to collaborate with people and businesses to build things that make a real difference — products that are both technically solid and delightful to use.',
+    'about_quick_facts' => 'Quick facts',
+    'about_location_label' => 'Based in',
+    'about_location_value' => 'Germany',
+    'about_focus_label' => 'Focus',
+    'about_focus_value' => 'Full-Stack Web Development',
+    'about_edu_label' => 'Education',
+    'about_edu_value' => 'Bootcamp · Web Development',
+    'about_lang_label' => 'Languages',
+    'about_lang_value' => 'English, German',
+    'about_experience' => 'Experience',
+    'about_exp_value' => '6+ years coding',
+
+    // About page — sidebar
+    'about_photo_placeholder' => 'Add profile photo to public/images/profile.jpg',
+    'about_location_detail' => 'Bodensee Region, Germany',
+    'about_location_region' => '4-country region: Germany · Austria · Switzerland · Liechtenstein',
+    'about_frontend' => 'Frontend Development',
+    'about_backend' => 'Backend (Laravel)',
+    'about_years' => 'yrs exp.',
+    'about_edu_school' => 'Frontend Academy',
+    'about_edu_detail' => 'Bootcamp · Web Development',
+
+    'show_more_education' => 'Show full education',
+
+    'edu_academy_title'   => 'Front-end Development Academy',
+    'edu_academy_co'      => 'Brainster · Skopje · 2019 – 2020',
+    'edu_academy_bullets' => [
+        'Built and styled responsive websites with HTML, CSS, Flexbox, CSS Grid and Bootstrap.',
+        'Developed interactive UIs and applications using JavaScript and React.',
+        'Gained the core skills to build and ship a wide range of modern websites and apps.',
+    ],
+
+    'edu_bachelor_title'   => "Bachelor's Degree — Defence Studies",
+    'edu_bachelor_co'      => 'Ss. Cyril and Methodius University · Skopje · 2005 – 2009',
+    'edu_bachelor_bullets' => [
+        'Specialised in defence studies and analytics within Security, Defence & Peace.',
+        'Developed strong analytical, research and structured-thinking skills.',
+    ],
+
+    'edu_highschool_title'   => 'Economics & Law High School',
+    'edu_highschool_co'      => 'DSEPU "Vasil Antevski - Dren" · Skopje · 2001 – 2005',
+    'edu_highschool_bullets' => [
+        'Graduated as a certified Economic Technician.',
+        'Studied economics, business and marketing fundamentals.',
+    ],
+
+// Languages
+    'lang_native' => 'Native',
+    'lang_advanced' => 'Advanced',
+    'lang_upper_int' => 'Upper Intermediate',
+    'lang_intermediate' => 'Intermediate',
+
+// Experience
+    'exp_present' => 'Present',
+    'exp_remote' => 'Remote',
+    'exp_freelance' => 'Freelance',
+    'exp_fireswitch_role' => 'Front-end Developer · Jr. Back-end Developer',
+    'exp_vipplast_role' => 'Sales & Marketing Specialist',
+    'exp_fireswitch_bullets' => [
+        'Developed and maintained responsive Laravel web applications using Blade templates, Livewire for real-time components, Tailwind CSS, Alpine.js, and Vanilla JavaScript.',
+        'Expanded responsibilities into backend development: implemented PHP logic, Eloquent ORM database operations, REST APIs, and new feature development.',
+        'Worked fully remotely in an international team, consistently delivering high-quality features.',
+        'Focused on clean, maintainable code and excellent user experience.',
+    ],
+    'exp_freelance_bullets' => [
+        'Built custom web applications for clients using full-stack Laravel development.',
+        'Independently managed the complete project lifecycle: database design (MySQL), backend business logic, authentication systems, and modern frontend implementation.',
+        'Successfully transitioned multiple projects from frontend-focused to full-stack delivery.',
+    ],
+    'exp_vipplast_bullets' => [
+        'Built strong client relationships and managed marketing campaigns.',
+    ],
+
+    'show_more_history' => 'Show earlier career',
+    'show_less'         => 'Show less',
+
+    // Earlier career — titles & companies
+    'exp_role_sales_marketing'    => 'Sales & Marketing Specialist',
+    'exp_role_sales_marketing_co' => 'Vip-Plast DOOEL · Skopje · 06/2016 – 06/2019',
+    'exp_role_production_malta'   => 'Production Specialist',
+    'exp_role_production_malta_co'=> 'Cuschieri Group · Malta · 03/2016 – 06/2016',
+    'exp_role_sales'              => 'Sales Specialist',
+    'exp_role_sales_co'           => 'Vip-Plast DOOEL · Skopje · 05/2012 – 03/2016',
+    'exp_role_prod_manager'       => 'Production Manager',
+    'exp_role_prod_manager_co'    => 'Vip-Plast DOOEL · Skopje · 01/2010 – 05/2012',
+    'exp_role_prod_specialist'    => 'Production Specialist',
+    'exp_role_prod_specialist_co' => 'Vip-Plast DOOEL · Skopje · 05/2007 – 09/2009',
+
+// Earlier career — bullet arrays
+    'exp_role_sales_marketing_bullets' => [
+        'Built and maintained relationships with new and existing clients while growing brand awareness.',
+        'Created marketing materials and analysed campaign data to shape future strategies.',
+    ],
+    'exp_role_production_malta_bullets' => [
+        'Supported the setup of a new production line and its ongoing improvement.',
+        'Contributed hands-on to daily production operations.',
+    ],
+    'exp_role_sales_bullets' => [
+        'Set sales targets and delivered product demonstrations to clients.',
+        'Resolved customer complaints and built lasting relationships based on trust.',
+    ],
+    'exp_role_prod_manager_bullets' => [
+        'Led the production team and organised the full production workflow.',
+        'Planned and adjusted schedules to meet quality standards and delivery deadlines.',
+    ],
+    'exp_role_prod_specialist_bullets' => [
+        'Coordinated production processes and planned work schedules.',
+        'Monitored operations and adjusted plans to meet order demands on time.',
+    ],
+
+    // Experience timeline
+    'exp1_title' => 'Full-Stack Developer',
+    'exp1_company' => 'Freelance',
+    'exp2_title' => 'Frontend Developer',
+    'exp2_company' => 'Web Agency',
+    'exp3_title' => 'Junior Developer',
+    'exp3_company' => 'Startup',
+
+    // Projects
+    'projects_eyebrow' => 'Portfolio',
     'projects_title' => 'Featured Projects',
-    'projects_all_cta' => 'View all projects',
-    'contact_title' => 'Get in touch',
-    'contact_text' => 'Got a project idea or want to team up? Drop me a message!',
-    'contact_cta' => 'Contact me',
-    'project_detail_tech' => 'Technologies Used',
-    'project_detail_demo' => 'View Demo',
+    'projects_page_subtitle' => 'A selection of things I have built.',
+    'projects_all_cta' => 'All projects',
+    'project_detail_tech' => 'Technologies',
+    'project_detail_demo' => 'Live Demo',
     'project_detail_github' => 'View on GitHub',
-    'project_detail' => 'View Project Details',
-    'project_description' => 'Description',
+    'project_detail' => 'View details',
+    'project_description' => 'About this project',
     'no_projects' => 'No projects found.',
-    'skills_title' => 'My Skills',
-    'skills_all_cta' => 'View all skills',
+    'filter_all' => 'All',
+    'search_projects' => 'Search projects…',
+
+    // Skills
+    'skills_eyebrow' => 'Skills',
+    'skills_title' => 'My Tech Stack',
+    'skills_page_subtitle' => 'Technologies I work with regularly.',
+    'skills_all_cta' => 'All skills',
     'skill_proficiency' => 'Proficiency',
-    'skill_description' => 'Description',
-    'skill_learning_source' => 'Learned From',
+    'skill_description' => 'About this skill',
+    'skill_learning_source' => 'Learned from',
     'skill_experience' => 'Experience',
     'no_skills' => 'No skills found.',
+    'skills_sphere_text' => 'A collection of technologies, tools and platforms I work with. From backend frameworks to design tools — constantly learning and expanding.',
+
+    // Testimonials
+    'testimonials_eyebrow' => 'Testimonials',
+    'testimonials_title' => 'What clients say',
+    'testimonials_subtitle' => 'Kind words from people I have had the pleasure of working with.',
+
+    // Contact
+    'contact_eyebrow' => 'Get in touch',
+    'contact_title' => "Let's work together",
+    'contact_text' => 'Have a project in mind or want to collaborate? I would love to hear from you.',
+    'contact_cta' => 'Contact me',
+    'contact_response_note' => '⚡ I typically respond within 24 hours. Looking forward to hearing about your project!',
+    'contact_name_label' => 'Your name',
+    'contact_name_placeholder' => 'e.g. Jane Doe',
+    'contact_email_label' => 'Email address',
+    'contact_email_placeholder' => 'you@example.com',
+    'contact_message_label' => 'Message',
+    'contact_message_placeholder' => 'Tell me a bit about your project, timeline, and budget…',
+    'contact_submit' => 'Send message',
+    'contact_sending' => 'Sending…',
+    'contact_success' => '✅ Thank you! Your message has been sent. I will get back to you soon.',
+    'contact_error' => 'Something went wrong. Please try again or email me directly.',
+    // Contact validation
+    'contact_name_required' => 'Please enter your name.',
+    'contact_name_min' => 'Your name must be at least 2 characters.',
+    'contact_name_max' => 'Your name may not exceed 255 characters.',
+    'contact_email_required' => 'Please enter your email address.',
+    'contact_email_invalid' => 'Please enter a valid email address.',
+    'contact_email_max' => 'Your email may not exceed 255 characters.',
+    'contact_message_required' => 'Please write a message.',
+    'contact_message_min' => 'Your message must be at least 10 characters.',
+    'contact_message_max' => 'Your message may not exceed 1000 characters.',
+
+    // Theme
     'theme_light' => 'Light',
     'theme_dark' => 'Dark',
     'theme_system' => 'System',
-    'contact_name_label' => 'Name',
-    'contact_email_label' => 'Email',
-    'contact_message_label' => 'Message',
-    'contact_submit' => 'Send Message',
-    'contact_success' => 'Thanks! Your message has been sent.',
-    'contact_error' => 'Something went wrong. Please try again.',
-    'contact_name_required' => 'Your name is required.',
-    'contact_name_string' => 'The name must be a string.',
-    'contact_name_max' => 'The name can’t be longer than 255 characters.',
-    'contact_email_required' => 'Your email is required.',
-    'contact_email_email' => 'The email must be a valid email address.',
-    'contact_email_max' => 'The email can’t be longer than 255 characters.',
-    'contact_message_required' => 'A message is required.',
-    'contact_message_string' => 'The message must be a string.',
-    'contact_message_max' => 'The message can’t be longer than 1000 characters.',
-    'filter_all' => 'All',
-    'search_projects' => 'Search Projects',
-    'services_title' => 'What I offer you',
-    'back_to_services' => 'Back to Services',
-    'back_to_home' => 'Back to Home',
+
+    // Misc
     'go_to_homepage' => 'Go to Homepage',
-    'go_to_skills' => 'Go to Skills',
+    'go_to_skills' => 'All Skills',
+    'back_to_home' => 'Back to Home',
 ];

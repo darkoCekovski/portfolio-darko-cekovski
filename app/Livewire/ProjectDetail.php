@@ -17,6 +17,6 @@ class ProjectDetail extends Component
     public function render()
     {
         return view('livewire.pages.project-detail')
-            ->layout('layouts.app', ['title' => $this->project->name . ' - ' . __('messages.site_title')]);
+            ->layout('layouts.app', ['title' => $this->project->title . ' - ' . __('messages.site_title')]);
     }
 }
