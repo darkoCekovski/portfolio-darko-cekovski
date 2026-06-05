@@ -4,7 +4,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <span
                 class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block reveal">{{ __('messages.about_eyebrow') }}</span>
-            <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white mb-4 reveal reveal-delay-1">{{ __('messages.about_title') }} test 5</h1>
+            <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white mb-4 reveal reveal-delay-1">{{ __('messages.about_title') }} test 6</h1>
             <p class="text-slate-500 dark:text-slate-400 max-w-xl reveal reveal-delay-2">{{ __('messages.about_page_subtitle') }}</p>
         </div>
     </section>
