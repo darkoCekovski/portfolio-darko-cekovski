@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'system_processing_directory' => 'public',
     'options' => [
         "closeButton" => true,
         "positionClass" => "toast-top-end",
