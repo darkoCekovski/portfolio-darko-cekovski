@@ -85,88 +85,78 @@
                 </div>
                 {{-- ── Right: image / code card ─────────────────────────── --}}
                 <div class="flex items-center justify-center reveal reveal-delay-2">
-{{--                    @if(file_exists(public_path('images/profile.png')))--}}
-{{--                         Real photo --}}
-{{--                        <div class="relative">--}}
-{{--                            <div--}}
-{{--                                class="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500/20 to-sky-500/20 blur-3xl scale-110"></div>--}}
-{{--                            <img src="{{ asset('images/profile.png') }}"--}}
-{{--                                 alt="Darko Cekovski"--}}
-{{--                                 class="relative w-full max-w-sm drop-shadow-2xl">--}}
-{{--                        </div>--}}
-{{--                    @else--}}
-                        {{-- Fallback: floating code card --}}
-                        <div class="relative w-full max-w-sm mx-auto">
-                            {{-- Glow behind card --}}
-                            <div
-                                class="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-sky-500/20 blur-3xl"></div>
+                    {{-- Fallback: floating code card --}}
+                    <div class="relative w-full max-w-sm mx-auto">
+                        {{-- Glow behind card --}}
+                        <div
+                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-sky-500/20 blur-3xl"></div>
 
-                            {{-- Code card --}}
-                            <div
-                                class="relative rounded-3xl bg-white/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 shadow-2xl p-6 backdrop-blur-xl">
-                                {{-- Window dots --}}
-                                <div class="flex gap-1.5 mb-5">
-                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                                </div>
-
-                                {{-- Code --}}
-                                <div class="space-y-2 font-mono text-xs leading-relaxed">
-                                    <div><span class="text-indigo-400">class</span> <span
-                                            class="text-sky-400">Portfolio</span> <span
-                                            class="text-slate-400 dark:text-slate-500">{</span></div>
-                                    <div class="pl-4">
-                                        <span class="text-emerald-400">public</span>
-                                        <span class="text-indigo-300"> string</span>
-                                        <span class="text-slate-700 dark:text-slate-300"> $name</span>
-                                        <span class="text-slate-400 dark:text-slate-500"> = </span>
-                                        <span class="text-amber-400">'Darko Cekovski'</span><span
-                                            class="text-slate-400 dark:text-slate-500">;</span>
-                                    </div>
-                                    <div class="pl-4">
-                                        <span class="text-emerald-400">public</span>
-                                        <span class="text-indigo-300"> array</span>
-                                        <span class="text-slate-700 dark:text-slate-300"> $stack</span>
-                                        <span class="text-slate-400 dark:text-slate-500"> = [</span>
-                                    </div>
-                                    @foreach(['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'] as $tech)
-                                        <div class="pl-8"><span class="text-amber-400">'{{ $tech }}'</span><span
-                                                class="text-slate-400 dark:text-slate-500">,</span></div>
-                                    @endforeach
-                                    <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">];</span></div>
-                                    <div class="pt-1 pl-4">
-                                        <span class="text-emerald-400">public function</span>
-                                        <span class="text-sky-400"> build</span><span
-                                            class="text-slate-400 dark:text-slate-500">(): </span><span
-                                            class="text-indigo-300">string</span>
-                                    </div>
-                                    <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">{</span></div>
-                                    <div class="pl-8">
-                                        <span class="text-indigo-400">return</span>
-                                        <span class="text-amber-400"> 'something great'</span><span
-                                            class="text-slate-400 dark:text-slate-500">;</span>
-                                    </div>
-                                    <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">}</span></div>
-                                    <div><span class="text-slate-400 dark:text-slate-500">}</span></div>
-                                </div>
-
-                                {{-- Blinking cursor --}}
-                                <div class="mt-3 flex items-center gap-2">
-                                    <span class="text-indigo-400 font-mono text-sm animate-pulse">▋</span>
-                                    <div class="h-px flex-1 bg-indigo-500/20"></div>
-                                </div>
+                        {{-- Code card --}}
+                        <div
+                            class="relative rounded-3xl bg-white/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 shadow-2xl p-6 backdrop-blur-xl">
+                            {{-- Window dots --}}
+                            <div class="flex gap-1.5 mb-5">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
                             </div>
 
-                            {{-- Floating badge bottom — centered --}}
-                            {{-- Floating badge bottom — centered --}}
-                            <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full whitespace-nowrap
-                            bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-white/10 shadow-lg text-xs font-mono font-semibold text-indigo-600 dark:text-indigo-400">
-                                {{ __('messages.hero_card_badge') }}
+                            {{-- Code --}}
+                            <div class="space-y-2 font-mono text-xs leading-relaxed">
+                                <div><span class="text-indigo-400">class</span> <span
+                                        class="text-sky-400">Portfolio</span> <span
+                                        class="text-slate-400 dark:text-slate-500">{</span></div>
+                                <div class="pl-4">
+                                    <span class="text-emerald-400">public</span>
+                                    <span class="text-indigo-300"> string</span>
+                                    <span class="text-slate-700 dark:text-slate-300"> $name</span>
+                                    <span class="text-slate-400 dark:text-slate-500"> = </span>
+                                    <span class="text-amber-400">'Darko Cekovski'</span><span
+                                        class="text-slate-400 dark:text-slate-500">;</span>
+                                </div>
+                                <div class="pl-4">
+                                    <span class="text-emerald-400">public</span>
+                                    <span class="text-indigo-300"> array</span>
+                                    <span class="text-slate-700 dark:text-slate-300"> $stack</span>
+                                    <span class="text-slate-400 dark:text-slate-500"> = [</span>
+                                </div>
+                                @foreach(['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'] as $tech)
+                                    <div class="pl-8"><span class="text-amber-400">'{{ $tech }}'</span><span
+                                            class="text-slate-400 dark:text-slate-500">,</span></div>
+                                @endforeach
+                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">];</span></div>
+                                <div class="pt-1 pl-4">
+                                    <span class="text-emerald-400">public function</span>
+                                    <span class="text-sky-400"> build</span><span
+                                        class="text-slate-400 dark:text-slate-500">(): </span><span
+                                        class="text-indigo-300">string</span>
+                                </div>
+                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">{</span></div>
+                                <div class="pl-8">
+                                    <span class="text-indigo-400">return</span>
+                                    <span class="text-amber-400"> 'something great'</span><span
+                                        class="text-slate-400 dark:text-slate-500">;</span>
+                                </div>
+                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">}</span></div>
+                                <div><span class="text-slate-400 dark:text-slate-500">}</span></div>
                             </div>
 
+                            {{-- Blinking cursor --}}
+                            <div class="mt-3 flex items-center gap-2">
+                                <span class="text-indigo-400 font-mono text-sm animate-pulse">▋</span>
+                                <div class="h-px flex-1 bg-indigo-500/20"></div>
+                            </div>
                         </div>
-{{--                    @endif--}}
+
+                        {{-- Floating badge bottom — centered --}}
+                        {{-- Floating badge bottom — centered --}}
+                        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full whitespace-nowrap
+                            bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-white/10 shadow-lg text-xs font-mono font-semibold text-indigo-600 dark:text-indigo-400">
+                            {{ __('messages.hero_card_badge') }}
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -175,12 +165,18 @@
     {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
     <section id="services" class="py-24 bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-24">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="mb-16 reveal text-center">
-                <span
-                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">{{ __('messages.services_eyebrow') }}</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('messages.services_title') }}</h2>
-                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">{{ __('messages.services_subtitle') }}</p>
-            </div>
+            <x-section-header
+                :eyebrow="__('messages.services_eyebrow')"
+                :title="__('messages.services_title')"
+                :subtitle="__('messages.services_subtitle')"
+                :centered="true"
+            />
+{{--            <div class="mb-16 reveal text-center">--}}
+{{--                <span--}}
+{{--                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">{{ __('messages.services_eyebrow') }}</span>--}}
+{{--                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('messages.services_title') }}</h2>--}}
+{{--                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">{{ __('messages.services_subtitle') }}</p>--}}
+{{--            </div>--}}
             @livewire('services')
         </div>
     </section>
@@ -199,8 +195,10 @@
                        class="group inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 transition-colors duration-200">
                         {{ __('messages.about_cta') }}
                         <span class="inline-block w-4 ml-2 overflow-visible">
-                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5"
+                                 fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                         </span>
                     </a>
