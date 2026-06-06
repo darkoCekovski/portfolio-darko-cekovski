@@ -165,6 +165,7 @@
     {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
     <section id="services" class="py-24 bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-24">
         <div class="max-w-6xl mx-auto px-6">
+            TEST
             <x-section-header
                 :eyebrow="__('messages.services_eyebrow')"
                 :title="__('messages.services_title')"
