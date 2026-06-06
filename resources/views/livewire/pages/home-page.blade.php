@@ -163,7 +163,8 @@
     </section>
 
     {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
-    <section id="services" class="bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-12 lg:scroll-mt-24 py-12 lg:py-24">
+    <section id="services"
+             class="bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-12 lg:scroll-mt-24 py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             <x-section-header
                 :eyebrow="__('messages.services_eyebrow')"
@@ -276,69 +277,44 @@
     {{-- ── PROJECTS PREVIEW ─────────────────────────────────────────────── --}}
     <section class="py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex items-end mb-12 reveal">
+
+            {{-- Header row: title left + link right --}}
+            <div class="flex items-end reveal mb-12">
                 <div class="flex-1">
-                    <span
-                        class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">{{ __('messages.projects_eyebrow') }}</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">{{ __('messages.projects_title') }}</h2>
+                <span class="text-xs text-indigo-500 dark:text-indigo-400 font-bold uppercase tracking-widest block mb-3">
+                    {{ __('messages.projects_eyebrow') }}
+                </span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                        {{ __('messages.projects_title') }}
+                    </h2>
                 </div>
+
                 {{-- Desktop link --}}
-                <a href="{{ localized_route('projects') }}"
-                   class="group hidden sm:inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 transition-colors duration-200">
+                <x-arrow-link
+                    href="{{ localized_route('projects') }}"
+                    class="hidden sm:inline-flex"
+                >
                     {{ __('messages.projects_all_cta') }}
-                    <span class="inline-block w-4 ml-2 overflow-visible">
-                        <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" fill="none"
-                             stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                        </svg>
-                    </span>
-                </a>
+                </x-arrow-link>
             </div>
 
+            {{-- Project cards grid --}}
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($projects as $i => $project)
-                    <a href="{{ localized_route('project.detail', ['id' => $project->id]) }}"
-                       class="group rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08]
-                      overflow-hidden hover:border-indigo-300 dark:hover:border-indigo-500/40
-                      transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10
-                      card-glow reveal reveal-delay-{{ $i + 1 }}">
-                        @if($project->thumbnail)
-                            <div class="aspect-video overflow-hidden bg-slate-100 dark:bg-white/5">
-                                <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}"
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                        @endif
-                        <div class="p-5">
-                            <h3 class="font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                {{ $project->title }}
-                            </h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mb-4">{{ $project->description }}</p>
-                            <div class="flex flex-wrap gap-1.5">
-                                @foreach(array_slice($project->tech_stack ?? [], 0, 3) as $tech)
-                                    <span
-                                        class="px-2 py-0.5 text-xs rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium border border-indigo-100 dark:border-indigo-500/20">
-                                    {{ $tech }}
-                                </span>
-                                @endforeach
-                            </div>
-                        </div>
-                    </a>
+                    <x-project-card :project="$project" :delay="$i + 1" />
                 @endforeach
             </div>
 
-            {{-- Mobile button (below cards) --}}
+            {{-- Mobile button --}}
             <div class="mt-10 flex justify-center sm:hidden reveal">
-                <a href="{{ localized_route('projects') }}"
-                   class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
-                      bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/25
-                      transition-all duration-200 hover:-translate-y-0.5">
+                <x-primary-button href="{{ localized_route('projects') }}">
                     {{ __('messages.projects_all_cta') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                     </svg>
-                </a>
+                </x-primary-button>
             </div>
+
         </div>
     </section>
 
