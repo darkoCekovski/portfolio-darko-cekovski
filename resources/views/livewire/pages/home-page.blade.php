@@ -355,45 +355,6 @@
         </div>
     </section>
 
-    <script>
-        function heroStats() {
-            return {
-                init() {
-                    const els = this.$el.querySelectorAll('[data-stat]');
-                    if (!els.length) return;
-
-                    const setFinal = () => els.forEach(el => {
-                        el.textContent = el.dataset.stat + (el.dataset.suffix || '');
-                    });
-
-                    if (sessionStorage.getItem('hero_stats_done')) {
-                        setFinal();
-                        return;
-                    }
-
-                    const run = () => {
-                        sessionStorage.setItem('hero_stats_done', '1');
-                        els.forEach(el => {
-                            const target = parseInt(el.dataset.stat, 10);
-                            const suffix = el.dataset.suffix || '';
-                            const dur = 2800;
-                            const start = performance.now();
-                            const easeOut = t => 1 - Math.pow(1 - t, 3);
-                            el.textContent = '0' + suffix;
-                            (function tick(now) {
-                                const p = Math.min(1, (now - start) / dur);
-                                el.textContent = Math.round(easeOut(p) * target) + suffix;
-                                if (p < 1) requestAnimationFrame(tick);
-                            })(start);
-                        });
-                    };
-
-                    setTimeout(run, 1800);
-                }
-            };
-        }
-    </script>
-
     {{-- ── SERVICE MODAL ─────────────────────────────────────────────────── --}}
     <div x-show="show" x-cloak @keydown.escape.window="close()"
          class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-4"
@@ -450,23 +411,57 @@
                     <div class="p-8">
                         <p class="text-slate-600 dark:text-slate-300 leading-relaxed" x-text="service.description"></p>
                         <div class="mt-8">
-                            <a href="{{ localized_route('contact') }}"
-                               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
-                                      bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-500/20
-                                      transition-all duration-200">
+                            <x-primary-button href="{{ localized_route('contact') }}" size="sm">
                                 {{ __('messages.contact_cta') }}
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
-                                     viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                                 </svg>
-                            </a>
+                            </x-primary-button>
                         </div>
                     </div>
                 </div>
             </template>
         </div>
     </div>
+
+    <script>
+        function heroStats() {
+            return {
+                init() {
+                    const els = this.$el.querySelectorAll('[data-stat]');
+                    if (!els.length) return;
+
+                    const setFinal = () => els.forEach(el => {
+                        el.textContent = el.dataset.stat + (el.dataset.suffix || '');
+                    });
+
+                    if (sessionStorage.getItem('hero_stats_done')) {
+                        setFinal();
+                        return;
+                    }
+
+                    const run = () => {
+                        sessionStorage.setItem('hero_stats_done', '1');
+                        els.forEach(el => {
+                            const target = parseInt(el.dataset.stat, 10);
+                            const suffix = el.dataset.suffix || '';
+                            const dur = 2800;
+                            const start = performance.now();
+                            const easeOut = t => 1 - Math.pow(1 - t, 3);
+                            el.textContent = '0' + suffix;
+                            (function tick(now) {
+                                const p = Math.min(1, (now - start) / dur);
+                                el.textContent = Math.round(easeOut(p) * target) + suffix;
+                                if (p < 1) requestAnimationFrame(tick);
+                            })(start);
+                        });
+                    };
+
+                    setTimeout(run, 1800);
+                }
+            };
+        }
+    </script>
 
     <script>
         function serviceModal() {
