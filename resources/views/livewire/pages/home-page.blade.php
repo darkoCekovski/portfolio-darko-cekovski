@@ -9,7 +9,7 @@
                 class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-sky-500/10 dark:bg-sky-500/5 blur-3xl"></div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 py-24 w-full">
+        <div class="max-w-6xl mx-auto px-4 py-24 w-full">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 {{-- ── Left: text ──────────────────────────────────────── --}}
                 <div>
@@ -164,45 +164,29 @@
 
     {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
     <section id="services" class="py-24 bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-6">
-            TEST
+        <div class="max-w-6xl mx-auto px-4">
             <x-section-header
                 :eyebrow="__('messages.services_eyebrow')"
                 :title="__('messages.services_title')"
                 :subtitle="__('messages.services_subtitle')"
                 :centered="true"
             />
-{{--            <div class="mb-16 reveal text-center">--}}
-{{--                <span--}}
-{{--                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">{{ __('messages.services_eyebrow') }}</span>--}}
-{{--                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('messages.services_title') }}</h2>--}}
-{{--                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">{{ __('messages.services_subtitle') }}</p>--}}
-{{--            </div>--}}
             @livewire('services')
         </div>
     </section>
 
     {{-- ── ABOUT TEASER ─────────────────────────────────────────────────── --}}
     <section class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 {{--                left side--}}
                 <div class="reveal">
-                    <span
-                        class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4 block">{{ __('messages.about_eyebrow') }}</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4 block">{{ __('messages.about_eyebrow') }}</span>
                     <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">{{ __('messages.about_title') }}</h2>
                     <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">{{ __('messages.about_text') }}</p>
-                    <a href="{{ localized_route('about') }}"
-                       class="group inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 transition-colors duration-200">
+                    <x-arrow-link href="{{ localized_route('about') }}">
                         {{ __('messages.about_cta') }}
-                        <span class="inline-block w-4 ml-2 overflow-visible">
-                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5"
-                                 fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                            </svg>
-                        </span>
-                    </a>
+                    </x-arrow-link>
                 </div>
                 {{--            right side--}}
                 <div class="grid grid-cols-2 gap-4 reveal reveal-delay-2">
@@ -284,14 +268,14 @@
 
     {{-- ── SKILLS ────────────────────────────────────────────────────────── --}}
     <section class="py-24 bg-slate-50/50 dark:bg-white/[0.02]">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-4">
             @livewire('skills-sphere')
         </div>
     </section>
 
     {{-- ── PROJECTS PREVIEW ─────────────────────────────────────────────── --}}
     <section class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="flex items-end mb-12 reveal">
                 <div class="flex-1">
                     <span
@@ -360,14 +344,14 @@
 
     {{-- ── TESTIMONIALS ─────────────────────────────────────────────────── --}}
     <section class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-4">
             @livewire('testimonials')
         </div>
     </section>
 
     {{-- ── CONTACT CTA ──────────────────────────────────────────────────── --}}
     <section class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-4">
             <div
                 class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 p-12 text-center reveal">
                 <div class="absolute inset-0 opacity-10 noise"></div>
