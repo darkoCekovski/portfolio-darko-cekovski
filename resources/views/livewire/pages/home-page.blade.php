@@ -9,7 +9,7 @@
                 class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-sky-500/10 dark:bg-sky-500/5 blur-3xl"></div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 py-24 w-full">
+        <div class="max-w-6xl mx-auto px-4 w-full py-12 lg:py-24">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 {{-- ── Left: text ──────────────────────────────────────── --}}
                 <div>
@@ -163,7 +163,7 @@
     </section>
 
     {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
-    <section id="services" class="py-24 bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-24">
+    <section id="services" class="bg-slate-50/50 dark:bg-white/[0.02] scroll-mt-12 lg:scroll-mt-24 py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             <x-section-header
                 :eyebrow="__('messages.services_eyebrow')"
@@ -176,7 +176,7 @@
     </section>
 
     {{-- ── ABOUT TEASER ─────────────────────────────────────────────────── --}}
-    <section class="py-24">
+    <section class="py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 {{--                left side--}}
@@ -267,14 +267,14 @@
     </section>
 
     {{-- ── SKILLS ────────────────────────────────────────────────────────── --}}
-    <section class="py-24 bg-slate-50/50 dark:bg-white/[0.02]">
+    <section class="bg-slate-50/50 dark:bg-white/[0.02] py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             @livewire('skills-sphere')
         </div>
     </section>
 
     {{-- ── PROJECTS PREVIEW ─────────────────────────────────────────────── --}}
-    <section class="py-24">
+    <section class="py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex items-end mb-12 reveal">
                 <div class="flex-1">
@@ -343,14 +343,14 @@
     </section>
 
     {{-- ── TESTIMONIALS ─────────────────────────────────────────────────── --}}
-    <section class="py-24">
+    <section class="py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             @livewire('testimonials')
         </div>
     </section>
 
     {{-- ── CONTACT CTA ──────────────────────────────────────────────────── --}}
-    <section class="py-24">
+    <section class="py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
             <div
                 class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 p-12 text-center reveal">
