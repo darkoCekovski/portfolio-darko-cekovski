@@ -326,22 +326,31 @@
     </section>
 
     {{-- ── CONTACT CTA ──────────────────────────────────────────────────── --}}
+    {{-- ── CONTACT CTA ──────────────────────────────────────────────── --}}
     <section class="py-12 lg:py-24">
         <div class="max-w-6xl mx-auto px-4">
-            <div
-                class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 p-12 text-center reveal">
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 p-12 text-center reveal">
+
                 <div class="absolute inset-0 opacity-10 noise"></div>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">{{ __('messages.contact_title') }}</h2>
-                <p class="text-indigo-100 text-lg mb-8 max-w-xl mx-auto relative">{{ __('messages.contact_text') }}</p>
-                <a href="{{ localized_route('contact') }}"
-                   class="relative inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm
-                          bg-white text-indigo-600 hover:bg-indigo-50 shadow-xl shadow-black/20
-                          transition-all duration-200 hover:-translate-y-0.5">
+
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">
+                    {{ __('messages.contact_title') }}
+                </h2>
+                <p class="text-indigo-100 text-lg mb-8 max-w-xl mx-auto relative">
+                    {{ __('messages.contact_text') }}
+                </p>
+
+                <x-primary-button
+                    href="{{ localized_route('contact') }}"
+                    variant="white"
+                    class="relative"
+                >
                     {{ __('messages.contact_cta') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                     </svg>
-                </a>
+                </x-primary-button>
+
             </div>
         </div>
     </section>
