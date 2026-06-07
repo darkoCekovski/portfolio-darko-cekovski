@@ -1,6 +1,9 @@
 <header
-    x-data="{ open: false, scrolled: false }"
-    x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 20)"
+    x-data="{ open: false, scrolled: window.scrollY > 20 }"
+    x-init="
+        requestAnimationFrame(() => scrolled = window.scrollY > 20);
+        window.addEventListener('scroll', () => scrolled = window.scrollY > 20);
+    "
     :class="scrolled ? 'bg-white/80 dark:bg-[#080b14]/80 backdrop-blur-xl shadow-lg shadow-slate-200/20 dark:shadow-black/30' : 'bg-transparent'"
     class="fixed top-0 inset-x-0 z-[9999] transition-all duration-300"
 >
@@ -8,8 +11,8 @@
 
         <!-- Logo -->
         <a href="{{ localized_route('home') }}" class="group flex items-center gap-2 font-bold text-xl">
-        <span
-            class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-sky-400 flex items-center justify-center text-white text-sm font-black shadow-lg group-hover:scale-110 transition-transform duration-200">D</span>
+            <span
+                class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-sky-400 flex items-center justify-center text-white text-sm font-black shadow-lg group-hover:scale-110 transition-transform duration-200">D</span>
             <span class="text-slate-800 dark:text-white">Darko<span class="text-indigo-500">.</span></span>
         </a>
 
@@ -17,9 +20,9 @@
         <div class="hidden lg:flex items-center gap-1"
              x-data="{ hash: window.location.hash }"
              x-init="
-            window.addEventListener('hashchange', () => hash = window.location.hash);
-            window.addEventListener('popstate', () => hash = window.location.hash);
-         ">
+                window.addEventListener('hashchange', () => hash = window.location.hash);
+                window.addEventListener('popstate', () => hash = window.location.hash);
+             ">
 
             {{-- Home --}}
             <a href="{{ localized_route('home') }}" @click="hash = ''"
@@ -88,8 +91,8 @@
             <button @click="open = !open"
                     class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                     aria-label="Menu">
-            <span :class="open ? 'rotate-45 translate-y-2' : ''"
-                  class="w-5 h-0.5 bg-slate-700 dark:bg-slate-300 transition-transform duration-300 origin-center"></span>
+                <span :class="open ? 'rotate-45 translate-y-2' : ''"
+                      class="w-5 h-0.5 bg-slate-700 dark:bg-slate-300 transition-transform duration-300 origin-center"></span>
                 <span :class="open ? 'opacity-0' : ''"
                       class="w-5 h-0.5 bg-slate-700 dark:bg-slate-300 transition-opacity duration-300"></span>
                 <span :class="open ? '-rotate-45 -translate-y-2' : ''"
@@ -104,9 +107,9 @@
         x-cloak
         x-data="{ hash: window.location.hash }"
         x-init="
-        window.addEventListener('hashchange', () => hash = window.location.hash);
-        window.addEventListener('popstate', () => hash = window.location.hash);
-    "
+            window.addEventListener('hashchange', () => hash = window.location.hash);
+            window.addEventListener('popstate', () => hash = window.location.hash);
+        "
         x-transition:enter="transition ease-out duration-200"
         x-transition:enter-start="opacity-0 -translate-y-4"
         x-transition:enter-end="opacity-100 translate-y-0"
