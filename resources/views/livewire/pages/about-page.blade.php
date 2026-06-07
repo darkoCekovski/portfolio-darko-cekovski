@@ -123,11 +123,9 @@
 
                     {{-- CTAs --}}
                     <div class="flex gap-4 pt-2 reveal reveal-delay-4">
-                        <a href="{{ localized_route('contact') }}"
-                           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
-                                  bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-500/20 transition-all duration-200">
+                        <x-primary-button href="{{ localized_route('contact') }}" size="sm">
                             {{ __('messages.contact_cta') }}
-                        </a>
+                        </x-primary-button>
                         @livewire('download-cv')
                     </div>
                 </div>
