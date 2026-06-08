@@ -1,4 +1,4 @@
-<footer class="border-t border-slate-200 dark:border-white/10 mt-24">
+<footer class="border-t border-slate-200 dark:border-white/10 mt-12 lg:mt-24">
     <div class="max-w-6xl mx-auto px-6 py-12">
         <div class="flex flex-col md:flex-row items-center justify-between gap-6">
             <!-- Brand -->
