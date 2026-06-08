@@ -5,6 +5,15 @@
 html { scroll-behavior: smooth; }
 [x-cloak] { display: none !important; }
 
+/* ── Theme switcher icon ─────────────────────────── */
+.theme-icon-light,
+.theme-icon-dark,
+.theme-icon-system { display: none; }
+
+html[data-theme='light'] .theme-icon-light { display: block; }
+html[data-theme='dark'] .theme-icon-dark { display: block; }
+html[data-theme='system'] .theme-icon-system { display: block; }
+
 /* ── Skill progress ring ─────────────────────────── */
 @property --p { syntax: '<number>'; inherits: false; initial-value: 0; }
 @keyframes skill-fill { 0% { --p: 0; } 100% { --p: var(--target); } }
