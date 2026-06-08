@@ -7,7 +7,7 @@
         :subtitle="__('messages.about_page_subtitle')"
     />
     {{-- Page content --}}
-    <x-page-section>
+    <x-page-section muted>
         <div class="grid lg:grid-cols-5 gap-16">
 
             {{-- ── LEFT: main content ─────────────────────────────── --}}
