@@ -1,4 +1,5 @@
 <div>
+
     {{-- Page header --}}
     <x-page-header
         :eyebrow="__('messages.about_eyebrow')"
@@ -31,30 +32,24 @@
                     {{-- Experience timeline --}}
                     <div class="p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] reveal reveal-delay-2"
                          x-data="{ open: false }">
-                        <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">{{ __('messages.about_experience') }}</h3>
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">
+                            {{ __('messages.about_experience') }}
+                        </h3>
 
                         <div class="space-y-7 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200 dark:before:bg-white/10">
 
-                            {{-- Current dev roles (always visible) --}}
+                            {{-- Current roles (always visible) --}}
                             @foreach([
                                 ['02/2022 – '.__('messages.exp_present'), 'Fireswitch Media B.V.', __('messages.exp_fireswitch_role'), 'exp_fireswitch_bullets'],
-                                ['03/2020 – '.__('messages.exp_present'), __('messages.exp_freelance'),  __('messages.exp_fireswitch_role'), 'exp_freelance_bullets'],
+                                ['03/2020 – '.__('messages.exp_present'), __('messages.exp_freelance'), __('messages.exp_fireswitch_role'), 'exp_freelance_bullets'],
                             ] as [$years, $company, $role, $bulletsKey])
-                                <div class="flex gap-4 relative">
-                                    <div class="w-3.5 h-3.5 rounded-full border-2 border-indigo-500 bg-white dark:bg-[#080b14] flex-shrink-0 mt-1 relative z-10"></div>
-                                    <div class="flex-1">
-                                        <div class="text-xs text-indigo-500 font-bold">{{ $years }}</div>
-                                        <div class="font-bold text-slate-800 dark:text-slate-200 text-sm mt-0.5">{{ $company }}</div>
-                                        <div class="text-xs text-indigo-400 font-medium mb-3">{{ $role }}</div>
-                                        <ul class="space-y-1.5">
-                                            @foreach(__('messages.'.$bulletsKey) as $bullet)
-                                                <li class="flex gap-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                                    <span class="text-indigo-400 flex-shrink-0 mt-0.5">›</span>{{ $bullet }}
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
+                                <x-timeline-item
+                                    :years="$years"
+                                    :company="$company"
+                                    :role="$role"
+                                    :bullets="__('messages.'.$bulletsKey)"
+                                    :active="true"
+                                />
                             @endforeach
 
                             {{-- Earlier career (collapsible) --}}
@@ -69,21 +64,13 @@
                                         [__('messages.exp_role_prod_manager'),     __('messages.exp_role_prod_manager_co'),     'exp_role_prod_manager_bullets'],
                                         [__('messages.exp_role_prod_specialist'),  __('messages.exp_role_prod_specialist_co'),  'exp_role_prod_specialist_bullets'],
                                     ] as [$title, $company, $bulletsKey])
-                                        <div class="flex gap-4 relative">
-                                            <div class="w-3.5 h-3.5 rounded-full border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-[#080b14] flex-shrink-0 mt-1 relative z-10"></div>
-                                            <div class="flex-1">
-                                                <div class="font-bold text-slate-700 dark:text-slate-300 text-sm">{{ $title }}</div>
-                                                <div class="text-xs text-slate-400 dark:text-slate-500 mb-2">{{ $company }}</div>
-                                                <ul class="space-y-1.5">
-                                                    @foreach(__('messages.'.$bulletsKey) as $bullet)
-                                                        <li class="flex gap-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                                            <span class="text-indigo-400 flex-shrink-0 mt-0.5">›</span>{{ $bullet }}
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        <x-timeline-item
+                                            :company="$title"
+                                            :role="$company"
+                                            :bullets="__('messages.'.$bulletsKey)"
+                                        />
                                     @endforeach
+
                                 </div>
 
                                 {{-- Fade overlay when collapsed --}}
@@ -103,6 +90,7 @@
                                     </svg>
                                 </span>
                             </button>
+
                         </div>
                     </div>
 
@@ -113,9 +101,10 @@
                         </x-primary-button>
                         @livewire('download-cv')
                     </div>
+
                 </div>
 
-                {{-- ── RIGHT: sidebar cards ────────────────────────────── --}}
+                {{-- ── RIGHT: sidebar ──────────────────────────────────── --}}
                 <div class="lg:col-span-2 space-y-5">
 
                     {{-- Profile photo --}}
@@ -140,7 +129,7 @@
                     </div>
 
                     {{-- Location --}}
-                    <div class="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] reveal reveal-delay-1 hover:shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/40 transition-all duration-300">
+                    <x-sidebar-card class="reveal reveal-delay-1">
                         <div class="flex items-center gap-3 mb-3">
                             <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -152,10 +141,10 @@
                         </div>
                         <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">{{ __('messages.about_location_detail') }}</p>
                         <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">{{ __('messages.about_location_region') }}</p>
-                    </div>
+                    </x-sidebar-card>
 
                     {{-- Focus / Experience --}}
-                    <div class="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] reveal reveal-delay-2 hover:shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/40 transition-all duration-300">
+                    <x-sidebar-card class="reveal reveal-delay-2">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -168,67 +157,51 @@
                             <x-progress-bar
                                 :label="__('messages.about_frontend')"
                                 :value="'6 '.__('messages.about_years')"
-                                value-class="text-indigo-500 font-bold"
                                 :percent="90"
+                                :colored="true"
                             />
                             <x-progress-bar
                                 :label="__('messages.about_backend')"
                                 :value="'2 '.__('messages.about_years')"
-                                value-class="text-indigo-500 font-bold"
                                 :percent="33"
+                                :colored="true"
                             />
                         </div>
-                    </div>
+                    </x-sidebar-card>
 
                     {{-- Education --}}
-                    <div class="p-6 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] reveal reveal-delay-3 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/40 transition-all duration-300"
-                         x-data="{ open: false }">
+                    <x-sidebar-card padding="p-6" x-data="{ open: false }" class="reveal reveal-delay-3">
                         <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">{{ __('messages.about_edu_label') }}</h3>
 
                         <div class="space-y-6 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200 dark:before:bg-white/10">
 
-                            {{-- Always visible: Frontend Academy --}}
-                            <div class="flex gap-4 relative">
-                                <div class="w-3.5 h-3.5 rounded-full border-2 border-indigo-500 bg-white dark:bg-[#080b14] flex-shrink-0 mt-1 relative z-10"></div>
-                                <div class="flex-1">
-                                    <div class="font-bold text-slate-800 dark:text-slate-200 text-sm">{{ __('messages.edu_academy_title') }}</div>
-                                    <div class="text-xs text-indigo-400 font-medium mb-2">{{ __('messages.edu_academy_co') }}</div>
-                                    <ul class="space-y-1.5">
-                                        @foreach(__('messages.edu_academy_bullets') as $bullet)
-                                            <li class="flex gap-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                                <span class="text-indigo-400 flex-shrink-0 mt-0.5">›</span>{{ $bullet }}
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
+                            {{-- Frontend Academy (always visible) --}}
+                            <x-timeline-item
+                                :company="__('messages.edu_academy_title')"
+                                :role="__('messages.edu_academy_co')"
+                                :bullets="__('messages.edu_academy_bullets')"
+                                :active="true"
+                            />
 
                             {{-- Collapsible: degree + high school --}}
                             <div class="relative">
                                 <div class="overflow-hidden transition-all duration-500 space-y-6"
                                      :style="open ? 'max-height: 800px' : 'max-height: 40px'">
 
-                                    @foreach([
-                                        ['edu_bachelor_title', 'edu_bachelor_co', 'edu_bachelor_bullets'],
-                                        ['edu_highschool_title', 'edu_highschool_co', 'edu_highschool_bullets'],
-                                    ] as [$titleKey, $coKey, $bulletsKey])
-                                        <div class="flex gap-4 relative">
-                                            <div class="w-3.5 h-3.5 rounded-full border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-[#080b14] flex-shrink-0 mt-1 relative z-10"></div>
-                                            <div class="flex-1">
-                                                <div class="font-bold text-slate-700 dark:text-slate-300 text-sm">{{ __('messages.'.$titleKey) }}</div>
-                                                <div class="text-xs text-slate-400 dark:text-slate-500 mb-2">{{ __('messages.'.$coKey) }}</div>
-                                                <ul class="space-y-1.5">
-                                                    @foreach(__('messages.'.$bulletsKey) as $bullet)
-                                                        <li class="flex gap-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                                            <span class="text-indigo-400 flex-shrink-0 mt-0.5">›</span>{{ $bullet }}
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    @endforeach
+                                    <x-timeline-item
+                                        :company="__('messages.edu_bachelor_title')"
+                                        :role="__('messages.edu_bachelor_co')"
+                                        :bullets="__('messages.edu_bachelor_bullets')"
+                                    />
+                                    <x-timeline-item
+                                        :company="__('messages.edu_highschool_title')"
+                                        :role="__('messages.edu_highschool_co')"
+                                        :bullets="__('messages.edu_highschool_bullets')"
+                                    />
+
                                 </div>
 
+                                {{-- Fade when collapsed --}}
                                 <div x-show="!open"
                                      class="absolute inset-x-0 bottom-0 h-16 pointer-events-none bg-gradient-to-t from-white dark:from-[#0b1020] to-transparent"></div>
                             </div>
@@ -245,11 +218,12 @@
                                     </svg>
                                 </span>
                             </button>
+
                         </div>
-                    </div>
+                    </x-sidebar-card>
 
                     {{-- Languages --}}
-                    <div class="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] reveal reveal-delay-4 hover:shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-500/40 transition-all duration-300">
+                    <x-sidebar-card class="reveal reveal-delay-4">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -272,10 +246,11 @@
                                 />
                             @endforeach
                         </div>
-                    </div>
+                    </x-sidebar-card>
 
                 </div>
             </div>
         </div>
     </section>
+
 </div>
