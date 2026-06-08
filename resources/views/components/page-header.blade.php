@@ -4,7 +4,7 @@
     'subtitle' => '',
 ])
 
-<section class="bg-slate-50/50 dark:bg-white/[0.02] border-b border-slate-200 dark:border-white/10 py-20">
+<section class="bg-slate-50/50 dark:bg-white/[0.02] border-b border-slate-200 dark:border-white/10 py-10 lg:py-20">
     <div class="max-w-6xl mx-auto px-4">
 
         @if($eyebrow)
