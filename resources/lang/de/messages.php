@@ -51,7 +51,7 @@ return [
     'about_focus_label'    => 'Schwerpunkt',
     'about_focus_value'    => 'Full-Stack-Webentwicklung',
     'about_edu_label'      => 'Ausbildung',
-    'about_edu_value' => 'Bootcamp · Webentwicklung',
+    'about_edu_value' => 'Webentwicklung',
     'about_lang_label'     => 'Sprachen',
     'about_lang_value'     => 'Englisch, Deutsch',
     'about_experience'     => 'Erfahrung',

@@ -1,11 +1,25 @@
-@props(['active'])
+@props([
+    'href'    => '#',
+    'active'  => false,
+    'mobile'  => false,
+    'dynamic' => false,
+])
 
 @php
-$classes = ($active ?? false)
-            ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 dark:border-indigo-600 text-sm font-medium leading-5 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
-            : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gray-300 dark:focus:border-gray-700 transition duration-150 ease-in-out';
+    $activeClass = 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10';
+
+    if ($mobile) {
+        $base     = 'block px-4 py-3 rounded-lg text-sm font-medium transition-colors';
+        $inactive = 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5';
+    } else {
+        $base     = 'relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200';
+        $inactive = 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5';
+    }
+
+    // dynamic = no PHP state classes, Alpine handles it via :class
+    $stateClass = $dynamic ? '' : ($active ? $activeClass : $inactive);
 @endphp
 
-<a {{ $attributes->merge(['class' => $classes]) }}>
+<a href="{{ $href }}" {{ $attributes->merge(['class' => trim($base . ' ' . $stateClass)]) }}>
     {{ $slot }}
 </a>

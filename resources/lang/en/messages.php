@@ -51,7 +51,7 @@ return [
     'about_focus_label' => 'Focus',
     'about_focus_value' => 'Full-Stack Web Development',
     'about_edu_label' => 'Education',
-    'about_edu_value' => 'Bootcamp · Web Development',
+    'about_edu_value' => 'Web Development',
     'about_lang_label' => 'Languages',
     'about_lang_value' => 'English, German',
     'about_experience' => 'Experience',

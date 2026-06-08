@@ -9,14 +9,14 @@
 >
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 h-20">
 
-        <!-- Logo -->
+        {{-- Logo --}}
         <a href="{{ localized_route('home') }}" class="group flex items-center gap-2 font-bold text-xl">
             <span
                 class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-sky-400 flex items-center justify-center text-white text-sm font-black shadow-lg group-hover:scale-110 transition-transform duration-200">D</span>
             <span class="text-slate-800 dark:text-white">Darko<span class="text-indigo-500">.</span></span>
         </a>
 
-        <!-- Desktop nav -->
+        {{-- Desktop nav --}}
         <div class="hidden lg:flex items-center gap-1"
              x-data="{ hash: window.location.hash }"
              x-init="
@@ -24,62 +24,65 @@
                 window.addEventListener('popstate', () => hash = window.location.hash);
              ">
 
-            {{-- Home --}}
-            <a href="{{ localized_route('home') }}" @click="hash = ''"
-               :class="hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }}
-               ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-               : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
-               class="relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200">
+            {{-- Home (hash-based → dynamic) --}}
+            <x-nav-link
+                href="{{ localized_route('home') }}"
+                dynamic
+                @click="hash = ''"
+                :class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
+                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
+            >
                 {{ __('messages.nav_home') }}
-            </a>
+            </x-nav-link>
 
             {{-- About --}}
-            <a href="{{ localized_route('about') }}"
-               class="relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200
-              {{ request()->routeIs('about')
-                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5' }}">
+            <x-nav-link
+                href="{{ localized_route('about') }}"
+                :active="request()->routeIs('about')"
+            >
                 {{ __('messages.nav_about') }}
-            </a>
+            </x-nav-link>
 
-            {{-- Services --}}
-            <a href="{{ localized_route('home') }}#services" @click="hash = '#services'"
-               :class="hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }}
-               ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-               : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
-               class="relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200">
+            {{-- Services (hash-based → dynamic) --}}
+            <x-nav-link
+                href="{{ localized_route('home') }}#services"
+                dynamic
+                @click="hash = '#services'"
+                :class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
+                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
+            >
                 {{ __('messages.nav_services') }}
-            </a>
+            </x-nav-link>
 
             {{-- Projects --}}
-            <a href="{{ localized_route('projects') }}"
-               class="relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200
-              {{ request()->routeIs('projects') || request()->routeIs('project.detail')
-                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5' }}">
+            <x-nav-link
+                href="{{ localized_route('projects') }}"
+                :active="request()->routeIs('projects') || request()->routeIs('project.detail')"
+            >
                 {{ __('messages.nav_projects') }}
-            </a>
+            </x-nav-link>
 
             {{-- Skills --}}
-            <a href="{{ localized_route('skills') }}"
-               class="relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200
-              {{ request()->routeIs('skills') || request()->routeIs('skill.detail')
-                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5' }}">
+            <x-nav-link
+                href="{{ localized_route('skills') }}"
+                :active="request()->routeIs('skills') || request()->routeIs('skill.detail')"
+            >
                 {{ __('messages.nav_skills') }}
-            </a>
+            </x-nav-link>
 
             {{-- Contact --}}
-            <a href="{{ localized_route('contact') }}"
-               class="relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200
-              {{ request()->routeIs('contact')
-                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
-                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5' }}">
+            <x-nav-link
+                href="{{ localized_route('contact') }}"
+                :active="request()->routeIs('contact')"
+            >
                 {{ __('messages.nav_contact') }}
-            </a>
+            </x-nav-link>
+
         </div>
 
-        <!-- Right controls -->
+        {{-- Right controls --}}
         <div class="flex items-center gap-3">
             @livewire('theme-switcher')
             @include('partials.language-switcher')
@@ -87,7 +90,7 @@
                 @livewire('download-cv')
             </div>
 
-            <!-- Hamburger -->
+            {{-- Hamburger --}}
             <button @click="open = !open"
                     class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                     aria-label="Menu">
@@ -101,7 +104,7 @@
         </div>
     </nav>
 
-    <!-- Mobile menu -->
+    {{-- Mobile menu --}}
     <div
         x-show="open"
         x-cloak
@@ -118,59 +121,71 @@
         x-transition:leave-end="opacity-0 -translate-y-4"
         class="lg:hidden border-t border-slate-200 dark:border-white/10 bg-white/95 dark:bg-[#080b14]/95 backdrop-blur-xl px-6 py-4 space-y-1"
     >
-        {{-- Home --}}
-        <a href="{{ localized_route('home') }}" @click="open = false; hash = ''"
-           :class="hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }}
-           ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
-           : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
-           class="block px-4 py-3 rounded-lg text-sm font-medium transition-colors">
+        {{-- Home (hash-based → dynamic) --}}
+        <x-nav-link
+            href="{{ localized_route('home') }}"
+            mobile
+            dynamic
+            @click="open = false; hash = ''"
+            :class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
+                ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
+                : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
+        >
             {{ __('messages.nav_home') }}
-        </a>
+        </x-nav-link>
 
         {{-- About --}}
-        <a href="{{ localized_route('about') }}" @click="open = false"
-           class="block px-4 py-3 rounded-lg text-sm font-medium transition-colors
-          {{ request()->routeIs('about')
-             ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
-             : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5' }}">
+        <x-nav-link
+            href="{{ localized_route('about') }}"
+            mobile
+            :active="request()->routeIs('about')"
+            @click="open = false"
+        >
             {{ __('messages.nav_about') }}
-        </a>
+        </x-nav-link>
 
-        {{-- Services --}}
-        <a href="{{ localized_route('home') }}#services" @click="open = false; hash = '#services'"
-           :class="hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }}
-           ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
-           : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
-           class="block px-4 py-3 rounded-lg text-sm font-medium transition-colors">
+        {{-- Services (hash-based → dynamic) --}}
+        <x-nav-link
+            href="{{ localized_route('home') }}#services"
+            mobile
+            dynamic
+            @click="open = false; hash = '#services'"
+            :class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
+                ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
+                : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
+        >
             {{ __('messages.nav_services') }}
-        </a>
+        </x-nav-link>
 
         {{-- Projects --}}
-        <a href="{{ localized_route('projects') }}" @click="open = false"
-           class="block px-4 py-3 rounded-lg text-sm font-medium transition-colors
-          {{ request()->routeIs('projects') || request()->routeIs('project.detail')
-             ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
-             : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5' }}">
+        <x-nav-link
+            href="{{ localized_route('projects') }}"
+            mobile
+            :active="request()->routeIs('projects') || request()->routeIs('project.detail')"
+            @click="open = false"
+        >
             {{ __('messages.nav_projects') }}
-        </a>
+        </x-nav-link>
 
         {{-- Skills --}}
-        <a href="{{ localized_route('skills') }}" @click="open = false"
-           class="block px-4 py-3 rounded-lg text-sm font-medium transition-colors
-          {{ request()->routeIs('skills') || request()->routeIs('skill.detail')
-             ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
-             : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5' }}">
+        <x-nav-link
+            href="{{ localized_route('skills') }}"
+            mobile
+            :active="request()->routeIs('skills') || request()->routeIs('skill.detail')"
+            @click="open = false"
+        >
             {{ __('messages.nav_skills') }}
-        </a>
+        </x-nav-link>
 
         {{-- Contact --}}
-        <a href="{{ localized_route('contact') }}" @click="open = false"
-           class="block px-4 py-3 rounded-lg text-sm font-medium transition-colors
-          {{ request()->routeIs('contact')
-             ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
-             : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5' }}">
+        <x-nav-link
+            href="{{ localized_route('contact') }}"
+            mobile
+            :active="request()->routeIs('contact')"
+            @click="open = false"
+        >
             {{ __('messages.nav_contact') }}
-        </a>
+        </x-nav-link>
 
         <div class="pt-3 border-t border-slate-200 dark:border-white/10">
             @livewire('download-cv')
