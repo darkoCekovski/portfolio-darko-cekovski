@@ -163,6 +163,42 @@ return [
     'exp3_title' => 'Junior Developer',
     'exp3_company' => 'Startup',
 
+// Availability
+    'about_availability_label'  => 'Availability',
+    'availability_status'       => 'Status',
+    'availability_available'    => 'Available',
+    'availability_type'         => 'Type',
+    'availability_type_value'   => 'Freelance / Part-time',
+    'availability_timezone'     => 'Timezone',
+    'availability_response'     => 'Response',
+    'availability_response_value' => 'Within 24 hours',
+
+// Open To
+    'about_open_to_label'       => 'Open To',
+    'open_to_freelance'         => 'Freelance projects',
+    'open_to_remote'            => 'Remote collaboration',
+    'open_to_fullstack'         => 'Full-stack development',
+    'open_to_longterm'          => 'Long-term partnerships',
+    'open_to_laravel'           => 'Laravel / PHP projects',
+    'open_to_consulting'        => 'Technical consulting',
+
+// Personal Strengths
+    'about_strengths_label'     => 'Personal Strengths',
+    'strength_problem_solving'  => 'Problem-solving',
+    'strength_critical_thinking'=> 'Critical Thinking',
+    'strength_communication'    => 'Communication',
+    'strength_teamwork'         => 'Teamwork',
+    'strength_self_motivated'   => 'Self-Motivated',
+    'strength_attention_detail' => 'Attention to Detail',
+    'strength_organization'     => 'Organization',
+    'strength_adaptability'     => 'Adaptability',
+
+// Currently Exploring
+    'about_exploring_label'     => 'Currently Exploring',
+
+// Continuous Learning
+    'about_learning_label'      => 'Continuous Learning',
+
     // Projects
     'projects_eyebrow' => 'Portfolio',
     'projects_title' => 'Featured Projects',
