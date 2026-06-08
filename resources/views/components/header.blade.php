@@ -29,7 +29,7 @@
                 href="{{ localized_route('home') }}"
                 dynamic
                 @click="hash = ''"
-                :class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
+                x-bind:class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
                     ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
             >
@@ -49,7 +49,7 @@
                 href="{{ localized_route('home') }}#services"
                 dynamic
                 @click="hash = '#services'"
-                :class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
+                x-bind:class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
                     ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
             >
@@ -127,7 +127,7 @@
             mobile
             dynamic
             @click="open = false; hash = ''"
-            :class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
+            x-bind:class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
                 ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
         >
@@ -150,7 +150,7 @@
             mobile
             dynamic
             @click="open = false; hash = '#services'"
-            :class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
+            x-bind:class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
                 ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
         >
