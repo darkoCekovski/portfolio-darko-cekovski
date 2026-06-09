@@ -98,3 +98,10 @@ html[data-theme='system'] .theme-icon-system { display: block; }
     pointer-events: none;
     opacity: 0.4;
 }
+
+/* ── Swiper pagination dark mode ─────────────────── */
+html.dark .testimonials-swiper {
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-pagination-bullet-inactive-opacity: 0.3;
+    --swiper-pagination-color: #818cf8;
+}
