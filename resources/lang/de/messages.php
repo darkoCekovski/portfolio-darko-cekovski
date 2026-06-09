@@ -207,6 +207,7 @@ return [
     'project_detail_repository' => 'Repository',
     'badge_public'            => 'Öffentlich',
     'badge_private'           => 'Privat',
+    'badge_featured'          => 'Featured',
     'badge_live'              => 'Live',
     'badge_coming_soon'       => 'Demnächst',
 
