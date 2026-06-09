@@ -219,7 +219,7 @@ return [
 
     // Testimonials
     'testimonials_eyebrow' => 'Referenzen',
-    'testimonials_title'   => 'Was Kunden sagen',
+    'testimonials_title' => 'Was andere sagen',
     'testimonials_subtitle' => 'Nette Worte von Menschen, mit denen ich zusammenarbeiten durfte.',
 
     // Contact

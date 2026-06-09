@@ -193,7 +193,7 @@ return [
 
     // Projects
     'projects_eyebrow' => 'Portfolio',
-    'projects_title' => 'Featured Projects',
+    'projects_title' => 'Featured projects',
     'projects_page_subtitle' => 'A selection of things I have built.',
     'projects_all_cta' => 'All projects',
     'project_detail_tech' => 'Technologies',
@@ -207,7 +207,7 @@ return [
 
     // Skills
     'skills_eyebrow' => 'Skills',
-    'skills_title' => 'My Tech Stack',
+    'skills_title' => 'My tech stack',
     'skills_page_subtitle' => 'Technologies I work with regularly.',
     'skills_all_cta' => 'All skills',
     'skill_proficiency' => 'Proficiency',
@@ -219,7 +219,7 @@ return [
 
     // Testimonials
     'testimonials_eyebrow' => 'Testimonials',
-    'testimonials_title' => 'What clients say',
+    'testimonials_title' => 'What people say',
     'testimonials_subtitle' => 'Kind words from people I have had the pleasure of working with.',
 
     // Contact
