@@ -26,4 +26,18 @@ class Project extends Model
         'is_featured'      => 'boolean',
         'github_is_public' => 'boolean',
     ];
+
+    public function getLocalizedDescriptionAttribute(): string
+    {
+        return app()->getLocale() === 'de' && $this->description_de
+            ? $this->description_de
+            : ($this->description ?? '');
+    }
+
+    public function getLocalizedShortDescriptionAttribute(): string
+    {
+        return app()->getLocale() === 'de' && $this->short_description_de
+            ? $this->short_description_de
+            : ($this->short_description ?? '');
+    }
 }
