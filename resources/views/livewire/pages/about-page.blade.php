@@ -206,13 +206,13 @@
                     </x-slot>
                     <div class="space-y-2">
                         @foreach([
-                            __('messages.open_to_fulltime'),
-                            __('messages.open_to_freelance'),
-                            __('messages.open_to_remote'),
-                            __('messages.open_to_fullstack'),
-                            __('messages.open_to_longterm'),
-                            __('messages.open_to_laravel'),
-                        ] as $item)
+                                    __('messages.open_to_fulltime'),
+                                    __('messages.open_to_freelance'),
+                                    __('messages.open_to_remote'),
+                                    __('messages.open_to_fullstack'),
+                                    __('messages.open_to_longterm'),
+                                    __('messages.open_to_laravel'),
+                                  ] as $item)
                             <div class="flex items-center gap-2">
                                 <svg class="w-3.5 h-3.5 text-indigo-500 flex-shrink-0" fill="currentColor"
                                      viewBox="0 0 24 24">

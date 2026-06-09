@@ -59,7 +59,7 @@ return [
 
     // About page — sidebar
     'about_photo_placeholder' => 'Profilfoto unter public/images/profile.jpg hinzufügen',
-    'about_location_detail'   => 'Bodenseeregion, Deutschland',
+    'about_location_detail'   => 'Konstanz, Bodenseeregion, Deutschland',
     'about_location_region'   => '4-Länder-Region: Deutschland · Österreich · Schweiz · Liechtenstein',
     'about_frontend'          => 'Frontend-Entwicklung',
     'about_backend'           => 'Backend (Laravel)',

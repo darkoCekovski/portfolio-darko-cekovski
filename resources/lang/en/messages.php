@@ -57,9 +57,9 @@ return [
     'about_experience' => 'Experience',
     'about_exp_value' => '6+ years coding',
 
-    // About page — sidebar
+// About page — sidebar
     'about_photo_placeholder' => 'Add profile photo to public/images/profile.jpg',
-    'about_location_detail' => 'Bodensee Region, Germany',
+    'about_location_detail' => 'Constance, Lake Constance Region, Germany',
     'about_location_region' => '4-country region: Germany · Austria · Switzerland · Liechtenstein',
     'about_frontend' => 'Frontend Development',
     'about_backend' => 'Backend (Laravel)',
