@@ -13,7 +13,7 @@ class ProjectSeeder extends Seeder
 
         $projects = [
             [
-                'title'                => 'DoMore Logistics',
+                'title'                => 'Do More Logistics',
                 'short_description'    => 'US trucking corporate site with fullscreen video hero, Livewire job application and contact forms with reCAPTCHA, interactive US region maps, and automated email confirmations.',
                 'short_description_de' => 'US-Logistikunternehmen-Website mit Video-Hero, Livewire-Formularen mit reCAPTCHA, interaktiven US-Regionskarten und automatischen E-Mail-Bestätigungen.',
                 'description'          => 'Corporate website for a US-based trucking and logistics company built with a component-based Blade architecture where every homepage section is a dedicated component (s-entry-welcome-hero, s-why-us, s-services, s-equipment, s-stat-counter, s-testimonials, etc.) assembled in a single welcome.blade.php. The hero renders a full-screen autoplay muted video background (trucks_parking.mp4) with an Alpine.js x-data="heroArrow" component managing a bouncing scroll-down arrow that hides on scroll via transition directives. The headline uses a CSS typing animation, and the CTA uses a custom flip button component — a reusable Blade component with text and hoverText named slots that animates on hover.
