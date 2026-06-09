@@ -207,6 +207,8 @@ return [
     'project_detail_repository' => 'Repository',
     'badge_public'  => 'Public',
     'badge_private' => 'Private',
+    'badge_live'         => 'Live',
+    'badge_coming_soon'  => 'Coming soon',
 
     // Skills
     'skills_eyebrow' => 'Skills',
