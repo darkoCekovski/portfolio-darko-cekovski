@@ -29,7 +29,6 @@ Additional sections include an animated stat counter, a testimonials slider, a b
                 'is_featured' => true,
                 'github_is_public' => false,
                 'order' => 1,
-                'published' => true,
             ],
             [
                 'title' => 'Fragilo',
@@ -46,7 +45,6 @@ Notably, the project includes a dedicated iOS layout and full set of Livewire iO
                 'is_featured' => true,
                 'github_is_public' => false,
                 'order' => 2,
-                'published' => true,
             ],
             [
                 'title' => 'Personal Portfolio',
@@ -63,7 +61,6 @@ The component library includes reusable Blade components: page-section, page-hea
                 'is_featured' => true,
                 'github_is_public' => true,
                 'order' => 3,
-                'published' => true,
             ],
             [
                 'title' => 'ImmoTech',
@@ -82,7 +79,6 @@ Nine languages (EN, DE, MK, RS, BG, HR, SI, GR, AL) are implemented via a gl() l
                 'is_featured' => true,
                 'github_is_public' => true,
                 'order' => 4,
-                'published' => false,
             ],
             [
                 'title' => 'phpDeluxe',
@@ -99,7 +95,6 @@ Transactional emails include a welcome email with credentials (client onboarding
                 'is_featured' => false,
                 'github_is_public' => false,
                 'order' => 5,
-                'published' => true,
             ],
             [
                 'title' => 'AsiaFlirt',
@@ -116,7 +111,6 @@ The chat system is fully Livewire-driven with a three-pane layout (user list, me
                 'is_featured' => false,
                 'github_is_public' => false,
                 'order' => 6,
-                'published' => true,
             ],
         ];
 
