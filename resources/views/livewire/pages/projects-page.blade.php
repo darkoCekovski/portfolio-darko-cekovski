@@ -8,7 +8,7 @@
     <x-page-section>
 
         {{-- Search + Filter bar --}}
-        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+        <div class="flex flex-col gap-4 mb-10">
 
             {{-- Search --}}
             <div class="relative flex-1 max-w-sm">
