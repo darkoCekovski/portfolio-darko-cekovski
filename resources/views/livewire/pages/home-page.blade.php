@@ -285,6 +285,15 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse($projects as $i => $project)
                 <x-project-card :project="$project" :delay="($i % 3) + 1"/>
+            @empty
+                <div class="col-span-3 text-center py-20">
+                    <svg class="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4"
+                         fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/>
+                    </svg>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">{{ __('messages.no_projects') }}</p>
+                </div>
             @endforelse
         </div>
 
