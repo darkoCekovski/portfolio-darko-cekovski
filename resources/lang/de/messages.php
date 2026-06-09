@@ -121,6 +121,7 @@ return [
     'show_more_history' => 'Frühere Laufbahn anzeigen',
     'show_less'         => 'Weniger anzeigen',
 
+// Earlier career — titles & companies
     'exp_role_sales_marketing'    => 'Vertriebs- & Marketingspezialist',
     'exp_role_sales_marketing_co' => 'Vip-Plast DOOEL · Skopje · 06/2016 – 06/2019',
     'exp_role_production_malta'   => 'Produktionsspezialist',
@@ -132,6 +133,7 @@ return [
     'exp_role_prod_specialist'    => 'Produktionsspezialist',
     'exp_role_prod_specialist_co' => 'Vip-Plast DOOEL · Skopje · 05/2007 – 09/2009',
 
+// Earlier career — bullet arrays
     'exp_role_sales_marketing_bullets' => [
         'Aufbau und Pflege von Beziehungen zu neuen und bestehenden Kunden sowie Steigerung der Markenbekanntheit.',
         'Erstellung von Marketingmaterialien und Analyse von Kampagnendaten zur Gestaltung künftiger Strategien.',
@@ -153,13 +155,41 @@ return [
         'Überwachung des Betriebs und Anpassung der Pläne zur termingerechten Erfüllung von Aufträgen.',
     ],
 
-    // Experience timeline
-    'exp1_title'           => 'Full-Stack-Entwickler',
-    'exp1_company'         => 'Freiberuflich',
-    'exp2_title'           => 'Frontend-Entwickler',
-    'exp2_company'         => 'Webagentur',
-    'exp3_title'           => 'Junior-Entwickler',
-    'exp3_company'         => 'Startup',
+// Availability
+    'about_availability_label'    => 'Verfügbarkeit',
+    'availability_status'         => 'Status',
+    'availability_available'      => 'Verfügbar',
+    'availability_type'           => 'Art',
+    'availability_type_value'     => 'Vollzeit / Freiberuflich',
+    'availability_timezone'       => 'Zeitzone',
+    'availability_response'       => 'Antwortzeit',
+    'availability_response_value' => 'Innerhalb 24 Stunden',
+
+// Open To
+    'about_open_to_label'         => 'Offen für',
+    'open_to_freelance'           => 'Freiberufliche Projekte',
+    'open_to_remote'              => 'Remote-Zusammenarbeit',
+    'open_to_fullstack'           => 'Full-Stack-Entwicklung',
+    'open_to_longterm'            => 'Langfristige Partnerschaften',
+    'open_to_laravel'             => 'Laravel / PHP-Projekte',
+    'open_to_fulltime'            => 'Vollzeitstelle',
+
+// Personal Strengths
+    'about_strengths_label'       => 'Persönliche Stärken',
+    'strength_problem_solving'    => 'Problemlösung',
+    'strength_critical_thinking'  => 'Kritisches Denken',
+    'strength_communication'      => 'Kommunikation',
+    'strength_teamwork'           => 'Teamarbeit',
+    'strength_self_motivated'     => 'Eigenmotivation',
+    'strength_attention_detail'   => 'Detailgenauigkeit',
+    'strength_organization'       => 'Organisation',
+    'strength_adaptability'       => 'Anpassungsfähigkeit',
+
+// Currently Exploring
+    'about_exploring_label'       => 'Aktuell im Fokus',
+
+// Continuous Learning
+    'about_learning_label'        => 'Weiterbildung',
 
     // Projects
     'projects_eyebrow'        => 'Portfolio',

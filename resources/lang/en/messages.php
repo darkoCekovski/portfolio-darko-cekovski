@@ -155,20 +155,12 @@ return [
         'Monitored operations and adjusted plans to meet order demands on time.',
     ],
 
-    // Experience timeline
-    'exp1_title' => 'Full-Stack Developer',
-    'exp1_company' => 'Freelance',
-    'exp2_title' => 'Frontend Developer',
-    'exp2_company' => 'Web Agency',
-    'exp3_title' => 'Junior Developer',
-    'exp3_company' => 'Startup',
-
 // Availability
     'about_availability_label'  => 'Availability',
     'availability_status'       => 'Status',
     'availability_available'    => 'Available',
     'availability_type'         => 'Type',
-    'availability_type_value'   => 'Freelance / Part-time',
+    'availability_type_value'   => 'Full-time / Freelance',
     'availability_timezone'     => 'Timezone',
     'availability_response'     => 'Response',
     'availability_response_value' => 'Within 24 hours',
@@ -180,7 +172,7 @@ return [
     'open_to_fullstack'         => 'Full-stack development',
     'open_to_longterm'          => 'Long-term partnerships',
     'open_to_laravel'           => 'Laravel / PHP projects',
-    'open_to_consulting'        => 'Technical consulting',
+    'open_to_fulltime'          => 'Full-time position',
 
 // Personal Strengths
     'about_strengths_label'     => 'Personal Strengths',
