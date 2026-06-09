@@ -283,9 +283,9 @@
 
         {{-- Project cards grid --}}
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            @forelse($projects as $i => $project)
-                <x-project-card :project="$project" :delay="($i % 3) + 1"/>
-            @endforelse
+            @foreach ($projects as $i => $project)
+                <x-project-card :project="$project" :delay="$i + 1"/>
+            @endforeach
         </div>
 
         {{-- Mobile button --}}
