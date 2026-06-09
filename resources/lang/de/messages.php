@@ -204,6 +204,8 @@ return [
     'no_projects'             => 'Keine Projekte gefunden.',
     'filter_all'              => 'Alle',
     'search_projects'         => 'Projekte suchen…',
+    'badge_public'            => 'Öffentlich',
+    'badge_private'           => 'Privat',
 
     // Skills
     'skills_eyebrow'          => 'Fähigkeiten',
