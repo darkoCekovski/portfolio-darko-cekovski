@@ -204,6 +204,7 @@ return [
     'no_projects' => 'No projects found.',
     'filter_all' => 'All',
     'search_projects' => 'Search projects…',
+    'project_detail_repository' => 'Repository',
     'badge_public'  => 'Public',
     'badge_private' => 'Private',
 
