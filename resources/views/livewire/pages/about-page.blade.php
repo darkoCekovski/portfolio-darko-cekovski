@@ -29,7 +29,7 @@
                 </div>
 
                 {{-- Experience timeline --}}
-                <x-about-card
+                <x-card
                     :title="__('messages.about_experience')"
                     padding="p-6"
                     x-data="{ open: false }"
@@ -102,7 +102,7 @@
                         </button>
 
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- CTAs --}}
                 <div class="flex gap-4 pt-2 reveal reveal-delay-4">
@@ -143,7 +143,7 @@
                 </div>
 
                 {{-- Location --}}
-                <x-about-card :title="__('messages.about_location_label')" class="reveal reveal-delay-1">
+                <x-card :title="__('messages.about_location_label')" class="reveal reveal-delay-1">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -155,10 +155,10 @@
                     </x-slot>
                     <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">{{ __('messages.about_location_detail') }}</p>
                     <p class="text-xs text-slate-400 dark:text-slate-500 leading-relaxed">{{ __('messages.about_location_region') }}</p>
-                </x-about-card>
+                </x-card>
 
                 {{-- Availability --}}
-                <x-about-card :title="__('messages.about_availability_label')" class="reveal reveal-delay-2">
+                <x-card :title="__('messages.about_availability_label')" class="reveal reveal-delay-2">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -193,10 +193,10 @@
                                 class="text-xs font-semibold text-slate-700 dark:text-slate-300">{{ __('messages.availability_response_value') }}</span>
                         </div>
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Open To --}}
-                <x-about-card :title="__('messages.about_open_to_label')" class="reveal reveal-delay-3">
+                <x-card :title="__('messages.about_open_to_label')" class="reveal reveal-delay-3">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -224,10 +224,10 @@
                             </div>
                         @endforeach
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Focus --}}
-                <x-about-card :title="__('messages.about_focus_label')" class="reveal reveal-delay-4">
+                <x-card :title="__('messages.about_focus_label')" class="reveal reveal-delay-4">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -249,10 +249,10 @@
                             :colored="true"
                         />
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Personal Strengths --}}
-                <x-about-card :title="__('messages.about_strengths_label')" class="reveal reveal-delay-1">
+                <x-card :title="__('messages.about_strengths_label')" class="reveal reveal-delay-1">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -279,10 +279,10 @@
                 </span>
                         @endforeach
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Currently Exploring --}}
-                <x-about-card :title="__('messages.about_exploring_label')" class="reveal reveal-delay-2">
+                <x-card :title="__('messages.about_exploring_label')" class="reveal reveal-delay-2">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -300,10 +300,10 @@
                 </span>
                         @endforeach
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Continuous Learning --}}
-                <x-about-card :title="__('messages.about_learning_label')" class="reveal reveal-delay-3">
+                <x-card :title="__('messages.about_learning_label')" class="reveal reveal-delay-3">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -329,10 +329,10 @@
                             </div>
                         @endforeach
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Education --}}
-                <x-about-card
+                <x-card
                     :title="__('messages.about_edu_label')"
                     padding="p-6"
                     x-data="{ open: false }"
@@ -383,10 +383,10 @@
                 </span>
                         </button>
                     </div>
-                </x-about-card>
+                </x-card>
 
                 {{-- Languages --}}
-                <x-about-card :title="__('messages.about_lang_label')" class="reveal reveal-delay-1">
+                <x-card :title="__('messages.about_lang_label')" class="reveal reveal-delay-1">
                     <x-slot name="icon">
                         <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                              viewBox="0 0 24 24">
@@ -404,7 +404,7 @@
                             <x-progress-bar :label="$lang" :value="$level" :percent="$pct"/>
                         @endforeach
                     </div>
-                </x-about-card>
+                </x-card>
 
             </div>
         </div>

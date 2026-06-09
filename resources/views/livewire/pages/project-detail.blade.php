@@ -77,7 +77,7 @@
                 <div class="space-y-5 reveal reveal-delay-3">
 
                     {{-- Tech stack --}}
-                    <x-about-card :title="__('messages.project_detail_tech')">
+                    <x-card :title="__('messages.project_detail_tech')">
                         <x-slot name="icon">
                             <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                                  viewBox="0 0 24 24">
@@ -90,10 +90,10 @@
                                 <x-tech-badge>{{ $tech }}</x-tech-badge>
                             @endforeach
                         </div>
-                    </x-about-card>
+                    </x-card>
 
                     {{-- Repository --}}
-                    <x-about-card :title="__('messages.project_detail_repository')">
+                    <x-card :title="__('messages.project_detail_repository')">
                         <x-slot name="icon">
                             <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                                  viewBox="0 0 24 24">
@@ -119,8 +119,8 @@
                                     </a>
                                 @else
                                     <span class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
-                    {{ __('messages.badge_public') }}
-                </span>
+                                        {{ __('messages.badge_public') }}
+                                    </span>
                                 @endif
                             </div>
                         @else
@@ -132,15 +132,15 @@
                                           d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z"/>
                                 </svg>
                                 <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">
-                {{ __('messages.badge_private') }}
-            </span>
+                                    {{ __('messages.badge_private') }}
+                                </span>
                             </div>
                         @endif
 
-                    </x-about-card>
+                    </x-card>
 
                     {{-- Live status --}}
-                    <x-about-card :title="__('messages.project_detail_status')">
+                    <x-card :title="__('messages.project_detail_status')">
                         <x-slot name="icon">
                             <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
                                  viewBox="0 0 24 24">
@@ -169,12 +169,12 @@
                                           d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
                                 </svg>
                                 <span class="text-sm font-semibold text-amber-600 dark:text-amber-400">
-                {{ __('messages.badge_coming_soon') }}
-            </span>
+                                    {{ __('messages.badge_coming_soon') }}
+                                </span>
                             </div>
                         @endif
 
-                    </x-about-card>
+                    </x-card>
 
                 </div>
             </div>
