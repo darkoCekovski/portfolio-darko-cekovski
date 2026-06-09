@@ -33,11 +33,14 @@
             {{-- 1. Public / Private --}}
             @if($project->github_is_public)
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
-                     bg-emerald-50/90 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400
-                     border border-emerald-100 dark:border-emerald-500/20">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25"/>
+                 bg-emerald-50/90 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400
+                 border border-emerald-100 dark:border-emerald-500/20">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <circle cx="6" cy="6" r="2"/>
+                        <circle cx="6" cy="18" r="2"/>
+                        <circle cx="18" cy="6" r="2"/>
+                        <path d="M6 8v8M11 18h3a2 2 0 0 0 2-2V8"/>
                     </svg>
                     {{ __('messages.badge_public') }}
                 </span>
