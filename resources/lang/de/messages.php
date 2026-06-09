@@ -210,6 +210,7 @@ return [
     'badge_featured'          => 'Featured',
     'badge_live'              => 'Live',
     'badge_coming_soon'       => 'Demnächst',
+    'project_detail_status'   => 'Status',
 
     // Skills
     'skills_eyebrow'          => 'Fähigkeiten',
