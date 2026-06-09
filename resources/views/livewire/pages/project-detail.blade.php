@@ -101,19 +101,42 @@
                                       d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25z"/>
                             </svg>
                         </x-slot>
+
                         @if($project->github_is_public)
-                            <span
-                                class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                                {{ __('messages.badge_public') }}
-                            </span>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     viewBox="0 0 24 24">
+                                    <circle cx="6" cy="6" r="2"/>
+                                    <circle cx="6" cy="18" r="2"/>
+                                    <circle cx="18" cy="6" r="2"/>
+                                    <path d="M6 8v8M11 18h3a2 2 0 0 0 2-2V8"/>
+                                </svg>
+                                @if($project->github_url)
+                                    <a href="{{ $project->github_url }}" target="_blank" rel="noopener"
+                                       class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline truncate">
+                                        {{ __('messages.badge_public') }}
+                                    </a>
+                                @else
+                                    <span class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                    {{ __('messages.badge_public') }}
+                </span>
+                                @endif
+                            </div>
                         @else
-                            <span
-                                class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                                {{ __('messages.badge_private') }}
-                            </span>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-slate-400 dark:text-slate-500 flex-shrink-0" fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z"/>
+                                </svg>
+                                <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">
+                {{ __('messages.badge_private') }}
+            </span>
+                            </div>
                         @endif
+
                     </x-about-card>
 
                 </div>
