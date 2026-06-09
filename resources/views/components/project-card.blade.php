@@ -103,7 +103,7 @@
             {{ $project->title }}
         </h3>
         <p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-4">
-            {{ $project->short_description }}
+            {{ $project->localized_short_description }}
         </p>
         <div class="flex flex-wrap gap-1.5">
             @foreach(array_slice($project->tech_stack ?? [], 0, 3) as $tech)

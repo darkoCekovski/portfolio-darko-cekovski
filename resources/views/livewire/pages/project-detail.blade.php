@@ -46,7 +46,7 @@
                         {{ __('messages.project_description') }}
                     </h2>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line">
-                        {{ $project->description }}
+                        {{ $project->localized_description }}
                     </p>
 
                     {{-- CTA buttons --}}
