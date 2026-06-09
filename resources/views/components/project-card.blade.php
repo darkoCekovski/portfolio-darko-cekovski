@@ -32,17 +32,17 @@
             @if($project->github_is_public)
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
                              bg-emerald-50/90 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400
-                             backdrop-blur-sm border border-emerald-100 dark:border-emerald-500/20">
+                             border border-emerald-100 dark:border-emerald-500/20">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.769 0-5.452-.23-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25"/>
                     </svg>
                     {{ __('messages.badge_public') }}
                 </span>
             @else
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
                              bg-white/80 dark:bg-black/40 text-slate-500 dark:text-slate-400
-                             backdrop-blur-sm border border-slate-200 dark:border-white/10">
+                             border border-slate-200 dark:border-white/10">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z"/>

@@ -264,40 +264,40 @@
     </x-page-section>
 
     {{-- ── PROJECTS PREVIEW ─────────────────────────────────────────────── --}}
-{{--    <x-page-section>--}}
-{{--        --}}{{-- Header row: title left + link right --}}
-{{--        <div class="flex items-end mb-12 reveal">--}}
-{{--            <div class="flex-1">--}}
-{{--                <span--}}
-{{--                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">--}}
-{{--                    {{ __('messages.projects_eyebrow') }}--}}
-{{--                </span>--}}
-{{--                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">--}}
-{{--                    {{ __('messages.projects_title') }}--}}
-{{--                </h2>--}}
-{{--            </div>--}}
-{{--            <x-arrow-link href="{{ localized_route('projects') }}" class="hidden sm:inline-flex">--}}
-{{--                {{ __('messages.projects_all_cta') }}--}}
-{{--            </x-arrow-link>--}}
-{{--        </div>--}}
+    <x-page-section>
+        {{-- Header row: title left + link right --}}
+        <div class="flex items-end mb-12 reveal">
+            <div class="flex-1">
+                <span
+                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">
+                    {{ __('messages.projects_eyebrow') }}
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                    {{ __('messages.projects_title') }}
+                </h2>
+            </div>
+            <x-arrow-link href="{{ localized_route('projects') }}" class="hidden sm:inline-flex">
+                {{ __('messages.projects_all_cta') }}
+            </x-arrow-link>
+        </div>
 
-{{--        --}}{{-- Project cards grid --}}
-{{--        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">--}}
-{{--            @forelse($projects as $i => $project)--}}
-{{--                <x-project-card :project="$project" :delay="($i % 3) + 1"/>--}}
-{{--            @endforelse--}}
-{{--        </div>--}}
+        {{-- Project cards grid --}}
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @forelse($projects as $i => $project)
+                <x-project-card :project="$project" :delay="($i % 3) + 1"/>
+            @endforelse
+        </div>
 
-{{--        --}}{{-- Mobile button --}}
-{{--        <div class="mt-10 flex justify-center sm:hidden reveal">--}}
-{{--            <x-primary-button href="{{ localized_route('projects') }}">--}}
-{{--                {{ __('messages.projects_all_cta') }}--}}
-{{--                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">--}}
-{{--                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>--}}
-{{--                </svg>--}}
-{{--            </x-primary-button>--}}
-{{--        </div>--}}
-{{--    </x-page-section>--}}
+        {{-- Mobile button --}}
+        <div class="mt-10 flex justify-center sm:hidden reveal">
+            <x-primary-button href="{{ localized_route('projects') }}">
+                {{ __('messages.projects_all_cta') }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+            </x-primary-button>
+        </div>
+    </x-page-section>
 
     {{-- ── TESTIMONIALS ─────────────────────────────────────────────────── --}}
     <x-page-section>
