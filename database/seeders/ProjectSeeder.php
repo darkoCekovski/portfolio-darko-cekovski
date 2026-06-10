@@ -124,7 +124,7 @@ Das Chat-System ist vollständig Livewire-gesteuert mit einem Drei-Bereiche-Layo
                 'tech_stack'           => ['Laravel', 'Jetstream', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'Filament', 'Swiper.js', 'MySQL', 'Tinify API'],
                 'is_featured'          => false,
                 'github_is_public'     => false,
-                'order'                => 6,
+                'order'                => 5,
             ],
         ];
 
