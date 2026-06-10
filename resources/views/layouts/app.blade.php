@@ -20,10 +20,9 @@
     {!! ToastMagic::styles() !!}
 
     <script>
-        (() => {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            document.documentElement.classList.add('dark');
-        })();
+        localStorage.setItem('theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.classList.add('dark');
     </script>
 
 {{--    <script>--}}
