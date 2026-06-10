@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Mail\ContactForm;
 use Livewire\Component;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactConfirmation;
 
 class ContactPage extends Component
 {
@@ -49,8 +50,14 @@ class ContactPage extends Component
         try {
             Contact::create($validated);
 
+            // Notification to you
             Mail::to(config('mail.from.address'))->send(
                 new ContactForm($validated['name'], $validated['email'], $validated['comment'])
+            );
+
+            // Auto-reply confirmation to the sender
+            Mail::to($validated['email'])->send(
+                new ContactConfirmation($validated['name'], $validated['comment'], app()->getLocale())
             );
 
             $this->reset(['name', 'email', 'comment']);
