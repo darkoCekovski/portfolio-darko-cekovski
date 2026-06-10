@@ -20,12 +20,22 @@
 
     <script>
         (() => {
-            const t = localStorage.getItem('theme') || 'dark';
+            const urlTheme = new URLSearchParams(window.location.search).get('theme');
+            const t = urlTheme || localStorage.getItem('theme') || 'system';
             document.documentElement.setAttribute('data-theme', t);
             const dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             if (dark) document.documentElement.classList.add('dark');
         })();
     </script>
+
+{{--    <script>--}}
+{{--        (() => {--}}
+{{--            const t = localStorage.getItem('theme') || 'system';--}}
+{{--            document.documentElement.setAttribute('data-theme', t);--}}
+{{--            const dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);--}}
+{{--            if (dark) document.documentElement.classList.add('dark');--}}
+{{--        })();--}}
+{{--    </script>--}}
 </head>
 
 <body
