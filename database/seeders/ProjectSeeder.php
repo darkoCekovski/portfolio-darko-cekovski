@@ -50,7 +50,7 @@ Notably, the project includes a dedicated iOS layout and full set of Livewire iO
 Fragendetailseiten enthalten eine Sidebar mit verwandten Fragen (aufgelöst durch Tag/Thema-Zuordnung), eine Alpine.js-Bildlightbox und dynamische Open-Graph- und Twitter-Card-Meta-Tags für SEO. Die Entdeckungsebene umfasst alle Fragen, Themenwelten (Kategorien) und tagbasierte Filteransichten. Nutzer erhalten ein persönliches Dashboard mit Aktivitätsübersicht, eine Lesezeichenseite und eine Avatar-Anpassungsseite.
 
 Bemerkenswert ist ein dediziertes iOS-Layout mit vollständigen Livewire-iOS-Ansichten (Auth, Dashboard, Frageseiten) — was auf eine mobile App-Hülle hindeutet, die dasselbe Laravel-Backend über eine separate Ansichtsschicht nutzt. Transaktions-E-Mails werden über Laravel Mail abgewickelt (Kontobestätigung, Team-Einladungen).',
-                'thumbnail'            => null,
+                'thumbnail' => '/images/projects/fragilo.png',
                 'demo_url'             => 'https://www.fragilo.de',
                 'github_url'           => null,
                 'tech_stack'           => ['Laravel', 'Jetstream', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'Quill.js', 'MySQL'],
@@ -72,7 +72,7 @@ The component library includes reusable Blade components: page-section, page-hea
 Der Hero-Bereich enthält einen Schreibmaschineneffekt mit Tech-Stack-Rollen und einen IntersectionObserver-gesteuerten animierten Statistikzähler mit kubischer Easing-Funktion. Der Servicebereich lädt Daten aus MySQL über Eloquent und öffnet lokalisierte Detailmodals über einen dedizierten ServiceApiController-JSON-Endpunkt. Skills werden in einer reinen JavaScript-3D-Rotationskugel mit devicons CDN sowie animierten SVG-Fortschrittsringen basierend auf CSS @property und conic-gradient dargestellt.
 
 Die Komponentenbibliothek umfasst wiederverwendbare Blade-Komponenten: page-section, page-header, section-header, primary-button (5 Varianten), ghost-button, nav-link (mit dynamic-Prop für Alpine.js hash-basierte Aktivzustände), about-card, timeline-item, progress-bar und sidebar-card. Der Testimonials-Bereich verwendet ein Swiper.js-Karussell aus der Datenbank mit Initialen-Gradient-Avatar-Fallback. Scroll-Reveal-Animationen nutzen eine MutationObserver-Rettungsfunktion für Livewire-DOM-Morphing. Automatisch auf Netcup Shared Hosting via GitHub-Webhook deployt.',
-                'thumbnail'            => null,
+                'thumbnail' => '/images/projects/portfolio.png',
                 'demo_url'             => 'https://darkocekovski.com',
                 'github_url'           => 'https://github.com/darkoCekovski/portfolio-darko-cekovski',
                 'tech_stack'           => ['Laravel 12', 'Livewire 3', 'Alpine.js', 'Tailwind CSS', 'MySQL', 'Vite', 'Swiper.js'],
@@ -118,7 +118,7 @@ Transactional emails include a welcome email with credentials (client onboarding
 Der Preisbereich rendert als Vollbild-Modal-Overlay mit Service-Checkliste und CTA, dynamisch aus dem CMS befüllt. Die Portfolio-Präsentation verwendet zwei Swiper-Karussells mit Tab-Wechsel — eines für Beispielwebsites, eines für Kundenlogos. Der Blog hat eine benutzerdefinierte Livewire-Pagination und dynamische SEO-Meta-, OG- und Twitter-Card-Tags pro Artikel. Die EN/DE-Implementierung verwendet einen gl()-Locale-Helfer mit separaten Route-Domains (phpdeluxe.com / phpdeluxe.de).
 
 Transaktions-E-Mails umfassen eine Willkommens-E-Mail mit Anmeldedaten, eine OTP-Verifizierungs-E-Mail und Admin-Benachrichtigungen — alle über ein gemeinsames Master-E-Mail-Layout. Die Kontaktseite hat noindex-Meta-Tags. Der Header implementiert eine mobile Slide-out-Navigation via Vanilla-JS.',
-                'thumbnail'            => null,
+                'thumbnail' => '/images/projects/phpdeluxe.png',
                 'demo_url'             => 'https://www.phpdeluxe.com',
                 'github_url'           => null,
                 'tech_stack'           => ['Laravel', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'Swiper.js', 'MySQL'],
@@ -140,7 +140,7 @@ The chat system is fully Livewire-driven with a three-pane layout (user list, me
 Profile umfassen Präferenzeinstellungen, geburtstagbasierte Altersberechnung und Foto-Uploads über das livewire-media-library-Paket mit Admin-Genehmigungsmoderation (Fotos erscheinen unscharf bis zur Genehmigung). Die ID-Verifizierung verwendet einen Upload-Ablauf mit einer dedizierten Filament-Admin-Tabellenspalte. Das Filament-Admin-Panel enthält ein benutzerdefiniertes Widget zur Tinify-API-Bildkomprimierungsverfolgung.
 
 Das Chat-System ist vollständig Livewire-gesteuert mit einem Drei-Bereiche-Layout (Nutzerliste, Nachrichtenboard, Nachricht schreiben) und Block-/Entsperrfunktionalität. Stories unterstützen mehrsprachige Inhalte via getTranslation(), Likes und Mehr-Bild-Galerien. Die Trips-Funktion ermöglicht Reisepläne mit Swiper-Galerien und admin-genehmigten Medien. Drei Sprachen: EN, DE, FR via gl()-Locale-Helfer mit hreflang-SEO-Links.',
-                'thumbnail'            => null,
+                'thumbnail' => '/images/projects/asiaflirt.png',
                 'demo_url'             => 'https://www.asiaflirt.com',
                 'github_url'           => null,
                 'tech_stack'           => ['Laravel', 'Jetstream', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'Filament', 'Swiper.js', 'MySQL', 'Tinify API'],

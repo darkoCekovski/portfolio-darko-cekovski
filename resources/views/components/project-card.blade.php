@@ -10,11 +10,11 @@
           reveal reveal-delay-{{ $delay }}">
 
     {{-- Image / Placeholder with badge overlay --}}
-    <div class="relative aspect-video overflow-hidden">
+    <div class="relative aspect-video overflow-hidden bg-slate-100 dark:bg-[#0d1117]">
 
         @if($project->thumbnail)
             <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}"
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                 class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 p-2">
         @else
             <div class="w-full h-full bg-gradient-to-br from-indigo-500/10 via-blue-500/10 to-sky-500/10
                         dark:from-indigo-500/20 dark:via-blue-500/20 dark:to-sky-500/20
