@@ -56,11 +56,13 @@ class ContactPage extends Component
             $this->reset(['name', 'email', 'comment']);
             $this->resetValidation();
 
-            $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
+//            $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
+            $this->dispatch('toastMagic', ['type' => 'success', 'message' => __('messages.contact_success')]);
 
         } catch (\Throwable $e) {
             report($e);
-            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_error'));
+//            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_error'));
+            $this->dispatch('toastMagic', ['type' => 'error', 'message' => __('messages.contact_error')]);
         }
     }
 
