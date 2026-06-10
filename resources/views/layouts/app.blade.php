@@ -17,7 +17,9 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    {!! ToastMagic::styles() !!}
+    {{--    {!! ToastMagic::styles() !!}--}}
+    <link rel="stylesheet"
+          href="{{ asset('packages/devrabiul/laravel-toaster-magic/css/laravel-toaster-magic.min.css') }}">
 
     <script>
         (() => {
@@ -45,6 +47,10 @@
 <x-button-to-top/>
 
 @livewireScripts
+{{--{!! ToastMagic::scripts() !!}--}}
+<script src="{{ asset('packages/devrabiul/laravel-toaster-magic/js/livewire-v3/laravel-toaster-magic.js') }}"></script>
+<script
+    src="{{ asset('packages/devrabiul/laravel-toaster-magic/js/livewire-v3/livewire-toaster-magic-v3.js') }}"></script>
 {!! ToastMagic::scripts() !!}
 </body>
 </html>
