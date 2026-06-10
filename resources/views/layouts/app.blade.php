@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" class="scroll-smooth">
+<html lang="{{ app()->getLocale() }}" class="scroll-smooth dark" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
@@ -20,39 +21,29 @@
 
     <script>
         (() => {
-            const urlTheme = new URLSearchParams(window.location.search).get('theme');
-            const t = urlTheme || localStorage.getItem('theme') || 'system';
+            const t = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', t);
             const dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             if (dark) document.documentElement.classList.add('dark');
         })();
     </script>
-
-{{--    <script>--}}
-{{--        (() => {--}}
-{{--            const t = localStorage.getItem('theme') || 'system';--}}
-{{--            document.documentElement.setAttribute('data-theme', t);--}}
-{{--            const dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);--}}
-{{--            if (dark) document.documentElement.classList.add('dark');--}}
-{{--        })();--}}
-{{--    </script>--}}
 </head>
 
 <body
     class="bg-slate-50 dark:bg-[#080b14] text-slate-900 dark:text-slate-100 font-inter antialiased transition-colors duration-300"
     x-data
 >
-    @include('components.header')
+@include('components.header')
 
-    <main class="min-h-screen pt-20">
-        {{ $slot }}
-    </main>
+<main class="min-h-screen pt-20">
+    {{ $slot }}
+</main>
 
-    @include('components.footer')
+@include('components.footer')
 
-    <x-button-to-top />
+<x-button-to-top/>
 
-    @livewireScripts
-    {!! ToastMagic::scripts() !!}
+@livewireScripts
+{!! ToastMagic::scripts() !!}
 </body>
 </html>
