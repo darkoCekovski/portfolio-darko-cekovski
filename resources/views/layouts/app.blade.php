@@ -20,7 +20,7 @@
 
     <script>
         (() => {
-            const t = localStorage.getItem('theme') || 'system';
+            const t = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', t);
             const dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             if (dark) document.documentElement.classList.add('dark');
