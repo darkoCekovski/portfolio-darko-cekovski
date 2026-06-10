@@ -49,9 +49,9 @@ class ContactPage extends Component
         try {
             Contact::create($validated);
 
-            Mail::to(config('mail.from.address'))->send(
-                new ContactForm($validated['name'], $validated['email'], $validated['comment'])
-            );
+//            Mail::to(config('mail.from.address'))->send(
+//                new ContactForm($validated['name'], $validated['email'], $validated['comment'])
+//            );
 
             $this->reset(['name', 'email', 'comment']);
             $this->resetValidation();
