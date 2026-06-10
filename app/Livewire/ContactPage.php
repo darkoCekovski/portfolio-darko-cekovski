@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactPage extends Component
 {
-    public string $name    = '';
-    public string $email   = '';
+    public string $name = '';
+    public string $email = '';
     public string $comment = '';
 
     protected function rules(): array
     {
         return [
-            'name'    => ['required', 'string', 'min:2', 'max:255'],
-            'email'   => ['required', 'email:rfc', 'max:255'],
+            'name' => ['required', 'string', 'min:2', 'max:255'],
+            'email' => ['required', 'email:rfc', 'max:255'],
             'comment' => ['required', 'string', 'min:10', 'max:1000'],
         ];
     }
@@ -25,15 +25,15 @@ class ContactPage extends Component
     protected function messages(): array
     {
         return [
-            'name.required'    => __('messages.contact_name_required'),
-            'name.min'         => __('messages.contact_name_min'),
-            'name.max'         => __('messages.contact_name_max'),
-            'email.required'   => __('messages.contact_email_required'),
-            'email.email'      => __('messages.contact_email_invalid'),
-            'email.max'        => __('messages.contact_email_max'),
+            'name.required' => __('messages.contact_name_required'),
+            'name.min' => __('messages.contact_name_min'),
+            'name.max' => __('messages.contact_name_max'),
+            'email.required' => __('messages.contact_email_required'),
+            'email.email' => __('messages.contact_email_invalid'),
+            'email.max' => __('messages.contact_email_max'),
             'comment.required' => __('messages.contact_message_required'),
-            'comment.min'      => __('messages.contact_message_min'),
-            'comment.max'      => __('messages.contact_message_max'),
+            'comment.min' => __('messages.contact_message_min'),
+            'comment.max' => __('messages.contact_message_max'),
         ];
     }
 
@@ -56,13 +56,11 @@ class ContactPage extends Component
             $this->reset(['name', 'email', 'comment']);
             $this->resetValidation();
 
-//            $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
-            $this->dispatch('toastMagic', ['type' => 'success', 'message' => __('messages.contact_success')]);
+            $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
 
         } catch (\Throwable $e) {
             report($e);
-//            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_error'));
-            $this->dispatch('toastMagic', ['type' => 'error', 'message' => __('messages.contact_error')]);
+            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_error'));
         }
     }
 
