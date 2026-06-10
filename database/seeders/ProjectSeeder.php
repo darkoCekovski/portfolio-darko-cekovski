@@ -105,28 +105,6 @@ Neun Sprachen (EN, DE, MK, RS, BG, HR, SI, GR, AL) über gl()-Locale-Helfer. Dre
                 'order'                => 4,
             ],
             [
-                'title'                => 'phpDeluxe',
-                'short_description'    => 'CMS-driven marketing platform for a managed website subscription service with DB-driven content, Swiper portfolio showcase, full-screen pricing modal, and EN/DE domain-based routing.',
-                'short_description_de' => 'CMS-gesteuerte Marketingplattform für Website-Abonnements mit datenbankgesteuerten Inhalten, Swiper-Portfolio-Karussell, Vollbild-Preismodal und EN/DE-Domain-basiertem Routing.',
-                'description'          => 'Marketing and service platform for a fully managed website subscription business. Architected as a CMS-driven Livewire application where all homepage content — hero banner, "Why Us" section, core competencies, portfolio gallery, customer reviews, and pricing — is loaded from the database via Eloquent accessors (getHomeBanner, getwhyChooseUs, getHomeGoodReason, getPortfolio), enabling admins to update all content without touching code.
-
-The pricing section renders as a full-screen modal overlay with a services checklist and CTA, populated dynamically from the CMS. The portfolio showcase uses two Swiper carousels with tab switching — one for example websites, one for client logos. The blog features a custom Livewire pagination component and per-article dynamic SEO meta, OG and Twitter Card tags. The multilingual EN/DE implementation uses a gl() locale helper with separate route domains (phpdeluxe.com / phpdeluxe.de).
-
-Transactional emails include a welcome email with credentials (client onboarding flow), an OTP verification email, and admin notifications — all using a shared master email layout. The contact page has noindex meta to prevent search engine indexing. The header implements a mobile slide-out navigation drawer toggled via vanilla JS.',
-                'description_de'       => 'Marketing- und Service-Plattform für ein vollständig verwaltetes Website-Abonnement-Geschäft. Als CMS-gesteuerter Livewire-Anwendung architektiert, bei der alle Startseiteninhalte — Hero-Banner, Warum-Wir-Bereich, Kernkompetenzen, Portfolio-Galerie, Kundenbewertungen und Preise — über Eloquent-Accessoren aus der Datenbank geladen werden, sodass Administratoren alle Inhalte ohne Code-Änderungen aktualisieren können.
-
-Der Preisbereich rendert als Vollbild-Modal-Overlay mit Service-Checkliste und CTA, dynamisch aus dem CMS befüllt. Die Portfolio-Präsentation verwendet zwei Swiper-Karussells mit Tab-Wechsel — eines für Beispielwebsites, eines für Kundenlogos. Der Blog hat eine benutzerdefinierte Livewire-Pagination und dynamische SEO-Meta-, OG- und Twitter-Card-Tags pro Artikel. Die EN/DE-Implementierung verwendet einen gl()-Locale-Helfer mit separaten Route-Domains (phpdeluxe.com / phpdeluxe.de).
-
-Transaktions-E-Mails umfassen eine Willkommens-E-Mail mit Anmeldedaten, eine OTP-Verifizierungs-E-Mail und Admin-Benachrichtigungen — alle über ein gemeinsames Master-E-Mail-Layout. Die Kontaktseite hat noindex-Meta-Tags. Der Header implementiert eine mobile Slide-out-Navigation via Vanilla-JS.',
-                'thumbnail' => '/images/projects/phpdeluxe.png',
-                'demo_url'             => 'https://www.phpdeluxe.com',
-                'github_url'           => null,
-                'tech_stack'           => ['Laravel', 'Livewire', 'Alpine.js', 'Tailwind CSS', 'Swiper.js', 'MySQL'],
-                'is_featured'          => false,
-                'github_is_public'     => false,
-                'order'                => 5,
-            ],
-            [
                 'title'                => 'AsiaFlirt',
                 'short_description'    => 'International dating platform (EN/DE/FR) with real-time Livewire chat, admin-moderated photo uploads, ID verification, trip planning with Swiper galleries, multilingual stories, membership tiers, and a Filament admin panel.',
                 'short_description_de' => 'Internationale Dating-Plattform (EN/DE/FR) mit Echtzeit-Livewire-Chat, adminmoderiertem Foto-Upload, ID-Verifizierung, Reiseplanung mit Swiper-Galerien, mehrsprachigen Stories und Filament-Admin-Panel.',
