@@ -24,7 +24,7 @@
             <div class="rounded-2xl overflow-hidden mb-10 reveal reveal-delay-2 aspect-video">
                 @if($project->thumbnail)
                     <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}"
-                         class="w-full h-full object-cover">
+                         class="w-full h-full object-contain">
                 @else
                     <div class="w-full h-full bg-gradient-to-br from-indigo-500/10 via-blue-500/10 to-sky-500/10
                                 dark:from-indigo-500/20 dark:via-blue-500/20 dark:to-sky-500/20
