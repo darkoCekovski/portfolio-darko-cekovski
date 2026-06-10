@@ -51,6 +51,6 @@
 <script src="{{ asset('packages/devrabiul/laravel-toaster-magic/js/livewire-v3/laravel-toaster-magic.js') }}"></script>
 <script
     src="{{ asset('packages/devrabiul/laravel-toaster-magic/js/livewire-v3/livewire-toaster-magic-v3.js') }}"></script>
-{!! ToastMagic::scripts() !!}
+{{--{!! ToastMagic::scripts() !!}--}}
 </body>
 </html>
