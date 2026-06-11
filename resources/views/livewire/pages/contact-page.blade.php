@@ -165,24 +165,10 @@
 
                     {{-- Cloudflare Turnstile --}}
                     <div>
-                        <div
-                            x-data
-                            x-init="window.renderTurnstile = () => {
-                                        if (window.turnstile) {
-                                        turnstile.render($refs.turnstile, {
-                                        sitekey: '{{ config('services.turnstile.site_key') }}',
-                                        theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
-                                        language: '{{ app()->getLocale() }}',
-                                        callback: (token) => { @this.set('turnstileToken', token) },
-                                        'expired-callback': () => { @this.set('turnstileToken', '') },
-                                        'error-callback': () => { @this.set('turnstileToken', '') },
-                                    });
-                                }
-                            };
-                            window.renderTurnstile();"
-                            wire:ignore
-                        >
-                            <div x-ref="turnstile"></div>
+                        <div wire:ignore
+                             x-data="turnstileWidget()"
+                             x-init="init()">
+                            <div x-ref="widget"></div>
                         </div>
                         @error('turnstileToken')
                         <p class="mt-1.5 text-xs text-red-500 flex items-center gap-1">
@@ -221,14 +207,37 @@
         </div>
     </x-page-section>
 
-{{--    @script--}}
+    @script
     <script>
+        Alpine.data('turnstileWidget', () => ({
+            widgetId: null,
+
+            init() {
+                if (window.turnstile) {
+                    this.renderWidget();
+                } else {
+                    document.addEventListener('turnstile-ready', () => this.renderWidget(), { once: true });
+                }
+            },
+
+            renderWidget() {
+                this.widgetId = window.turnstile.render(this.$refs.widget, {
+                    sitekey: '{{ config('services.turnstile.site_key') }}',
+                    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+                    language: '{{ app()->getLocale() }}',
+                    callback: (token) => { $wire.set('turnstileToken', token); },
+                    'expired-callback': () => { $wire.set('turnstileToken', ''); },
+                    'error-callback': () => { $wire.set('turnstileToken', ''); },
+                });
+            },
+        }));
+
         Livewire.on('reset-turnstile', () => {
             if (window.turnstile) {
                 window.turnstile.reset();
             }
         });
     </script>
-{{--    @endscript--}}
+    @endscript
 
 </div>
