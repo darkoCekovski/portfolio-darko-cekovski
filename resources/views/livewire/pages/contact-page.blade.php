@@ -211,16 +211,21 @@
     <script>
         Alpine.data('turnstileWidget', () => ({
             widgetId: null,
+            rendered: false,
 
             init() {
                 if (window.turnstile) {
                     this.renderWidget();
                 } else {
-                    document.addEventListener('turnstile-ready', () => this.renderWidget(), { once: true });
+                    document.addEventListener('turnstile-ready', () => {
+                        this.renderWidget();
+                    }, { once: true });
                 }
             },
 
             renderWidget() {
+                if (this.rendered) return;
+                this.rendered = true;
                 this.widgetId = window.turnstile.render(this.$refs.widget, {
                     sitekey: '{{ config('services.turnstile.site_key') }}',
                     theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
