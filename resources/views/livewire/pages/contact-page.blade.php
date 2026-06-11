@@ -12,26 +12,26 @@
             <div class="lg:col-span-2 space-y-8 reveal">
 
                 {{-- Email --}}
-{{--                <div class="flex gap-4">--}}
-{{--                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10--}}
-{{--                                flex items-center justify-center flex-shrink-0">--}}
-{{--                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor"--}}
-{{--                             stroke-width="2" viewBox="0 0 24 24">--}}
-{{--                            <path stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>--}}
-{{--                        </svg>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">--}}
-{{--                            {{ __('messages.contact_email_label') }}--}}
-{{--                        </div>--}}
-{{--                        <a href="mailto:hello@darkocekovski.com"--}}
-{{--                           class="font-semibold text-slate-700 dark:text-slate-300 mt-0.5 block--}}
-{{--                                  hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">--}}
-{{--                            hello@darkocekovski.com--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                {{--                <div class="flex gap-4">--}}
+                {{--                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10--}}
+                {{--                                flex items-center justify-center flex-shrink-0">--}}
+                {{--                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor"--}}
+                {{--                             stroke-width="2" viewBox="0 0 24 24">--}}
+                {{--                            <path stroke-linecap="round" stroke-linejoin="round"--}}
+                {{--                                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>--}}
+                {{--                        </svg>--}}
+                {{--                    </div>--}}
+                {{--                    <div>--}}
+                {{--                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">--}}
+                {{--                            {{ __('messages.contact_email_label') }}--}}
+                {{--                        </div>--}}
+                {{--                        <a href="mailto:hello@darkocekovski.com"--}}
+                {{--                           class="font-semibold text-slate-700 dark:text-slate-300 mt-0.5 block--}}
+                {{--                                  hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">--}}
+                {{--                            hello@darkocekovski.com--}}
+                {{--                        </a>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
 
                 {{-- Location --}}
                 <div class="flex gap-4">
@@ -163,6 +163,39 @@
                         @enderror
                     </div>
 
+                    {{-- Cloudflare Turnstile --}}
+                    <div>
+                        <div
+                            x-data
+                            x-init="window.renderTurnstile = () => {
+                                        if (window.turnstile) {
+                                        turnstile.render($refs.turnstile, {
+                                        sitekey: '{{ config('services.turnstile.site_key') }}',
+                                        theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+                                        language: '{{ app()->getLocale() }}',
+                                        callback: (token) => { @this.set('turnstileToken', token) },
+                                        'expired-callback': () => { @this.set('turnstileToken', '') },
+                                        'error-callback': () => { @this.set('turnstileToken', '') },
+                                    });
+                                }
+                            };
+                            window.renderTurnstile();"
+                            wire:ignore
+                        >
+                            <div x-ref="turnstile"></div>
+                        </div>
+                        @error('turnstileToken')
+                        <p class="mt-1.5 text-xs text-red-500 flex items-center gap-1">
+                            <svg class="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                                      clip-rule="evenodd"/>
+                            </svg>
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
                     {{-- Submit --}}
                     <button type="submit"
                             wire:loading.attr="disabled"
@@ -187,4 +220,15 @@
             </div>
         </div>
     </x-page-section>
+
+    @script
+    <script>
+        Livewire.on('reset-turnstile', () => {
+            if (window.turnstile) {
+                window.turnstile.reset();
+            }
+        });
+    </script>
+    @endscript
+
 </div>

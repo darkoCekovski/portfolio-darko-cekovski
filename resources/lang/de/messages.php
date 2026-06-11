@@ -255,6 +255,8 @@ return [
     'contact_message_required'=> 'Bitte schreib eine Nachricht.',
     'contact_message_min'     => 'Deine Nachricht muss mindestens 10 Zeichen lang sein.',
     'contact_message_max'     => 'Deine Nachricht darf 1000 Zeichen nicht überschreiten.',
+    'contact_turnstile_required' => 'Bitte bestätigen Sie, dass Sie ein Mensch sind.',
+    'contact_turnstile_failed'   => 'Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut.',
 
     // Theme
     'theme_light'          => 'Hell',

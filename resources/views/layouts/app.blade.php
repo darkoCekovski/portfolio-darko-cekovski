@@ -52,5 +52,7 @@
 <script
     src="{{ asset('packages/devrabiul/laravel-toaster-magic/js/livewire-v3/livewire-toaster-magic-v3.js') }}"></script>
 {{--{!! ToastMagic::scripts() !!}--}}
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
