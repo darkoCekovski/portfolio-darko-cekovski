@@ -221,7 +221,7 @@
         </div>
     </x-page-section>
 
-    @script
+{{--    @script--}}
     <script>
         Livewire.on('reset-turnstile', () => {
             if (window.turnstile) {
@@ -229,6 +229,6 @@
             }
         });
     </script>
-    @endscript
+{{--    @endscript--}}
 
 </div>
