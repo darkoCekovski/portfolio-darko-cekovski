@@ -28,7 +28,7 @@ Additional sections include an animated stat counter, a testimonials slider, a b
 Die Karriereseiten umfassen drei Fahrerprogramme — Owner Operator, Lease Purchase und Equipment — jeweils mit Vollbild-Hero, Programmhighlights und einer interaktiven US-Regionskarte als SVG-Komponente. FAQs sind auf vier dedizierte Seiten aufgeteilt und verwenden Accordion-Komponenten mit Alpine.js Auf-/Zuklapp-Status.
 
 Zwei Livewire-Formulare verwalten Fahrerrekrutierung und allgemeine Anfragen. Das Bewerbungsformular erfasst Vor- und Nachname, E-Mail, Telefon, CDL-Klasse und Erfahrung mit wire:model.defer-Bindings. Beide Formulare sind durch Google reCAPTCHA geschützt und serverseitig validiert. Erfolgreiche Einsendungen lösen Laravel-Mail-Transaktions-E-Mails aus — eine Bestätigung an den Bewerber und eine Admin-Benachrichtigung. Ein Livewire-Cookie-Consent-Banner übernimmt die DSGVO-Compliance. Weitere Bereiche: animierter Statistikzähler, Testimonials-Slider, Blog-Vorschau und Social-Bar-Komponente.',
-                'thumbnail'            => null,
+                'thumbnail'            => '/images/projects/domorelogistics.png',
                 'demo_url'             => 'https://domorelogisticsllc.com',
                 'github_url'           => null,
                 'tech_stack'           => ['Laravel', 'Livewire 3', 'Alpine.js', 'Tailwind CSS', 'MySQL', 'reCAPTCHA'],
