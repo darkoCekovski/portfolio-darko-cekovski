@@ -35,8 +35,13 @@
             document.dispatchEvent(new Event('turnstile-ready'));
         };
     </script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback&render=explicit" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback&render=explicit"
+            async defer></script>
 
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+            data-cf-beacon='{"token": "f2128a0e0382482db6fc81cedc72c3d0"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </head>
 
 <body
