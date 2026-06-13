@@ -23,10 +23,13 @@
                 </a>
             </div>
 
-            <!-- Copy -->
-            <p class="text-sm text-slate-400 dark:text-slate-500">
-                © {{ date('Y') }} Darko Cekovski. Built with Laravel & Livewire.
-            </p>
+            <!-- Copy + Legal -->
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-slate-400 dark:text-slate-500 text-center">
+                <p>© {{ date('Y') }} Darko Cekovski. Built with Laravel & Livewire.</p>
+                <a href="{{ localized_route('privacy') }}" class="hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">
+                    {{ __('messages.privacy_title') }}
+                </a>
+            </div>
         </div>
     </div>
 </footer>
