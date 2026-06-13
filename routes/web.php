@@ -3,6 +3,7 @@
 use App\Livewire\HomePage;
 use App\Livewire\AboutPage;
 use App\Livewire\ContactPage;
+use App\Livewire\PrivacyPage;
 use App\Livewire\ProjectDetail;
 use App\Livewire\ProjectsPage;
 use App\Livewire\SkillsPage;
