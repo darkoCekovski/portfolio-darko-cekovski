@@ -17,6 +17,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
     Route::get('/',               HomePage::class)->name('home');
     Route::get('/about',          AboutPage::class)->name('about');
     Route::get('/contact',        ContactPage::class)->name('contact');
+    Route::get('/privacy',        PrivacyPage::class)->name('privacy');
     Route::get('/service/{name}', HomePage::class)->name('service.detail');
     Route::get('/projects',       ProjectsPage::class)->name('projects');
     Route::get('/project/{id}',   ProjectDetail::class)->name('project.detail');

@@ -258,6 +258,11 @@ return [
     'contact_turnstile_required' => 'Please verify that you are human.',
     'contact_turnstile_failed'   => 'Verification failed. Please try again.',
 
+//  Privacy
+    'privacy_eyebrow'  => 'Legal',
+    'privacy_title'    => 'Privacy Policy',
+    'privacy_subtitle' => 'How your data is collected, used, and protected on this site.',
+
     // Theme
     'theme_light' => 'Light',
     'theme_dark' => 'Dark',

@@ -258,6 +258,11 @@ return [
     'contact_turnstile_required' => 'Bitte bestätigen Sie, dass Sie ein Mensch sind.',
     'contact_turnstile_failed'   => 'Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut.',
 
+//  Privacy
+    'privacy_eyebrow'  => 'Rechtliches',
+    'privacy_title'    => 'Datenschutzerklärung',
+    'privacy_subtitle' => 'Wie Ihre Daten auf dieser Website erhoben, verwendet und geschützt werden.',
+
     // Theme
     'theme_light'          => 'Hell',
     'theme_dark'           => 'Dunkel',
