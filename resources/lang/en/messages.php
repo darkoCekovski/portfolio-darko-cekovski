@@ -263,6 +263,11 @@ return [
     'privacy_title'    => 'Privacy Policy',
     'privacy_subtitle' => 'How your data is collected, used, and protected on this site.',
 
+//  Imprint
+    'imprint_eyebrow'  => 'Legal',
+    'imprint_title'    => 'Imprint',
+    'imprint_subtitle' => 'Legal disclosure pursuant to § 5 DDG.',
+
     // Theme
     'theme_light' => 'Light',
     'theme_dark' => 'Dark',
