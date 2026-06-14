@@ -4,8 +4,8 @@
 <h2>Verantwortlich für diese Website</h2>
 <p>
     Darko Cekovski<br>
-    [Straße und Hausnummer]<br>
-    [PLZ] [Ort]<br>
+    Wallgutstraße 34<br>
+    78462, Konstanz<br>
     Deutschland
 </p>
 

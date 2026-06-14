@@ -4,8 +4,8 @@
 <h2>Responsible for this website</h2>
 <p>
     Darko Cekovski<br>
-    [Street and house number]<br>
-    [Postal code] [City]<br>
+    Wallgutstraße 34<br>
+    78462, Constance<br>
     Germany
 </p>
 
