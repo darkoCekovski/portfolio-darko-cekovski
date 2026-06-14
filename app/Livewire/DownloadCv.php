@@ -1,15 +1,17 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Components;
 
 use Livewire\Component;
 
 class DownloadCv extends Component
 {
-    public function download()
+    public string $cvUrl = '';
+
+    public function mount(): void
     {
-        // Pass the current app locale to the named route
-        return redirect()->route('cv.download', app()->getLocale());
+        $locale = app()->getLocale();
+        $this->cvUrl = config("services.cv.{$locale}", config('services.cv.en'));
     }
 
     public function render()

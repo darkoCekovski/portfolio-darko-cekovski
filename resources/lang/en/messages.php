@@ -3,7 +3,7 @@
 return [
     // Global
     'site_title' => "Darko Cekovski's Portfolio",
-    'download_cv' => 'Download CV',
+    'cv_button' => 'View Resume',
 
     // Nav
     'nav_home' => 'Home',

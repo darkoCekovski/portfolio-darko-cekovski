@@ -39,4 +39,9 @@ return [
         'secret_key' => env('TURNSTILE_SECRET_KEY'),
     ],
 
+    'cv' => [
+        'en' => env('CV_LINK_EN'),
+        'de' => env('CV_LINK_DE'),
+    ],
+
 ];

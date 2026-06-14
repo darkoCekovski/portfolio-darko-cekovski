@@ -3,7 +3,7 @@
 return [
     // Global
     'site_title' => 'Portfolio Darko Cekovski',
-    'download_cv' => 'Lebenslauf herunterladen',
+    'cv_button' => 'Lebenslauf ansehen',
 
     // Nav
     'nav_home' => 'Startseite',
