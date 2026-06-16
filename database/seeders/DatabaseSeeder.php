@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             SkillsTableSeeder::class,
             TestimonialSeeder::class,
-            // ProjectSeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }

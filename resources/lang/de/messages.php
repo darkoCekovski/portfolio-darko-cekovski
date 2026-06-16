@@ -1,40 +1,33 @@
 <?php
 
 return [
-    // Global
+// Global
     'site_title' => 'Portfolio Darko Cekovski',
     'cv_button' => 'Lebenslauf ansehen',
-
-    // Nav
+// Nav
     'nav_home' => 'Startseite',
+    'nav_services' => 'Leistungen',
     'nav_about' => 'Über mich',
     'nav_projects' => 'Projekte',
     'nav_contact' => 'Kontakt',
     'nav_skills' => 'Fähigkeiten',
-
-    // Hero
-    'hero_available' => 'Offen für Arbeit — Freelance & Festanstellung',
-    'hero_greeting' => 'Hallo, ich bin',
-    'hero_role_prefix' => 'Webentwickler — spezialisiert auf ',
-    'hero_roles' => ['Full-Stack-Entwicklung', 'Laravel & PHP', 'Sauberes UI-Design'],
-    'hero_subtitle' => 'Ich entwickle schnelle, moderne Webanwendungen mit sauberem Code und durchdachtem Design – und verwandle Ideen in hochwertige digitale Produkte.',
-    'hero_cta' => 'Meine Arbeit ansehen',
-    'hero_card_badge' => '// immer am Lernen',
-
-    // Stats
+// Hero
+    'hero_available' => 'Offen für Stellen — Freelance & Festanstellung',
+    'hero_greeting' => "Hi, ich bin",
+    'hero_role_prefix' => 'Web Developer — entwickle ',
+    'hero_roles' => ['Laravel Applications', 'Full-Stack Features', 'Clean Modern UIs'],
+    'hero_subtitle' => 'Full-Stack-Laravel-Entwickler mit fundierter Frontend-Expertise in Livewire, Tailwind CSS und Alpine.js sowie solider Backend-Umsetzung in PHP, Eloquent ORM und MySQL. Ich entwickle vollständige Webanwendungen — von der polierten UI bis zur datenbankgestützten Backend-Logik. Remote seit 2020.',
+    'hero_cta' => 'Meine Projekte',
+    'hero_card_badge' => '// always learning',
+// Stats
     'stat_years' => 'Jahre Erfahrung',
     'stat_skills' => 'Technologien',
-    'stat_projects' => 'Projekte abgeliefert',
-
-    // Services
-    'services_title' => 'Was ich für dich entwickeln kann',
-    'services_subtitle' => 'Von der Idee bis zum Launch – ich decke den gesamten Stack ab.',
+    'stat_projects' => 'Projekte umgesetzt',
+// Services
     'services_eyebrow' => 'Leistungen',
-    'back_to_services' => 'Zurück zu den Leistungen',
-    'services_page_subtitle' => 'Das sind die Bereiche, bei denen ich dir helfen kann.',
-    'nav_services' => 'Leistungen',
-
-    // About
+    'services_title' => 'Was ich für dich entwickeln kann',
+    'services_subtitle' => 'Von der polierten Benutzeroberfläche bis zur Backend-Logik — vollständige Laravel-Entwicklung aus einer Hand.',
+// About
     'about_eyebrow' => 'Über mich',
     'about_title' => 'Der Entwickler hinter dem Code',
     'about_page_subtitle' => 'Ein kleiner Einblick in meine Person, welche Erfahrung ich mitbringe und was mich antreibt, Dinge für das Web zu entwickeln.',

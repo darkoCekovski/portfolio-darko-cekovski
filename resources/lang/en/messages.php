@@ -1,40 +1,33 @@
 <?php
 
 return [
-    // Global
+// Global
     'site_title' => "Darko Cekovski's Portfolio",
     'cv_button' => 'View Resume',
-
-    // Nav
+// Nav
     'nav_home' => 'Home',
+    'nav_services' => 'Services',
     'nav_about' => 'About Me',
     'nav_projects' => 'Projects',
     'nav_contact' => 'Contact',
     'nav_skills' => 'Skills',
-
-    // Hero
+// Hero
     'hero_available' => 'Open to work — freelance & full-time',
-    'hero_greeting' => "Hello, I'm",
-    'hero_role_prefix' => 'Web Developer — specialising in ',
-    'hero_roles' => ['Full-Stack Development', 'Laravel & PHP', 'Clean UI Design'],
-    'hero_subtitle' => 'I build fast, modern web applications with clean code and thoughtful design — turning ideas into polished digital products.',
+    'hero_greeting' => "Hi, I'm",
+    'hero_role_prefix' => 'Web Developer — building ',
+    'hero_roles' => ['Laravel Applications', 'Full-Stack Features', 'Clean Modern UIs'],
+    'hero_subtitle' => 'Full-stack Laravel developer with deep frontend expertise in Livewire, Tailwind CSS and Alpine.js, and solid backend delivery across PHP, Eloquent ORM and MySQL. I build complete web applications from polished UI to data-driven backend features — remote since 2020.',
     'hero_cta' => 'See my work',
     'hero_card_badge' => '// always learning',
-
-    // Stats
-    'stat_years' => 'Years of coding',
+// Stats
+    'stat_years' => 'Years experience',
     'stat_skills' => 'Technologies',
     'stat_projects' => 'Projects shipped',
-
-    // Services
-    'services_title' => 'What I can build for you',
-    'services_subtitle' => 'From concept to launch — I cover the full stack.',
-    'services_eyebrow' => 'Services',
-    'back_to_services' => 'Back to Services',
-    'services_page_subtitle' => 'Here is what I can help you build.',
-    'nav_services' => 'Services',
-
-    // About
+// Services
+    'services_eyebrow'  => 'Services',
+    'services_title'    => 'What I can build for you',
+    'services_subtitle' => 'From polished UIs to backend features — end-to-end Laravel delivery.',
+// About
     'about_eyebrow' => 'About Me',
     'about_title' => 'The developer behind the code',
     'about_page_subtitle' => 'A little background on who I am, what experience I bring, and what drives me to build things for the web.',
@@ -69,23 +62,23 @@ return [
 
     'show_more_education' => 'Show full education',
 
-    'edu_academy_title'   => 'Front-end Development Academy',
-    'edu_academy_co'      => 'Brainster · Skopje · 2019 – 2020',
+    'edu_academy_title' => 'Front-end Development Academy',
+    'edu_academy_co' => 'Brainster · Skopje · 2019 – 2020',
     'edu_academy_bullets' => [
         'Built and styled responsive websites with HTML, CSS, Flexbox, CSS Grid and Bootstrap.',
         'Developed interactive UIs and applications using JavaScript and React.',
         'Gained the core skills to build and ship a wide range of modern websites and apps.',
     ],
 
-    'edu_bachelor_title'   => "Bachelor's Degree — Defence Studies",
-    'edu_bachelor_co'      => 'Ss. Cyril and Methodius University · Skopje · 2005 – 2009',
+    'edu_bachelor_title' => "Bachelor's Degree — Defence Studies",
+    'edu_bachelor_co' => 'Ss. Cyril and Methodius University · Skopje · 2005 – 2009',
     'edu_bachelor_bullets' => [
         'Specialised in defence studies and analytics within Security, Defence & Peace.',
         'Developed strong analytical, research and structured-thinking skills.',
     ],
 
-    'edu_highschool_title'   => 'Economics & Law High School',
-    'edu_highschool_co'      => 'DSEPU "Vasil Antevski - Dren" · Skopje · 2001 – 2005',
+    'edu_highschool_title' => 'Economics & Law High School',
+    'edu_highschool_co' => 'DSEPU "Vasil Antevski - Dren" · Skopje · 2001 – 2005',
     'edu_highschool_bullets' => [
         'Graduated as a certified Economic Technician.',
         'Studied economics, business and marketing fundamentals.',
@@ -119,18 +112,18 @@ return [
     ],
 
     'show_more_history' => 'Show earlier career',
-    'show_less'         => 'Show less',
+    'show_less' => 'Show less',
 
     // Earlier career — titles & companies
-    'exp_role_sales_marketing'    => 'Sales & Marketing Specialist',
+    'exp_role_sales_marketing' => 'Sales & Marketing Specialist',
     'exp_role_sales_marketing_co' => 'Vip-Plast DOOEL · Skopje · 06/2016 – 06/2019',
-    'exp_role_production_malta'   => 'Production Specialist',
-    'exp_role_production_malta_co'=> 'Cuschieri Group · Malta · 03/2016 – 06/2016',
-    'exp_role_sales'              => 'Sales Specialist',
-    'exp_role_sales_co'           => 'Vip-Plast DOOEL · Skopje · 05/2012 – 03/2016',
-    'exp_role_prod_manager'       => 'Production Manager',
-    'exp_role_prod_manager_co'    => 'Vip-Plast DOOEL · Skopje · 01/2010 – 05/2012',
-    'exp_role_prod_specialist'    => 'Production Specialist',
+    'exp_role_production_malta' => 'Production Specialist',
+    'exp_role_production_malta_co' => 'Cuschieri Group · Malta · 03/2016 – 06/2016',
+    'exp_role_sales' => 'Sales Specialist',
+    'exp_role_sales_co' => 'Vip-Plast DOOEL · Skopje · 05/2012 – 03/2016',
+    'exp_role_prod_manager' => 'Production Manager',
+    'exp_role_prod_manager_co' => 'Vip-Plast DOOEL · Skopje · 01/2010 – 05/2012',
+    'exp_role_prod_specialist' => 'Production Specialist',
     'exp_role_prod_specialist_co' => 'Vip-Plast DOOEL · Skopje · 05/2007 – 09/2009',
 
 // Earlier career — bullet arrays
@@ -156,40 +149,40 @@ return [
     ],
 
 // Availability
-    'about_availability_label'  => 'Availability',
-    'availability_status'       => 'Status',
-    'availability_available'    => 'Available',
-    'availability_type'         => 'Type',
-    'availability_type_value'   => 'Full-time / Freelance',
-    'availability_timezone'     => 'Timezone',
-    'availability_response'     => 'Response',
+    'about_availability_label' => 'Availability',
+    'availability_status' => 'Status',
+    'availability_available' => 'Available',
+    'availability_type' => 'Type',
+    'availability_type_value' => 'Full-time / Freelance',
+    'availability_timezone' => 'Timezone',
+    'availability_response' => 'Response',
     'availability_response_value' => 'Within 24 hours',
 
 // Open To
-    'about_open_to_label'       => 'Open To',
-    'open_to_freelance'         => 'Freelance projects',
-    'open_to_remote'            => 'Remote collaboration',
-    'open_to_fullstack'         => 'Full-stack development',
-    'open_to_longterm'          => 'Long-term partnerships',
-    'open_to_laravel'           => 'Laravel / PHP projects',
-    'open_to_fulltime'          => 'Full-time position',
+    'about_open_to_label' => 'Open To',
+    'open_to_freelance' => 'Freelance projects',
+    'open_to_remote' => 'Remote collaboration',
+    'open_to_fullstack' => 'Full-stack development',
+    'open_to_longterm' => 'Long-term partnerships',
+    'open_to_laravel' => 'Laravel / PHP projects',
+    'open_to_fulltime' => 'Full-time position',
 
 // Personal Strengths
-    'about_strengths_label'     => 'Personal Strengths',
-    'strength_problem_solving'  => 'Problem-solving',
-    'strength_critical_thinking'=> 'Critical Thinking',
-    'strength_communication'    => 'Communication',
-    'strength_teamwork'         => 'Teamwork',
-    'strength_self_motivated'   => 'Self-Motivated',
+    'about_strengths_label' => 'Personal Strengths',
+    'strength_problem_solving' => 'Problem-solving',
+    'strength_critical_thinking' => 'Critical Thinking',
+    'strength_communication' => 'Communication',
+    'strength_teamwork' => 'Teamwork',
+    'strength_self_motivated' => 'Self-Motivated',
     'strength_attention_detail' => 'Attention to Detail',
-    'strength_organization'     => 'Organization',
-    'strength_adaptability'     => 'Adaptability',
+    'strength_organization' => 'Organization',
+    'strength_adaptability' => 'Adaptability',
 
 // Currently Exploring
-    'about_exploring_label'     => 'Currently Exploring',
+    'about_exploring_label' => 'Currently Exploring',
 
 // Continuous Learning
-    'about_learning_label'      => 'Continuous Learning',
+    'about_learning_label' => 'Continuous Learning',
 
     // Projects
     'projects_eyebrow' => 'Portfolio',
@@ -205,11 +198,11 @@ return [
     'filter_all' => 'All',
     'search_projects' => 'Search projects…',
     'project_detail_repository' => 'Repository',
-    'badge_public'  => 'Public',
+    'badge_public' => 'Public',
     'badge_private' => 'Private',
-    'badge_featured'     => 'Featured',
-    'badge_live'         => 'Live',
-    'badge_coming_soon'  => 'Coming soon',
+    'badge_featured' => 'Featured',
+    'badge_live' => 'Live',
+    'badge_coming_soon' => 'Coming soon',
     'project_detail_status' => 'Status',
 
     // Skills
@@ -256,16 +249,16 @@ return [
     'contact_message_min' => 'Your message must be at least 10 characters.',
     'contact_message_max' => 'Your message may not exceed 1000 characters.',
     'contact_turnstile_required' => 'Please verify that you are human.',
-    'contact_turnstile_failed'   => 'Verification failed. Please try again.',
+    'contact_turnstile_failed' => 'Verification failed. Please try again.',
 
 //  Privacy
-    'privacy_eyebrow'  => 'Legal',
-    'privacy_title'    => 'Privacy Policy',
+    'privacy_eyebrow' => 'Legal',
+    'privacy_title' => 'Privacy Policy',
     'privacy_subtitle' => 'How your data is collected, used, and protected on this site.',
 
 //  Imprint
-    'imprint_eyebrow'  => 'Legal',
-    'imprint_title'    => 'Imprint',
+    'imprint_eyebrow' => 'Legal',
+    'imprint_title' => 'Imprint',
     'imprint_subtitle' => 'Legal disclosure pursuant to § 5 DDG.',
 
     // Theme
