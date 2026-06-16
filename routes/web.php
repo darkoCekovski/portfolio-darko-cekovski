@@ -8,7 +8,6 @@ use App\Livewire\ImprintPage;
 use App\Livewire\ProjectDetail;
 use App\Livewire\ProjectsPage;
 use App\Livewire\SkillsPage;
-use App\Http\Controllers\CvController;
 use App\Http\Controllers\SkillApiController;
 use App\Http\Controllers\ServiceApiController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +25,6 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
     Route::get('/project/{id}',   ProjectDetail::class)->name('project.detail');
     Route::get('/skills',         SkillsPage::class)->name('skills');
     Route::get('/skill/{slug}',   SkillsPage::class)->name('skill.detail');
-    Route::get('/cv/download',    [CvController::class, 'download'])->name('cv.download');
 });
 
 Route::get('/api/skills/{slug}',    [SkillApiController::class, 'show']);
