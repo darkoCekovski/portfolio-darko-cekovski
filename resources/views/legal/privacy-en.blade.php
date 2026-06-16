@@ -27,6 +27,5 @@
     You also have the right to lodge a complaint with a data protection supervisory authority.
     The authority responsible for us is the
     <a href="https://www.baden-wuerttemberg.datenschutz.de/" target="_blank" rel="noopener">
-        State Commissioner for Data Protection Baden-Württemberg (LfDI)
-    </a>.
+        State Commissioner for Data Protection Baden-Württemberg (LfDI)</a>.
 </p>

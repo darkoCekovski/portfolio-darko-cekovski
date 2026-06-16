@@ -27,6 +27,5 @@
     Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
     Zuständig ist der
     <a href="https://www.baden-wuerttemberg.datenschutz.de/" target="_blank" rel="noopener">
-        Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI)
-    </a>.
+        Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI)</a>.
 </p>
