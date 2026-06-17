@@ -24,8 +24,8 @@ return [
     'stat_skills' => 'Technologies',
     'stat_projects' => 'Projects shipped',
 // Services
-    'services_eyebrow'  => 'Services',
-    'services_title'    => 'What I can build for you',
+    'services_eyebrow' => 'Services',
+    'services_title' => 'What I can build for you',
     'services_subtitle' => 'From polished UIs to backend features — end-to-end Laravel delivery.',
 // About
     'about_eyebrow' => 'About Me',
@@ -85,6 +85,10 @@ return [
     ],
 
 // Languages
+    'macedonian' => 'Macedonian',
+    'english' => 'English',
+    'german' => 'German',
+    'russian' => 'Russian',
     'lang_native' => 'Native',
     'lang_advanced' => 'Advanced',
     'lang_upper_int' => 'Upper Intermediate',

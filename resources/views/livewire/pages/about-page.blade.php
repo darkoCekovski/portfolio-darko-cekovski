@@ -396,10 +396,10 @@
                     </x-slot>
                     <div class="space-y-2.5">
                         @foreach([
-                            ['Macedonian', __('messages.lang_native'),      100],
-                            ['English',    __('messages.lang_advanced'),     85],
-                            ['German',     __('messages.lang_upper_int'),    70],
-                            ['Russian',    __('messages.lang_intermediate'), 50],
+                            ['messages.macedonian', __('messages.lang_native'),      100],
+                            ['messages.english',    __('messages.lang_advanced'),     85],
+                            ['messages.german',     __('messages.lang_upper_int'),    70],
+                            ['messages.russian',    __('messages.lang_intermediate'), 50],
                         ] as [$lang, $level, $pct])
                             <x-progress-bar :label="$lang" :value="$level" :percent="$pct"/>
                         @endforeach

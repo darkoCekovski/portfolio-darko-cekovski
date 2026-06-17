@@ -85,6 +85,10 @@ return [
     ],
 
 // Languages
+    'macedonian' => 'Mazedonisch',
+    'english'    => 'Englisch',
+    'german'     => 'Deutsch',
+    'russian'    => 'Russisch',
     'lang_native' => 'Muttersprache',
     'lang_advanced' => 'Fortgeschritten',
     'lang_upper_int' => 'Obere Mittelstufe',
