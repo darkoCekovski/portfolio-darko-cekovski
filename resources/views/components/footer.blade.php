@@ -4,7 +4,7 @@
         {{-- Top row --}}
         <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
 
-            {{-- Brand --}}
+            {{-- Logo --}}
             <a href="{{ localized_route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-200">
                 <img src="{{ asset('images/logo-dark.svg') }}"
                      alt="Darko Cekovski"
