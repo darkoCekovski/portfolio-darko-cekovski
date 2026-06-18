@@ -10,7 +10,13 @@ class PrivacyPage extends Component
     {
         return view('livewire.pages.privacy-page')
             ->layout('layouts.app', [
-                'title' => __('messages.privacy_title') . ' — ' . __('messages.site_title'),
+                'title'           => __('messages.privacy_title') . ' — Darko Cekovski',
+                'metaTitle'       => __('messages.privacy_title') . ' — Darko Cekovski',
+                'metaDescription' => app()->getLocale() === 'de'
+                    ? 'Datenschutzerklärung von Darko Cekovski — Informationen zur Verarbeitung personenbezogener Daten auf dieser Website.'
+                    : 'Privacy Policy of Darko Cekovski — information on how personal data is collected and processed on this website.',
+                'canonical'       => url(app()->getLocale() . '/privacy'),
+                'robots'          => 'noindex, nofollow',
             ]);
     }
 }

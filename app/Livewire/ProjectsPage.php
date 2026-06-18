@@ -56,9 +56,22 @@ class ProjectsPage extends Component
             ->values()
             ->toArray();
 
+        $metaTitle = app()->getLocale() === 'de'
+            ? 'Projekte — Darko Cekovski'
+            : 'Projects — Darko Cekovski';
+
+        $metaDescription = app()->getLocale() === 'de'
+            ? 'Eine Auswahl meiner Full-Stack-Laravel-Projekte — gebaut mit Livewire, Tailwind CSS und Alpine.js.'
+            : 'A selection of full-stack Laravel projects built with Livewire, Tailwind CSS and Alpine.js.';
+
         return view('livewire.pages.projects-page', [
             'projects'     => $projects,
             'technologies' => $technologies,
-        ])->layout('layouts.app', ['title' => __('messages.projects_title') . ' - ' . __('messages.site_title')]);
+        ])->layout('layouts.app', [
+            'title'           => $metaTitle,
+            'metaTitle'       => $metaTitle,
+            'metaDescription' => $metaDescription,
+            'canonical'       => url(app()->getLocale() . '/projects'),
+        ]);
     }
 }

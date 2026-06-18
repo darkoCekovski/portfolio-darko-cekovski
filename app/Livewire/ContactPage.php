@@ -52,7 +52,7 @@ class ContactPage extends Component
     protected function verifyTurnstile(): bool
     {
         $response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-            'secret' => config('services.turnstile.secret_key'),
+            'secret'   => config('services.turnstile.secret_key'),
             'response' => $this->turnstileToken,
             'remoteip' => request()->ip(),
         ]);
@@ -64,7 +64,6 @@ class ContactPage extends Component
     {
         $validated = $this->validate();
 
-        // Verify Turnstile
         if (!$this->verifyTurnstile()) {
             $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_turnstile_failed'));
             $this->reset('turnstileToken');
@@ -74,8 +73,8 @@ class ContactPage extends Component
 
         try {
             Contact::create([
-                'name' => $validated['name'],
-                'email' => $validated['email'],
+                'name'    => $validated['name'],
+                'email'   => $validated['email'],
                 'comment' => $validated['comment'],
             ]);
 
@@ -90,7 +89,6 @@ class ContactPage extends Component
             $this->reset(['name', 'email', 'comment', 'turnstileToken']);
             $this->resetValidation();
             $this->dispatch('reset-turnstile');
-
             $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
 
         } catch (\Throwable $e) {
@@ -103,9 +101,20 @@ class ContactPage extends Component
 
     public function render()
     {
+        $metaTitle = app()->getLocale() === 'de'
+            ? 'Kontakt — Darko Cekovski'
+            : 'Contact — Darko Cekovski';
+
+        $metaDescription = app()->getLocale() === 'de'
+            ? 'Nimm Kontakt auf — verfügbar für Freelance-Projekte und Festanstellungen in Laravel. Remote oder in der Region Konstanz.'
+            : 'Get in touch — available for freelance projects and full-time Laravel roles. Remote or in the Constance area, Germany.';
+
         return view('livewire.pages.contact-page')
             ->layout('layouts.app', [
-                'title' => __('messages.contact_title') . ' — ' . __('messages.site_title'),
+                'title'           => $metaTitle,
+                'metaTitle'       => $metaTitle,
+                'metaDescription' => $metaDescription,
+                'canonical'       => url(app()->getLocale() . '/contact'),
             ]);
     }
 }
