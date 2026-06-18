@@ -162,7 +162,7 @@
     </section>
 
     {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
-    <x-page-section id="services" muted class="scroll-mt-20">
+    <x-page-section id="services" muted class="scroll-mt-12">
         <x-section-header
             :eyebrow="__('messages.services_eyebrow')"
             :title="__('messages.services_title')"
