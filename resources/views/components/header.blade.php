@@ -13,10 +13,10 @@
         <a href="{{ localized_route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-200">
             <img src="{{ asset('images/logo-dark.svg') }}"
                  alt="Darko Cekovski"
-                 class="h-20 hidden dark:block">
+                 class="h-24 hidden dark:block">
             <img src="{{ asset('images/logo-light.svg') }}"
                  alt="Darko Cekovski"
-                 class="h-20 block dark:hidden">
+                 class="h-24 block dark:hidden">
         </a>
 
         {{-- Desktop nav --}}
