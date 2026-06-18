@@ -5,10 +5,13 @@
         <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
 
             {{-- Brand --}}
-            <a href="{{ localized_route('home') }}" class="flex items-center gap-2 font-bold text-lg">
-                <span
-                    class="w-7 h-7 rounded-md bg-gradient-to-br from-indigo-500 via-blue-500 to-sky-400 flex items-center justify-center text-white text-xs font-black">D</span>
-                <span class="text-slate-700 dark:text-slate-300">Darko Cekovski</span>
+            <a href="{{ localized_route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-200">
+                <img src="{{ asset('images/logo-dark.svg') }}"
+                     alt="Darko Cekovski"
+                     class="h-9 hidden dark:block">
+                <img src="{{ asset('images/logo-light.svg') }}"
+                     alt="Darko Cekovski"
+                     class="h-9 block dark:hidden">
             </a>
 
             {{-- Social links --}}

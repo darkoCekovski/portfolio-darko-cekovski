@@ -10,10 +10,13 @@
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 h-20">
 
         {{-- Logo --}}
-        <a href="{{ localized_route('home') }}" class="group flex items-center gap-2 font-bold text-xl">
-            <span
-                class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-sky-400 flex items-center justify-center text-white text-sm font-black shadow-lg group-hover:scale-110 transition-transform duration-200">D</span>
-            <span class="text-slate-800 dark:text-white">Darko<span class="text-indigo-500">.</span></span>
+        <a href="{{ localized_route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-200">
+            <img src="{{ asset('images/logo-dark.svg') }}"
+                 alt="Darko Cekovski"
+                 class="h-10 hidden dark:block">
+            <img src="{{ asset('images/logo-light.svg') }}"
+                 alt="Darko Cekovski"
+                 class="h-10 block dark:hidden">
         </a>
 
         {{-- Desktop nav --}}
