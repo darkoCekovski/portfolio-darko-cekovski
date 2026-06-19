@@ -7,7 +7,7 @@
     class="rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] transition-transform duration-200 p-5 card-glow">
 
     {{-- Icon slot --}}
-    <div class="w-9 h-9 flex items-center justify-center bg-indigo-50 dark:bg-indigo-500/10 rounded-lg mb-3">
+    <div class="w-9 h-9 flex items-center justify-center bg-primary-50 dark:bg-primary-500/10 rounded-lg mb-3">
         {{ $icon }}
     </div>
 

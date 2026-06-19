@@ -11,7 +11,7 @@
 
         {{-- Right: text --}}
         <div class="reveal">
-        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4 block">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-4 block">
             {{ __('messages.skills_eyebrow') }}
         </span>
             <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
@@ -22,7 +22,7 @@
             </p>
             <a href="{{ localized_route('skills') }}"
                wire:navigate
-               class="group inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 transition-colors duration-200">
+               class="group inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 transition-colors duration-200">
                 {{ __('messages.skills_all_cta') }}
                 <span class="inline-block w-4 ml-2 overflow-visible">
                 <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" fill="none"

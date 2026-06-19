@@ -1,0 +1,23 @@
+{
+    "name": "Darko Cekovski",
+    "short_name": "Darko",
+    "description": "Laravel Full-Stack Developer — Constance, Germany",
+    "start_url": "/en/",
+    "display": "standalone",
+    "background_color": "#080b14",
+    "theme_color": "#6366f1",
+    "icons": [
+        {
+            "src": "/images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

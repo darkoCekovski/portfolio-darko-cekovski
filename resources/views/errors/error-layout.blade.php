@@ -19,7 +19,7 @@
 {{-- Minimal header --}}
 <header class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
     <a href="{{ url('/') }}" class="flex items-center gap-2 font-bold text-lg">
-            <span class="w-7 h-7 rounded-md bg-gradient-to-br from-indigo-500 via-blue-500 to-sky-400
+            <span class="w-7 h-7 rounded-md bg-gradient-to-br from-primary-500 via-blue-500 to-sky-400
                          flex items-center justify-center text-white text-xs font-black">D</span>
         <span class="text-slate-700 dark:text-slate-300">Darko Cekovski</span>
     </a>
@@ -35,7 +35,7 @@
         </div>
 
         {{-- Icon --}}
-        <div class="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10
+        <div class="w-16 h-16 rounded-2xl bg-primary-50 dark:bg-primary-500/10
                         flex items-center justify-center mx-auto mb-6">
             {!! $icon !!}
         </div>
@@ -54,7 +54,7 @@
         <div class="flex flex-wrap gap-4 justify-center">
             <a href="{{ url('/') }}"
                class="inline-flex items-center gap-2 h-11 px-6 rounded-xl font-semibold text-sm
-                          bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/25
+                          bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-500/25
                           transition-all duration-200 hover:-translate-y-0.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -68,8 +68,8 @@
                    class="inline-flex items-center gap-2 h-11 px-6 rounded-xl font-semibold text-sm
                               border border-slate-200 dark:border-white/10
                               text-slate-700 dark:text-slate-300 bg-white dark:bg-white/[0.03]
-                              hover:border-indigo-300 dark:hover:border-indigo-500/40
-                              hover:text-indigo-600 dark:hover:text-indigo-400
+                              hover:border-primary-300 dark:hover:border-primary-500/40
+                              hover:text-primary-600 dark:hover:text-primary-400
                               transition-all duration-200 hover:-translate-y-0.5">
                     {{ ($locale ?? 'en') === 'de' ? 'Kontakt aufnehmen' : 'Get in touch' }}
                 </a>

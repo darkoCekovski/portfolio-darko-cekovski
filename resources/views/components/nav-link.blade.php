@@ -6,7 +6,7 @@
 ])
 
 @php
-    $activeClass = 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10';
+    $activeClass = 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10';
 
     if ($mobile) {
         $base     = 'block px-4 py-3 rounded-lg text-sm font-medium transition-colors';

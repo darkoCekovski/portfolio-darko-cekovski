@@ -5,7 +5,7 @@
         {{-- Background gradient blobs --}}
         <div class="absolute inset-0 -z-10 overflow-hidden">
             <div
-                class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-indigo-500/10 dark:bg-indigo-500/5 blur-3xl"></div>
+                class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary-500/10 dark:bg-primary-500/5 blur-3xl"></div>
             <div
                 class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-sky-500/10 dark:bg-sky-500/5 blur-3xl"></div>
         </div>
@@ -85,7 +85,7 @@
                     <div class="relative w-full max-w-sm mx-auto">
                         {{-- Glow behind card --}}
                         <div
-                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-sky-500/20 blur-3xl"></div>
+                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500/20 to-sky-500/20 blur-3xl"></div>
 
                         {{-- Code card --}}
                         <div
@@ -100,13 +100,13 @@
                             {{-- Code --}}
                             <div class="space-y-2 font-mono text-xs leading-relaxed">
                                 <div>
-                                    <span class="text-indigo-400">class</span>
+                                    <span class="text-primary-400">class</span>
                                     <span class="text-sky-400"> Portfolio</span>
                                     <span class="text-slate-400 dark:text-slate-500"> {</span>
                                 </div>
                                 <div class="pl-4">
                                     <span class="text-emerald-400">public</span>
-                                    <span class="text-indigo-300"> string</span>
+                                    <span class="text-primary-300"> string</span>
                                     <span class="text-slate-700 dark:text-slate-300"> $name</span>
                                     <span class="text-slate-400 dark:text-slate-500"> = </span>
                                     <span class="text-amber-400">'Darko Cekovski'</span>
@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="pl-4">
                                     <span class="text-emerald-400">public</span>
-                                    <span class="text-indigo-300"> array</span>
+                                    <span class="text-primary-300"> array</span>
                                     <span class="text-slate-700 dark:text-slate-300"> $stack</span>
                                     <span class="text-slate-400 dark:text-slate-500"> = [</span>
                                 </div>
@@ -129,11 +129,11 @@
                                     <span class="text-emerald-400">public function</span>
                                     <span class="text-sky-400"> build</span>
                                     <span class="text-slate-400 dark:text-slate-500">(): </span>
-                                    <span class="text-indigo-300">string</span>
+                                    <span class="text-primary-300">string</span>
                                 </div>
                                 <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">{</span></div>
                                 <div class="pl-8">
-                                    <span class="text-indigo-400">return</span>
+                                    <span class="text-primary-400">return</span>
                                     <span class="text-amber-400"> 'something great'</span>
                                     <span class="text-slate-400 dark:text-slate-500">;</span>
                                 </div>
@@ -143,15 +143,15 @@
 
                             {{-- Blinking cursor --}}
                             <div class="mt-3 flex items-center gap-2">
-                                <span class="text-indigo-400 font-mono text-sm animate-pulse">▋</span>
-                                <div class="h-px flex-1 bg-indigo-500/20"></div>
+                                <span class="text-primary-400 font-mono text-sm animate-pulse">▋</span>
+                                <div class="h-px flex-1 bg-primary-500/20"></div>
                             </div>
                         </div>
 
                         {{-- Floating badge --}}
                         <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full whitespace-nowrap
                             bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-white/10 shadow-lg
-                            text-xs font-mono font-semibold text-indigo-600 dark:text-indigo-400">
+                            text-xs font-mono font-semibold text-primary-600 dark:text-primary-400">
                             {{ __('messages.hero_card_badge') }}
                         </div>
                     </div>
@@ -179,7 +179,7 @@
             {{-- Left side --}}
             <div class="reveal">
                 <span
-                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-4 block">
+                    class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-4 block">
                     {{ __('messages.about_eyebrow') }}
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
@@ -202,7 +202,7 @@
                     :value="__('messages.about_location_value')"
                 >
                     <x-slot name="icon">
-                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.75"
+                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="1.75"
                              viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -218,7 +218,7 @@
                     :value="__('messages.about_exp_value')"
                 >
                     <x-slot name="icon">
-                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.75"
+                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="1.75"
                              viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
@@ -232,7 +232,7 @@
                     :value="__('messages.about_edu_value')"
                 >
                     <x-slot name="icon">
-                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.75"
+                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="1.75"
                              viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/>
@@ -246,7 +246,7 @@
                     :value="__('messages.about_lang_value')"
                 >
                     <x-slot name="icon">
-                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.75"
+                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="1.75"
                              viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"/>
@@ -269,7 +269,7 @@
         <div class="flex items-end mb-12 reveal">
             <div class="flex-1">
                 <span
-                    class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">
+                    class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-3 block">
                     {{ __('messages.projects_eyebrow') }}
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
@@ -316,12 +316,12 @@
     {{-- ── CONTACT CTA ──────────────────────────────────────────────────── --}}
     <x-page-section>
         <div
-            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 p-12 text-center reveal">
+            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-blue-600 to-sky-500 p-12 text-center reveal">
             <div class="absolute inset-0 opacity-10 noise"></div>
             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">
                 {{ __('messages.contact_title') }}
             </h2>
-            <p class="text-indigo-100 text-lg mb-8 max-w-xl mx-auto relative">
+            <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto relative">
                 {{ __('messages.contact_text') }}
             </p>
             <x-primary-button href="{{ localized_route('contact') }}" variant="white" class="relative">
@@ -360,14 +360,14 @@
             <template x-if="loading">
                 <div class="p-10 text-center">
                     <div
-                        class="w-10 h-10 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                        class="w-10 h-10 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
                 </div>
             </template>
 
             <template x-if="!loading && service">
                 <div>
                     <div
-                        class="relative bg-gradient-to-br from-indigo-500/10 via-blue-500/5 to-sky-500/10 dark:from-indigo-500/20 dark:via-blue-500/10 dark:to-sky-500/10 p-8 pb-6">
+                        class="relative bg-gradient-to-br from-primary-500/10 via-blue-500/5 to-sky-500/10 dark:from-primary-500/20 dark:via-blue-500/10 dark:to-sky-500/10 p-8 pb-6">
                         <button @click="close()"
                                 class="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center
                                        text-slate-400 hover:text-slate-700 dark:hover:text-white
@@ -379,7 +379,7 @@
                         </button>
                         <div
                             class="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 shadow-sm flex items-center justify-center mb-5">
-                            <svg class="w-7 h-7 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor"
+                            <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor"
                                  stroke-width="1.75" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" :d="service.icon"></path>
                             </svg>

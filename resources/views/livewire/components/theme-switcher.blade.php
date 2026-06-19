@@ -34,11 +34,11 @@
             <button @click="set(opt.value)" type="button"
                     class="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-sm transition-colors"
                     :class="theme===opt.value
-                        ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
+                        ? 'bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400 font-medium'
                         : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'">
                 <span x-html="opt.icon" class="w-4 h-4 flex-shrink-0"></span>
                 <span x-text="opt.label"></span>
-                <svg x-show="theme===opt.value" class="ml-auto w-3.5 h-3.5 text-indigo-500 flex-shrink-0"
+                <svg x-show="theme===opt.value" class="ml-auto w-3.5 h-3.5 text-primary-500 flex-shrink-0"
                      fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
                 </svg>

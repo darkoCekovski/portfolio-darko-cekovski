@@ -24,7 +24,7 @@
                               bg-white dark:bg-white/[0.03]
                               text-slate-800 dark:text-slate-200
                               placeholder-slate-400 dark:placeholder-slate-500
-                              focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400
+                              focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400
                               transition-all duration-200">
                 @if($search)
                     <button wire:click="clearSearch"
@@ -42,7 +42,7 @@
                 <button wire:click="toggleFilter('all')"
                         class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
                                {{ empty($filterTechs)
-                                  ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-500/20'
+                                  ? 'bg-primary-600 text-white shadow-sm shadow-primary-500/20'
                                   : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10' }}">
                     {{ __('messages.filter_all') }}
                 </button>
@@ -50,7 +50,7 @@
                     <button wire:click="toggleFilter(@js($tech))"
                             class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
                                    {{ in_array($tech, $filterTechs)
-                                      ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-500/20'
+                                      ? 'bg-primary-600 text-white shadow-sm shadow-primary-500/20'
                                       : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10' }}">
                         {{ $tech }}
                     </button>

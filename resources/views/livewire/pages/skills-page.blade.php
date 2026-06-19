@@ -18,8 +18,8 @@
                         @click="openModal('{{ $slug }}')"
                         class="group flex flex-col items-center gap-3 p-4 rounded-2xl text-left w-full
                                bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08]
-                               hover:border-indigo-300 dark:hover:border-indigo-500/40
-                               transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10
+                               hover:border-primary-300 dark:hover:border-primary-500/40
+                               transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-500/10
                                reveal reveal-delay-{{ min($i % 6 + 1, 5) }}">
                     <div class="relative w-16 h-16"
                          data-skill data-value="{{ $value }}" data-max="10"
@@ -35,16 +35,16 @@
                                      class="w-7 h-7 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200"
                                      loading="lazy">
                             @else
-                                <span class="text-xs font-bold text-indigo-500">{{ substr($skill->name, 0, 2) }}</span>
+                                <span class="text-xs font-bold text-primary-500">{{ substr($skill->name, 0, 2) }}</span>
                             @endif
                         </div>
                         <span
-                            class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-bold text-indigo-500 dark:text-indigo-400 bg-white dark:bg-[#080b14] px-1 rounded">
+                            class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary-500 dark:text-primary-400 bg-white dark:bg-[#080b14] px-1 rounded">
                             <span class="js-pct">0</span>%
                         </span>
                     </div>
                     <span
-                        class="text-xs font-medium text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors text-center">
+                        class="text-xs font-medium text-slate-600 dark:text-slate-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-center">
                         {{ $skill->name }}
                     </span>
                 </button>
@@ -84,7 +84,7 @@
             <template x-if="loading">
                 <div class="p-10 text-center">
                     <div
-                        class="w-10 h-10 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                        class="w-10 h-10 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
                 </div>
             </template>
 
@@ -93,7 +93,7 @@
                 <div>
                     {{-- Header gradient --}}
                     <div
-                        class="relative bg-gradient-to-br from-indigo-500/10 via-blue-500/5 to-sky-500/10 dark:from-indigo-500/20 dark:via-blue-500/10 dark:to-sky-500/10 p-8 pb-6">
+                        class="relative bg-gradient-to-br from-primary-500/10 via-blue-500/5 to-sky-500/10 dark:from-primary-500/20 dark:via-blue-500/10 dark:to-sky-500/10 p-8 pb-6">
                         <button @click="closeModal()"
                                 class="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/10 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -110,11 +110,11 @@
                                 <div class="flex items-center gap-3">
                                     <div class="h-2 rounded-full bg-slate-200 dark:bg-white/10 w-48 flex-shrink-0">
                                         <div
-                                            class="h-2 rounded-full bg-gradient-to-r from-indigo-500 to-sky-400 transition-all duration-700"
+                                            class="h-2 rounded-full bg-gradient-to-r from-primary-500 to-sky-400 transition-all duration-700"
                                             :style="`width: ${(skill.proficiency / 10) * 100}%`"></div>
                                     </div>
                                     <span
-                                        class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 flex-shrink-0"
+                                        class="text-sm font-semibold text-primary-600 dark:text-primary-400 flex-shrink-0"
                                         x-text="`${skill.proficiency}/10`"></span>
                                 </div>
                             </div>

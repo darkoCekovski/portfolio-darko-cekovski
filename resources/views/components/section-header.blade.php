@@ -9,7 +9,7 @@
 <div class="{{ $centered ? 'text-center' : '' }} mb-16 reveal {{ $delay ? 'reveal-delay-'.$delay : '' }}">
 
     @if($eyebrow)
-        <span class="dark:text-indigo-400 text-xs font-bold uppercase tracking-widest text-indigo-500 mb-3 block">
+        <span class="dark:text-primary-400 text-xs font-bold uppercase tracking-widest text-primary-500 mb-3 block">
             {{ $eyebrow }}
         </span>
     @endif

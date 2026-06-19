@@ -3,7 +3,7 @@
 ])
 
 <a href="{{ $href }}"
-    {{ $attributes->merge(['class' => 'group inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 transition-colors duration-200']) }}>
+    {{ $attributes->merge(['class' => 'group inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 transition-colors duration-200']) }}>
     {{ $slot }}
     <span class="inline-block w-4 overflow-visible ml-2">
         <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5"

@@ -9,7 +9,7 @@
 
         @if($eyebrow)
             <span
-                class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block reveal">
+                class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-3 block reveal">
                 {{ $eyebrow }}
             </span>
         @endif

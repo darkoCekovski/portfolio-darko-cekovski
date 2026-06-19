@@ -5,8 +5,8 @@
 
 <a href="{{ localized_route('project.detail', ['id' => $project->id]) }}"
    class="group rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08]
-          overflow-hidden hover:border-indigo-300 dark:hover:border-indigo-500/40
-          transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10
+          overflow-hidden hover:border-primary-300 dark:hover:border-primary-500/40
+          transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10
           reveal reveal-delay-{{ $delay }}">
 
     {{-- Image / Placeholder with badge overlay --}}
@@ -16,10 +16,10 @@
             <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}"
                  class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 p-2">
         @else
-            <div class="w-full h-full bg-gradient-to-br from-indigo-500/10 via-blue-500/10 to-sky-500/10
-                        dark:from-indigo-500/20 dark:via-blue-500/20 dark:to-sky-500/20
+            <div class="w-full h-full bg-gradient-to-br from-primary-500/10 via-blue-500/10 to-sky-500/10
+                        dark:from-primary-500/20 dark:via-blue-500/20 dark:to-sky-500/20
                         flex items-center justify-center">
-                <svg class="w-14 h-14 text-indigo-300 dark:text-indigo-600/60"
+                <svg class="w-14 h-14 text-primary-300 dark:text-primary-600/60"
                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3M5.25 21H18.75a2.25 2.25 0 0 0 2.25-2.25V5.25A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25v13.5A2.25 2.25 0 0 0 5.25 21z"/>
@@ -82,8 +82,8 @@
             {{-- 3. Featured (only if true) --}}
             @if($project->is_featured)
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
-                     bg-indigo-50/90 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-400
-                     border border-indigo-100 dark:border-indigo-500/20">
+                     bg-primary-50/90 dark:bg-primary-500/20 text-primary-700 dark:text-primary-400
+                     border border-primary-100 dark:border-primary-500/20">
                     <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"/>
@@ -99,7 +99,7 @@
     {{-- Content --}}
     <div class="p-5">
         <h3 class="text-slate-900 dark:text-white font-semibold mb-2
-                   group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                   group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
             {{ $project->title }}
         </h3>
         <p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-4">

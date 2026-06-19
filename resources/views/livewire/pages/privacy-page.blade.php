@@ -9,7 +9,7 @@
         <div class="max-w-3xl mx-auto reveal
                     prose prose-slate dark:prose-invert
                     prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white
-                    prose-a:text-indigo-600 dark:prose-a:text-indigo-400
+                    prose-a:text-primary-600 dark:prose-a:text-primary-400
                     prose-p:text-slate-600 dark:prose-p:text-slate-300
                     prose-li:text-slate-600 dark:prose-li:text-slate-300">
 

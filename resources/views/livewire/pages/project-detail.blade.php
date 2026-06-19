@@ -4,7 +4,7 @@
 
             {{-- Back --}}
             <a href="{{ localized_route('projects') }}"
-               class="group inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400
+               class="group inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400
                       mb-10 transition-colors duration-200 reveal">
                 <span class="inline-block w-4 mr-2 overflow-visible">
                     <svg class="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1.5"
@@ -26,10 +26,10 @@
                     <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}"
                          class="w-full h-full object-contain">
                 @else
-                    <div class="w-full h-full bg-gradient-to-br from-indigo-500/10 via-blue-500/10 to-sky-500/10
-                                dark:from-indigo-500/20 dark:via-blue-500/20 dark:to-sky-500/20
+                    <div class="w-full h-full bg-gradient-to-br from-primary-500/10 via-blue-500/10 to-sky-500/10
+                                dark:from-primary-500/20 dark:via-blue-500/20 dark:to-sky-500/20
                                 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-indigo-300 dark:text-indigo-600/60"
+                        <svg class="w-20 h-20 text-primary-300 dark:text-primary-600/60"
                              fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3M5.25 21H18.75a2.25 2.25 0 0 0 2.25-2.25V5.25A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25v13.5A2.25 2.25 0 0 0 5.25 21z"/>
@@ -79,7 +79,7 @@
                     {{-- Tech stack --}}
                     <x-card :title="__('messages.project_detail_tech')">
                         <x-slot name="icon">
-                            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
+                            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
                                  viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
@@ -95,7 +95,7 @@
                     {{-- Repository --}}
                     <x-card :title="__('messages.project_detail_repository')">
                         <x-slot name="icon">
-                            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
+                            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
                                  viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25z"/>
@@ -142,7 +142,7 @@
                     {{-- Live status --}}
                     <x-card :title="__('messages.project_detail_status')">
                         <x-slot name="icon">
-                            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" stroke-width="2"
+                            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
                                  viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M9.348 14.651a3.75 3.75 0 0 1 0-5.303m5.304-.001a3.75 3.75 0 0 1 0 5.304m-7.425 2.122a6.75 6.75 0 0 1 0-9.546m9.546.001a6.75 6.75 0 0 1 0 9.545M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12z"/>

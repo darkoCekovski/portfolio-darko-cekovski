@@ -13,7 +13,7 @@
 >
     <button
         @click="window.scrollTo({top:0,behavior:'smooth'})"
-        class="w-11 h-11 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/30 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
+        class="w-11 h-11 rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-500/30 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
         aria-label="Back to top"
     >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">

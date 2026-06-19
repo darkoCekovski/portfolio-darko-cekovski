@@ -11,7 +11,7 @@
         <span class="{{ $valueClass }}">{{ $value }}</span>
     </div>
     <div class="h-1.5 rounded-full bg-slate-100 dark:bg-white/10 overflow-hidden">
-        <div class="h-full rounded-full bg-gradient-to-r from-indigo-500 to-sky-400"
+        <div class="h-full rounded-full bg-gradient-to-r from-primary-500 to-sky-400"
              style="width: {{ $percent }}%"></div>
     </div>
 </div>

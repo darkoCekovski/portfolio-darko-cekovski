@@ -33,7 +33,7 @@
                 dynamic
                 @click="hash = ''"
                 x-bind:class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
-                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
+                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
             >
                 {{ __('messages.nav_home') }}
@@ -53,7 +53,7 @@
                 dynamic
                 @click="hash = '#services'"
                 x-bind:class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
-                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
+                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'"
             >
                 {{ __('messages.nav_services') }}
@@ -131,7 +131,7 @@
             dynamic
             @click="open = false; hash = ''"
             x-bind:class="(hash !== '#services' && {{ request()->routeIs('home') && !request()->routeIs('service.detail') ? 'true' : 'false' }})
-                ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
+                ? 'bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400'
                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
         >
             {{ __('messages.nav_home') }}
@@ -154,7 +154,7 @@
             dynamic
             @click="open = false; hash = '#services'"
             x-bind:class="(hash === '#services' || {{ request()->routeIs('service.detail') ? 'true' : 'false' }})
-                ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
+                ? 'bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400'
                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5'"
         >
             {{ __('messages.nav_services') }}

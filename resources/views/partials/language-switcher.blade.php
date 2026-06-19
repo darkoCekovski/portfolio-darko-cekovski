@@ -32,12 +32,12 @@
             <a href="{{ switch_locale_url($code) }}" wire:navigate.false
                class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors
                       {{ $current === $code
-                         ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium'
+                         ? 'bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400 font-medium'
                          : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5' }}">
                 <img src="{{ asset($data['flag']) }}" alt="{{ $data['name'] }}" class="w-4 h-4 rounded-sm object-cover">
                 {{ $data['name'] }}
                 @if($current === $code)
-                    <svg class="ml-auto w-3.5 h-3.5 text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+                    <svg class="ml-auto w-3.5 h-3.5 text-primary-500" fill="currentColor" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
                 @endif
             </a>
         @endforeach

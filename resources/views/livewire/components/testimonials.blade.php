@@ -5,7 +5,7 @@
 
     {{-- Section heading --}}
     <div class="text-center mb-14">
-        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 mb-3 block">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-3 block">
             {{ __('messages.testimonials_eyebrow') }}
         </span>
         <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
@@ -27,8 +27,8 @@
                         <div class="h-full p-8 rounded-2xl bg-white dark:bg-white/[0.03]
                                     border border-slate-200 dark:border-white/[0.08]
                                     flex flex-col gap-5
-                                    hover:border-indigo-300 dark:hover:border-indigo-500/40
-                                    hover:shadow-xl hover:shadow-indigo-500/10
+                                    hover:border-primary-300 dark:hover:border-primary-500/40
+                                    hover:shadow-xl hover:shadow-primary-500/10
                                     transition-all duration-300">
 
                             {{-- Quote --}}

@@ -13,9 +13,9 @@
 
                 {{-- Email --}}
                 {{--                <div class="flex gap-4">--}}
-                {{--                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10--}}
+                {{--                    <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-500/10--}}
                 {{--                                flex items-center justify-center flex-shrink-0">--}}
-                {{--                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor"--}}
+                {{--                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor"--}}
                 {{--                             stroke-width="2" viewBox="0 0 24 24">--}}
                 {{--                            <path stroke-linecap="round" stroke-linejoin="round"--}}
                 {{--                                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>--}}
@@ -27,7 +27,7 @@
                 {{--                        </div>--}}
                 {{--                        <a href="mailto:hello@darkocekovski.com"--}}
                 {{--                           class="font-semibold text-slate-700 dark:text-slate-300 mt-0.5 block--}}
-                {{--                                  hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">--}}
+                {{--                                  hover:text-primary-600 dark:hover:text-primary-400 transition-colors">--}}
                 {{--                            hello@darkocekovski.com--}}
                 {{--                        </a>--}}
                 {{--                    </div>--}}
@@ -35,9 +35,9 @@
 
                 {{-- Location --}}
                 <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10
+                    <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-500/10
                                 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor"
                              stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -56,9 +56,9 @@
                 </div>
 
                 {{-- Response note --}}
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-sky-500/10
-                            dark:from-indigo-500/20 dark:to-sky-500/15
-                            border border-indigo-200/50 dark:border-indigo-500/20">
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-primary-500/10 to-sky-500/10
+                            dark:from-primary-500/20 dark:to-sky-500/15
+                            border border-primary-200/50 dark:border-primary-500/20">
                     <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                         {{ __('messages.contact_response_note') }}
                     </p>
@@ -86,7 +86,7 @@
                                 'w-full px-4 py-3 rounded-xl text-sm border transition-all duration-200',
                                 'bg-white dark:bg-white/[0.03] text-slate-800 dark:text-slate-200',
                                 'placeholder-slate-400 dark:placeholder-slate-500',
-                                'focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400',
+                                'focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400',
                                 'border-red-400 dark:border-red-500 bg-red-50/30 dark:bg-red-500/5' => $errors->has('name'),
                                 'border-slate-200 dark:border-white/10' => !$errors->has('name'),
                             ])>
@@ -117,7 +117,7 @@
                                 'w-full px-4 py-3 rounded-xl text-sm border transition-all duration-200',
                                 'bg-white dark:bg-white/[0.03] text-slate-800 dark:text-slate-200',
                                 'placeholder-slate-400 dark:placeholder-slate-500',
-                                'focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400',
+                                'focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400',
                                 'border-red-400 dark:border-red-500 bg-red-50/30 dark:bg-red-500/5' => $errors->has('email'),
                                 'border-slate-200 dark:border-white/10' => !$errors->has('email'),
                             ])>
@@ -147,7 +147,7 @@
                                       'w-full px-4 py-3 rounded-xl text-sm border transition-all duration-200 resize-none',
                                       'bg-white dark:bg-white/[0.03] text-slate-800 dark:text-slate-200',
                                       'placeholder-slate-400 dark:placeholder-slate-500',
-                                      'focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-400',
+                                      'focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400',
                                       'border-red-400 dark:border-red-500 bg-red-50/30 dark:bg-red-500/5' => $errors->has('comment'),
                                       'border-slate-200 dark:border-white/10' => !$errors->has('comment'),
                                   ])></textarea>
@@ -187,8 +187,8 @@
                             wire:loading.attr="disabled"
                             wire:target="submit"
                             class="w-full inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl
-                                   font-semibold text-sm bg-indigo-600 hover:bg-indigo-700 text-white
-                                   shadow-lg shadow-indigo-500/25 transition-all duration-200 hover:-translate-y-0.5
+                                   font-semibold text-sm bg-primary-600 hover:bg-primary-700 text-white
+                                   shadow-lg shadow-primary-500/25 transition-all duration-200 hover:-translate-y-0.5
                                    disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
                         <svg wire:loading wire:target="submit"
                              class="w-4 h-4 animate-spin flex-shrink-0"
