@@ -18,7 +18,7 @@
                 // Percent (0-100) derived from 1..10 scale
                 $value = max(0, min(10, (int)($skill->proficiency ?? 0)));
                 $percent = (int) round(($value / 10) * 100);
-                // Optional brand color on the model (hex); fallback to Tailwind blue-600
+                // Optional brand color on the model (hex); fallback to Tailwind secondary-600
                 $color = $skill->color ?? '#2563eb';
                 // Detail route: adjust if your route signature differs
                 $href = function_exists('localized_route')
@@ -26,7 +26,7 @@
                   : route('skills.show', $skill->slug ?? $skill->id);
             @endphp
 
-            <a href="{{ $href }}" class="group flex flex-col items-center gap-3 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900">
+            <a href="{{ $href }}" class="group flex flex-col items-center gap-3 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500 dark:focus:ring-offset-gray-900">
                 <div
                     class="relative grid place-items-center w-32 h-32 select-none"
                     role="progressbar"
@@ -59,7 +59,7 @@
 
     <div class="mt-6 text-center">
         <a href="{{ function_exists('localized_route') ? localized_route('skills') : route('skills') }}"
-           class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+           class="inline-block bg-secondary-600 text-white px-6 py-3 rounded-lg hover:bg-secondary-700 dark:bg-secondary-500 dark:hover:bg-secondary-600">
             {{ __('messages.skills_all_cta') }}
         </a>
     </div>

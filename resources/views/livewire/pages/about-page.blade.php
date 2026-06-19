@@ -125,7 +125,7 @@
                                 <div
                                     class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary-500/15 dark:bg-primary-500/10 blur-3xl"></div>
                                 <div
-                                    class="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-sky-500/15 dark:bg-sky-500/10 blur-3xl"></div>
+                                    class="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-accent-500/15 dark:bg-accent-500/10 blur-3xl"></div>
                             </div>
                             <img src="{{ asset('images/profile.png') }}" alt="Darko Cekovski"
                                  class="relative z-10 w-full max-w-[200px]">

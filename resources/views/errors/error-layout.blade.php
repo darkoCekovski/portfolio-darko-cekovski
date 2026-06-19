@@ -19,7 +19,7 @@
 {{-- Minimal header --}}
 <header class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
     <a href="{{ url('/') }}" class="flex items-center gap-2 font-bold text-lg">
-            <span class="w-7 h-7 rounded-md bg-gradient-to-br from-primary-500 via-blue-500 to-sky-400
+            <span class="w-7 h-7 rounded-md bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-400
                          flex items-center justify-center text-white text-xs font-black">D</span>
         <span class="text-slate-700 dark:text-slate-300">Darko Cekovski</span>
     </a>

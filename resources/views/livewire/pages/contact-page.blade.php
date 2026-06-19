@@ -56,8 +56,8 @@
                 </div>
 
                 {{-- Response note --}}
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-primary-500/10 to-sky-500/10
-                            dark:from-primary-500/20 dark:to-sky-500/15
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-primary-500/10 to-accent-500/10
+                            dark:from-primary-500/20 dark:to-accent-500/15
                             border border-primary-200/50 dark:border-primary-500/20">
                     <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                         {{ __('messages.contact_response_note') }}

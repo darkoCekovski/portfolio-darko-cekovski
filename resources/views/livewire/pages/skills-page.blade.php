@@ -93,7 +93,7 @@
                 <div>
                     {{-- Header gradient --}}
                     <div
-                        class="relative bg-gradient-to-br from-primary-500/10 via-blue-500/5 to-sky-500/10 dark:from-primary-500/20 dark:via-blue-500/10 dark:to-sky-500/10 p-8 pb-6">
+                        class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">
                         <button @click="closeModal()"
                                 class="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/10 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -110,7 +110,7 @@
                                 <div class="flex items-center gap-3">
                                     <div class="h-2 rounded-full bg-slate-200 dark:bg-white/10 w-48 flex-shrink-0">
                                         <div
-                                            class="h-2 rounded-full bg-gradient-to-r from-primary-500 to-sky-400 transition-all duration-700"
+                                            class="h-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-400 transition-all duration-700"
                                             :style="`width: ${(skill.proficiency / 10) * 100}%`"></div>
                                     </div>
                                     <span

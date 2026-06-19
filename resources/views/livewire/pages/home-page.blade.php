@@ -7,7 +7,7 @@
             <div
                 class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary-500/10 dark:bg-primary-500/5 blur-3xl"></div>
             <div
-                class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-sky-500/10 dark:bg-sky-500/5 blur-3xl"></div>
+                class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent-500/10 dark:bg-accent-500/5 blur-3xl"></div>
         </div>
 
         <div class="max-w-6xl mx-auto px-4 w-full py-12 lg:py-24">
@@ -85,7 +85,7 @@
                     <div class="relative w-full max-w-sm mx-auto">
                         {{-- Glow behind card --}}
                         <div
-                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500/20 to-sky-500/20 blur-3xl"></div>
+                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 blur-3xl"></div>
 
                         {{-- Code card --}}
                         <div
@@ -93,7 +93,7 @@
                             {{-- Window dots --}}
                             <div class="flex gap-1.5 mb-5">
                                 <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-highlight-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
                             </div>
 
@@ -101,7 +101,7 @@
                             <div class="space-y-2 font-mono text-xs leading-relaxed">
                                 <div>
                                     <span class="text-primary-400">class</span>
-                                    <span class="text-sky-400"> Portfolio</span>
+                                    <span class="text-accent-400"> Portfolio</span>
                                     <span class="text-slate-400 dark:text-slate-500"> {</span>
                                 </div>
                                 <div class="pl-4">
@@ -109,7 +109,7 @@
                                     <span class="text-primary-300"> string</span>
                                     <span class="text-slate-700 dark:text-slate-300"> $name</span>
                                     <span class="text-slate-400 dark:text-slate-500"> = </span>
-                                    <span class="text-amber-400">'Darko Cekovski'</span>
+                                    <span class="text-highlight-400">'Darko Cekovski'</span>
                                     <span class="text-slate-400 dark:text-slate-500">;</span>
                                 </div>
                                 <div class="pl-4">
@@ -120,21 +120,21 @@
                                 </div>
                                 @foreach(['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'] as $tech)
                                     <div class="pl-8">
-                                        <span class="text-amber-400">'{{ $tech }}'</span>
+                                        <span class="text-highlight-400">'{{ $tech }}'</span>
                                         <span class="text-slate-400 dark:text-slate-500">,</span>
                                     </div>
                                 @endforeach
                                 <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">];</span></div>
                                 <div class="pt-1 pl-4">
                                     <span class="text-emerald-400">public function</span>
-                                    <span class="text-sky-400"> build</span>
+                                    <span class="text-accent-400"> build</span>
                                     <span class="text-slate-400 dark:text-slate-500">(): </span>
                                     <span class="text-primary-300">string</span>
                                 </div>
                                 <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">{</span></div>
                                 <div class="pl-8">
                                     <span class="text-primary-400">return</span>
-                                    <span class="text-amber-400"> 'something great'</span>
+                                    <span class="text-highlight-400"> 'something great'</span>
                                     <span class="text-slate-400 dark:text-slate-500">;</span>
                                 </div>
                                 <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">}</span></div>
@@ -316,7 +316,7 @@
     {{-- ── CONTACT CTA ──────────────────────────────────────────────────── --}}
     <x-page-section>
         <div
-            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-blue-600 to-sky-500 p-12 text-center reveal">
+            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 p-12 text-center reveal">
             <div class="absolute inset-0 opacity-10 noise"></div>
             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">
                 {{ __('messages.contact_title') }}
@@ -367,7 +367,7 @@
             <template x-if="!loading && service">
                 <div>
                     <div
-                        class="relative bg-gradient-to-br from-primary-500/10 via-blue-500/5 to-sky-500/10 dark:from-primary-500/20 dark:via-blue-500/10 dark:to-sky-500/10 p-8 pb-6">
+                        class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">
                         <button @click="close()"
                                 class="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center
                                        text-slate-400 hover:text-slate-700 dark:hover:text-white
