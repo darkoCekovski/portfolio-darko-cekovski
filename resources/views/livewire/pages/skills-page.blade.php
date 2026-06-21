@@ -53,100 +53,47 @@
     </x-page-section>
 
     {{-- ── SKILL DETAIL MODAL ─────────────────────────────────────────── --}}
-    <div
-        x-show="show"
-        x-cloak
-        @keydown.escape.window="closeModal()"
-        class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-4"
-        role="dialog" aria-modal="true"
-    >
-        {{-- Backdrop --}}
-        <div x-show="show"
-             x-transition:enter="transition ease-out duration-300"
-             x-transition:enter-start="opacity-0"
-             x-transition:enter-end="opacity-100"
-             x-transition:leave="transition ease-in duration-200"
-             x-transition:leave-end="opacity-0"
-             @click="closeModal()"
-             class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-
-        {{-- Panel --}}
-        <div x-show="show"
-             x-transition:enter="transition ease-out duration-300"
-             x-transition:enter-start="opacity-0 translate-y-8 sm:translate-y-0 sm:scale-95"
-             x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-             x-transition:leave="transition ease-in duration-200"
-             x-transition:leave-end="opacity-0 translate-y-8 sm:translate-y-0 sm:scale-95"
-             class="relative w-full max-w-lg rounded-3xl bg-white dark:bg-[#0f1424]
-                    border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden z-10">
-
-            {{-- Loading state --}}
-            <template x-if="loading">
-                <div class="p-10 text-center">
-                    <div
-                        class="w-10 h-10 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+    <x-detail-modal item-var="skill" close-method="closeModal">
+        <x-slot:header>
+            <div class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">
+                <div class="flex items-center gap-5">
+                    <template x-if="skill.logo">
+                        <img :src="skill.logo" :alt="skill.name" class="w-16 h-16 object-contain">
+                    </template>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white" x-text="skill.name"></h2>
+                        <div class="flex items-center gap-3">
+                            <div class="h-2 rounded-full bg-slate-200 dark:bg-white/10 w-48 flex-shrink-0">
+                                <div class="h-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-400 transition-all duration-700"
+                                     :style="`width: ${(skill.proficiency / 10) * 100}%`"></div>
+                            </div>
+                            <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 flex-shrink-0"
+                                  x-text="`${skill.proficiency}/10`"></span>
+                        </div>
+                    </div>
                 </div>
-            </template>
+            </div>
+        </x-slot:header>
 
-            {{-- Content --}}
-            <template x-if="!loading && skill">
+        <div class="p-8 space-y-5">
+            <template x-if="skill.description">
                 <div>
-                    {{-- Header gradient --}}
-                    <div
-                        class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">
-                        <button @click="closeModal()"
-                                class="absolute top-4 right-4 w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/10 transition-colors">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
-                            </svg>
-                        </button>
-                        <div class="flex items-center gap-5">
-                            <template x-if="skill.logo">
-                                <img :src="skill.logo" :alt="skill.name" class="w-16 h-16 object-contain">
-                            </template>
-                            <div>
-                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white" x-text="skill.name"></h2>
-                                <div class="flex items-center gap-3">
-                                    <div class="h-2 rounded-full bg-slate-200 dark:bg-white/10 w-48 flex-shrink-0">
-                                        <div
-                                            class="h-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-400 transition-all duration-700"
-                                            :style="`width: ${(skill.proficiency / 10) * 100}%`"></div>
-                                    </div>
-                                    <span
-                                        class="text-sm font-semibold text-primary-600 dark:text-primary-400 flex-shrink-0"
-                                        x-text="`${skill.proficiency}/10`"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Body --}}
-                    <div class="p-8 space-y-5">
-                        <template x-if="skill.description">
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">{{ __('messages.skill_description') }}</p>
-                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed"
-                                   x-text="skill.description"></p>
-                            </div>
-                        </template>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">{{ __('messages.skill_experience') }}</p>
-                                <p class="font-semibold text-slate-800 dark:text-slate-200"
-                                   x-text="skill.experience_duration || '—'"></p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">{{ __('messages.skill_learning_source') }}</p>
-                                <p class="font-semibold text-slate-800 dark:text-slate-200 text-sm"
-                                   x-text="skill.learning_source || '—'"></p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">{{ __('messages.skill_description') }}</p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed" x-text="skill.description"></p>
                 </div>
             </template>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5">
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">{{ __('messages.skill_experience') }}</p>
+                    <p class="font-semibold text-slate-800 dark:text-slate-200" x-text="skill.experience_duration || '—'"></p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5">
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">{{ __('messages.skill_learning_source') }}</p>
+                    <p class="font-semibold text-slate-800 dark:text-slate-200 text-sm" x-text="skill.learning_source || '—'"></p>
+                </div>
+            </div>
         </div>
-    </div>
+    </x-detail-modal>
 
     <script>
         function skillModal() {
