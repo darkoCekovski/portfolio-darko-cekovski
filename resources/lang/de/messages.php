@@ -76,9 +76,9 @@ return [
     ],
 // Languages
     'macedonian' => 'Mazedonisch',
-    'english'    => 'Englisch',
-    'german'     => 'Deutsch',
-    'russian'    => 'Russisch',
+    'english' => 'Englisch',
+    'german' => 'Deutsch',
+    'russian' => 'Russisch',
     'lang_native' => 'Muttersprache',
     'lang_advanced' => 'Fortgeschritten',
     'lang_upper_int' => 'Obere Mittelstufe',
@@ -236,4 +236,12 @@ return [
     'theme_light' => 'Hell',
     'theme_dark' => 'Dunkel',
     'theme_system' => 'System',
+// Blog
+    'blog_title' => 'Blog',
+    'blog_subtitle' => 'Notizen über Laravel, Livewire, Tailwind CSS und KI aus der täglichen Entwicklungsarbeit.',
+    'blog_filter_latest' => 'Neueste',
+    'blog_empty' => 'Noch keine Beiträge in dieser Kategorie.',
+    'blog_all_posts_cta' => 'Alle Beiträge',
+    'blog_related_articles' => 'Ähnliche Artikel',
+    'blog_min_read' => 'Min. Lesezeit',
 ];
