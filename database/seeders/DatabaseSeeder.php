@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
             SkillsTableSeeder::class,
             TestimonialSeeder::class,
             ProjectSeeder::class,
+            BlogCategorySeeder::class,
+            BlogPostSeeder::class,
         ]);
     }
 }
