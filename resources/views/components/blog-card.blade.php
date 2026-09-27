@@ -1,6 +1,6 @@
 @props(['post'])
 
-<a href="{{ localized_route('blog.detail', $post->slug) }}"
+<a href="{{ localized_route('blog.detail', ['slug' => $post->slug]) }}"
    class="group block rounded-2xl overflow-hidden bg-white dark:bg-slate-800/50 border border-slate-200
           dark:border-slate-700/50 hover:border-primary-300 dark:hover:border-primary-500/50
           transition-colors duration-200">
