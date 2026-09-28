@@ -23,15 +23,28 @@ class BlogPost extends Model
         'published_at' => 'datetime',
     ];
 
+    // Deleting a post also deletes its sibling in the other language, so no orphan rows are left behind
+    protected static function booted(): void
+    {
+        static::deleting(function (BlogPost $post): void {
+            static::where('group_uuid', $post->group_uuid)
+                ->where('id', '!=', $post->id)
+                ->delete();
+        });
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(BlogCategory::class, 'category_id');
     }
 
-    // Converts the markdown body into rendered HTML
+    // Converts the markdown body into rendered HTML; raw HTML in the source is stripped and unsafe links are blocked
     public function getRenderedBodyAttribute(): string
     {
-        return Str::markdown($this->body);
+        return Str::markdown($this->body, [
+            'html_input'         => 'strip',
+            'allow_unsafe_links' => false,
+        ]);
     }
 
     // Plain-text excerpt shown on the card, truncated to ~160 characters
