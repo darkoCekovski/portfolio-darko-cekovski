@@ -2,7 +2,7 @@
     <x-page-section>
         <div class="max-w-4xl mx-auto">
 
-            {{-- Back --}}
+            <!-- Back -->
             <a href="{{ localized_route('projects') }}"
                class="group inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400
                       mb-10 transition-colors duration-200 reveal">
@@ -15,12 +15,12 @@
                 {{ __('messages.projects_all_cta') }}
             </a>
 
-            {{-- Title --}}
+            <!-- Title -->
             <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-6 reveal reveal-delay-1">
                 {{ $project->title }}
             </h1>
 
-            {{-- Thumbnail or placeholder --}}
+            <!-- Thumbnail or placeholder -->
             <div class="rounded-2xl overflow-hidden mb-10 reveal reveal-delay-2 aspect-video">
                 @if($project->thumbnail)
                     <img src="{{ $project->thumbnail }}" alt="{{ $project->title }}"
@@ -40,7 +40,7 @@
 
             <div class="grid lg:grid-cols-3 gap-10">
 
-                {{-- Description --}}
+                <!-- Description -->
                 <div class="lg:col-span-2 reveal reveal-delay-2">
                     <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
                         {{ __('messages.project_description') }}
@@ -49,7 +49,7 @@
                         {{ $project->localized_description }}
                     </p>
 
-                    {{-- CTA buttons --}}
+                    <!-- CTA buttons -->
                     <div class="flex flex-wrap gap-3 mt-8">
                         @if($project->demo_url)
                             <x-primary-button href="{{ $project->demo_url }}" target="_blank" rel="noopener">
@@ -73,10 +73,10 @@
                     </div>
                 </div>
 
-                {{-- Sidebar --}}
+                <!-- Sidebar -->
                 <div class="space-y-5 reveal reveal-delay-3">
 
-                    {{-- Tech stack --}}
+                    <!-- Tech stack -->
                     <x-card :title="__('messages.project_detail_tech')">
                         <x-slot name="icon">
                             <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
@@ -92,7 +92,7 @@
                         </div>
                     </x-card>
 
-                    {{-- Repository --}}
+                    <!-- Repository -->
                     <x-card :title="__('messages.project_detail_repository')">
                         <x-slot name="icon">
                             <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
@@ -139,7 +139,7 @@
 
                     </x-card>
 
-                    {{-- Live status --}}
+                    <!-- Live status -->
                     <x-card :title="__('messages.project_detail_status')">
                         <x-slot name="icon">
                             <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
