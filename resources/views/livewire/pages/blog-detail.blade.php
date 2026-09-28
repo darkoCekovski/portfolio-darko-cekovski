@@ -3,7 +3,7 @@
         <div class="max-w-5xl mx-auto">
 
             {{-- Back --}}
-            <a href="{{ localized_route('blog') }}"
+            <a href="{{ localized_route('blogs') }}"
                class="group inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400
                       mb-10 transition-colors duration-200 reveal">
                 <span class="inline-block w-4 mr-2 overflow-visible">

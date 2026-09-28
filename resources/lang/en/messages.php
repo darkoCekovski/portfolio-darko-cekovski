@@ -237,6 +237,7 @@ return [
     'theme_dark' => 'Dark',
     'theme_system' => 'System',
 // Blog
+    'blog_eyebrow' => 'Insights',
     'blog_title' => 'Blog',
     'blog_subtitle' => 'Notes on Laravel, Livewire, Tailwind CSS and AI from day-to-day development work.',
     'blog_filter_latest' => 'Latest',

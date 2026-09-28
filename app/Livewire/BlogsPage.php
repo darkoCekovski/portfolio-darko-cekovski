@@ -7,7 +7,7 @@ use App\Models\BlogPost;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
-class BlogPage extends Component
+class BlogsPage extends Component
 {
     #[Url(as: 'category')]
     public ?string $category = null;
@@ -53,7 +53,7 @@ class BlogPage extends Component
             }
         }
 
-        return view('livewire.pages.blog-page', compact('categories', 'posts'))
+        return view('livewire.pages.blogs-page', compact('categories', 'posts'))
             ->layout('layouts.app', [
                 'title'           => $metaTitle,
                 'metaTitle'       => $metaTitle,
