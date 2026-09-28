@@ -9,7 +9,7 @@
           transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10
           reveal reveal-delay-{{ $delay }}">
 
-    {{-- Image / Placeholder with badge overlay --}}
+    <!-- Image / Placeholder with badge overlay -->
     <div class="relative aspect-video overflow-hidden bg-slate-100 dark:bg-[#0d1117]">
 
         @if($project->thumbnail)
@@ -27,10 +27,10 @@
             </div>
         @endif
 
-        {{-- Badges overlay --}}
+        <!-- Badges overlay -->
         <div class="absolute top-3 left-3 flex gap-1.5 flex-wrap">
 
-            {{-- 1. Public / Private --}}
+            <!-- 1. Public / Private -->
             @if($project->github_is_public)
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
                  bg-emerald-50/90 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400
@@ -55,8 +55,7 @@
                     {{ __('messages.badge_private') }}
                 </span>
             @endif
-
-            {{-- 2. Live / Coming soon --}}
+            <!-- 2. Live / Coming soon -->
             @if($project->demo_url)
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
                  bg-accent-50/90 dark:bg-accent-500/20 text-accent-700 dark:text-accent-400
@@ -78,8 +77,7 @@
                     {{ __('messages.badge_coming_soon') }}
                 </span>
             @endif
-
-            {{-- 3. Featured (only if true) --}}
+            <!-- 3. Featured (only if true) -->
             @if($project->is_featured)
                 <span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold
                      bg-primary-50/90 dark:bg-primary-500/20 text-primary-700 dark:text-primary-400
@@ -96,7 +94,7 @@
 
     </div>
 
-    {{-- Content --}}
+    <!-- Content -->
     <div class="p-5">
         <h3 class="text-slate-900 dark:text-white font-semibold mb-2
                    group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">

@@ -29,6 +29,7 @@ class BlogsPage extends Component
         $categories = BlogCategory::orderBy('sort_order')->get();
 
         $posts = BlogPost::locale(app()->getLocale())
+            ->with('category')
             ->category($this->category)
             ->latest('published_at')
             ->get();
@@ -45,20 +46,20 @@ class BlogsPage extends Component
             $activeCategory = $categories->firstWhere('slug', $this->category);
 
             if ($activeCategory) {
-                $metaTitle       = $activeCategory->name . ' — Blog — Darko Cekovski';
+                $metaTitle = $activeCategory->name . ' — Blog — Darko Cekovski';
                 $metaDescription = app()->getLocale() === 'de'
                     ? 'Blogbeiträge über ' . $activeCategory->name . '.'
                     : 'Blog posts about ' . $activeCategory->name . '.';
-                $canonical       = url(app()->getLocale() . '/blog?category=' . $activeCategory->slug);
+                $canonical = url(app()->getLocale() . '/blog?category=' . $activeCategory->slug);
             }
         }
 
         return view('livewire.pages.blogs-page', compact('categories', 'posts'))
             ->layout('layouts.app', [
-                'title'           => $metaTitle,
-                'metaTitle'       => $metaTitle,
+                'title' => $metaTitle,
+                'metaTitle' => $metaTitle,
                 'metaDescription' => $metaDescription,
-                'canonical'       => $canonical,
+                'canonical' => $canonical,
             ]);
     }
 }

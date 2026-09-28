@@ -9,7 +9,8 @@
         <div class="grid lg:grid-cols-3 gap-10">
 
             <!-- Category filters -->
-            <div class="flex flex-wrap gap-2 lg:flex-col lg:flex-nowrap lg:items-start lg:self-start lg:sticky lg:top-24">
+            <div
+                class="flex flex-wrap gap-2 lg:flex-col lg:flex-nowrap lg:items-start lg:self-start lg:sticky lg:top-24">
 
                 <button wire:click="showLatest"
                         class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
@@ -31,11 +32,11 @@
                 @endforeach
             </div>
 
-            <!-- Post grid: 1 column on mobile, 2 columns from sm up -->
+            <!-- Post grid -->
             <div class="lg:col-span-2">
                 <div class="grid sm:grid-cols-2 gap-6">
-                    @forelse($posts as $post)
-                        <x-blog-card :post="$post"/>
+                    @forelse($posts as $i => $post)
+                        <x-blog-card :post="$post" :delay="($i % 2) + 1"/>
                     @empty
                         <!-- Empty state -->
                         <div class="col-span-full text-center py-20">

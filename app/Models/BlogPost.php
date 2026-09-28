@@ -66,6 +66,7 @@ class BlogPost extends Model
     public function relatedPosts(int $limit = 2)
     {
         return static::locale($this->locale)
+            ->with('category')
             ->where('category_id', $this->category_id)
             ->where('id', '!=', $this->id)
             ->latest('published_at')
