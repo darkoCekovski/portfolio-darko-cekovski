@@ -15,7 +15,7 @@
                 {{ __('messages.blog_all_posts_cta') }}
             </a>
 
-            <!-- Header: reading time (mobile only), date and title -->
+            <!-- Header, reading time (mobile only), date and title -->
             <div class="reveal reveal-delay-1">
                 <p class="lg:hidden text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-3">
                     {{ $post->read_time_minutes }} {{ __('messages.blog_min_read') }}
@@ -28,7 +28,7 @@
                 </h1>
             </div>
 
-            <!-- Cover image or placeholder, full width -->
+            <!-- Cover image or placeholder -->
             <div class="rounded-2xl overflow-hidden mb-10 reveal reveal-delay-2 aspect-video">
                 @if($post->image_path)
                     <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->title }}"
@@ -48,15 +48,8 @@
 
             <div class="grid lg:grid-cols-3 gap-10">
 
-                <!-- Article body: left 2/3, scrolls with the page -->
+                <!-- Article body -->
                 <div class="lg:col-span-2">
-
-                    <!-- Rendered markdown; no reveal here because long articles are taller than the viewport -->
-                    <div class="prose prose-slate dark:prose-invert max-w-none
-                                text-slate-600 dark:text-slate-300
-                                prose-a:text-primary-600 dark:prose-a:text-primary-400">
-                        {!! $post->rendered_body !!}
-                    </div>
 
                     <div
                         class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 reveal reveal-delay-2">
@@ -69,7 +62,7 @@
                     </div>
                 </div>
 
-                <!-- Sidebar: right 1/3, desktop only, sticky while the article scrolls -->
+                <!-- Sidebar -->
                 <div class="hidden lg:block reveal reveal-delay-3">
                     <div class="sticky top-24 space-y-5">
 
