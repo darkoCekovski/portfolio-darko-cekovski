@@ -7,10 +7,9 @@
 
     <x-page-section>
 
-        {{-- Search + Filter bar --}}
+        <!-- Search + Filter bar -->
         <div class="flex flex-col gap-4 mb-10">
-
-            {{-- Search --}}
+            <!-- Search -->
             <div class="relative flex-1 max-w-sm">
                 <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"
                      fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -36,8 +35,7 @@
                     </button>
                 @endif
             </div>
-
-            {{-- Tech filters --}}
+            <!-- Tech filters -->
             <div class="flex flex-wrap gap-2">
                 <button wire:click="toggleFilter('all')"
                         class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
@@ -56,10 +54,9 @@
                     </button>
                 @endforeach
             </div>
-
         </div>
 
-        {{-- Grid --}}
+        <!-- Grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse($projects as $i => $project)
                 <x-project-card :project="$project" :delay="($i % 3) + 1"/>
