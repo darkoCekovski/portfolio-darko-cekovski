@@ -21,3 +21,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+# Filament assets, published by "filament:upgrade" during composer install
+/public/css/filament
+/public/js/filament
+/public/fonts/filament
