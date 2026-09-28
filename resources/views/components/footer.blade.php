@@ -1,10 +1,10 @@
 <footer class="border-t border-slate-200 dark:border-white/10 mt-12 lg:mt-24">
     <div class="max-w-6xl mx-auto px-6 py-10">
 
-        {{-- Top row --}}
+        <!-- Top row -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
 
-            {{-- Logo --}}
+            <!-- Logo -->
             <a href="{{ localized_route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-200">
                 <img src="{{ asset('images/logo-dark.svg') }}"
                      alt="Darko Cekovski"
@@ -14,7 +14,7 @@
                      class="h-20 block dark:hidden">
             </a>
 
-            {{-- Social links --}}
+            <!-- Social links -->
             <div class="flex items-center gap-3">
                 <a href="https://github.com/darkoCekovski" target="_blank" rel="noopener"
                    class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-all duration-200">
@@ -39,7 +39,7 @@
                 </a>
             </div>
 
-            {{-- Legal links --}}
+            <!-- Legal links -->
             <div class="flex items-center gap-5 text-sm">
                 <a href="{{ localized_route('imprint') }}"
                    class="text-primary-500 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors duration-200">
@@ -54,10 +54,10 @@
 
         </div>
 
-        {{-- Divider --}}
+        <!-- Divider -->
         <div class="border-t border-slate-100 dark:border-white/5"></div>
 
-        {{-- Bottom row --}}
+        <!-- Bottom row -->
         <div class="pt-6 text-center">
             <p class="text-xs text-slate-400 dark:text-slate-500">
                 © {{ date('Y') }} Darko Cekovski. Built with Laravel, Livewire &amp; Tailwind.
