@@ -8,25 +8,25 @@
     <x-page-section>
         <div class="grid lg:grid-cols-3 gap-10">
 
-            <!-- Category filters: wrapped chips on mobile, sticky vertical list on desktop -->
-            <div class="flex flex-wrap gap-2 lg:flex-col lg:flex-nowrap lg:self-start lg:sticky lg:top-24">
+            <!-- Category filters -->
+            <div class="flex flex-wrap gap-2 lg:flex-col lg:flex-nowrap lg:items-start lg:self-start lg:sticky lg:top-24">
 
                 <!-- "Latest" clears every filter and resets the URL to /blog -->
                 <button wire:click="showLatest"
-                        class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 lg:text-left
-                               {{ !$category
-                                  ? 'bg-primary-600 text-white shadow-sm shadow-primary-500/20'
-                                  : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10' }}">
+                        class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
+                   {{ !$category
+                      ? 'bg-primary-600 text-white shadow-sm shadow-primary-500/20'
+                      : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10' }}">
                     {{ __('messages.blog_filter_latest') }}
                 </button>
 
                 <!-- One filter per category, sorted by sort_order -->
                 @foreach($categories as $cat)
                     <button wire:click="filterByCategory(@js($cat->slug))"
-                            class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 lg:text-left
-                                   {{ $category === $cat->slug
-                                      ? 'bg-primary-600 text-white shadow-sm shadow-primary-500/20'
-                                      : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10' }}">
+                            class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
+                       {{ $category === $cat->slug
+                          ? 'bg-primary-600 text-white shadow-sm shadow-primary-500/20'
+                          : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10' }}">
                         {{ $cat->name }}
                     </button>
                 @endforeach
