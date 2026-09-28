@@ -58,9 +58,14 @@
                         {!! $post->rendered_body !!}
                     </div>
 
+                    <div
+                        class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 reveal reveal-delay-2">
+                        {!! $post->rendered_body !!}
+                    </div>
+
                     <!-- Mobile only -->
                     <div class="lg:hidden mt-10 pt-6 border-t border-slate-200 dark:border-white/10">
-                        <x-share-links :post="$post" />
+                        <x-share-links :post="$post"/>
                     </div>
                 </div>
 
@@ -91,7 +96,7 @@
                                           d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"/>
                                 </svg>
                             </x-slot>
-                            <x-share-links :post="$post" />
+                            <x-share-links :post="$post"/>
                         </x-card>
 
                     </div>
