@@ -245,4 +245,7 @@ return [
     'blog_all_posts_cta' => 'All posts',
     'blog_related_articles' => 'Related articles',
     'blog_min_read' => 'min read',
+    'blog_read_time' => 'Reading time',
+    'blog_minutes'   => 'min',
+    'blog_share'     => 'Share',
 ];
