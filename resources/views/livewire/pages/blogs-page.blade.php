@@ -10,7 +10,7 @@
 
             <!-- Category filters -->
             <div class="flex flex-wrap gap-2 lg:flex-col lg:flex-nowrap lg:items-start lg:self-start lg:sticky lg:top-24">
-                
+
                 <button wire:click="showLatest"
                         class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200
                    {{ !$category
