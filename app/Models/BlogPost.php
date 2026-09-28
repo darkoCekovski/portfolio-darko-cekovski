@@ -73,4 +73,12 @@ class BlogPost extends Model
             ->limit($limit)
             ->get();
     }
+
+    // Returns the sibling row of this post in another language, linked through the shared group_uuid
+    public function translation(string $locale): ?self
+    {
+        return static::where('group_uuid', $this->group_uuid)
+            ->where('locale', $locale)
+            ->first();
+    }
 }

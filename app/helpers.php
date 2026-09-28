@@ -21,6 +21,20 @@ if (!function_exists('switch_locale_url')) {
         $route = request()->route();
 
         if ($route && $route->getName()) {
+            // Blog post slugs differ per language, so the translated post is resolved through the shared group_uuid
+            if ($route->getName() === 'blog.detail') {
+                $post = \App\Models\BlogPost::locale($route->parameter('locale'))
+                    ->where('slug', $route->parameter('slug'))
+                    ->first();
+
+                $translation = $post?->translation($locale);
+
+                // Fall back to the blog listing when the post has no translation in the target language
+                return $translation
+                    ? route('blog.detail', ['locale' => $locale, 'slug' => $translation->slug])
+                    : route('blogs', ['locale' => $locale]);
+            }
+
             $params = $route->parameters();
             $params['locale'] = $locale;
             return route($route->getName(), $params);
@@ -39,8 +53,3 @@ if (!function_exists('switch_locale_url')) {
         return url(implode('/', $segments));
     }
 }
-
-
-
-
-
