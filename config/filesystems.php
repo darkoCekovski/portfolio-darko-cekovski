@@ -41,7 +41,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
@@ -77,4 +77,7 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    // Absolute filesystem path to httpdocs on this server, used to mirror blog images so they're served without waiting for a deploy.
+    // Set HTTPDOCS_PUBLIC_PATH in .env; left unset locally, where this feature is inert.
+    'httpdocs_public_path' => env('HTTPDOCS_PUBLIC_PATH'),
 ];
