@@ -75,6 +75,14 @@
                 {{ __('messages.nav_skills') }}
             </x-nav-link>
 
+            {{-- Blog --}}
+            <x-nav-link
+                href="{{ localized_route('blog') }}"
+                :active="request()->routeIs('blog')"
+            >
+                {{ __('messages.blog_title') }}
+            </x-nav-link>
+
             {{-- Contact --}}
             <x-nav-link
                 href="{{ localized_route('contact') }}"
@@ -178,6 +186,16 @@
             @click="open = false"
         >
             {{ __('messages.nav_skills') }}
+        </x-nav-link>
+
+        {{-- Blog --}}
+        <x-nav-link
+            href="{{ localized_route('blog') }}"
+            mobile
+            :active="request()->routeIs('blog')"
+            @click="open = false"
+        >
+            {{ __('messages.blog_title') }}
         </x-nav-link>
 
         {{-- Contact --}}
