@@ -9,7 +9,7 @@
 >
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 h-20">
 
-        {{-- Logo --}}
+        <!-- Logo -->
         <a href="{{ localized_route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-200">
             <img src="{{ asset('images/logo-dark.svg') }}"
                  alt="Darko Cekovski"
@@ -19,7 +19,7 @@
                  class="h-20 block dark:hidden">
         </a>
 
-        {{-- Desktop nav --}}
+        <!-- Desktop nav -->
         <div class="hidden lg:flex items-center gap-1"
              x-data="{ hash: window.location.hash }"
              x-init="
@@ -27,7 +27,7 @@
                 window.addEventListener('popstate', () => hash = window.location.hash);
              ">
 
-            {{-- Home (hash-based → dynamic) --}}
+            <!-- Home (hash-based → dynamic) -->
             <x-nav-link
                 href="{{ localized_route('home') }}"
                 dynamic
@@ -39,7 +39,7 @@
                 {{ __('messages.nav_home') }}
             </x-nav-link>
 
-            {{-- About --}}
+            <!-- About -->
             <x-nav-link
                 href="{{ localized_route('about') }}"
                 :active="request()->routeIs('about')"
@@ -47,7 +47,7 @@
                 {{ __('messages.nav_about') }}
             </x-nav-link>
 
-            {{-- Services (hash-based → dynamic) --}}
+            <!-- Services (hash-based → dynamic) -->
             <x-nav-link
                 href="{{ localized_route('home') }}#services"
                 dynamic
@@ -59,7 +59,7 @@
                 {{ __('messages.nav_services') }}
             </x-nav-link>
 
-            {{-- Projects --}}
+            <!-- Projects -->
             <x-nav-link
                 href="{{ localized_route('projects') }}"
                 :active="request()->routeIs('projects') || request()->routeIs('project.detail')"
@@ -67,7 +67,7 @@
                 {{ __('messages.nav_projects') }}
             </x-nav-link>
 
-            {{-- Skills --}}
+            <!-- Skills -->
             <x-nav-link
                 href="{{ localized_route('skills') }}"
                 :active="request()->routeIs('skills') || request()->routeIs('skill.detail')"
@@ -75,7 +75,7 @@
                 {{ __('messages.nav_skills') }}
             </x-nav-link>
 
-            {{-- Blog --}}
+            <!-- Blog -->
             <x-nav-link
                 href="{{ localized_route('blogs') }}"
                 :active="request()->routeIs('blogs')"
@@ -83,7 +83,7 @@
                 {{ __('messages.blog_title') }}
             </x-nav-link>
 
-            {{-- Contact --}}
+            <!-- Contact -->
             <x-nav-link
                 href="{{ localized_route('contact') }}"
                 :active="request()->routeIs('contact')"
@@ -93,7 +93,7 @@
 
         </div>
 
-        {{-- Right controls --}}
+        <!-- Right controls -->
         <div class="flex items-center gap-3">
             @livewire('theme-switcher')
             @include('partials.language-switcher')
@@ -101,7 +101,7 @@
                 @livewire('download-cv')
             </div>
 
-            {{-- Hamburger --}}
+            <!-- Hamburger -->
             <button @click="open = !open"
                     class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
                     aria-label="Menu">
@@ -115,7 +115,7 @@
         </div>
     </nav>
 
-    {{-- Mobile menu --}}
+    <!-- Mobile menu -->
     <div
         x-show="open"
         x-cloak
@@ -132,7 +132,7 @@
         x-transition:leave-end="opacity-0 -translate-y-4"
         class="lg:hidden border-t border-slate-200 dark:border-white/10 bg-white/95 dark:bg-[#080b14]/95 backdrop-blur-xl px-6 py-4 space-y-1"
     >
-        {{-- Home (hash-based → dynamic) --}}
+        <!-- Home (hash-based → dynamic) -->
         <x-nav-link
             href="{{ localized_route('home') }}"
             mobile
@@ -145,7 +145,7 @@
             {{ __('messages.nav_home') }}
         </x-nav-link>
 
-        {{-- About --}}
+        <!-- About -->
         <x-nav-link
             href="{{ localized_route('about') }}"
             mobile
@@ -155,7 +155,7 @@
             {{ __('messages.nav_about') }}
         </x-nav-link>
 
-        {{-- Services (hash-based → dynamic) --}}
+        <!-- Services (hash-based → dynamic) -->
         <x-nav-link
             href="{{ localized_route('home') }}#services"
             mobile
@@ -168,7 +168,7 @@
             {{ __('messages.nav_services') }}
         </x-nav-link>
 
-        {{-- Projects --}}
+        <!-- Projects -->
         <x-nav-link
             href="{{ localized_route('projects') }}"
             mobile
@@ -178,7 +178,7 @@
             {{ __('messages.nav_projects') }}
         </x-nav-link>
 
-        {{-- Skills --}}
+        <!-- Skills -->
         <x-nav-link
             href="{{ localized_route('skills') }}"
             mobile
@@ -188,7 +188,7 @@
             {{ __('messages.nav_skills') }}
         </x-nav-link>
 
-        {{-- Blog --}}
+        <!-- Blog -->
         <x-nav-link
             href="{{ localized_route('blogs') }}"
             mobile
@@ -198,7 +198,7 @@
             {{ __('messages.blog_title') }}
         </x-nav-link>
 
-        {{-- Contact --}}
+        <!-- Contact -->
         <x-nav-link
             href="{{ localized_route('contact') }}"
             mobile
