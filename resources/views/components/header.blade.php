@@ -77,8 +77,8 @@
 
             {{-- Blog --}}
             <x-nav-link
-                href="{{ localized_route('blog') }}"
-                :active="request()->routeIs('blog')"
+                href="{{ localized_route('blogs') }}"
+                :active="request()->routeIs('blogs')"
             >
                 {{ __('messages.blog_title') }}
             </x-nav-link>
@@ -190,9 +190,9 @@
 
         {{-- Blog --}}
         <x-nav-link
-            href="{{ localized_route('blog') }}"
+            href="{{ localized_route('blogs') }}"
             mobile
-            :active="request()->routeIs('blog')"
+            :active="request()->routeIs('blogs')"
             @click="open = false"
         >
             {{ __('messages.blog_title') }}
