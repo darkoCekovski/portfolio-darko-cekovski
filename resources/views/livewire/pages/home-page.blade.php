@@ -312,26 +312,57 @@
     <x-page-section>
         @livewire('testimonials')
     </x-page-section>
-    
+
     <!-- CONTACT CTA -->
-    <x-page-section>
-        <div
-            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 p-12 text-center reveal">
-            <div class="absolute inset-0 opacity-10 noise"></div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">
-                {{ __('messages.contact_title') }}
-            </h2>
-            <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto relative">
-                {{ __('messages.contact_text') }}
-            </p>
-            <x-primary-button href="{{ localized_route('contact') }}" variant="white" class="relative">
-                {{ __('messages.contact_cta') }}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                </svg>
-            </x-primary-button>
+    <!-- CONTACT CTA — the card grows to fill the screen as the user scrolls through this section -->
+    <section
+        x-data="ctaExpand()"
+        class="relative"
+        style="height: 220vh;"
+    >
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+            <div
+                x-ref="card"
+                :style="cardStyle"
+                class="relative overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500"
+            >
+                <div class="absolute inset-0 opacity-10 noise"></div>
+                <div class="relative h-full flex flex-col items-center justify-center text-center p-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                        {{ __('messages.contact_title') }}
+                    </h2>
+                    <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto">
+                        {{ __('messages.contact_text') }}
+                    </p>
+                    <x-primary-button href="{{ localized_route('contact') }}" variant="white">
+                        {{ __('messages.contact_cta') }}
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </x-primary-button>
+                </div>
+            </div>
         </div>
-    </x-page-section>
+    </section>
+
+{{--    <x-page-section>--}}
+{{--        <div--}}
+{{--            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 p-12 text-center reveal">--}}
+{{--            <div class="absolute inset-0 opacity-10 noise"></div>--}}
+{{--            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">--}}
+{{--                {{ __('messages.contact_title') }}--}}
+{{--            </h2>--}}
+{{--            <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto relative">--}}
+{{--                {{ __('messages.contact_text') }}--}}
+{{--            </p>--}}
+{{--            <x-primary-button href="{{ localized_route('contact') }}" variant="white" class="relative">--}}
+{{--                {{ __('messages.contact_cta') }}--}}
+{{--                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">--}}
+{{--                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>--}}
+{{--                </svg>--}}
+{{--            </x-primary-button>--}}
+{{--        </div>--}}
+{{--    </x-page-section>--}}
 
     <!-- BLOG PREVIEW -->
     <x-page-section muted>
@@ -509,6 +540,61 @@
                 scrollToServices(behavior) {
                     const el = document.getElementById('services');
                     if (el) el.scrollIntoView({behavior, block: 'start'});
+                },
+            };
+        }
+    </script>
+
+    <script>
+        function ctaExpand() {
+            return {
+                // Initial values only; init() overwrites them with exact pixel values before the first paint of the animation
+                cardStyle: {width: '90%', height: '60%', borderRadius: '1.5rem'},
+                ticking: false,
+
+                init() {
+                    this.update();
+                    window.addEventListener('scroll', () => this.onScroll(), {passive: true});
+                    window.addEventListener('resize', () => this.update());
+                },
+
+                // Throttles scroll updates to one per animation frame, to avoid janky repeated layout work
+                onScroll() {
+                    if (this.ticking) return;
+                    this.ticking = true;
+                    requestAnimationFrame(() => {
+                        this.update();
+                        this.ticking = false;
+                    });
+                },
+
+                update() {
+                    const rect = this.$el.getBoundingClientRect();
+                    const scrollDistance = this.$el.offsetHeight - window.innerHeight;
+
+                    // 0 when the section's top just reaches the viewport top, 1 once fully scrolled past
+                    let progress = scrollDistance > 0 ? -rect.top / scrollDistance : 0;
+                    progress = Math.min(1, Math.max(0, progress));
+
+                    // Ease in/out so the growth doesn't feel mechanical
+                    const eased = progress < 0.5
+                        ? 2 * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+                    // clientWidth excludes the vertical scrollbar, so the card never overflows horizontally on desktop
+                    const fullWidth = document.documentElement.clientWidth;
+                    const fullHeight = window.innerHeight;
+
+                    // Start state matches the content column of the other sections (max-w-6xl = 72rem, px-4 = 1rem each side)
+                    const startWidth = Math.min(fullWidth - 32, 1152);
+                    const startHeight = fullHeight * 0.6;
+                    const startRadius = 24; // px, same as rounded-3xl
+
+                    this.cardStyle = {
+                        width: (startWidth + (fullWidth - startWidth) * eased) + 'px',
+                        height: (startHeight + (fullHeight - startHeight) * eased) + 'px',
+                        borderRadius: (startRadius * (1 - eased)) + 'px',
+                    };
                 },
             };
         }
