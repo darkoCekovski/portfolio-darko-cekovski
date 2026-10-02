@@ -314,17 +314,21 @@
     </x-page-section>
 
     <!-- CONTACT CTA -->
-    <!-- CONTACT CTA — the card grows to fill the screen as the user scrolls through this section -->
     <section
         x-data="ctaExpand()"
         class="relative"
-        style="height: 220vh;"
+        style="height: 260vh; height: 260svh;"
     >
-        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+        <div
+            x-ref="pin"
+            class="sticky w-full overflow-hidden"
+            style="top: 0; height: 100vh; height: 100svh;"
+        >
+            <!-- The card always has full-screen size; clip-path reveals only part of it, which avoids layout work on scroll -->
             <div
                 x-ref="card"
-                :style="cardStyle"
-                class="relative overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500"
+                class="absolute inset-0 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500"
+                style="clip-path: inset(20% 4% 20% 4% round 24px); will-change: clip-path;"
             >
                 <div class="absolute inset-0 opacity-10 noise"></div>
                 <div class="relative h-full flex flex-col items-center justify-center text-center p-12">
@@ -548,17 +552,26 @@
     <script>
         function ctaExpand() {
             return {
-                // Initial values only; init() overwrites them with exact pixel values before the first paint of the animation
-                cardStyle: {width: '90%', height: '60%', borderRadius: '1.5rem'},
+                // Scroll distance, in viewport heights, over which the card grows to full screen.
+                // Section height = 100svh (pinned screen) + expandVh * 100svh (growing) + hold distance (set in the section style)
+                expandVh: 1,
                 ticking: false,
 
                 init() {
+                    this.onScrollBound = () => this.onScroll();
+                    this.onResizeBound = () => this.update();
+                    window.addEventListener('scroll', this.onScrollBound, {passive: true});
+                    window.addEventListener('resize', this.onResizeBound);
                     this.update();
-                    window.addEventListener('scroll', () => this.onScroll(), {passive: true});
-                    window.addEventListener('resize', () => this.update());
                 },
 
-                // Throttles scroll updates to one per animation frame, to avoid janky repeated layout work
+                // Removes the listeners when the element is torn down, so they don't pile up across page navigations
+                destroy() {
+                    window.removeEventListener('scroll', this.onScrollBound);
+                    window.removeEventListener('resize', this.onResizeBound);
+                },
+
+                // Throttles scroll updates to one per animation frame
                 onScroll() {
                     if (this.ticking) return;
                     this.ticking = true;
@@ -569,32 +582,26 @@
                 },
 
                 update() {
-                    const rect = this.$el.getBoundingClientRect();
-                    const scrollDistance = this.$el.offsetHeight - window.innerHeight;
+                    const card = this.$refs.card;
+                    const viewH = this.$refs.pin.offsetHeight; // svh-based, stable while mobile browser bars show or hide
+                    const viewW = card.clientWidth;
 
-                    // 0 when the section's top just reaches the viewport top, 1 once fully scrolled past
-                    let progress = scrollDistance > 0 ? -rect.top / scrollDistance : 0;
-                    progress = Math.min(1, Math.max(0, progress));
+                    // How far the top of the section is above the top of the viewport
+                    const scrolled = -this.$el.getBoundingClientRect().top;
 
-                    // Ease in/out so the growth doesn't feel mechanical
-                    const eased = progress < 0.5
-                        ? 2 * progress * progress
-                        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                    // Linear on purpose: easing at the start of a scroll-linked animation feels like lag
+                    const progress = Math.min(1, Math.max(0, scrolled / (viewH * this.expandVh)));
 
-                    // clientWidth excludes the vertical scrollbar, so the card never overflows horizontally on desktop
-                    const fullWidth = document.documentElement.clientWidth;
-                    const fullHeight = window.innerHeight;
-
-                    // Start state matches the content column of the other sections (max-w-6xl = 72rem, px-4 = 1rem each side)
-                    const startWidth = Math.min(fullWidth - 32, 1152);
-                    const startHeight = fullHeight * 0.6;
+                    // Start state matches the content column of the other sections (max-w-6xl = 72rem, px-4 = 1rem per side)
+                    const startW = Math.min(viewW - 32, 1152);
+                    const startH = viewH * 0.6;
                     const startRadius = 24; // px, same as rounded-3xl
 
-                    this.cardStyle = {
-                        width: (startWidth + (fullWidth - startWidth) * eased) + 'px',
-                        height: (startHeight + (fullHeight - startHeight) * eased) + 'px',
-                        borderRadius: (startRadius * (1 - eased)) + 'px',
-                    };
+                    const insetX = ((viewW - startW) / 2) * (1 - progress);
+                    const insetY = ((viewH - startH) / 2) * (1 - progress);
+                    const radius = startRadius * (1 - progress);
+
+                    card.style.clipPath = `inset(${insetY}px ${insetX}px ${insetY}px ${insetX}px round ${radius}px)`;
                 },
             };
         }
