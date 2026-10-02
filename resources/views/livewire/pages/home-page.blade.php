@@ -64,7 +64,7 @@
                     <!-- Stats -->
                     <div
                         class="flex flex-wrap gap-8 mt-14 pt-10 border-t border-slate-200 dark:border-white/10 reveal reveal-delay-5"
-                        x-data="heroStats()" x-init="init()">
+                        x-data="heroStats()">
                         @foreach([
                             ['stat_years',    6,  '+', __('messages.stat_years')],
                             ['stat_skills',   12, '+', __('messages.stat_skills')],
@@ -286,7 +286,7 @@
             @forelse($projects as $i => $project)
                 <x-project-card :project="$project" :delay="($i % 3) + 1"/>
             @empty
-                <div class="col-span-3 text-center py-20">
+                <div class="col-span-full text-center py-20">
                     <svg class="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4"
                          fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -328,7 +328,7 @@
             <div
                 x-ref="card"
                 class="absolute inset-0 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500"
-                style="clip-path: inset(27.5% 4% 27.5% 4% round 24px); will-change: clip-path;"
+                style="clip-path: inset(27.5% max(16px, calc((100% - 1152px) / 2)) 27.5% max(16px, calc((100% - 1152px) / 2)) round 24px); will-change: clip-path;"
             >
                 <div class="absolute inset-0 opacity-10 noise"></div>
                 <div class="relative h-full flex flex-col items-center justify-center text-center p-12">
@@ -341,32 +341,14 @@
                     <x-primary-button href="{{ localized_route('contact') }}" variant="white">
                         {{ __('messages.contact_cta') }}
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                         </svg>
                     </x-primary-button>
                 </div>
             </div>
         </div>
     </section>
-
-{{--    <x-page-section>--}}
-{{--        <div--}}
-{{--            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 p-12 text-center reveal">--}}
-{{--            <div class="absolute inset-0 opacity-10 noise"></div>--}}
-{{--            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 relative">--}}
-{{--                {{ __('messages.contact_title') }}--}}
-{{--            </h2>--}}
-{{--            <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto relative">--}}
-{{--                {{ __('messages.contact_text') }}--}}
-{{--            </p>--}}
-{{--            <x-primary-button href="{{ localized_route('contact') }}" variant="white" class="relative">--}}
-{{--                {{ __('messages.contact_cta') }}--}}
-{{--                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">--}}
-{{--                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>--}}
-{{--                </svg>--}}
-{{--            </x-primary-button>--}}
-{{--        </div>--}}
-{{--    </x-page-section>--}}
 
     <!-- BLOG PREVIEW -->
     <x-page-section muted>
@@ -391,7 +373,7 @@
             @forelse($latestPosts as $i => $post)
                 <x-blog-card :post="$post" :delay="($i % 3) + 1"/>
             @empty
-                <div class="col-span-3 text-center py-20">
+                <div class="col-span-full text-center py-20">
                     <svg class="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4"
                          fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
