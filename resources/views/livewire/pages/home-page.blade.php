@@ -317,7 +317,7 @@
     <section
         x-data="ctaExpand()"
         class="relative"
-        style="height: 260vh; height: 260svh;"
+        style="height: 320vh; height: 320svh;"
     >
         <div
             x-ref="pin"
@@ -328,7 +328,7 @@
             <div
                 x-ref="card"
                 class="absolute inset-0 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500"
-                style="clip-path: inset(20% 4% 20% 4% round 24px); will-change: clip-path;"
+                style="clip-path: inset(27.5% 4% 27.5% 4% round 24px); will-change: clip-path;"
             >
                 <div class="absolute inset-0 opacity-10 noise"></div>
                 <div class="relative h-full flex flex-col items-center justify-center text-center p-12">
@@ -594,7 +594,7 @@
 
                     // Start state matches the content column of the other sections (max-w-6xl = 72rem, px-4 = 1rem per side)
                     const startW = Math.min(viewW - 32, 1152);
-                    const startH = viewH * 0.6;
+                    const startH = viewH * 0.45;
                     const startRadius = 24; // px, same as rounded-3xl
 
                     const insetX = ((viewW - startW) / 2) * (1 - progress);
