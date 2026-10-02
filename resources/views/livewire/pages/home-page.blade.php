@@ -1,8 +1,8 @@
 <div x-data="serviceModal()" @open-service-modal.window="open($event.detail.name)">
 
-    {{-- ── HERO ──────────────────────────────────────────────────────────── --}}
+    <!-- HERO -->
     <section class="relative min-h-[92vh] flex items-center overflow-hidden">
-        {{-- Background gradient blobs --}}
+        <!-- Background gradient blobs -->
         <div class="absolute inset-0 -z-10 overflow-hidden">
             <div
                 class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary-500/10 dark:bg-primary-500/5 blur-3xl"></div>
@@ -13,9 +13,9 @@
         <div class="max-w-6xl mx-auto px-4 w-full py-12 lg:py-24">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-                {{-- ── Left: text ──────────────────────────────────────── --}}
+                <!-- Left: text -->
                 <div>
-                    {{-- Eyebrow --}}
+                    <!-- Eyebrow -->
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold
                         bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400
                         border border-emerald-200 dark:border-emerald-500/20 mb-6 reveal">
@@ -27,7 +27,7 @@
                         {{ __('messages.hero_available') }}
                     </div>
 
-                    {{-- Greeting + Name --}}
+                    <!-- Greeting + Name -->
                     <p class="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-3 reveal reveal-delay-1">
                         {{ __('messages.hero_greeting') }}
                     </p>
@@ -35,7 +35,7 @@
                         <span class="gradient-text">Darko Cekovski</span>
                     </h1>
 
-                    {{-- Typewriter role --}}
+                    <!-- Typewriter role -->
                     <p class="text-xl text-slate-500 dark:text-slate-400 mb-4 reveal reveal-delay-2 whitespace-nowrap">
                         <span class="block sm:inline">{{ __('messages.hero_role_prefix') }}</span>
                         <span data-typewriter='@json(__("messages.hero_roles"))'
@@ -46,7 +46,7 @@
                         {{ __('messages.hero_subtitle') }}
                     </p>
 
-                    {{-- CTAs --}}
+                    <!-- CTAs -->
                     <div class="flex flex-wrap gap-4 reveal reveal-delay-4">
                         <x-primary-button href="{{ localized_route('projects') }}">
                             {{ __('messages.hero_cta') }}
@@ -61,7 +61,7 @@
                         </x-ghost-button>
                     </div>
 
-                    {{-- Stats --}}
+                    <!-- Stats -->
                     <div
                         class="flex flex-wrap gap-8 mt-14 pt-10 border-t border-slate-200 dark:border-white/10 reveal reveal-delay-5"
                         x-data="heroStats()" x-init="init()">
@@ -80,24 +80,24 @@
                     </div>
                 </div>
 
-                {{-- ── Right: code card ─────────────────────────── --}}
+                <!-- ── Right: code card -->
                 <div class="flex items-center justify-center reveal reveal-delay-2">
                     <div class="relative w-full max-w-sm mx-auto">
-                        {{-- Glow behind card --}}
+                        <!-- Glow behind card -->
                         <div
                             class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 blur-3xl"></div>
 
-                        {{-- Code card --}}
+                        <!-- Code card -->
                         <div
                             class="relative rounded-3xl bg-white/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 shadow-2xl p-6 backdrop-blur-xl">
-                            {{-- Window dots --}}
+                            <!-- Window dots -->
                             <div class="flex gap-1.5 mb-5">
                                 <div class="w-3 h-3 rounded-full bg-red-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-highlight-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
                             </div>
 
-                            {{-- Code --}}
+                            <!-- Code -->
                             <div class="space-y-2 font-mono text-xs leading-relaxed">
                                 <div>
                                     <span class="text-primary-400">class</span>
@@ -141,14 +141,14 @@
                                 <div><span class="text-slate-400 dark:text-slate-500">}</span></div>
                             </div>
 
-                            {{-- Blinking cursor --}}
+                            <!-- Blinking cursor -->
                             <div class="mt-3 flex items-center gap-2">
                                 <span class="text-primary-400 font-mono text-sm animate-pulse">▋</span>
                                 <div class="h-px flex-1 bg-primary-500/20"></div>
                             </div>
                         </div>
 
-                        {{-- Floating badge --}}
+                        <!-- Floating badge -->
                         <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full whitespace-nowrap
                             bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-white/10 shadow-lg
                             text-xs font-mono font-semibold text-primary-600 dark:text-primary-400">
@@ -161,7 +161,7 @@
         </div>
     </section>
 
-    {{-- ── SERVICES ─────────────────────────────────────────────────────── --}}
+    <!-- SERVICES -->
     <x-page-section id="services" muted class="scroll-mt-12">
         <x-section-header
             :eyebrow="__('messages.services_eyebrow')"
@@ -172,11 +172,11 @@
         @livewire('services')
     </x-page-section>
 
-    {{-- ── ABOUT TEASER ─────────────────────────────────────────────────── --}}
+    <!-- ABOUT TEASER -->
     <x-page-section>
         <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-            {{-- Left side --}}
+            <!-- Left side -->
             <div class="reveal">
                 <span
                     class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-4 block">
@@ -193,10 +193,10 @@
                 </x-arrow-link>
             </div>
 
-            {{-- Right side: info cards --}}
+            <!-- Right side: info cards -->
             <div class="grid grid-cols-2 gap-4 reveal reveal-delay-2">
 
-                {{-- Location --}}
+                <!-- Location -->
                 <x-info-card
                     :label="__('messages.about_location_label')"
                     :value="__('messages.about_location_value')"
@@ -212,7 +212,7 @@
                     </x-slot>
                 </x-info-card>
 
-                {{-- Experience --}}
+                <!-- Experience -->
                 <x-info-card
                     :label="__('messages.about_experience')"
                     :value="__('messages.about_exp_value')"
@@ -226,7 +226,7 @@
                     </x-slot>
                 </x-info-card>
 
-                {{-- Education --}}
+                <!-- Education -->
                 <x-info-card
                     :label="__('messages.about_edu_label')"
                     :value="__('messages.about_edu_value')"
@@ -240,7 +240,7 @@
                     </x-slot>
                 </x-info-card>
 
-                {{-- Languages --}}
+                <!-- Languages -->
                 <x-info-card
                     :label="__('messages.about_lang_label')"
                     :value="__('messages.about_lang_value')"
@@ -258,14 +258,14 @@
         </div>
     </x-page-section>
 
-    {{-- ── SKILLS ────────────────────────────────────────────────────────── --}}
+    <!-- SKILLS -->
     <x-page-section muted>
         @livewire('skills-sphere')
     </x-page-section>
 
-    {{-- ── PROJECTS PREVIEW ─────────────────────────────────────────────── --}}
+    <!-- PROJECTS PREVIEW -->
     <x-page-section>
-        {{-- Header row: title left + link right --}}
+        <!-- Header row: title left + link right -->
         <div class="flex items-end mb-12 reveal">
             <div class="flex-1">
                 <span
@@ -281,7 +281,7 @@
             </x-arrow-link>
         </div>
 
-        {{-- Project cards grid --}}
+        <!-- Project cards grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse($projects as $i => $project)
                 <x-project-card :project="$project" :delay="($i % 3) + 1"/>
@@ -297,7 +297,7 @@
             @endforelse
         </div>
 
-        {{-- Mobile button --}}
+        <!-- Mobile button -->
         <div class="mt-10 flex justify-center sm:hidden reveal">
             <x-primary-button href="{{ localized_route('projects') }}">
                 {{ __('messages.projects_all_cta') }}
@@ -308,12 +308,57 @@
         </div>
     </x-page-section>
 
-    {{-- ── TESTIMONIALS ─────────────────────────────────────────────────── --}}
+    <!-- TESTIMONIALS -->
     <x-page-section>
         @livewire('testimonials')
     </x-page-section>
 
-    {{-- ── CONTACT CTA ──────────────────────────────────────────────────── --}}
+    <!-- BLOG PREVIEW -->
+    <x-page-section muted>
+        <!-- Header row: title left + link right -->
+        <div class="flex items-end mb-12 reveal">
+            <div class="flex-1">
+            <span
+                class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-3 block">
+                {{ __('messages.blog_eyebrow') }}
+            </span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                    {{ __('messages.blog_title') }}
+                </h2>
+            </div>
+            <x-arrow-link href="{{ localized_route('blogs') }}" class="hidden sm:inline-flex">
+                {{ __('messages.blog_all_posts_cta') }}
+            </x-arrow-link>
+        </div>
+
+        <!-- Post cards grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @forelse($latestPosts as $i => $post)
+                <x-blog-card :post="$post" :delay="($i % 3) + 1"/>
+            @empty
+                <div class="col-span-3 text-center py-20">
+                    <svg class="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4"
+                         fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>
+                    </svg>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">{{ __('messages.blog_no_posts_yet') }}</p>
+                </div>
+            @endforelse
+        </div>
+
+        <!-- Mobile button -->
+        <div class="mt-10 flex justify-center sm:hidden reveal">
+            <x-primary-button href="{{ localized_route('blogs') }}">
+                {{ __('messages.blog_all_posts_cta') }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+            </x-primary-button>
+        </div>
+    </x-page-section>
+
+    <!-- CONTACT CTA -->
     <x-page-section>
         <div
             class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-500 p-12 text-center reveal">
@@ -333,7 +378,7 @@
         </div>
     </x-page-section>
 
-    {{-- ── SERVICE MODAL ─────────────────────────────────────────────────── --}}
+    <!-- SERVICE MODAL -->
     <x-detail-modal item-var="service" close-method="close">
         <x-slot:header>
             <div class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">

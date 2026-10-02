@@ -248,4 +248,5 @@ return [
     'blog_read_time' => 'Reading time',
     'blog_minutes'   => 'min',
     'blog_share'     => 'Share',
+    'blog_no_posts_yet' => 'No blog posts yet.',
 ];

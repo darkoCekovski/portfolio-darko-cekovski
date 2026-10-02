@@ -248,4 +248,5 @@ return [
     'blog_read_time' => 'Lesezeit',
     'blog_minutes'   => 'Min.',
     'blog_share'     => 'Teilen',
+    'blog_no_posts_yet' => 'Noch keine Blogbeiträge.',
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\BlogPost;
 use App\Models\Project;
 use App\Models\Service;
 use Livewire\Component;
@@ -18,6 +19,13 @@ class HomePage extends Component
     public function render()
     {
         $projects = Project::latest()->take(3)->get();
+
+        // Latest 3 posts in the current language, used by the homepage blog preview
+        $latestPosts = BlogPost::locale(app()->getLocale())
+            ->with('category')
+            ->latest('published_at')
+            ->take(3)
+            ->get();
 
         $metaTitle = app()->getLocale() === 'de'
             ? 'Darko Cekovski — Laravel Full-Stack Entwickler'
@@ -38,7 +46,7 @@ class HomePage extends Component
             }
         }
 
-        return view('livewire.pages.home-page', compact('projects'))
+        return view('livewire.pages.home-page', compact('projects', 'latestPosts'))
             ->layout('layouts.app', [
                 'title'           => $metaTitle,
                 'metaTitle'       => $metaTitle,
