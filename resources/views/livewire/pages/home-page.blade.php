@@ -318,10 +318,10 @@
         <!-- Header row: title left + link right -->
         <div class="flex items-end mb-12 reveal">
             <div class="flex-1">
-            <span
-                class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-3 block">
+                <span
+                    class="text-xs font-bold uppercase tracking-widest text-primary-500 dark:text-primary-400 mb-3 block">
                 {{ __('messages.blog_eyebrow') }}
-            </span>
+                </span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
                     {{ __('messages.blog_title') }}
                 </h2>
@@ -381,8 +381,10 @@
     <!-- SERVICE MODAL -->
     <x-detail-modal item-var="service" close-method="close">
         <x-slot:header>
-            <div class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">
-                <div class="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 shadow-sm flex items-center justify-center mb-5">
+            <div
+                class="relative bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/20 dark:via-secondary-500/10 dark:to-accent-500/10 p-8 pb-6">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 shadow-sm flex items-center justify-center mb-5">
                     <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor"
                          stroke-width="1.75" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" :d="service.icon"></path>
