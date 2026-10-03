@@ -31,7 +31,7 @@ return [
     'about_eyebrow' => 'Über mich',
     'about_title' => 'Der Entwickler hinter dem Code',
     'about_page_subtitle' => 'Ein kleiner Einblick in meine Person, welche Erfahrung ich mitbringe und was mich antreibt, Dinge für das Web zu entwickeln.',
-    'about_text' => 'Ich bin ein Webentwickler, der sich auf die Entwicklung benutzerfreundlicher und effizienter Anwendungen mit Laravel, Tailwind CSS und Livewire spezialisiert hat. Ich verwandle komplexe Probleme gerne in elegante Lösungen.',
+    'about_text' => 'Mein Name ist Darko Cekovski, und ich bin Webentwickler und auf die Entwicklung benutzerfreundlicher und effizienter Anwendungen mit Laravel, Tailwind CSS und Livewire spezialisiert. Ich verwandle komplexe Probleme gerne in elegante Lösungen.',
     'about_cta' => 'Mehr über mich',
     'about_who_title' => 'Wer ich bin',
     'about_passion_title' => 'Was mich antreibt',

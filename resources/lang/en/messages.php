@@ -31,7 +31,7 @@ return [
     'about_eyebrow' => 'About Me',
     'about_title' => 'The developer behind the code',
     'about_page_subtitle' => 'A little background on who I am, what experience I bring, and what drives me to build things for the web.',
-    'about_text' => "I'm a web developer specialising in building user-friendly, efficient applications with Laravel, Tailwind CSS, and Livewire. I love turning complex problems into clean, elegant solutions.",
+    'about_text' => "My name is Darko Cekovski, and I'm a web developer specialising in building user-friendly, efficient applications with Laravel, Tailwind CSS, and Livewire. I love turning complex problems into clean, elegant solutions.",
     'about_cta' => 'Read more about me',
     'about_who_title' => 'Who I am',
     'about_passion_title' => 'What drives me',
