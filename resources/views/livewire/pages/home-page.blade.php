@@ -309,7 +309,7 @@
     </x-page-section>
 
     <!-- TESTIMONIALS -->
-    <x-page-section>
+    <x-page-section muted>
         @livewire('testimonials')
     </x-page-section>
 
@@ -351,7 +351,7 @@
     </section>
 
     <!-- BLOG PREVIEW -->
-    <x-page-section muted>
+    <x-page-section>
         <!-- Header row: title left + link right -->
         <div class="flex items-end mb-12 reveal">
             <div class="flex-1">
