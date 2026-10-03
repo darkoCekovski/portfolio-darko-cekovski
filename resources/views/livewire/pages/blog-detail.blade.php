@@ -58,7 +58,23 @@
 
                     <!-- Mobile only -->
                     <div class="lg:hidden mt-10 pt-6 border-t border-slate-200 dark:border-white/10">
+
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-8 h-8 flex items-center justify-center flex-shrink-0 bg-primary-50 dark:bg-primary-500/10 rounded-lg">
+                                <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2"
+                                     viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-widest">
+                                {{ __('messages.blog_share') }}
+                            </h3>
+                        </div>
+
                         <x-share-links :post="$post"/>
+
                     </div>
                 </div>
 
