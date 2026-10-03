@@ -82,79 +82,209 @@
 
                 <!-- ── Right: code card -->
                 <div class="flex items-center justify-center reveal reveal-delay-2">
-                    <div class="relative w-full max-w-sm mx-auto">
-                        <!-- Glow behind card -->
-                        <div
-                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 blur-3xl"></div>
+                    <!-- Контејнер за десната страна од херо секцијата -->
+                    <div class="relative w-full max-w-lg aspect-square mx-auto flex items-center justify-center overflow-hidden rounded-2xl bg-slate-950/40 border border-slate-800/50 backdrop-blur-sm"
+                         x-data="heroAnimation()">
 
-                        <!-- Code card -->
-                        <div
-                            class="relative rounded-3xl bg-white/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 shadow-2xl p-6 backdrop-blur-xl">
-                            <!-- Window dots -->
-                            <div class="flex gap-1.5 mb-5">
-                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-highlight-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                            </div>
+                        <!-- Интерактивното Canvas платно за 3D/мрежна анимација -->
+                        <canvas x-ref="canvas" class="absolute inset-0 w-full h-full pointer-events-auto"></canvas>
 
-                            <!-- Code -->
-                            <div class="space-y-2 font-mono text-xs leading-relaxed">
-                                <div>
-                                    <span class="text-primary-400">class</span>
-                                    <span class="text-accent-400"> Portfolio</span>
-                                    <span class="text-slate-400 dark:text-slate-500"> {</span>
-                                </div>
-                                <div class="pl-4">
-                                    <span class="text-emerald-400">public</span>
-                                    <span class="text-primary-300"> string</span>
-                                    <span class="text-slate-700 dark:text-slate-300"> $name</span>
-                                    <span class="text-slate-400 dark:text-slate-500"> = </span>
-                                    <span class="text-highlight-400">'Darko Cekovski'</span>
-                                    <span class="text-slate-400 dark:text-slate-500">;</span>
-                                </div>
-                                <div class="pl-4">
-                                    <span class="text-emerald-400">public</span>
-                                    <span class="text-primary-300"> array</span>
-                                    <span class="text-slate-700 dark:text-slate-300"> $stack</span>
-                                    <span class="text-slate-400 dark:text-slate-500"> = [</span>
-                                </div>
-                                @foreach(['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'] as $tech)
-                                    <div class="pl-8">
-                                        <span class="text-highlight-400">'{{ $tech }}'</span>
-                                        <span class="text-slate-400 dark:text-slate-500">,</span>
-                                    </div>
-                                @endforeach
-                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">];</span></div>
-                                <div class="pt-1 pl-4">
-                                    <span class="text-emerald-400">public function</span>
-                                    <span class="text-accent-400"> build</span>
-                                    <span class="text-slate-400 dark:text-slate-500">(): </span>
-                                    <span class="text-primary-300">string</span>
-                                </div>
-                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">{</span></div>
-                                <div class="pl-8">
-                                    <span class="text-primary-400">return</span>
-                                    <span class="text-highlight-400"> 'something great'</span>
-                                    <span class="text-slate-400 dark:text-slate-500">;</span>
-                                </div>
-                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">}</span></div>
-                                <div><span class="text-slate-400 dark:text-slate-500">}</span></div>
-                            </div>
-
-                            <!-- Blinking cursor -->
-                            <div class="mt-3 flex items-center gap-2">
-                                <span class="text-primary-400 font-mono text-sm animate-pulse">▋</span>
-                                <div class="h-px flex-1 bg-primary-500/20"></div>
-                            </div>
+                        <!-- Централен визуелен елемент/акцент (твоето лого или стилизирана икона) -->
+                        <div class="relative z-10 p-6 rounded-full bg-gradient-to-b from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 shadow-2xl shadow-indigo-500/5 animate-pulse">
+                            <svg class="w-16 h-16 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg>
                         </div>
 
-                        <!-- Floating badge -->
-                        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full whitespace-nowrap
-                            bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-white/10 shadow-lg
-                            text-xs font-mono font-semibold text-primary-600 dark:text-primary-400">
-                            {{ __('messages.hero_card_badge') }}
+                        <!-- Суптилен текст во аголот, во твојот стил -->
+                        <div class="absolute bottom-4 right-4 z-10 text-xs font-mono text-slate-500 select-none">
+                            // alpine.js & canvas integration
                         </div>
                     </div>
+
+                    <script>
+                        function heroAnimation() {
+                            return {
+                                points: [],
+                                maxPoints: 45,
+                                connectionDistance: 100,
+                                mouse: { x: null, y: null, radius: 120 },
+                                ctx: null,
+                                canvas: null,
+
+                                init() {
+                                    this.canvas = this.\$refs.canvas;
+                                    this.ctx = this.canvas.getContext('2d');
+
+                                    this.resizeCanvas();
+                                    this.createPoints();
+
+                                    // Следење на глувчето
+                                    window.addEventListener('resize', () => this.resizeCanvas());
+                                    this.canvas.addEventListener('mousemove', (e) => {
+                                        const rect = this.canvas.getBoundingClientRect();
+                                        this.mouse.x = e.clientX - rect.left;
+                                        this.mouse.y = e.clientY - rect.top;
+                                    });
+                                    this.canvas.addEventListener('mouseleave', () => {
+                                        this.mouse.x = null;
+                                        this.mouse.y = null;
+                                    });
+
+                                    // Стартување на анимациската јамка (Loop)
+                                    this.animate();
+                                },
+
+                                resizeCanvas() {
+                                    this.canvas.width = this.canvas.offsetWidth;
+                                    this.canvas.height = this.canvas.offsetHeight;
+                                },
+
+                                createPoints() {
+                                    this.points = [];
+                                    for (let i = 0; i < this.maxPoints; i++) {
+                                        this.points.push({
+                                            x: Math.random() * this.canvas.width,
+                                            y: Math.random() * this.canvas.height,
+                                            vx: (Math.random() - 0.5) * 0.6,
+                                            vy: (Math.random() - 0.5) * 0.6,
+                                            radius: Math.random() * 2 + 1
+                                        });
+                                    }
+                                },
+
+                                animate() {
+                                    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                                    // Ажурирање и цртање на точките
+                                    this.points.forEach(p => {
+                                        p.x += p.vx;
+                                        p.y += p.vy;
+
+                                        // Одбивање од деструктивните рабови
+                                        if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+                                        if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+
+                                        // Ефект на привлекување од глувчето (суптилна интеракција)
+                                        if (this.mouse.x !== null && this.mouse.y !== null) {
+                                            const dx = this.mouse.x - p.x;
+                                            const dy = this.mouse.y - p.y;
+                                            const dist = Math.sqrt(dx * dx + dy * dy);
+                                            if (dist < this.mouse.radius) {
+                                                const force = (this.mouse.radius - dist) / this.mouse.radius;
+                                                p.x -= dx * force * 0.02;
+                                                p.y -= dy * force * 0.02;
+                                            }
+                                        }
+
+                                        // Цртање на точката со боја од твојот бренд
+                                        this.ctx.beginPath();
+                                        this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                                        this.ctx.fillStyle = 'rgba(129, 140, 248, 0.4)'; // Indigo-400 со транспарентност
+                                        this.ctx.fill();
+                                    });
+
+                                    // Цртање на поврзувачките линии
+                                    for (let i = 0; i < this.points.length; i++) {
+                                        for (let j = i + 1; j < this.points.length; j++) {
+                                            const p1 = this.points[i];
+                                            const p2 = this.points[j];
+                                            const dx = p1.x - p2.x;
+                                            const dy = p1.y - p2.y;
+                                            const dist = Math.sqrt(dx * dx + dy * dy);
+
+                                            if (dist < this.connectionDistance) {
+                                                const alpha = (1 - dist / this.connectionDistance) * 0.15;
+                                                this.ctx.beginPath();
+                                                this.ctx.moveTo(p1.x, p1.y);
+                                                this.ctx.lineTo(p2.x, p2.y);
+                                                // Градиент ефект помеѓу индиго и виолетова боја за линиите
+                                                this.ctx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
+                                                this.ctx.lineWidth = 0.8;
+                                                this.ctx.stroke();
+                                            }
+                                        }
+                                    }
+
+                                    requestAnimationFrame(() => this.animate());
+                                }
+                            }
+                        }
+                    </script>
+
+                    {{--                    <div class="relative w-full max-w-sm mx-auto">--}}
+{{--                        <!-- Glow behind card -->--}}
+{{--                        <div--}}
+{{--                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 blur-3xl"></div>--}}
+
+{{--                        <!-- Code card -->--}}
+{{--                        <div--}}
+{{--                            class="relative rounded-3xl bg-white/80 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 shadow-2xl p-6 backdrop-blur-xl">--}}
+{{--                            <!-- Window dots -->--}}
+{{--                            <div class="flex gap-1.5 mb-5">--}}
+{{--                                <div class="w-3 h-3 rounded-full bg-red-400"></div>--}}
+{{--                                <div class="w-3 h-3 rounded-full bg-highlight-400"></div>--}}
+{{--                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>--}}
+{{--                            </div>--}}
+
+{{--                            <!-- Code -->--}}
+{{--                            <div class="space-y-2 font-mono text-xs leading-relaxed">--}}
+{{--                                <div>--}}
+{{--                                    <span class="text-primary-400">class</span>--}}
+{{--                                    <span class="text-accent-400"> Portfolio</span>--}}
+{{--                                    <span class="text-slate-400 dark:text-slate-500"> {</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="pl-4">--}}
+{{--                                    <span class="text-emerald-400">public</span>--}}
+{{--                                    <span class="text-primary-300"> string</span>--}}
+{{--                                    <span class="text-slate-700 dark:text-slate-300"> $name</span>--}}
+{{--                                    <span class="text-slate-400 dark:text-slate-500"> = </span>--}}
+{{--                                    <span class="text-highlight-400">'Darko Cekovski'</span>--}}
+{{--                                    <span class="text-slate-400 dark:text-slate-500">;</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="pl-4">--}}
+{{--                                    <span class="text-emerald-400">public</span>--}}
+{{--                                    <span class="text-primary-300"> array</span>--}}
+{{--                                    <span class="text-slate-700 dark:text-slate-300"> $stack</span>--}}
+{{--                                    <span class="text-slate-400 dark:text-slate-500"> = [</span>--}}
+{{--                                </div>--}}
+{{--                                @foreach(['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'] as $tech)--}}
+{{--                                    <div class="pl-8">--}}
+{{--                                        <span class="text-highlight-400">'{{ $tech }}'</span>--}}
+{{--                                        <span class="text-slate-400 dark:text-slate-500">,</span>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">];</span></div>--}}
+{{--                                <div class="pt-1 pl-4">--}}
+{{--                                    <span class="text-emerald-400">public function</span>--}}
+{{--                                    <span class="text-accent-400"> build</span>--}}
+{{--                                    <span class="text-slate-400 dark:text-slate-500">(): </span>--}}
+{{--                                    <span class="text-primary-300">string</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">{</span></div>--}}
+{{--                                <div class="pl-8">--}}
+{{--                                    <span class="text-primary-400">return</span>--}}
+{{--                                    <span class="text-highlight-400"> 'something great'</span>--}}
+{{--                                    <span class="text-slate-400 dark:text-slate-500">;</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="pl-4"><span class="text-slate-400 dark:text-slate-500">}</span></div>--}}
+{{--                                <div><span class="text-slate-400 dark:text-slate-500">}</span></div>--}}
+{{--                            </div>--}}
+
+{{--                            <!-- Blinking cursor -->--}}
+{{--                            <div class="mt-3 flex items-center gap-2">--}}
+{{--                                <span class="text-primary-400 font-mono text-sm animate-pulse">▋</span>--}}
+{{--                                <div class="h-px flex-1 bg-primary-500/20"></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <!-- Floating badge -->--}}
+{{--                        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full whitespace-nowrap--}}
+{{--                            bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-white/10 shadow-lg--}}
+{{--                            text-xs font-mono font-semibold text-primary-600 dark:text-primary-400">--}}
+{{--                            {{ __('messages.hero_card_badge') }}--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
 
             </div>
