@@ -32,7 +32,7 @@
                         {{ __('messages.hero_greeting') }}
                     </p>
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white mb-6 reveal reveal-delay-2">
-                        <span class="gradient-text">Darko Cekovski</span>
+                        <span class="gradient-text">Darko</span>
                     </h1>
 
                     <!-- Typewriter role -->
