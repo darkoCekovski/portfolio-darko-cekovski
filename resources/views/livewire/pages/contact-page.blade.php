@@ -8,32 +8,10 @@
     <x-page-section>
         <div class="grid lg:grid-cols-5 gap-16">
 
-            {{-- Contact info --}}
+            <!-- Contact info -->
             <div class="lg:col-span-2 space-y-8 reveal">
 
-                {{-- Email --}}
-                {{--                <div class="flex gap-4">--}}
-                {{--                    <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-500/10--}}
-                {{--                                flex items-center justify-center flex-shrink-0">--}}
-                {{--                        <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor"--}}
-                {{--                             stroke-width="2" viewBox="0 0 24 24">--}}
-                {{--                            <path stroke-linecap="round" stroke-linejoin="round"--}}
-                {{--                                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>--}}
-                {{--                        </svg>--}}
-                {{--                    </div>--}}
-                {{--                    <div>--}}
-                {{--                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">--}}
-                {{--                            {{ __('messages.contact_email_label') }}--}}
-                {{--                        </div>--}}
-                {{--                        <a href="mailto:hello@darkocekovski.com"--}}
-                {{--                           class="font-semibold text-slate-700 dark:text-slate-300 mt-0.5 block--}}
-                {{--                                  hover:text-primary-600 dark:hover:text-primary-400 transition-colors">--}}
-                {{--                            hello@darkocekovski.com--}}
-                {{--                        </a>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-
-                {{-- Location --}}
+                <!-- Location -->
                 <div class="flex gap-4">
                     <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-500/10
                                 flex items-center justify-center flex-shrink-0">
@@ -55,7 +33,7 @@
                     </div>
                 </div>
 
-                {{-- Response note --}}
+                <!-- Response note -->
                 <div class="p-6 rounded-2xl bg-gradient-to-br from-primary-500/10 to-accent-500/10
                             dark:from-primary-500/20 dark:to-accent-500/15
                             border border-primary-200/50 dark:border-primary-500/20">
@@ -66,12 +44,17 @@
 
             </div>
 
-            {{-- Form --}}
+            <!-- Form -->
             <div class="lg:col-span-3 reveal reveal-delay-2">
 
                 <form wire:submit="submit" class="space-y-5" novalidate>
 
-                    {{-- Name --}}
+                    <!-- Required fields note -->
+                    <p class="text-xs text-slate-400 dark:text-slate-500">
+                        <span class="text-red-400">*</span> {{ __('messages.contact_required_note') }}
+                    </p>
+
+                    <!-- Name -->
                     <div>
                         <label for="name"
                                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
@@ -102,7 +85,7 @@
                         @enderror
                     </div>
 
-                    {{-- Email --}}
+                    <!-- Email -->
                     <div>
                         <label for="email"
                                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
@@ -133,7 +116,7 @@
                         @enderror
                     </div>
 
-                    {{-- Message --}}
+                    <!-- Message -->
                     <div>
                         <label for="comment"
                                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
@@ -163,7 +146,7 @@
                         @enderror
                     </div>
 
-                    {{-- Cloudflare Turnstile --}}
+                    <!-- Cloudflare Turnstile -->
                     <div>
                         <div wire:ignore
                              x-data="turnstileWidget()"
@@ -182,7 +165,7 @@
                         @enderror
                     </div>
 
-                    {{-- Submit --}}
+                    <!-- Submit -->
                     <button type="submit"
                             wire:loading.attr="disabled"
                             wire:target="submit"

@@ -212,6 +212,7 @@ return [
     'contact_sending' => 'Wird gesendet…',
     'contact_success' => '✅ Danke! Deine Nachricht wurde gesendet. Ich melde mich bald.',
     'contact_error' => 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
+    'contact_required_note' => 'Pflichtfelder',
 // Contact validation
     'contact_name_required' => 'Bitte gib deinen Namen ein.',
     'contact_name_min' => 'Dein Name muss mindestens 2 Zeichen lang sein.',
