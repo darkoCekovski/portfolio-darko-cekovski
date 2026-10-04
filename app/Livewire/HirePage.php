@@ -21,8 +21,6 @@ class HirePage extends Component
     private const LANGUAGES = [
         'en' => 'English',
         'de' => 'Deutsch',
-        'mk' => 'Македонски',
-        'sr' => 'Srpski / Hrvatski',
     ];
 
     // Receives the finished wizard from Alpine, validates it again (the client checks are only for comfort) and stores it.

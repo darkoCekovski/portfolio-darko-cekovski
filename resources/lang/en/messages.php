@@ -329,7 +329,8 @@ return [
     'hire_err_throttled'       => 'Too many requests. Please try again later.',
 
     'hire_done_title'          => 'Thank you, :name!',
-    'hire_done_text'           => 'Your request has arrived.',
+    'hire_done_text_project' => 'Your request has arrived. ⚡ I typically respond within 24 hours. Looking forward to hearing about your project!',
+    'hire_done_text_role'    => 'Your request has arrived. ⚡ I typically respond within 24 hours. Thank you for considering me, I’m looking forward to learning more about the role and the team!',
     'hire_done_projects'       => 'See my projects',
     'hire_done_blog'           => 'Read the blog',
 ];

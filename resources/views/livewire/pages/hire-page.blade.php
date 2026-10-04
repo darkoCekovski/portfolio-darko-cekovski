@@ -19,14 +19,16 @@
                     <!-- PROGRESS -->
                     <div class="mb-6">
                         <div class="mb-3 flex items-center justify-between text-xs font-semibold">
-                            <span class="text-primary-600 dark:text-primary-400" aria-live="polite" x-text="stepLabel"></span>
+                            <span class="text-primary-600 dark:text-primary-400" aria-live="polite"
+                                  x-text="stepLabel"></span>
                             <span class="text-slate-400 dark:text-slate-500" x-text="stepTitles[step - 1]"></span>
                         </div>
 
                         <div class="h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-white/10"
                              role="progressbar" aria-valuemin="1" :aria-valuemax="totalSteps" :aria-valuenow="step">
-                            <div class="h-full rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 transition-all duration-500 ease-out"
-                                 :style="'width:' + progress + '%'"></div>
+                            <div
+                                class="h-full rounded-full bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 transition-all duration-500 ease-out"
+                                :style="'width:' + progress + '%'"></div>
                         </div>
 
                         <!-- Step names: desktop only; on narrow screens "Step X of Y" is enough. Finished steps can be revisited. -->
@@ -65,8 +67,10 @@
                                                    :label="__('messages.hire_intent_project')"
                                                    :hint="__('messages.hire_intent_project_hint')">
                                         <x-slot name="icon">
-                                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
+                                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                                                 viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
                                             </svg>
                                         </x-slot>
                                     </x-choice-card>
@@ -75,8 +79,10 @@
                                                    :label="__('messages.hire_intent_role')"
                                                    :hint="__('messages.hire_intent_role_hint')">
                                         <x-slot name="icon">
-                                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
+                                            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75"
+                                                 viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                                             </svg>
                                         </x-slot>
                                     </x-choice-card>
@@ -86,7 +92,8 @@
 
                             <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
                                 {{ __('messages.hire_contact_prompt') }}
-                                <a href="{{ localized_route('contact') }}" class="font-semibold text-primary-600 hover:underline dark:text-primary-400">
+                                <a href="{{ localized_route('contact') }}"
+                                   class="font-semibold text-primary-600 hover:underline dark:text-primary-400">
                                     {{ __('messages.hire_contact_link') }}
                                 </a>
                             </p>
@@ -97,7 +104,8 @@
                             <div x-show="!isRole" class="space-y-6">
                                 <fieldset data-field="projectTypes">
                                     <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_types_legend') }} <span class="text-red-400" aria-hidden="true">*</span>
+                                        {{ __('messages.hire_types_legend') }} <span class="text-red-400"
+                                                                                     aria-hidden="true">*</span>
                                     </legend>
                                     <div class="grid gap-3 sm:grid-cols-2">
                                         @foreach($options['types'] as $value => $label)
@@ -117,7 +125,8 @@
                             </div>
 
                             <div x-show="isRole" x-cloak class="space-y-6">
-                                <x-wizard-field field="company" :required="true" :maxlength="120" autocomplete="organization"
+                                <x-wizard-field field="company" :required="true" :maxlength="120"
+                                                autocomplete="organization"
                                                 :label="__('messages.hire_company_label')"/>
                                 <x-wizard-field field="roleTitle" :label="__('messages.hire_role_label')"/>
                             </div>
@@ -128,11 +137,13 @@
                             <div class="space-y-8">
                                 <fieldset x-show="!isRole" data-field="budget">
                                     <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_budget_label') }} <span class="text-red-400" aria-hidden="true">*</span>
+                                        {{ __('messages.hire_budget_label') }} <span class="text-red-400"
+                                                                                     aria-hidden="true">*</span>
                                     </legend>
                                     <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
                                         @foreach($options['budgets'] as $value => $label)
-                                            <x-choice-card name="budget" :value="$value" model="form.budget" :label="$label"/>
+                                            <x-choice-card name="budget" :value="$value" model="form.budget"
+                                                           :label="$label"/>
                                         @endforeach
                                     </div>
                                     <p class="mt-3 text-xs text-slate-400 dark:text-slate-500">{{ __('messages.hire_budget_note') }}</p>
@@ -141,11 +152,13 @@
 
                                 <fieldset x-show="isRole" x-cloak data-field="workModel">
                                     <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_work_label') }} <span class="text-red-400" aria-hidden="true">*</span>
+                                        {{ __('messages.hire_work_label') }} <span class="text-red-400"
+                                                                                   aria-hidden="true">*</span>
                                     </legend>
                                     <div class="grid gap-3 sm:grid-cols-3">
                                         @foreach($options['workModels'] as $value => $label)
-                                            <x-choice-card name="workModel" :value="$value" model="form.workModel" :label="$label"/>
+                                            <x-choice-card name="workModel" :value="$value" model="form.workModel"
+                                                           :label="$label"/>
                                         @endforeach
                                     </div>
                                     <x-field-error field="workModel"/>
@@ -153,11 +166,13 @@
 
                                 <fieldset data-field="timeline">
                                     <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_timeline_label') }} <span class="text-red-400" aria-hidden="true">*</span>
+                                        {{ __('messages.hire_timeline_label') }} <span class="text-red-400"
+                                                                                       aria-hidden="true">*</span>
                                     </legend>
                                     <div class="grid gap-3 sm:grid-cols-3">
                                         @foreach($options['timelines'] as $value => $label)
-                                            <x-choice-card name="timeline" :value="$value" model="form.timeline" :label="$label"/>
+                                            <x-choice-card name="timeline" :value="$value" model="form.timeline"
+                                                           :label="$label"/>
                                         @endforeach
                                     </div>
                                     <x-field-error field="timeline"/>
@@ -168,7 +183,8 @@
                         <!-- STEP 4: contact -->
                         <x-wizard-step :n="4">
                             <!-- Recap of the answers, so the visitor can review them before sending -->
-                            <div class="mb-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.03]">
+                            <div
+                                class="mb-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.03]">
                                 <p class="mb-2 text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
                                     {{ __('messages.hire_recap') }}
                                 </p>
@@ -183,7 +199,8 @@
                                 <div class="grid gap-6 sm:grid-cols-2">
                                     <x-wizard-field field="name" :required="true" :maxlength="100" autocomplete="name"
                                                     :label="__('messages.hire_name_label')"/>
-                                    <x-wizard-field field="email" type="email" :required="true" :maxlength="150" autocomplete="email"
+                                    <x-wizard-field field="email" type="email" :required="true" :maxlength="150"
+                                                    autocomplete="email"
                                                     :label="__('messages.hire_email_label')"/>
                                 </div>
 
@@ -191,16 +208,18 @@
                                     <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
                                         {{ __('messages.hire_lang_label') }}
                                     </legend>
-                                    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                                    <div class="grid max-w-sm grid-cols-2 gap-3">
                                         @foreach($languages as $value => $label)
-                                            <x-choice-card name="language" :value="$value" model="form.language" :label="$label"/>
+                                            <x-choice-card name="language" :value="$value" model="form.language"
+                                                           :label="$label"/>
                                         @endforeach
                                     </div>
                                 </fieldset>
 
                                 <!-- Honeypot: moved off-screen and hidden from assistive tech; bots fill it, people never see it -->
                                 <div class="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
-                                    <label>Website <input type="text" name="hp_url" tabindex="-1" autocomplete="off" x-model="form.website"></label>
+                                    <label>Website <input type="text" name="hp_url" tabindex="-1" autocomplete="off"
+                                                          x-model="form.website"></label>
                                 </div>
 
                                 <p class="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
@@ -216,13 +235,16 @@
                     </div>
 
                     <!-- NAVIGATION: Back on the left (secondary), Continue / Send on the right (primary) -->
-                    <div class="mt-10 flex items-center justify-between gap-4 border-t border-slate-200 pt-6 dark:border-white/10">
+                    <div
+                        class="mt-10 flex items-center justify-between gap-4 border-t border-slate-200 pt-6 dark:border-white/10">
                         <button type="button" @click="back()" x-show="step > 1" x-cloak
                                 class="inline-flex h-12 items-center gap-2 rounded-xl border border-slate-200 px-5 text-sm font-semibold
                                        text-slate-600 transition-all duration-200 hover:bg-slate-100
                                        dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
                             </svg>
                             {{ __('messages.hire_back') }}
                         </button>
@@ -232,13 +254,18 @@
                                        font-semibold text-white shadow-lg shadow-primary-500/25 transition-all duration-200
                                        hover:-translate-y-0.5 hover:bg-primary-700
                                        disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0">
-                            <svg x-show="submitting" x-cloak class="h-4 w-4 flex-shrink-0 animate-spin" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                            <svg x-show="submitting" x-cloak class="h-4 w-4 flex-shrink-0 animate-spin" fill="none"
+                                 viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                             </svg>
                             <span x-text="submitting ? ui.sending : (step === totalSteps ? ui.send : ui.next)"></span>
-                            <svg x-show="!submitting && step < totalSteps" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                            <svg x-show="!submitting && step < totalSteps" class="h-4 w-4" fill="none"
+                                 stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                         </button>
                     </div>
@@ -246,18 +273,27 @@
 
                 <!-- SUCCESS -->
                 <div x-show="done" x-cloak class="py-6 text-center">
-                    <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white shadow-lg shadow-primary-500/25">
+                    <div
+                        class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white shadow-lg shadow-primary-500/25">
                         <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
                         </svg>
                     </div>
-                    <h2 id="hire-done-heading" tabindex="-1" class="mb-3 text-2xl font-bold text-slate-900 outline-none dark:text-white" x-text="doneTitle"></h2>
-                    <p class="mx-auto mb-8 max-w-md text-slate-500 dark:text-slate-400">
-                        {{ __('messages.hire_done_text') }} {{ __('messages.contact_response_note') }}
+                    <h2 id="hire-done-heading" tabindex="-1"
+                        class="mb-3 text-2xl font-bold text-slate-900 outline-none dark:text-white"
+                        x-text="doneTitle"></h2>
+                    <!-- The thank-you text depends on the path chosen in step 1 -->
+                    <p x-show="!isRole" class="mx-auto mb-8 max-w-md text-slate-500 dark:text-slate-400">
+                        {{ __('messages.hire_done_text_project') }}
+                    </p>
+                    <p x-show="isRole" x-cloak class="mx-auto mb-8 max-w-md text-slate-500 dark:text-slate-400">
+                        {{ __('messages.hire_done_text_role') }}
                     </p>
                     <div class="flex flex-wrap justify-center gap-3">
-                        <x-primary-button href="{{ localized_route('projects') }}">{{ __('messages.hire_done_projects') }}</x-primary-button>
-                        <x-ghost-button href="{{ localized_route('blogs') }}">{{ __('messages.hire_done_blog') }}</x-ghost-button>
+                        <x-primary-button
+                            href="{{ localized_route('projects') }}">{{ __('messages.hire_done_projects') }}</x-primary-button>
+                        <x-ghost-button
+                            href="{{ localized_route('blogs') }}">{{ __('messages.hire_done_blog') }}</x-ghost-button>
                     </div>
                 </div>
             </div>
@@ -316,10 +352,18 @@
                 },
 
                 // ── Derived values ──
-                get isRole() { return this.form.intent === 'role'; },
-                get progress() { return (this.step / this.totalSteps) * 100; },
-                get stepLabel() { return this.ui.stepOf.replace(':current', this.step).replace(':total', this.totalSteps); },
-                get doneTitle() { return this.ui.doneTitle.replace(':name', this.form.name.trim().split(' ')[0]); },
+                get isRole() {
+                    return this.form.intent === 'role';
+                },
+                get progress() {
+                    return (this.step / this.totalSteps) * 100;
+                },
+                get stepLabel() {
+                    return this.ui.stepOf.replace(':current', this.step).replace(':total', this.totalSteps);
+                },
+                get doneTitle() {
+                    return this.ui.doneTitle.replace(':name', this.form.name.trim().split(' ')[0]);
+                },
 
                 // Heading and intro text of a step; steps 2 and 3 differ between the project and the role path
                 heading(n) {
@@ -429,12 +473,12 @@
 
                     this.$nextTick(() => {
                         // Focus lands on the new step's heading instead of a button that has just disappeared
-                        document.getElementById('hire-step-' + n + '-heading')?.focus({ preventScroll: true });
+                        document.getElementById('hire-step-' + n + '-heading')?.focus({preventScroll: true});
 
                         // Bring the card back into view when Continue was pressed far down on a small screen
                         if (this.$root.getBoundingClientRect().top < 0) {
                             const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                            this.$root.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+                            this.$root.scrollIntoView({behavior: calm ? 'auto' : 'smooth', block: 'start'});
                         }
                     });
                 },
@@ -464,8 +508,19 @@
                     };
 
                     return this.isRole
-                        ? { ...common, company: f.company.trim(), roleTitle: f.roleTitle.trim() || null, workModel: f.workModel }
-                        : { ...common, projectTypes: [...f.projectTypes], description: f.description.trim(), link: this.normalizeUrl(f.link) || null, budget: f.budget };
+                        ? {
+                            ...common,
+                            company: f.company.trim(),
+                            roleTitle: f.roleTitle.trim() || null,
+                            workModel: f.workModel
+                        }
+                        : {
+                            ...common,
+                            projectTypes: [...f.projectTypes],
+                            description: f.description.trim(),
+                            link: this.normalizeUrl(f.link) || null,
+                            budget: f.budget
+                        };
                 },
 
                 async submit() {
@@ -480,8 +535,8 @@
                         if (result && result.ok) {
                             this.done = true;
                             this.$nextTick(() => {
-                                document.getElementById('hire-done-heading')?.focus({ preventScroll: true });
-                                this.$root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                document.getElementById('hire-done-heading')?.focus({preventScroll: true});
+                                this.$root.scrollIntoView({behavior: 'smooth', block: 'start'});
                             });
                         } else if (result && result.errors) {
                             this.applyServerErrors(result.errors);
