@@ -105,3 +105,14 @@ html.dark .testimonials-swiper {
     --swiper-pagination-bullet-inactive-opacity: 0.3;
     --swiper-pagination-color: #818cf8;
 }
+
+/* ── Hire wizard: directional step transitions (--hire-dir is 1 when moving forward, -1 when moving back) ── */
+.hire-step-enter { transition: opacity .3s ease-out .12s, transform .3s ease-out .12s; }   /* waits for the old step to leave */
+.hire-step-enter-start { opacity: 0; transform: translateX(calc(var(--hire-dir, 1) * 1.5rem)); }
+.hire-step-leave { transition: opacity .12s ease-in, transform .12s ease-in; }
+.hire-step-leave-end { opacity: 0; transform: translateX(calc(var(--hire-dir, 1) * -1.5rem)); }
+
+@media (prefers-reduced-motion: reduce) {
+    .hire-step-enter,
+    .hire-step-leave { transition: none; }
+}

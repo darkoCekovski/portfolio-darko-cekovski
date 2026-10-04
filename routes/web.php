@@ -13,6 +13,8 @@ use App\Http\Controllers\ServiceApiController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\BlogsPage;
 use App\Livewire\BlogDetail;
+use App\Livewire\HirePage;
+
 
 Route::redirect('/', '/en');
 
@@ -29,6 +31,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|de']], functio
     Route::get('/skill/{slug}',   SkillsPage::class)->name('skill.detail');
     Route::get('/blog',           BlogsPage::class)->name('blogs');
     Route::get('/blog/{slug}',    BlogDetail::class)->name('blog.detail');
+    Route::get('/hire', HirePage::class)->name('hire');
 });
 
 Route::get('/api/skills/{slug}',    [SkillApiController::class, 'show']);
