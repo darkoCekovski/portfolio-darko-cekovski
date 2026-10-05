@@ -51,9 +51,7 @@
                     </div>
 
                     <!-- Required-fields note; kept invisible (not removed) on step 1 so nothing shifts when it appears -->
-                    <p class="mb-6 text-xs text-slate-400 dark:text-slate-500" :class="step > 1 ? '' : 'invisible'">
-                        <span class="text-red-400">*</span> {{ __('messages.contact_required_note') }}
-                    </p>
+                    <x-form.required-note class="mb-6" x-bind:class="step > 1 ? '' : 'invisible'"/>
 
                     <!-- STEPS: stacked in one grid cell, so the old and the new step overlap while they cross-fade -->
                     <div class="-mx-4 grid overflow-x-clip px-4" :style="'--hire-dir:' + direction">
@@ -87,7 +85,7 @@
                                         </x-slot>
                                     </x-choice-card>
                                 </div>
-                                <x-field-error field="intent"/>
+                                <x-form.error :alpine="true" field="intent"/>
                             </fieldset>
 
                             <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
@@ -103,32 +101,34 @@
                         <x-wizard-step :n="2">
                             <div x-show="!isRole" class="space-y-6">
                                 <fieldset data-field="projectTypes">
-                                    <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_types_legend') }} <span class="text-red-400"
-                                                                                     aria-hidden="true">*</span>
-                                    </legend>
+                                    <x-form.label tag="legend" :required="true">
+                                        {{ __('messages.hire_types_legend') }}
+                                    </x-form.label>
                                     <div class="grid gap-3 sm:grid-cols-2">
                                         @foreach($options['types'] as $value => $label)
                                             <x-choice-card type="checkbox" name="projectTypes" :value="$value"
                                                            model="form.projectTypes" :label="$label"/>
                                         @endforeach
                                     </div>
-                                    <x-field-error field="projectTypes"/>
+                                    <x-form.error :alpine="true" field="projectTypes"/>
                                 </fieldset>
 
-                                <x-wizard-field field="description" type="textarea" :required="true" :maxlength="2000"
-                                                :label="__('messages.hire_desc_label')"
-                                                :placeholder="__('messages.hire_desc_placeholder')"/>
+                                <x-form.field :alpine="true" field="description" type="textarea" :required="true"
+                                              :maxlength="2000"
+                                              :label="__('messages.hire_desc_label')"
+                                              :placeholder="__('messages.hire_desc_placeholder')"/>
 
-                                <x-wizard-field field="link" type="url" autocomplete="url" placeholder="https://"
-                                                :label="__('messages.hire_link_label')"/>
+                                <x-form.field :alpine="true" field="link" type="url" autocomplete="url"
+                                              placeholder="https://"
+                                              :label="__('messages.hire_link_label')"/>
                             </div>
 
                             <div x-show="isRole" x-cloak class="space-y-6">
-                                <x-wizard-field field="company" :required="true" :maxlength="120"
-                                                autocomplete="organization"
-                                                :label="__('messages.hire_company_label')"/>
-                                <x-wizard-field field="roleTitle" :label="__('messages.hire_role_label')"/>
+                                <x-form.field :alpine="true" field="company" :required="true" :maxlength="120"
+                                              autocomplete="organization"
+                                              :label="__('messages.hire_company_label')"/>
+                                <x-form.field :alpine="true" field="roleTitle"
+                                              :label="__('messages.hire_role_label')"/>
                             </div>
                         </x-wizard-step>
 
@@ -136,10 +136,9 @@
                         <x-wizard-step :n="3">
                             <div class="space-y-8">
                                 <fieldset x-show="!isRole" data-field="budget">
-                                    <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_budget_label') }} <span class="text-red-400"
-                                                                                     aria-hidden="true">*</span>
-                                    </legend>
+                                    <x-form.label tag="legend" :required="true">
+                                        {{ __('messages.hire_budget_label') }}
+                                    </x-form.label>
                                     <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
                                         @foreach($options['budgets'] as $value => $label)
                                             <x-choice-card name="budget" :value="$value" model="form.budget"
@@ -147,35 +146,33 @@
                                         @endforeach
                                     </div>
                                     <p class="mt-3 text-xs text-slate-400 dark:text-slate-500">{{ __('messages.hire_budget_note') }}</p>
-                                    <x-field-error field="budget"/>
+                                    <x-form.error :alpine="true" field="budget"/>
                                 </fieldset>
 
                                 <fieldset x-show="isRole" x-cloak data-field="workModel">
-                                    <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_work_label') }} <span class="text-red-400"
-                                                                                   aria-hidden="true">*</span>
-                                    </legend>
+                                    <x-form.label tag="legend" :required="true">
+                                        {{ __('messages.hire_work_label') }}
+                                    </x-form.label>
                                     <div class="grid gap-3 sm:grid-cols-3">
                                         @foreach($options['workModels'] as $value => $label)
                                             <x-choice-card name="workModel" :value="$value" model="form.workModel"
                                                            :label="$label"/>
                                         @endforeach
                                     </div>
-                                    <x-field-error field="workModel"/>
+                                    <x-form.error :alpine="true" field="workModel"/>
                                 </fieldset>
 
                                 <fieldset data-field="timeline">
-                                    <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_timeline_label') }} <span class="text-red-400"
-                                                                                       aria-hidden="true">*</span>
-                                    </legend>
+                                    <x-form.label tag="legend" :required="true">
+                                        {{ __('messages.hire_timeline_label') }}
+                                    </x-form.label>
                                     <div class="grid gap-3 sm:grid-cols-3">
                                         @foreach($options['timelines'] as $value => $label)
                                             <x-choice-card name="timeline" :value="$value" model="form.timeline"
                                                            :label="$label"/>
                                         @endforeach
                                     </div>
-                                    <x-field-error field="timeline"/>
+                                    <x-form.error :alpine="true" field="timeline"/>
                                 </fieldset>
                             </div>
                         </x-wizard-step>
@@ -197,17 +194,18 @@
 
                             <div class="space-y-6">
                                 <div class="grid gap-6 sm:grid-cols-2">
-                                    <x-wizard-field field="name" :required="true" :maxlength="100" autocomplete="name"
-                                                    :label="__('messages.hire_name_label')"/>
-                                    <x-wizard-field field="email" type="email" :required="true" :maxlength="150"
-                                                    autocomplete="email"
-                                                    :label="__('messages.hire_email_label')"/>
+                                    <x-form.field :alpine="true" field="name" :required="true" :maxlength="100"
+                                                  autocomplete="name"
+                                                  :label="__('messages.contact_name_label')"
+                                                  :placeholder="__('messages.contact_name_placeholder')"/>
+                                    <x-form.field :alpine="true" field="email" type="email" :required="true"
+                                                  :maxlength="150" autocomplete="email"
+                                                  :label="__('messages.contact_email_label')"
+                                                  :placeholder="__('messages.contact_email_placeholder')"/>
                                 </div>
 
                                 <fieldset data-field="language">
-                                    <legend class="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                        {{ __('messages.hire_lang_label') }}
-                                    </legend>
+                                    <x-form.label tag="legend">{{ __('messages.hire_lang_label') }}</x-form.label>
                                     <div class="grid max-w-sm grid-cols-2 gap-3">
                                         @foreach($languages as $value => $label)
                                             <x-choice-card name="language" :value="$value" model="form.language"
@@ -222,11 +220,7 @@
                                                           x-model="form.website"></label>
                                 </div>
 
-                                <p class="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                                    {{ __('messages.hire_privacy_note') }}
-                                    <a href="{{ localized_route('privacy') }}" target="_blank" rel="noopener"
-                                       class="font-semibold text-primary-600 hover:underline dark:text-primary-400">{{ __('messages.hire_privacy_link') }}</a>.
-                                </p>
+                                <x-form.privacy-note/>
 
                                 <p x-show="serverError" x-text="serverError" x-cloak role="alert"
                                    class="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-400"></p>
@@ -237,23 +231,18 @@
                     <!-- NAVIGATION: Back on the left (secondary), Continue / Send on the right (primary) -->
                     <div
                         class="mt-10 flex items-center justify-between gap-4 border-t border-slate-200 pt-6 dark:border-white/10">
-                        <button type="button" @click="back()" x-show="step > 1" x-cloak
-                                class="inline-flex h-12 items-center gap-2 rounded-xl border border-slate-200 px-5 text-sm font-semibold
-                                       text-slate-600 transition-all duration-200 hover:bg-slate-100
-                                       dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5">
+                        <x-ghost-button x-on:click="back()" x-show="step > 1" x-cloak>
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5"
                                  viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
                             </svg>
                             {{ __('messages.hire_back') }}
-                        </button>
+                        </x-ghost-button>
 
-                        <button type="submit" :disabled="submitting"
-                                class="ml-auto inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary-600 px-6 text-sm
-                                       font-semibold text-white shadow-lg shadow-primary-500/25 transition-all duration-200
-                                       hover:-translate-y-0.5 hover:bg-primary-700
-                                       disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0">
+                        <!-- The disabled look is set on this instance, so the shared button component stays untouched -->
+                        <x-primary-button type="submit" x-bind:disabled="submitting"
+                                          class="ml-auto disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0">
                             <svg x-show="submitting" x-cloak class="h-4 w-4 flex-shrink-0 animate-spin" fill="none"
                                  viewBox="0 0 24 24">
                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
@@ -267,7 +256,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
-                        </button>
+                        </x-primary-button>
                     </div>
                 </form>
 
