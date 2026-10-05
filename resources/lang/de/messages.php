@@ -333,4 +333,11 @@ return [
     'hire_done_text_role'    => 'Deine Anfrage ist angekommen. ⚡ Ich antworte in der Regel innerhalb von 24 Stunden. Danke, dass du an mich gedacht hast, ich freue mich darauf, mehr über die Stelle und das Team zu erfahren!',
     'hire_done_projects'       => 'Projekte ansehen',
     'hire_done_blog'           => 'Blog lesen',
+
+// Shared form texts (used by the contact and hire forms)
+    'form_optional'      => 'optional',
+    'form_required_note' => 'Pflichtfelder',
+    'form_privacy_note'  => 'Deine Angaben nutze ich nur, um deine Anfrage zu beantworten. Mehr dazu in der',
+    'form_privacy_link'  => 'Datenschutzerklärung',
+    'form_err_throttled' => 'Zu viele Anfragen. Bitte versuche es später erneut.',
 ];

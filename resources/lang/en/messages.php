@@ -333,5 +333,12 @@ return [
     'hire_done_text_role'    => 'Your request has arrived. ⚡ I typically respond within 24 hours. Thank you for considering me, I’m looking forward to learning more about the role and the team!',
     'hire_done_projects'       => 'See my projects',
     'hire_done_blog'           => 'Read the blog',
+
+// Shared form texts (used by the contact and hire forms)
+    'form_optional'      => 'optional',
+    'form_required_note' => 'Required fields',
+    'form_privacy_note'  => 'I only use your details to reply to your request. More in the',
+    'form_privacy_link'  => 'privacy policy',
+    'form_err_throttled' => 'Too many requests. Please try again later.',
 ];
 

@@ -50,101 +50,22 @@
                 <form wire:submit="submit" class="space-y-5" novalidate>
 
                     <!-- Required fields note -->
-                    <p class="text-xs text-slate-400 dark:text-slate-500">
-                        <span class="text-red-400">*</span> {{ __('messages.contact_required_note') }}
-                    </p>
+                    <x-form.required-note/>
 
                     <!-- Name -->
-                    <div>
-                        <label for="name"
-                               class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                            {{ __('messages.contact_name_label') }} <span class="text-red-400">*</span>
-                        </label>
-                        <input type="text"
-                               id="name"
-                               wire:model.blur="name"
-                               autocomplete="name"
-                               placeholder="{{ __('messages.contact_name_placeholder') }}"
-                            @class([
-                                'w-full px-4 py-3 rounded-xl text-sm border transition-all duration-200',
-                                'bg-white dark:bg-white/[0.03] text-slate-800 dark:text-slate-200',
-                                'placeholder-slate-400 dark:placeholder-slate-500',
-                                'focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400',
-                                'border-red-400 dark:border-red-500 bg-red-50/30 dark:bg-red-500/5' => $errors->has('name'),
-                                'border-slate-200 dark:border-white/10' => !$errors->has('name'),
-                            ])>
-                        @error('name')
-                        <p class="mt-1.5 text-xs text-red-500 flex items-center gap-1">
-                            <svg class="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                      clip-rule="evenodd"/>
-                            </svg>
-                            {{ $message }}
-                        </p>
-                        @enderror
-                    </div>
+                    <x-form.field field="name" wire:model.blur="name" autocomplete="name" :required="true"
+                                  :label="__('messages.contact_name_label')"
+                                  :placeholder="__('messages.contact_name_placeholder')"/>
 
                     <!-- Email -->
-                    <div>
-                        <label for="email"
-                               class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                            {{ __('messages.contact_email_label') }} <span class="text-red-400">*</span>
-                        </label>
-                        <input type="email"
-                               id="email"
-                               wire:model.blur="email"
-                               autocomplete="email"
-                               placeholder="{{ __('messages.contact_email_placeholder') }}"
-                            @class([
-                                'w-full px-4 py-3 rounded-xl text-sm border transition-all duration-200',
-                                'bg-white dark:bg-white/[0.03] text-slate-800 dark:text-slate-200',
-                                'placeholder-slate-400 dark:placeholder-slate-500',
-                                'focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400',
-                                'border-red-400 dark:border-red-500 bg-red-50/30 dark:bg-red-500/5' => $errors->has('email'),
-                                'border-slate-200 dark:border-white/10' => !$errors->has('email'),
-                            ])>
-                        @error('email')
-                        <p class="mt-1.5 text-xs text-red-500 flex items-center gap-1">
-                            <svg class="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                      clip-rule="evenodd"/>
-                            </svg>
-                            {{ $message }}
-                        </p>
-                        @enderror
-                    </div>
+                    <x-form.field field="email" type="email" wire:model.blur="email" autocomplete="email" :required="true"
+                                  :label="__('messages.contact_email_label')"
+                                  :placeholder="__('messages.contact_email_placeholder')"/>
 
                     <!-- Message -->
-                    <div>
-                        <label for="comment"
-                               class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                            {{ __('messages.contact_message_label') }} <span class="text-red-400">*</span>
-                        </label>
-                        <textarea id="comment"
-                                  wire:model.blur="comment"
-                                  rows="6"
-                                  placeholder="{{ __('messages.contact_message_placeholder') }}"
-                                  @class([
-                                      'w-full px-4 py-3 rounded-xl text-sm border transition-all duration-200 resize-none',
-                                      'bg-white dark:bg-white/[0.03] text-slate-800 dark:text-slate-200',
-                                      'placeholder-slate-400 dark:placeholder-slate-500',
-                                      'focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-400',
-                                      'border-red-400 dark:border-red-500 bg-red-50/30 dark:bg-red-500/5' => $errors->has('comment'),
-                                      'border-slate-200 dark:border-white/10' => !$errors->has('comment'),
-                                  ])></textarea>
-                        @error('comment')
-                        <p class="mt-1.5 text-xs text-red-500 flex items-center gap-1">
-                            <svg class="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                      clip-rule="evenodd"/>
-                            </svg>
-                            {{ $message }}
-                        </p>
-                        @enderror
-                    </div>
+                    <x-form.field field="comment" type="textarea" :rows="6" wire:model.blur="comment" :required="true"
+                                  :label="__('messages.contact_message_label')"
+                                  :placeholder="__('messages.contact_message_placeholder')"/>
 
                     <!-- Cloudflare Turnstile -->
                     <div>
@@ -153,28 +74,19 @@
                              x-init="init()">
                             <div x-ref="widget"></div>
                         </div>
-                        @error('turnstileToken')
-                        <p class="mt-1.5 text-xs text-red-500 flex items-center gap-1">
-                            <svg class="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                      d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                      clip-rule="evenodd"/>
-                            </svg>
-                            {{ $message }}
-                        </p>
-                        @enderror
+                        <x-form.error field="turnstileToken"/>
                     </div>
 
+                    <!-- Privacy notice -->
+                    <x-form.privacy-note/>
+
                     <!-- Submit -->
-                    <button type="submit"
-                            wire:loading.attr="disabled"
-                            wire:target="submit"
-                            class="w-full inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl
-                                   font-semibold text-sm bg-primary-600 hover:bg-primary-700 text-white
-                                   shadow-lg shadow-primary-500/25 transition-all duration-200 hover:-translate-y-0.5
-                                   disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                    <x-primary-button type="submit"
+                                      wire:loading.attr="disabled"
+                                      wire:target="submit"
+                                      class="w-full justify-center">
                         <svg wire:loading wire:target="submit"
-                             class="w-4 h-4 animate-spin flex-shrink-0"
+                             class="h-4 w-4 flex-shrink-0 animate-spin"
                              fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10"
                                     stroke="currentColor" stroke-width="4"></circle>
@@ -183,7 +95,7 @@
                         </svg>
                         <span wire:loading.remove wire:target="submit">{{ __('messages.contact_submit') }}</span>
                         <span wire:loading wire:target="submit">{{ __('messages.contact_sending') }}</span>
-                    </button>
+                    </x-primary-button>
 
                 </form>
             </div>
