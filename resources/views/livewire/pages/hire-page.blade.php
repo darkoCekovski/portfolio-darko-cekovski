@@ -118,7 +118,7 @@
                                               :label="__('messages.hire_desc_label')"
                                               :placeholder="__('messages.hire_desc_placeholder')"/>
 
-                                <x-form.field :alpine="true" field="link" type="url" autocomplete="url"
+                                <x-form.field :alpine="true" field="link" type="url" autocomplete="url" :maxlength="255"
                                               placeholder="https://"
                                               :label="__('messages.hire_link_label')"/>
                             </div>
@@ -127,7 +127,7 @@
                                 <x-form.field :alpine="true" field="company" :required="true" :maxlength="120"
                                               autocomplete="organization"
                                               :label="__('messages.hire_company_label')"/>
-                                <x-form.field :alpine="true" field="roleTitle"
+                                <x-form.field :alpine="true" field="roleTitle" :maxlength="255"
                                               :label="__('messages.hire_role_label')"/>
                             </div>
                         </x-wizard-step>
@@ -194,12 +194,12 @@
 
                             <div class="space-y-6">
                                 <div class="grid gap-6 sm:grid-cols-2">
-                                    <x-form.field :alpine="true" field="name" :required="true" :maxlength="100"
+                                    <x-form.field :alpine="true" field="name" :required="true" :maxlength="255"
                                                   autocomplete="name"
                                                   :label="__('messages.contact_name_label')"
                                                   :placeholder="__('messages.contact_name_placeholder')"/>
                                     <x-form.field :alpine="true" field="email" type="email" :required="true"
-                                                  :maxlength="150" autocomplete="email"
+                                                  :maxlength="255" autocomplete="email"
                                                   :label="__('messages.contact_email_label')"
                                                   :placeholder="__('messages.contact_email_placeholder')"/>
                                 </div>
@@ -407,9 +407,11 @@
                     }
 
                     if (step === 4) {
-                        if (f.name.trim().length < 2) e.name = m.required;
-                        if (!f.email.trim()) e.email = m.required;
-                        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = m.email;
+                        if (!f.name.trim()) e.name = m.nameRequired;
+                        else if (f.name.trim().length < 2) e.name = m.nameMin;
+
+                        if (!f.email.trim()) e.email = m.emailRequired;
+                        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = m.emailInvalid;
                     }
 
                     return e;
