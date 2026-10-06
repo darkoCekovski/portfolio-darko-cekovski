@@ -24,7 +24,7 @@ class ContactConfirmation extends Mailable
     public function build()
     {
         $subject = $this->lang === 'de'
-            ? 'Danke für Ihre Nachricht — Darko Cekovski'
+            ? 'Danke für deine Nachricht — Darko Cekovski'
             : 'Thanks for reaching out — Darko Cekovski';
 
         return $this->subject($subject)

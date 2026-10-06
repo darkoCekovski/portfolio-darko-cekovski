@@ -92,11 +92,11 @@
     <div class="body">
         @if($locale === 'de')
             <p>Hallo {{ $name }},</p>
-            <p>vielen Dank für Ihre Nachricht! Ich habe sie erhalten und melde mich in der Regel innerhalb von 24–48
-                Stunden bei Ihnen.</p>
-            <p>Hier ist eine Kopie Ihrer Nachricht:</p>
+            <p>vielen Dank für deine Nachricht! Ich habe sie erhalten und melde mich in der Regel innerhalb von 24–48
+                Stunden bei dir.</p>
+            <p>Hier ist eine Kopie deiner Nachricht:</p>
             <div class="quote">{{ $comment }}</div>
-            <p>In der Zwischenzeit können Sie sich gerne meine Projekte ansehen.</p>
+            <p>In der Zwischenzeit kannst du dir gerne meine Projekte ansehen.</p>
             <div class="signature">
                 <p>Beste Grüße,<br><strong>Darko Cekovski</strong><br>Webentwickler</p>
                 <div class="links">

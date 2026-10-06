@@ -23,7 +23,9 @@ class ContactForm extends Mailable
 
     public function build()
     {
+        // Reply goes straight to the sender instead of back to the site address
         return $this->subject('New Contact Form Submission')
+            ->replyTo($this->email, $this->name)
             ->view('emails.contact')
             ->with([
                 'name' => $this->name,
