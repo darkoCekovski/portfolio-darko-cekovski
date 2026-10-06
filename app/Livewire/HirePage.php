@@ -136,6 +136,8 @@ class HirePage extends Component
         // Everything the Alpine wizard needs from the server: language, texts, error messages and option labels for the summary
         $config = [
             'locale' => $locale,
+            // Public key of the Cloudflare Turnstile widget (the same one the contact form uses)
+            'turnstileSiteKey' => config('services.turnstile.site_key'),
             'steps' => [
                 __('messages.hire_step_goal'),
                 __('messages.hire_step_details'),
@@ -171,6 +173,9 @@ class HirePage extends Component
                 'nameMin' => __('messages.contact_name_min'),
                 'emailRequired' => __('messages.contact_email_required'),
                 'emailInvalid' => __('messages.contact_email_invalid'),
+                // Same wording as the contact form
+                'turnstileRequired' => __('messages.contact_turnstile_required'),
+                'turnstileFailed'   => __('messages.contact_turnstile_failed'),
             ],
             'labels' => [
                 'intent' => [

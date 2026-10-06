@@ -220,6 +220,12 @@
                                                           x-model="form.website"></label>
                                 </div>
 
+                                <!-- Cloudflare Turnstile: created once, the first time this step is shown -->
+                                <div>
+                                    <div x-ref="turnstile"></div>
+                                    <x-form.error :alpine="true" field="turnstile"/>
+                                </div>
+
                                 <x-form.privacy-note/>
 
                                 <p x-show="serverError" x-text="serverError" x-cloak role="alert"
@@ -315,6 +321,9 @@
                 serverError: '',
                 errors: {},
                 guard: null,
+                turnstileToken: '',
+                turnstileId: null,
+                turnstileRequested: false,
                 form: {
                     intent: '',
                     projectTypes: [], description: '', link: '',        // project path
@@ -338,6 +347,40 @@
 
                 destroy() {
                     window.removeEventListener('beforeunload', this.guard);
+                },
+
+                // ── Turnstile ──
+                // Renders the widget the first time step 4 is shown; the Turnstile script itself is loaded by the layout
+                renderTurnstile() {
+                    if (this.turnstileRequested || !config.turnstileSiteKey) return;
+                    this.turnstileRequested = true;
+
+                    const render = () => {
+                        const holder = this.$refs.turnstile;
+
+                        this.turnstileId = window.turnstile.render(holder, {
+                            sitekey: config.turnstileSiteKey,
+                            theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+                            language: config.locale,
+                            // The normal widget is 300px wide; on very narrow screens the compact one fits the card
+                            size: holder.clientWidth < 300 ? 'compact' : 'normal',
+                            callback: (token) => {
+                                this.turnstileToken = token;
+                                this.errors.turnstile = '';
+                            },
+                            'expired-callback': () => { this.turnstileToken = ''; },
+                            'error-callback': () => { this.turnstileToken = ''; },
+                        });
+                    };
+
+                    if (window.turnstile) render();
+                    else document.addEventListener('turnstile-ready', render, {once: true});
+                },
+
+                // A Turnstile token works for one attempt only, so after a failed attempt a fresh one is requested
+                resetTurnstile() {
+                    this.turnstileToken = '';
+                    if (this.turnstileId !== null && window.turnstile) window.turnstile.reset(this.turnstileId);
                 },
 
                 // ── Derived values ──
@@ -412,6 +455,9 @@
 
                         if (!f.email.trim()) e.email = m.emailRequired;
                         else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = m.emailInvalid;
+
+                        // The widget has to be solved before sending (skipped when no site key is configured)
+                        if (config.turnstileSiteKey && !this.turnstileToken) e.turnstile = m.turnstileRequired;
                     }
 
                     return e;
@@ -463,6 +509,9 @@
                     this.step = n;
 
                     this.$nextTick(() => {
+                        // The Turnstile widget is created lazily, the first time the contact step is shown
+                        if (n === this.totalSteps) this.renderTurnstile();
+
                         // Focus lands on the new step's heading instead of a button that has just disappeared
                         document.getElementById('hire-step-' + n + '-heading')?.focus({preventScroll: true});
 
@@ -496,6 +545,7 @@
                         email: f.email.trim(),
                         language: f.language,
                         website: f.website,
+                        turnstileToken: this.turnstileToken,
                     };
 
                     return this.isRole
@@ -532,12 +582,18 @@
                         } else if (result && result.errors) {
                             this.applyServerErrors(result.errors);
                         } else {
-                            this.serverError = result && result.message === 'throttled'
-                                ? config.messages.throttled
-                                : config.messages.server;
+                            // A rejected attempt has used up its Turnstile token, so a fresh one is requested
+                            this.resetTurnstile();
+
+                            const known = {
+                                throttled: config.messages.throttled,
+                                turnstile: config.messages.turnstileFailed,
+                            };
+                            this.serverError = known[result?.message] ?? config.messages.server;
                         }
                     } catch (error) {
                         // Network failure, expired session (419) or a server error
+                        this.resetTurnstile();
                         this.serverError = config.messages.server;
                     } finally {
                         this.submitting = false;
