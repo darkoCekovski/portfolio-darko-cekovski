@@ -68,13 +68,22 @@ class ContactPage extends Component
         // At most 5 messages per hour per address; the confirmation mail goes to whatever address was typed in
         $throttleKey = 'contact-form:' . request()->ip();
 
+        // The toaster reads "status" and "title" from the event; without them it falls back to a green "Success!"
         if (RateLimiter::tooManyAttempts($throttleKey, 5)) {
-            $this->dispatch('toastMagic', type: 'error', message: __('messages.form_err_throttled'));
+            $this->dispatch('toastMagic',
+                status: 'error',
+                title: __('messages.toast_error_title'),
+                message: __('messages.form_err_throttled'),
+            );
             return;
         }
 
         if (!$this->verifyTurnstile()) {
-            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_turnstile_failed'));
+            $this->dispatch('toastMagic',
+                status: 'error',
+                title: __('messages.toast_error_title'),
+                message: __('messages.contact_turnstile_failed'),
+            );
             $this->reset('turnstileToken');
             $this->dispatch('reset-turnstile');
             return;
@@ -101,11 +110,19 @@ class ContactPage extends Component
             $this->reset(['name', 'email', 'comment', 'turnstileToken']);
             $this->resetValidation();
             $this->dispatch('reset-turnstile');
-            $this->dispatch('toastMagic', type: 'success', message: __('messages.contact_success'));
+            $this->dispatch('toastMagic',
+                status: 'success',
+                title: __('messages.toast_success_title'),
+                message: __('messages.contact_success'),
+            );
 
         } catch (\Throwable $e) {
             report($e);
-            $this->dispatch('toastMagic', type: 'error', message: __('messages.contact_error'));
+            $this->dispatch('toastMagic',
+                status: 'error',
+                title: __('messages.toast_error_title'),
+                message: __('messages.contact_error'),
+            );
             $this->reset('turnstileToken');
             $this->dispatch('reset-turnstile');
         }

@@ -213,6 +213,8 @@ return [
     'contact_success' => '✅ Thank you! Your message has been sent. I will get back to you soon.',
     'contact_error' => 'Something went wrong. Please try again or email me directly.',
     'contact_required_note' => 'Required fields',
+    'toast_success_title' => 'Message sent',
+    'toast_error_title'   => 'Something went wrong',
 // Contact validation
     'contact_name_required' => 'Please enter your name.',
     'contact_name_min' => 'Your name must be at least 2 characters.',

@@ -213,6 +213,8 @@ return [
     'contact_success' => '✅ Danke! Deine Nachricht wurde gesendet. Ich melde mich bald.',
     'contact_error' => 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
     'contact_required_note' => 'Pflichtfelder',
+    'toast_success_title' => 'Nachricht gesendet',
+    'toast_error_title'   => 'Etwas ist schiefgelaufen',
 // Contact validation
     'contact_name_required' => 'Bitte gib deinen Namen ein.',
     'contact_name_min' => 'Dein Name muss mindestens 2 Zeichen lang sein.',
