@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use App\Models\HireRequest;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Renderless;
 use Livewire\Component;
+
 
 class HirePage extends Component
 {
@@ -50,27 +52,58 @@ class HirePage extends Component
             return ['ok' => false, 'errors' => $validator->errors()->toArray()];
         }
 
+        // Checked after the validation, so a rejected form does not use up the single-use Turnstile token
+        if (! $this->verifyTurnstile((string) ($data['turnstileToken'] ?? ''))) {
+            return ['ok' => false, 'message' => 'turnstile'];
+        }
+
+        // Count only requests that passed every check
         RateLimiter::hit($throttleKey, 3600);
 
         $valid = $validator->validated();
 
         HireRequest::create([
-            'intent' => $valid['intent'],
-            'name' => $valid['name'],
-            'email' => $valid['email'],
-            'language' => $valid['language'],
-            'ui_locale' => $locale,
-            'timeline' => $valid['timeline'],
-            'budget' => $valid['budget'] ?? null,
+            'intent'        => $valid['intent'],
+            'name'          => $valid['name'],
+            'email'         => $valid['email'],
+            'language'      => $valid['language'],
+            'ui_locale'     => $locale,
+            'timeline'      => $valid['timeline'],
+            'budget'        => $valid['budget'] ?? null,
             'project_types' => $valid['projectTypes'] ?? null,
-            'description' => $valid['description'] ?? null,
-            'link' => $valid['link'] ?? null,
-            'company' => $valid['company'] ?? null,
-            'role_title' => $valid['roleTitle'] ?? null,
-            'work_model' => $valid['workModel'] ?? null,
+            'description'   => $valid['description'] ?? null,
+            'link'          => $valid['link'] ?? null,
+            'company'       => $valid['company'] ?? null,
+            'role_title'    => $valid['roleTitle'] ?? null,
+            'work_model'    => $valid['workModel'] ?? null,
         ]);
 
         return ['ok' => true];
+    }
+
+    // Asks Cloudflare whether the widget token is genuine; any failure counts as "not verified"
+    private function verifyTurnstile(string $token): bool
+    {
+        $secret = config('services.turnstile.secret_key');
+
+        if ($token === '' || blank($secret)) {
+            return false;
+        }
+
+        try {
+            $response = Http::asForm()->timeout(5)->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+                'secret'   => $secret,
+                'response' => $token,
+                'remoteip' => request()->ip(),
+            ]);
+        } catch (\Throwable $e) {
+            // Cloudflare unreachable: logged, and the visitor is asked to try again
+            report($e);
+
+            return false;
+        }
+
+        return $response->json('success') === true;
     }
 
     // Validation rules for the chosen path; the common fields are shared, the rest depends on project or role
@@ -175,7 +208,7 @@ class HirePage extends Component
                 'emailInvalid' => __('messages.contact_email_invalid'),
                 // Same wording as the contact form
                 'turnstileRequired' => __('messages.contact_turnstile_required'),
-                'turnstileFailed'   => __('messages.contact_turnstile_failed'),
+                'turnstileFailed' => __('messages.contact_turnstile_failed'),
             ],
             'labels' => [
                 'intent' => [
