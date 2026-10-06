@@ -96,7 +96,7 @@
                 Stunden bei dir.</p>
             <p>Hier ist eine Kopie deiner Nachricht:</p>
             <div class="quote">{{ $comment }}</div>
-            <p>In der Zwischenzeit kannst du dir gerne meine <a href="https://darkocekovski.com/de/projecte" target="_blank" rel="noopener" class="font-semibold text-primary-600 hover:underline dark:text-primary-400" data-alpine-devtools-right-click="">Projekte</a> ansehen.</p>
+            <p>In der Zwischenzeit kannst du dir gerne meine <a href="https://darkocekovski.com/de/projects" target="_blank" rel="noopener" class="font-semibold text-primary-600 hover:underline dark:text-primary-400" data-alpine-devtools-right-click="">Projekte</a> ansehen.</p>
             <div class="signature">
                 <p>Beste Grüße,<br><strong>Darko Cekovski</strong><br>Webentwickler</p>
                 <div class="links">
@@ -109,7 +109,7 @@
             <p>Thanks for getting in touch! I've received your message and will get back to you within 24–48 hours.</p>
             <p>Here's a copy of your message:</p>
             <div class="quote">{{ $comment }}</div>
-            <p>In the meantime, feel free to explore my <a href="https://darkocekovski.com/en/projecte" target="_blank" rel="noopener" class="font-semibold text-primary-600 hover:underline dark:text-primary-400" data-alpine-devtools-right-click="">projects</a>.</p>
+            <p>In the meantime, feel free to explore my <a href="https://darkocekovski.com/en/projects" target="_blank" rel="noopener" class="font-semibold text-primary-600 hover:underline dark:text-primary-400" data-alpine-devtools-right-click="">projects</a>.</p>
             <div class="signature">
                 <p>Best regards,<br><strong>Darko Cekovski</strong><br>Web Developer</p>
                 <div class="links">
