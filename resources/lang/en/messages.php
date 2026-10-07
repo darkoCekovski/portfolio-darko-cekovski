@@ -198,8 +198,8 @@ return [
     'testimonials_subtitle' => 'Kind words from people I have had the pleasure of working with.',
 // Contact
     'contact_eyebrow' => 'Get in touch',
-    'contact_title' => "Let's work together",
-    'contact_text' => 'Have a project in mind or want to collaborate? I would love to hear from you.',
+    'contact_title' => 'Send me a message',
+    'contact_text' => 'A question, feedback or just a hello? Write me a few lines and I will get back to you.',
     'contact_cta' => 'Contact me',
     'contact_response_note' => '⚡ I typically respond within 24 hours. Looking forward to hearing from you!',
     'contact_name_label' => 'Your name',

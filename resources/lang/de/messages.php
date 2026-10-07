@@ -198,8 +198,8 @@ return [
     'testimonials_subtitle' => 'Nette Worte von Menschen, mit denen ich zusammenarbeiten durfte.',
 // Contact
     'contact_eyebrow' => 'Kontakt',
-    'contact_title' => 'Lass uns zusammenarbeiten',
-    'contact_text' => 'Hast du ein Projekt im Sinn oder möchtest du zusammenarbeiten? Ich freue mich, von dir zu hören.',
+    'contact_title' => 'Schreib mir eine Nachricht',
+    'contact_text' => 'Eine Frage, Feedback oder einfach nur Hallo? Schreib mir ein paar Zeilen, ich melde mich bei dir.',
     'contact_cta' => 'Kontaktiere mich',
     'contact_response_note' => '⚡ Ich antworte in der Regel innerhalb von 24 Stunden. Ich freue mich darauf, von dir zu hören!',
     'contact_name_label' => 'Dein Name',
