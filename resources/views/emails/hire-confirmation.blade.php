@@ -88,9 +88,9 @@
         </div>
 
         @if($de)
-            <p>In der Zwischenzeit kannst du dir gerne meine Projekte ansehen.</p>
+            <p>In der Zwischenzeit kannst du dir gerne meine <a href="https://darkocekovski.com/de/projects" target="_blank" rel="noopener" class="font-semibold text-primary-600 hover:underline dark:text-primary-400" data-alpine-devtools-right-click="">Projekte</a> ansehen.</p>
         @else
-            <p>In the meantime, feel free to explore my projects.</p>
+            <p>In the meantime, feel free to explore my <a href="https://darkocekovski.com/en/projects" target="_blank" rel="noopener" class="font-semibold text-primary-600 hover:underline dark:text-primary-400" data-alpine-devtools-right-click="">projects</a>.</p>
         @endif
 
         <div class="signature">
