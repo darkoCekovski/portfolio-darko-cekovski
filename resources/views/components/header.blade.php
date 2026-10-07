@@ -83,14 +83,6 @@
                 {{ __('messages.blog_title') }}
             </x-nav-link>
 
-            <!-- Contact -->
-            <x-nav-link
-                href="{{ localized_route('contact') }}"
-                :active="request()->routeIs('contact')"
-            >
-                {{ __('messages.nav_contact') }}
-            </x-nav-link>
-
         </div>
 
         <!-- Right controls -->
@@ -98,7 +90,9 @@
             @livewire('theme-switcher')
             @include('partials.language-switcher')
             <div class="hidden lg:block">
-                @livewire('download-cv')
+                <x-primary-button href="{{ localized_route('hire') }}" variant="highlight" size="sm">
+                    {{ __('messages.hire_cta') }}
+                </x-primary-button>
             </div>
 
             <!-- Hamburger -->
@@ -198,18 +192,11 @@
             {{ __('messages.blog_title') }}
         </x-nav-link>
 
-        <!-- Contact -->
-        <x-nav-link
-            href="{{ localized_route('contact') }}"
-            mobile
-            :active="request()->routeIs('contact')"
-            @click="open = false"
-        >
-            {{ __('messages.nav_contact') }}
-        </x-nav-link>
-
         <div class="pt-3 border-t border-slate-200 dark:border-white/10">
-            @livewire('download-cv')
+            <x-primary-button href="{{ localized_route('hire') }}" variant="highlight"
+                              class="w-full justify-center" @click="open = false">
+                {{ __('messages.hire_cta') }}
+            </x-primary-button>
         </div>
     </div>
 

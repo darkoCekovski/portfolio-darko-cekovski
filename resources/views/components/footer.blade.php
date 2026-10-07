@@ -41,6 +41,11 @@
 
             <!-- Legal links -->
             <div class="flex items-center gap-5 text-sm">
+                <a href="{{ localized_route('contact') }}"
+                   class="text-primary-500 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors duration-200">
+                    {{ __('messages.nav_contact') }}
+                </a>
+                <span class="text-slate-300 dark:text-slate-600">·</span>
                 <a href="{{ localized_route('imprint') }}"
                    class="text-primary-500 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors duration-200">
                     {{ __('messages.imprint_title') }}

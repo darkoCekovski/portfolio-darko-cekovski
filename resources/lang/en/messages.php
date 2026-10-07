@@ -336,6 +336,10 @@ return [
     'hire_done_projects'       => 'See my projects',
     'hire_done_blog'           => 'Read the blog',
 
+// Hire call-to-action (header, home page, about page)
+    'hire_cta'      => 'Hire me',
+    'hire_cta_text' => 'Tell me about your project or the role in four short steps. It takes about two minutes.',
+
 // Shared form texts (used by the contact and hire forms)
     'form_optional'      => 'optional',
     'form_required_note' => 'Required fields',
