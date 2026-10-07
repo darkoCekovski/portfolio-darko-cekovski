@@ -58,11 +58,6 @@
                         </x-ghost-button>
                         <x-primary-button href="{{ localized_route('hire') }}" variant="highlight">
                             {{ __('messages.hire_cta') }}
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                            </svg>
                         </x-primary-button>
                     </div>
 
