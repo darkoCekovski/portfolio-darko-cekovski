@@ -113,21 +113,7 @@
     website).
 </p>
 
-<h2>8. External Libraries via jsDelivr</h2>
-<p>
-    To display icons and sliders, libraries are loaded through the content delivery network jsDelivr
-    (cdn.jsdelivr.net). When a page is opened, your browser connects to the jsDelivr servers for this purpose. Technical
-    data is transmitted in the process, in particular your IP address, browser type and version, the date and time of
-    the request and the domain of the requesting page (referrer). The data may also be processed by the infrastructure
-    providers used by the network; a transfer to third countries is possible. Further information is available in the
-    <a href="https://www.jsdelivr.com/privacy-policy-jsdelivr-net" target="_blank" rel="noopener">jsDelivr privacy policy</a>.
-</p>
-<p>
-    The legal basis is Art. 6(1)(f) GDPR (legitimate interest in a fast, reliable and consistent presentation of the
-    website).
-</p>
-
-<h2>9. Cookies and Local Storage</h2>
+<h2>8. Cookies and Local Storage</h2>
 <p>
     This website itself does not set any cookies for analytics or advertising purposes. For the website to work,
     technically necessary cookies are set: a session cookie and a cookie that protects the forms against cross-site
@@ -144,7 +130,7 @@
     Art. 6(1)(f) GDPR.
 </p>
 
-<h2>10. Your Rights</h2>
+<h2>9. Your Rights</h2>
 <p>You have the right at any time to:</p>
 <ul>
     <li>request information about your personal data stored by us (Art. 15 GDPR),</li>
