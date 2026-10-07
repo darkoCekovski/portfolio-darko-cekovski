@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Renderless;
 use Livewire\Component;
+use App\Mail\HireRequestConfirmation;
+use App\Mail\HireRequestReceived;
+use Illuminate\Support\Facades\Mail;
 
 
 class HirePage extends Component
@@ -62,7 +65,7 @@ class HirePage extends Component
 
         $valid = $validator->validated();
 
-        HireRequest::create([
+        $hire = HireRequest::create([
             'intent'        => $valid['intent'],
             'name'          => $valid['name'],
             'email'         => $valid['email'],
@@ -78,7 +81,26 @@ class HirePage extends Component
             'work_model'    => $valid['workModel'] ?? null,
         ]);
 
+        $this->sendMails($hire);
+
         return ['ok' => true];
+    }
+
+    // Sends the notification to the site owner and the confirmation to the visitor.
+    // The request is already stored, so a failing mail is only logged and never shown to the visitor as a failed request.
+    private function sendMails(HireRequest $hire): void
+    {
+        try {
+            Mail::to(config('mail.from.address'))->send(new HireRequestReceived($hire));
+        } catch (\Throwable $e) {
+            report($e);
+        }
+
+        try {
+            Mail::to($hire->email)->send(new HireRequestConfirmation($hire));
+        } catch (\Throwable $e) {
+            report($e);
+        }
     }
 
     // Asks Cloudflare whether the widget token is genuine; any failure counts as "not verified"
@@ -92,7 +114,7 @@ class HirePage extends Component
 
         try {
             $response = Http::asForm()->timeout(5)->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-                'secret'   => $secret,
+                'secret' => $secret,
                 'response' => $token,
                 'remoteip' => request()->ip(),
             ]);
