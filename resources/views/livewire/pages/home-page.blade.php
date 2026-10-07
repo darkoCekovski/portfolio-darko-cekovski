@@ -313,7 +313,7 @@
         @livewire('testimonials')
     </x-page-section>
 
-    <!-- CONTACT CTA -->
+    <!-- HIRE ME CTA -->
     <section
         x-data="ctaExpand()"
         class="relative"
@@ -333,17 +333,13 @@
                 <div class="absolute inset-0 opacity-10 noise"></div>
                 <div class="relative h-full flex flex-col items-center justify-center text-center p-12">
                     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-                        {{ __('messages.contact_title') }}
+                        {{ __('messages.hire_title') }}
                     </h2>
                     <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto">
-                        {{ __('messages.contact_text') }}
+                        {{ __('messages.hire_cta_text') }}
                     </p>
-                    <x-primary-button href="{{ localized_route('contact') }}" variant="white">
-                        {{ __('messages.contact_cta') }}
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                        </svg>
+                    <x-primary-button href="{{ localized_route('hire') }}" variant="white">
+                        {{ __('messages.hire_cta') }}
                     </x-primary-button>
                 </div>
             </div>
