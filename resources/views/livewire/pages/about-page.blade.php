@@ -106,8 +106,8 @@
 
                 {{-- CTAs --}}
                 <div class="flex gap-4 pt-2 reveal reveal-delay-4">
-                    <x-primary-button href="{{ localized_route('contact') }}" size="sm">
-                        {{ __('messages.contact_cta') }}
+                    <x-primary-button href="{{ localized_route('hire') }}" variant="highlight" size="sm">
+                        {{ __('messages.hire_cta') }}
                     </x-primary-button>
                     @livewire('download-cv')
                 </div>
