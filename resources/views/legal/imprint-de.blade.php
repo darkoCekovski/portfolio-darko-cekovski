@@ -11,7 +11,7 @@
 
 <h2>Kontakt</h2>
 <p>
-    E-Mail: <a href="mailto:hello@darkocekovski.com">hello@darkocekovski.com</a><br>
+    E-Mail: <a href="mailto:hello@darkocekovski.com">hello[@]darkocekovski.com</a><br>
     Kontaktformular: <a href="{{ localized_route('contact') }}">darkocekovski.com/de/contact</a>
 </p>
 

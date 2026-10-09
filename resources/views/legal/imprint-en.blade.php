@@ -11,8 +11,8 @@
 
 <h2>Contact</h2>
 <p>
-    Email: <a href="mailto:hello@darkocekovski.com">hello@darkocekovski.com</a><br>
-    Contact form: <a href="{{ localized_route('contact') }}">darkocekovski.com/contact</a>
+    Email: <a href="mailto:hello@darkocekovski.com">hello[@]darkocekovski.com</a><br>
+    Contact form: <a href="{{ localized_route('contact') }}">darkocekovski.com/en/contact</a>
 </p>
 
 <h2>VAT Identification Number</h2>
